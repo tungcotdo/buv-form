@@ -1,9 +1,9 @@
 @font-face {
     font-family: AvenirNextLight;
-    src: url('font/Avenir/SVN-Avenir Next Light.otf');
+    src: url('../font/Avenir/SVN-Avenir Next Light.otf');
 }
 
 @font-face {
     font-family: BrandonBld;
-    src: url('font/Brandon/Brandon_bld.otf');
+    src: url('../font/Brandon/Brandon_bld.otf');
 }

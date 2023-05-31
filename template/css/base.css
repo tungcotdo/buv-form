@@ -17,10 +17,10 @@
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {}
 
-
 :root{
-    --pri-color: #d71f27;
+    --fir-color: #d71f27;
     --sec-color: #1f3e8c;
+    --thr-color: #4d78e5;
 }
 
 * {
@@ -40,5 +40,13 @@ html{
 
 .container__full{
     width: 100%;
+}
+
+.required__symbol{
+    color: var(--fir-color);
+}
+
+.text__vi{
+    color: var(--thr-color);
 }
 
