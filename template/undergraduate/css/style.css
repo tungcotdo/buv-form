@@ -1,0 +1,28 @@
+.undergraduate__banner{
+    background-color: red;
+    height: 290px;
+    background-image: url('../img/banner.png');
+    background-position: center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 20px;
+}
+
+.undergraduate-banner-logo__img{
+    width: 130px;
+}
+
+.undergraduate-banner-title__heading{
+    background-color: var(--sec-color);
+    font-size: 27px;
+    padding: 15px;
+    width: 300px;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: BrandonBld;
+}
