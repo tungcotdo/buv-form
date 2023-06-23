@@ -103,6 +103,7 @@
 }
 
 .scholarship__note{
+    margin-top: var(--space-sec);
     font-style: italic;
 }
 
@@ -191,4 +192,8 @@
     line-height: 21px;
     letter-spacing: -.042em;
     color: #333;
+}
+
+.scholarship-section__field-group{
+    width: 100%;
 }

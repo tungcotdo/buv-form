@@ -59,15 +59,9 @@ html{
     color: var(--color-thr);
 }
 
-.grid-col-2{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    column-gap: var(--space-fou);
-}
-
-.grid-col-3{
-    display: grid;
-    grid-template-columns: 33.333333333333333333% 33.333333333333333333% 33.333333333333333333%;
+.display-flex-space-between{
+    display: flex;
+    justify-content: space-between;
     column-gap: var(--space-fou);
 }
 
