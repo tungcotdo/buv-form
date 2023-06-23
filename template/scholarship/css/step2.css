@@ -1,0 +1,16 @@
+.scholarship-section__field-textbox-label,
+.scholarship-section__field-textbox-input{
+    display: block;
+    width: 100%;
+
+}
+
+.scholarship-section__field-textbox-input{
+    height: 35px;
+    border: 1px solid rgba(79, 79, 79, .3);
+}
+
+.scholarship-section__field-gender-group{
+    border: 1px solid rgba(79, 79, 79, .3);
+    padding: 7.5px;
+}
