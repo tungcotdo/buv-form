@@ -66,89 +66,104 @@
 
             <form class="scholarship__form">
                 <div class="scholarship__section">
-                    <h3 class="scholarship-section__heading">PERSONAL INFOMATION</h3>
-
                     <p class="scholarship__note">
-                        Note: (<span class="required__symbol">*</span>) This field is required/ <span class="text__vi">Vui lòng không để trống thông tin này</span>
+                        Note: (<span class="required__symbol">*</span>) This field is required/ <span class="text__vi">Vui lòng không để trống thông tin này!</span>
                     </p>
 
+
+
+                    <!-- PERSONAL INFOMATION -->
+                    <h3 class="scholarship-section__heading">PERSONAL INFOMATION</h3>
                     <div class="scholarship-section__field">
 
-                        <div class="form-field-group__gap">
-
-                            <div class="display-flex-space-between">
-                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label scholarship-section__field-textbox-label">First name<span class="required__symbol">*</span></label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
-                                </div>
-                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label scholarship-section__field-textbox-label">Middle name<span class="required__symbol">*</span></label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
-                                </div>
-                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label scholarship-section__field-textbox-label">Last name<span class="required__symbol">*</span></label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
-                                </div>
+                        <div class="grid-desktop-three-col grid-ipad-three-col">
+                            <div class="scholarship-section__field-group">
+                                <label class="scholarship-section__field-label">First name<span class="required__symbol">*</span></label>
+                                <input class="scholarship-section__field-textbox" type="text">
                             </div>
+                            <div class="scholarship-section__field-group">
+                                <label class="scholarship-section__field-label">Middle name<span class="required__symbol">*</span></label>
+                                <input class="scholarship-section__field-textbox" type="text">
+                            </div>
+                            <div class="scholarship-section__field-group">
+                                <label class="scholarship-section__field-label">Last name<span class="required__symbol">*</span></label>
+                                <input class="scholarship-section__field-textbox" type="text">
+                            </div>
+                        </div>
 
-                            <div class="display-flex-space-between">
-                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Full name in Vietnamese (Tên tiếng việt có dấu)<span class="required__symbol">*</span></label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
-                                </div>
-                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Gender<span class="required__symbol">*</span></label>
-                                    <div class="display-flex-space-between scholarship-section__field-gender-group">
-                                        <div>
-                                            <input type="checkbox">
-                                            <label> Male</label>
-                                        </div>
-                                        <div>
-                                            <input type="checkbox">
-                                            <label> Female</label>
-                                        </div>
-                                        <div>
-                                            <input type="checkbox">
-                                            <label> Other</label>
-                                        </div>
+                        <div class="grid-desktop-three-col">
+                            <div class="scholarship-section__field-group">
+                                <label class="scholarship-section__field-label">Full name in Vietnamese (Tên tiếng việt có dấu)<span class="required__symbol">*</span></label>
+                                <input class="scholarship-section__field-textbox" type="text">
+                            </div>
+                            <div class="scholarship-section__field-group">
+                                <label class="scholarship-section__field-label">Mobile phone<span class="required__symbol">*</span></label>
+                                <input class="scholarship-section__field-textbox" type="text">
+                            </div>
+                            <div class="scholarship-section__field-group">
+                                <label class="scholarship-section__field-label">Email (in CAPITALS)<span class="required__symbol">*</span></label>
+                                <input class="scholarship-section__field-textbox" type="text">
+                            </div>
+                            
+                        </div>
+
+                        <div class="grid-desktop-three-col">
+                            <div class="scholarship-section__field-group">
+                                <label class="scholarship-section__field-label">Gender<span class="required__symbol">*</span></label>
+                                <div class="grid-three-col scholarship-section__field-gender-group">
+                                    <div class="scholarship-section__field-checkbox-group">
+                                        <input type="checkbox" class="scholarship-section__field-checkbox-input">
+                                        <label> Male</label>
                                     </div>
-                                </div>
-                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Date of birth<span class="required__symbol">*</span></label>
-                                    <div class="flex-birthday">
-                                        <div>
-                                            <input class="scholarship-section__field-birthday-textbox" type="text" placeholder="Day">
-                                        </div>
-                                        <div>
-                                            <input class="scholarship-section__field-birthday-textbox" type="text" placeholder="Month">
-                                        </div>
-                                        <div>
-                                            <input class="scholarship-section__field-birthday-textbox" type="text" placeholder="Year">
-                                        </div>
+                                    <div class="scholarship-section__field-checkbox-group">
+                                        <input type="checkbox" class="scholarship-section__field-checkbox-input">
+                                        <label> Female</label>
+                                    </div>
+                                    <div class="scholarship-section__field-checkbox-group">
+                                        <input type="checkbox" class="scholarship-section__field-checkbox-input">
+                                        <label> Other</label>
                                     </div>
                                 </div>
                             </div>
-    
-                            <div class="display-flex-space-between">
-                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Email (in CAPITALS)<span class="required__symbol">*</span></label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
-                                </div>
-                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Mobile phone<span class="required__symbol">*</span></label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
-                                </div>
-                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">National ID card number/Passport number<span class="required__symbol">*</span></label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                            <div class="scholarship-section__field-group">
+                                <label class="scholarship-section__field-label">Date of birth<span class="required__symbol">*</span></label>
+                                <div class="grid-three-col scholarship-section__field-birthday">
+                                    <select class="scholarship-section__field-selectbox">
+                                        <option value="">Day</option>
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                        <option value="">4</option>
+                                    </select>
+                                    <select class="scholarship-section__field-selectbox">
+                                        <option value="">Month</option>
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                        <option value="">4</option>
+                                    </select>
+                                    <select class="scholarship-section__field-selectbox">
+                                        <option value="">Year</option>
+                                        <option value="">2023</option>
+                                        <option value="">2024</option>
+                                        <option value="">2025</option>
+                                        <option value="">2026</option>
+                                    </select>
                                 </div>
                             </div>
+                            <div class="scholarship-section__field-group">
+                                <label class="scholarship-section__field-label">Place of birth<span class="required__symbol">*</span></label>
+                                <input class="scholarship-section__field-textbox" type="text">
+                            </div>
+                        </div>
 
-                            <div class="display-flex-space-between">
-                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Place of birth<span class="required__symbol">*</span></label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
-                                </div>
+                        <div class="grid-desktop-two-col">
+
+                            <div class="scholarship-section__field-group">
+                                <label class="scholarship-section__field-label">National ID card number/Passport number<span class="required__symbol">*</span></label>
+                                <input class="scholarship-section__field-textbox" type="text">
+                            </div>
+                            <div class="grid-desktop-two-col grid-ipad-two-col">
                                 <div class="scholarship-section__field-group">
                                     <label class="scholarship-section__field-label">Passport-sized photograph<span class="required__symbol">*</span></label>
                                     <input class="scholarship-section__field-file" type="file">
@@ -158,18 +173,65 @@
                                     <input class="scholarship-section__field-file" type="file">
                                 </div>
                             </div>
-
-                            <div class="scholarship-section__field-textarea-group">
-                                <label class="scholarship-section__field-label scholarship-section__field-textbox-label">Current address<span class="required__symbol">*</span></label>
-                                <textarea class="scholarship-section__field-textarea-input" type="text"></textarea>
-                            </div>
-
                         </div>
+
+                        <div class="scholarship-section__field-textarea-group">
+                            <label class="scholarship-section__field-label">Current address<span class="required__symbol">*</span></label>
+                            <textarea class="scholarship-section__field-textarea-input" type="text"></textarea>
+                        </div>
+
+                        <fieldset class="scholarship-section__field-group scholarship-section__field-emergency-contact-group">
+                            <legend>Emergency contact 1</legend>
+                            <div class="grid-desktop-four-col grid-ipad-four-col">
+                                <div class="scholarship-section__field-group">
+                                    <label class="scholarship-section__field-label">Name<span class="required__symbol">*</span></label>
+                                    <input class="scholarship-section__field-textbox" type="text">
+                                </div>
+                                <div class="scholarship-section__field-group">
+                                    <label class="scholarship-section__field-label">Relationship<span class="required__symbol">*</span></label>
+                                    <input class="scholarship-section__field-textbox" type="text">
+                                </div>
+                                <div class="scholarship-section__field-group">
+                                    <label class="scholarship-section__field-label">Phone no<span class="required__symbol">*</span></label>
+                                    <input class="scholarship-section__field-textbox" type="text">
+                                </div>
+                                <div class="scholarship-section__field-group">
+                                    <label class="scholarship-section__field-label">Email<span class="required__symbol">*</span></label>
+                                    <input class="scholarship-section__field-textbox" type="text">
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="scholarship-section__field-group scholarship-section__field-emergency-contact-group">
+                            <legend>Emergency contact 2</legend>
+                            <div class="grid-desktop-four-col grid-ipad-four-col">
+                                <div class="scholarship-section__field-group">
+                                    <label class="scholarship-section__field-label">Name</label>
+                                    <input class="scholarship-section__field-textbox" type="text">
+                                </div>
+                                <div class="scholarship-section__field-group">
+                                    <label class="scholarship-section__field-label">Relationship</label>
+                                    <input class="scholarship-section__field-textbox" type="text">
+                                </div>
+                                <div class="scholarship-section__field-group">
+                                    <label class="scholarship-section__field-label">Phone no</label>
+                                    <input class="scholarship-section__field-textbox" type="text">
+                                </div>
+                                <div class="scholarship-section__field-group">
+                                    <label class="scholarship-section__field-label">Email</label>
+                                    <input class="scholarship-section__field-textbox" type="text">
+                                </div>
+                            </div>
+                        </fieldset>
 
 
                     </div>
+                    <!-- / PERSONAL INFOMATION -->
+
+
+
                 </div>
-                
+
                 <div class="scholarship-form__submit">
                     <input class="scholarship-form-submit__btn scholarship-form-submit__btn--previous" type="submit" value="Previous">
                     <input class="scholarship-form-submit__btn scholarship-form-submit__btn--next" type="submit" value="Next">

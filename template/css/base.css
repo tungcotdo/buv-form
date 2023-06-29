@@ -23,6 +23,8 @@
     --color-thr: #4d78e5;
     --color-fou: #198753;
     --color-fiv: #0b5e37;
+    --color-bor: rgba(79, 79, 79, .3);
+    --color-bac: #eee;
 
     --space-mob: 10px;
     --space-fir: 10px;
@@ -30,6 +32,7 @@
     --space-thr: 20px;
     --space-fou: 30px;
 
+    
 }
 
 * {
@@ -59,11 +62,6 @@ html{
     color: var(--color-thr);
 }
 
-.display-flex-space-between{
-    display: flex;
-    justify-content: space-between;
-    column-gap: var(--space-fou);
-}
 
 
 
