@@ -62,6 +62,14 @@ html{
     color: var(--color-thr);
 }
 
+.text-italic{
+    font-style: italic;
+    line-height: 20px;
+}
+
+.mr-1{
+    margin-right: var(--space-fir);
+}
 
 
 

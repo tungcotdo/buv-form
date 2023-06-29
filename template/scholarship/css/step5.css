@@ -1,0 +1,25 @@
+.scholarship-section__field-checkbox-yn-input{
+    width: 30px;
+    height: 18px;
+}
+
+.scholarship-section__field-yn-group{
+    display: flex;
+    border: 1px solid var(--color-bor);
+    padding: 30px 10px;
+    margin-top: var(--space-thr);
+    align-items: center;
+    gap: var(--space-fir);
+    background-color: var(--color-bac);
+}
+
+.scholarship-section__fieldset-yn-group{
+    background-color: var(--color-bac);
+    border: 1px solid var(--color-bor);
+    padding: 30px 10px;
+    margin-top: var(--space-thr);
+}
+
+.scholarship-section__fieldset-yn-checkbox-group{
+    display: flex;
+}

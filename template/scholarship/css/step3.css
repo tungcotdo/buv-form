@@ -1,17 +1,2 @@
-.scholarship-section__field-textbox-label,
-.scholarship-section__field-textbox-input{
-    display: block;
-    width: 100%;
 
-}
 
-.scholarship-section__field-textbox-input{
-    height: 35px;
-    border: 1px solid var(--color-bor);
-}
-
-.scholarship-section__field-qualification-group{
-    padding: 5px 10px;
-    border: 1px solid var(--color-bor);
-    background-color: var(--color-bac);
-}
