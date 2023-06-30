@@ -28,7 +28,7 @@
             </div>
 
             <div class="scholarship__pagination">
-                <div class="scholarship-pagination__item scholarship-pagination__item--active">
+                <div class="scholarship-pagination__item">
                     <a class="scholarship-pagination-item__btn" href="scholarship1.html">1</a>
                 </div>
                 <div class="scholarship-pagination__dash"></div>
@@ -48,7 +48,7 @@
                     <a class="scholarship-pagination-item__btn" href="scholarship5.html">5</a>
                 </div>
                 <div class="scholarship-pagination__dash"></div>
-                <div class="scholarship-pagination__item">
+                <div class="scholarship-pagination__item scholarship-pagination__item--active">
                     <a class="scholarship-pagination-item__btn" href="scholarship6.html">6</a>
                 </div>
                 <div class="scholarship-pagination__dash"></div>
@@ -61,40 +61,60 @@
                 </div>
             </div>
 
+
+
             <form class="scholarship__form">
                 <div class="scholarship__section">
-                    <h3 class="scholarship-section__heading">You are applying for (Please check the appropriate boxes)</h3>
+                    <p class="scholarship__note">
+                        Note: (<span class="required__symbol">*</span>) This field is required/ <span class="text__vi">Vui lòng không để trống thông tin này!</span>
+                    </p>
+
+                    <h3 class="scholarship-section__heading">APPLICANT'S SUPPORTING STATEMENTS</h3>
+
+                    <p class="scholarship__note">Please limit your answer to 100 words per question.</p>
+
                     <div class="scholarship-section__field">
-                        <div class="scholarship-section__field-checkbox-group">
-                            <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                            <label class="scholarship-section__field-checkbox-label"> The British Ambassador’s Scholarship/ President’s Scholarship/ Dean’s Scholarship</label>
+
+                        <div class="scholarship-section__field-textarea-group">
+                            <label class="scholarship-section__field-label">1. Briefly give the reasons why you feel you are an ideal candidate for this scholarship.<span class="required__symbol">*</span></label>
+                            <textarea class="scholarship-section__field-textarea-input" type="text"></textarea>
                         </div>
-                        <div class="scholarship-section__field-checkbox-group">
-                            <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                            <label class="scholarship-section__field-checkbox-label"> Sir Graeme Davies’ Scholarship/ The Founder’s Scholarship</label>
+
+                        <div class="scholarship-section__field-textarea-group">
+                            <label class="scholarship-section__field-label">2. What one thing outside of school has been the most challenging for you so far?<span class="required__symbol">*</span></label>
+                            <textarea class="scholarship-section__field-textarea-input" type="text"></textarea>
                         </div>
-                        <div class="scholarship-section__field-checkbox-group">
-                            <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                            <label class="scholarship-section__field-checkbox-label"> Lion’s Heart Scholarship</label>
+
+                        <div class="scholarship-section__field-textarea-group">
+                            <label class="scholarship-section__field-label">3. How will the major that you have applied for will contribute significantly to the development of Vietnam?<span class="required__symbol">*</span></label>
+                            <textarea class="scholarship-section__field-textarea-input" type="text"></textarea>
                         </div>
-                        <div class="scholarship-section__field-checkbox-group">
-                            <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                            <label class="scholarship-section__field-checkbox-label"> Talent Scholarship</label>
+
+                        <div class="scholarship-section__field-textarea-group">
+                            <label class="scholarship-section__field-label">4. In your field of interest, who do you admire most and why? <span class="required__symbol">*</span></label>
+                            <textarea class="scholarship-section__field-textarea-input" type="text"></textarea>
                         </div>
-                        <div class="scholarship-section__field-checkbox-group">
-                            <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                            <label class="scholarship-section__field-checkbox-label"> Key Partnership Scholarship (MOU)</label>
+
+                        <div class="scholarship-section__field-textarea-group">
+                            <label class="scholarship-section__field-label">5. How will you contribute to British University Vietnam if you study here? <span class="required__symbol">*</span></label>
+                            <textarea class="scholarship-section__field-textarea-input" type="text"></textarea>
                         </div>
-                        <div class="scholarship-section__field-checkbox-group">
-                            <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                            <label class="scholarship-section__field-checkbox-label"> Education Development Scholarship</label>
+
+                        <div class="scholarship-section__field-textarea-group">
+                            <label class="scholarship-section__field-label">6. Is there anything else you would like to add in support of your application for this scholarship? Give details. <span class="required__symbol">*</span></label>
+                            <textarea class="scholarship-section__field-textarea-input" type="text"></textarea>
                         </div>
-                        <div class="scholarship-section__field-checkbox-group">
-                            <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                            <label class="scholarship-section__field-checkbox-label"> Others</label>
+
+                        <div class="scholarship-section__field-group">
+                            <label class="scholarship-section__field-label">Personal Statement in English (<a href="">Download template</a>)<span class="required__symbol">*</span></label>
+                            <input class="scholarship-section__field-file" type="file">
                         </div>
                     </div>
+                    <!-- /scholarship-section__field -->
+
+
                 </div>
+
                 <div class="scholarship-form__submit">
                     <input class="scholarship-form-submit__btn scholarship-form-submit__btn--previous" type="submit" value="Previous">
                     <input class="scholarship-form-submit__btn scholarship-form-submit__btn--next" type="submit" value="Next">

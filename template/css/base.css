@@ -71,5 +71,105 @@ html{
     margin-right: var(--space-fir);
 }
 
+small{
+    font-size: 12px;
+}
 
 
+
+/* Layout */
+
+.grid-three-col{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: var(--space-sec);
+}
+
+.grid-four-col{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: var(--space-sec);
+}
+
+.grid-five-col{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    column-gap: var(--space-sec);
+}
+
+
+/* Layout iphone */
+@media (min-width: 576px) {
+
+    .grid-iphone-two-col{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: var(--space-sec);
+    }
+    
+    .grid-iphone-three-col{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: var(--space-sec);
+    }
+    
+}
+
+
+/* Layout ipad */
+@media (min-width: 768px) {
+
+    .grid-ipad-two-col{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: var(--space-sec);
+    }
+    
+    .grid-ipad-three-col{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: var(--space-sec);
+    }
+
+    .grid-ipad-four-col{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        column-gap: var(--space-sec);
+    }
+
+    .grid-ipad-five-col{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        column-gap: var(--space-sec);
+    }
+    
+}
+
+/* Layout desktop */
+@media (min-width: 1050px) {
+
+    .grid-desktop-two-col{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: var(--space-sec);
+    }
+    
+    .grid-desktop-three-col{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: var(--space-sec);
+    }
+
+    .grid-desktop-four-col{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        column-gap: var(--space-sec);
+    }
+
+    .grid-desktop-five-col{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        column-gap: var(--space-sec);
+    }
+    
+}

@@ -28,7 +28,7 @@
             </div>
 
             <div class="scholarship__pagination">
-                <div class="scholarship-pagination__item scholarship-pagination__item--active">
+                <div class="scholarship-pagination__item">
                     <a class="scholarship-pagination-item__btn" href="scholarship1.html">1</a>
                 </div>
                 <div class="scholarship-pagination__dash"></div>
@@ -56,48 +56,50 @@
                     <a class="scholarship-pagination-item__btn" href="scholarship7.html">7</a>
                 </div>
                 <div class="scholarship-pagination__dash"></div>
-                <div class="scholarship-pagination__item">
+                <div class="scholarship-pagination__item scholarship-pagination__item--active">
                     <a class="scholarship-pagination-item__btn" href="scholarship8.html">8</a>
                 </div>
             </div>
 
             <form class="scholarship__form">
                 <div class="scholarship__section">
-                    <h3 class="scholarship-section__heading">You are applying for (Please check the appropriate boxes)</h3>
+                    <p class="scholarship__note">
+                        Note: (<span class="required__symbol">*</span>) This field is required/ <span class="text__vi">Vui lòng không để trống thông tin này!</span>
+                    </p>
+
+                    <h3 class="scholarship-section__heading">TERMS & CONDITIONS</h3>
+
                     <div class="scholarship-section__field">
-                        <div class="scholarship-section__field-checkbox-group">
-                            <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                            <label class="scholarship-section__field-checkbox-label"> The British Ambassador’s Scholarship/ President’s Scholarship/ Dean’s Scholarship</label>
+                  
+                        <div class="scholarship-section__field-condition">
+                            <p class="scholarship-section__field-condition-item"><b>1</b>. I certify that all information given by me in this application is true and correct. I further declare that any tertiary academic results submitted are a complete record of all results I have obtained from every institution I have attended.</p>
+                            <p class="scholarship-section__field-condition-item"><b>2</b>. I understand that at the time of enrollment I will be required to provide notarised copy of all documents used to support this application.</p>
+                            <p class="scholarship-section__field-condition-item"><b>3</b>. I hereby agree to abide by all regulations and procedures laid down by British University Vietnam if I am successfully chosen as a scholarship grantee.</p>
+                            <p class="scholarship-section__field-condition-item"><b>4</b>. I hereby declare my consent to have my details made available to the academic faculty. I agree to be contacted via phone or email by the University for academic reasons. I further understand that it may be disclosed to third parties for the purpose of processing my application.</p>
+                            <p class="scholarship-section__field-condition-item"><b>5</b>. I hereby declare that I have not committed any criminal offences and am able to provide a criminal record check when required.
                         </div>
+
                         <div class="scholarship-section__field-checkbox-group">
                             <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                            <label class="scholarship-section__field-checkbox-label"> Sir Graeme Davies’ Scholarship/ The Founder’s Scholarship</label>
+                            <label class="scholarship-section__field-checkbox-label"> Please tick here if you agree to the terms and conditions</label>
                         </div>
-                        <div class="scholarship-section__field-checkbox-group">
-                            <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                            <label class="scholarship-section__field-checkbox-label"> Lion’s Heart Scholarship</label>
-                        </div>
-                        <div class="scholarship-section__field-checkbox-group">
-                            <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                            <label class="scholarship-section__field-checkbox-label"> Talent Scholarship</label>
-                        </div>
-                        <div class="scholarship-section__field-checkbox-group">
-                            <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                            <label class="scholarship-section__field-checkbox-label"> Key Partnership Scholarship (MOU)</label>
-                        </div>
-                        <div class="scholarship-section__field-checkbox-group">
-                            <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                            <label class="scholarship-section__field-checkbox-label"> Education Development Scholarship</label>
-                        </div>
-                        <div class="scholarship-section__field-checkbox-group">
-                            <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                            <label class="scholarship-section__field-checkbox-label"> Others</label>
+
+                        <div class="scholarship-section__field-signature">
+                            <label class="scholarship-section__field-label">Applicant’s signature/Chữ ký của người dự tuyển</label>
+                            <div class="scholarship-section__field-input-signature"></div>
+                            <small>Please insert your signature here/ Vui lòng thêm chữ ký vào đây</small>
+                            <button class="scholarship-section__field-upload-signature">Or upload signature photo/Tải ảnh chữ ký</button>
+                            <button class="scholarship-section__field-clear-signature">Clear/Xóa</button>
                         </div>
                     </div>
+                    <!-- /scholarship-section__field -->
                 </div>
+
+                <hr>
+
                 <div class="scholarship-form__submit">
                     <input class="scholarship-form-submit__btn scholarship-form-submit__btn--previous" type="submit" value="Previous">
-                    <input class="scholarship-form-submit__btn scholarship-form-submit__btn--next" type="submit" value="Next">
+                    <input class="scholarship-form-submit__btn scholarship-form-submit__btn--next" type="submit" value="Finish">
                 </div>
             </form>
 

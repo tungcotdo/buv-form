@@ -28,7 +28,7 @@
 }
 
 .scholarship-section__field{
-    margin-top: var(--space-fou);
+    margin-top: var(--space-sec);
 }
 
 .scholarship-section__field-group{
@@ -39,7 +39,7 @@
 .scholarship-section__field-file-group{
     display: flex;
     border: 1px solid var(--color-bor);
-    padding: 30px 10px;
+    padding: 25px 10px;
     margin-top: var(--space-thr);
     align-items: center;
     gap: var(--space-fir);
@@ -49,7 +49,7 @@
 .scholarship-section__field-yn-group{
     display: flex;
     border: 1px solid var(--color-bor);
-    padding: 30px 10px;
+    padding: 10px;
     margin-top: var(--space-thr);
     align-items: center;
     gap: var(--space-fir);
@@ -74,11 +74,11 @@
     align-items: center;
 }
 
-.scholarship-section__field-fieldset-group{
-    padding: 20px 10px;
+.scholarship-section__fieldset-group{
+    padding: 0 10px 10px 10px;
     border: 1px solid var(--color-bor);
     background-color: var(--color-bac);
-    margin-top: var(--space-fir);
+    margin-top: var(--space-sec);
 }
 
 .scholarship-form__submit{
@@ -147,7 +147,7 @@
 
 
 .scholarship__note{
-    margin: var(--space-fou) 0;
+    margin: var(--space-thr) 0;
     font-style: italic;
 }
 
@@ -206,7 +206,6 @@
 
 .scholarship-pagination__item--active{
     background-color: var(--color-fir);
-    font-size: 20px;
 }
 
 .scholarship-pagination__item--active .scholarship-pagination-item__btn{
@@ -231,7 +230,7 @@
     }
 }
 
-.scholarship-section__field-legen{
+.scholarship-section__fieldset-legen{
     font-weight: bold;
 }
 
@@ -270,119 +269,146 @@
 .scholarship-section__field-checkbox-group{
     display: flex;
     align-items: center;
+    margin: var(--space-sec) 0;
 }
 
-.scholarship-section__field-checkbox-label{
-    flex-basis: 90%;
-}
 
 .scholarship-section__field-checkbox-input{
     width: 18px;
     height: 18px;
 }
 
+.scholarship-section__fieldset-yn-group{
+    background-color: var(--color-bac);
+    border: 1px solid var(--color-bor);
+    padding: 10px;
+    margin-top: var(--space-thr);
+}
+
+.scholarship-section__field-checkbox-yn-input{
+    width: 30px;
+    height: 18px;
+}
+
+.scholarship-section__fieldset-yn-checkbox-group{
+    display: flex;
+    align-items: center;
+}
+
+.scholarship-section__fieldset-sub-group{
+    padding: 0 25px 10px;
+}
+
+.scholarship-section__field-radio-group{
+    display: flex;
+    align-items: center;
+    margin: var(--space-sec) 0;
+}
+
+.scholarship-section__field-yn-radio{
+    display: flex;
+    gap: var(--space-sec);
+    align-items: center;
+}
+
+.scholarship-section__field-radio-yn-input{
+    width: 30px;
+    height: 18px;
+}
+
+
+.scholarship-section__fieldset-yn-radio-group{
+    display: flex;
+    align-items: center;
+}
+
+.scholarship-section__field-radio-label{
+    padding-top: 4px;
+}
+
+
+
+
 @media (max-width: 576px) {
     .text-italic,
-    .scholarship-section__field-checkbox-label{
+    .scholarship-section__field-checkbox-label,
+    .scholarship-section__fieldset-sub-legend{
         font-size: 13px;
     }
 }
 
-
-/* Layout */
-
-.grid-three-col{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: var(--space-sec);
+.scholarship-section__field-gender-group{
+    border: 1px solid var(--color-bor);
 }
 
-.grid-four-col{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: var(--space-sec);
-}
-
-.grid-five-col{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    column-gap: var(--space-sec);
+.scholarship-section__field-gender-checkbox-group{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    height: 33px;
 }
 
 
-/* Layout iphone */
-@media (min-width: 576px) {
 
-    .grid-iphone-two-col{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: var(--space-sec);
-    }
-    
-    .grid-iphone-three-col{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        column-gap: var(--space-sec);
-    }
-    
+.scholarship-section__field-birthday{
+    background-color: var(--color-bac);
 }
 
-
-/* Layout ipad */
-@media (min-width: 768px) {
-
-    .grid-ipad-two-col{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: var(--space-sec);
-    }
-    
-    .grid-ipad-three-col{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        column-gap: var(--space-sec);
-    }
-
-    .grid-ipad-four-col{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        column-gap: var(--space-sec);
-    }
-
-    .grid-ipad-five-col{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        column-gap: var(--space-sec);
-    }
-    
+.scholarship-section__field-file{
+    height: 35px;
+    width: 100%;
+    padding: 5.5px 0;
 }
 
-/* Layout desktop */
-@media (min-width: 1050px) {
-
-    .grid-desktop-two-col{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: var(--space-sec);
-    }
-    
-    .grid-desktop-three-col{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        column-gap: var(--space-sec);
-    }
-
-    .grid-desktop-four-col{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        column-gap: var(--space-sec);
-    }
-
-    .grid-desktop-five-col{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        column-gap: var(--space-sec);
-    }
-    
+.scholarship-section__field-textarea-input{
+    display: block;
+    width: 100%;
+    height: 70px;
+    border: 1px solid var(--color-bor);
 }
 
+.scholarship-section__field-textarea-group{
+    margin-top: var(--space-sec);
+}
+
+.scholarship-section__field-condition-item{
+    margin: var(--space-sec) 0;
+}
+
+.scholarship-section__field-condition-item b{
+    font-weight: bold;
+}
+
+.scholarship-section__field-signature{
+    /* background-color: red; */
+    text-align: center;
+    width: 350px;
+    margin-bottom: var(--space-fou);
+}
+
+.scholarship-section__field-input-signature{
+    
+    height: 300px;
+    border: 1px solid var(--color-bor);
+}
+
+.scholarship-section__field-clear-signature{
+    background-color: var(--color-fir);
+    color: white;
+    border: none;
+    margin-top: var(--space-fir);
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.scholarship-section__field-upload-signature{
+    background-color: var(--color-thr);
+    color: white;
+    border: none;
+    margin-top: var(--space-fir);
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
