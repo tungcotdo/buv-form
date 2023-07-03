@@ -1,5 +1,15 @@
 var functions = {
 
+    isCheckedbox: function(cbs){
+        var checkedFlag = false;
+        cbs.forEach(cb => {
+            if (cb.checked) {
+                checkedFlag = true;
+            }
+        });
+        return checkedFlag;
+    },
+
     rbShowHide:function(rbClass, eID, status){
         // Element show or hide by default
         var e = document.getElementById(eID);
@@ -9,11 +19,7 @@ var functions = {
         var rbs = document.querySelectorAll('.' + rbClass);
         rbs.forEach(rb => {
             rb.addEventListener("click", function(){ 
-                if( rb.value == 1 ){
-                    e.style.display = 'block';
-                }else{
-                    e.style.display = 'none';
-                }
+                e.style.display = ( rb.value == 1 ) ? 'block' : 'none';
             });
         });
 
@@ -25,25 +31,11 @@ var functions = {
         // Element show or hide by default
         e.style.display = ( status ) ? 'block' : 'none';
     
-        function isAnyChecked( cbs ){
-            var checkedFlag = false;
-            cbs.forEach(cb => {
-                if (cb.checked) {
-                    checkedFlag = true;
-                }
-            });
-            return checkedFlag;
-        }
-    
         var cbs = document.querySelectorAll('.' + cbClass);
     
         cbs.forEach(cb => {
             cb.addEventListener("click", function(){ 
-                if(isAnyChecked(cbs)){
-                    e.style.display = 'block';
-                }else{
-                    e.style.display = 'none';
-                }
+                e.style.display = functions.isCheckedbox(cbs) ? 'block' : 'none';
             });
         });
 

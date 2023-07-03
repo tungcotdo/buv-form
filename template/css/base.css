@@ -71,6 +71,10 @@ html{
     margin-right: var(--space-fir);
 }
 
+.ml-1{
+    margin-left: var(--space-fir);
+}
+
 small{
     font-size: 12px;
 }
@@ -95,6 +99,10 @@ small{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     column-gap: var(--space-sec);
+}
+
+.error-message{
+    color: var(--color-fir);
 }
 
 

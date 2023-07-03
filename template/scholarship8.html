@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/font.css">
-
     <link rel="stylesheet" href="scholarship/css/style.css">
 
 </head>
@@ -80,8 +79,8 @@
                         </div>
 
                         <div class="scholarship-section__field-checkbox-group">
-                            <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                            <label class="scholarship-section__field-checkbox-label"> Please tick here if you agree to the terms and conditions</label>
+                            <input type="checkbox" class="scholarship-section__field-checkbox-input" id="scholarship-section__field-checkbox-input-agree">
+                            <label class="scholarship-section__field-checkbox-label" for="scholarship-section__field-checkbox-input-agree"> Please tick here if you agree to the terms and conditions</label>
                         </div>
 
                         <div class="scholarship-section__field-signature">
@@ -103,10 +102,17 @@
                 </div>
             </form>
 
-
-
         </div><!-- container -->
     </div><!-- scholarship -->
+
+    <!-- Modal loading page -->
+    <div class="modal" id="modal__loading">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <div class="loader"></div>
+            <div class="loading__title">Đang chờ xử lý ...</div>
+        </div>
+    </div>
 
 </body>
 </html>

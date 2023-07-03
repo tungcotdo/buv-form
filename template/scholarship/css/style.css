@@ -190,7 +190,7 @@
     }
 
     .scholarship-pagination-item__btn{
-        padding: 10px 14px;
+        padding: 10px 13px;
     }
 }
 
@@ -276,6 +276,7 @@
 .scholarship-section__field-checkbox-input{
     width: 18px;
     height: 18px;
+    margin-left: 0;
 }
 
 .scholarship-section__fieldset-yn-group{
@@ -296,8 +297,9 @@
 }
 
 .scholarship-section__fieldset-sub-group{
-    padding: 0 25px 10px;
+    padding: 0 20px 10px;
 }
+
 
 .scholarship-section__field-radio-group{
     display: flex;
@@ -341,15 +343,21 @@
     border: 1px solid var(--color-bor);
 }
 
-.scholarship-section__field-gender-checkbox-group{
+.scholarship-section__field-gender-radio-group{
     display: flex;
     align-items: center;
-    gap: 5px;
     justify-content: center;
     height: 33px;
 }
 
+.scholarship-section__field-radio-gender-label{
+    padding-top: 4px;
+}
 
+.scholarship-section__field-radio-input{
+    width: 18px;
+    height: 18px;
+}
 
 .scholarship-section__field-birthday{
     background-color: var(--color-bac);

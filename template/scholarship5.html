@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/modal.css">
 
     <link rel="stylesheet" href="scholarship/css/style.css">
 
@@ -63,7 +64,7 @@
 
 
 
-            <form class="scholarship__form">
+            <form class="scholarship__form" id="scholarship__form">
                 <div class="scholarship__section">
                     <p class="scholarship__note">
                         Note: (<span class="required__symbol">*</span>) This field is required/ <span class="text__vi">Vui lòng không để trống thông tin này!</span>
@@ -77,40 +78,40 @@
                             <legend class="scholarship-section__fieldset-legen">1. STAFFORDSHIRE UNIVERSITY</legend>
                             <div class="">
                                 <div class="scholarship-section__field-checkbox-group">
-                                    <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                                    <label class="scholarship-section__field-checkbox-label"> BSc (Hons) International Business Management</label>
+                                    <input type="checkbox" class="scholarship-section__field-checkbox-input" id="scholarship-section__field-checkbox-input-1">
+                                    <label for="scholarship-section__field-checkbox-input-1" class="scholarship-section__field-checkbox-label"> BSc (Hons) International Business Management</label>
                                 </div>
                                 <div class="scholarship-section__field-checkbox-group">
-                                    <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                                    <label class="scholarship-section__field-checkbox-label"> BA (Hons) Marketing Management</label>
+                                    <input type="checkbox" class="scholarship-section__field-checkbox-input" id="scholarship-section__field-checkbox-input-2">
+                                    <label for="scholarship-section__field-checkbox-input-2" class="scholarship-section__field-checkbox-label"> BA (Hons) Marketing Management</label>
                                 </div>
                                 <div class="scholarship-section__field-checkbox-group">
-                                    <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                                    <label class="scholarship-section__field-checkbox-label"> BA (Hons) Tourism Management</label>
+                                    <input type="checkbox" class="scholarship-section__field-checkbox-input" id="scholarship-section__field-checkbox-input-3">
+                                    <label for="scholarship-section__field-checkbox-input-3" class="scholarship-section__field-checkbox-label"> BA (Hons) Tourism Management</label>
                                 </div>
                                 <div class="scholarship-section__field-checkbox-group">
-                                    <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                                    <label class="scholarship-section__field-checkbox-label"> BA (Hons) Events Management</label>
+                                    <input type="checkbox" class="scholarship-section__field-checkbox-input" id="scholarship-section__field-checkbox-input-4">
+                                    <label for="scholarship-section__field-checkbox-input-4" class="scholarship-section__field-checkbox-label"> BA (Hons) Events Management</label>
                                 </div>
                                 <div class="scholarship-section__field-checkbox-group">
-                                    <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                                    <label class="scholarship-section__field-checkbox-label"> BSc (Hons) Computer Games Design and Programming</label>
+                                    <input type="checkbox" class="scholarship-section__field-checkbox-input" id="scholarship-section__field-checkbox-input-5">
+                                    <label for="scholarship-section__field-checkbox-input-5" class="scholarship-section__field-checkbox-label"> BSc (Hons) Computer Games Design and Programming</label>
                                 </div>
                                 <fieldset class="scholarship-section__fieldset-group scholarship-section__fieldset-sub-group">
                                     <legend class="scholarship-section__fieldset-sub-legend">BA (Hons) Contemporary Creative Practice</legend>
                                     <div class="scholarship-section__field-checkbox-group">
-                                        <input type="checkbox" class="scholarship-section__field-checkbox-input field__cb-ccp-programe">
-                                        <label class="scholarship-section__field-checkbox-label"> Graphic Design</label>
+                                        <input type="checkbox" class="scholarship-section__field-checkbox-input field__cb-ccp-pro" id="scholarship-section__field-checkbox-input-6">
+                                        <label class="scholarship-section__field-checkbox-label" for="scholarship-section__field-checkbox-input-6"> Graphic Design</label>
                                     </div>
                                     <div class="scholarship-section__field-checkbox-group">
-                                        <input type="checkbox" class="scholarship-section__field-checkbox-input field__cb-ccp-programe">
-                                        <label class="scholarship-section__field-checkbox-label"> Illustration</label>
+                                        <input type="checkbox" class="scholarship-section__field-checkbox-input field__cb-ccp-pro" id="scholarship-section__field-checkbox-input-7">
+                                        <label class="scholarship-section__field-checkbox-label" for="scholarship-section__field-checkbox-input-7"> Illustration</label>
                                     </div>
                                     <div class="scholarship-section__field-checkbox-group">
-                                        <input type="checkbox" class="scholarship-section__field-checkbox-input field__cb-ccp-programe">
-                                        <label class="scholarship-section__field-checkbox-label"> Photography</label>
+                                        <input type="checkbox" class="scholarship-section__field-checkbox-input field__cb-ccp-pro" id="scholarship-section__field-checkbox-input-8">
+                                        <label class="scholarship-section__field-checkbox-label" for="scholarship-section__field-checkbox-input-8"> Photography</label>
                                     </div>
-                                    <div class="scholarship-section__field-group" id="field__ccp-programe-upload">
+                                    <div class="scholarship-section__field-group" id="field__show-ccp-upl">
                                         <label class="text-italic  mr-1">An original Portfolio of Artwork (<a href="">Download template</a>)<span class="required__symbol">*</span></label>
                                         <input class="scholarship-section__field-file" type="file">
                                     </div>
@@ -118,12 +119,12 @@
                                 <fieldset class="scholarship-section__fieldset-group scholarship-section__fieldset-sub-group">
                                     <legend class="scholarship-section__fieldset-sub-legend">BSc (Hons) Computer Science</legend>
                                     <div class="scholarship-section__field-checkbox-group">
-                                        <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                                        <label class="scholarship-section__field-checkbox-label"> Cyber Security</label>
+                                        <input type="checkbox" class="scholarship-section__field-checkbox-input" id="scholarship-section__field-checkbox-input-9">
+                                        <label for="scholarship-section__field-checkbox-input-9" class="scholarship-section__field-checkbox-label"> Cyber Security</label>
                                     </div>
                                     <div class="scholarship-section__field-checkbox-group">
-                                        <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                                        <label class="scholarship-section__field-checkbox-label"> Cloud Technologies</label>
+                                        <input type="checkbox" class="scholarship-section__field-checkbox-input" id="scholarship-section__field-checkbox-input-10">
+                                        <label for="scholarship-section__field-checkbox-input-10" class="scholarship-section__field-checkbox-label"> Cloud Technologies</label>
                                     </div>
                                 </fieldset>
                             </div>
@@ -132,19 +133,19 @@
                         <fieldset class="scholarship-section__fieldset-group">
                             <legend class="scholarship-section__fieldset-legen">2. UNIVERSITY OF LONDON</legend>
                             <div class="scholarship-section__field-checkbox-group">
-                                <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                                <label class="scholarship-section__field-checkbox-label"> BSc (Hons) Finance</label>
+                                <input type="checkbox" class="scholarship-section__field-checkbox-input" id="scholarship-section__field-checkbox-input-11">
+                                <label for="scholarship-section__field-checkbox-input-11" class="scholarship-section__field-checkbox-label"> BSc (Hons) Finance</label>
                             </div>
                         </fieldset>
                         <fieldset class="scholarship-section__fieldset-group">
                             <legend class="scholarship-section__fieldset-legen">3. BRITISH UNIVERSITY VIETNAM</legend>
                             <div class="scholarship-section__field-checkbox-group">
-                                <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                                <label class="scholarship-section__field-checkbox-label"> BA (Hons) Finance and Economics</label>
+                                <input type="checkbox" class="scholarship-section__field-checkbox-input" id="scholarship-section__field-checkbox-input-12">
+                                <label for="scholarship-section__field-checkbox-input-12" class="scholarship-section__field-checkbox-label"> BA (Hons) Finance and Economics</label>
                             </div>
                             <div class="scholarship-section__field-checkbox-group">
-                                <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                                <label class="scholarship-section__field-checkbox-label"> BA (Hons) International Hospitality Management
+                                <input type="checkbox" class="scholarship-section__field-checkbox-input" id="scholarship-section__field-checkbox-input-13">
+                                <label for="scholarship-section__field-checkbox-input-13" class="scholarship-section__field-checkbox-label"> BA (Hons) International Hospitality Management
                                 </label>
                             </div>
                         </fieldset>
@@ -161,12 +162,12 @@
                             <label class="scholarship-section__field-label">Is English the language of your secondary/ high school or tertiary studies?<span class="required__symbol">*</span></label>
                             <div class="scholarship-section__field-yn-radio">
                                 <div class="scholarship-section__field-radio-group">
-                                    <input type="radio" class="scholarship-section__field-radio-yn-input">
-                                    <label class="scholarship-section__field-radio-label"> Yes</label>
+                                    <input type="radio" class="scholarship-section__field-radio-yn-input" name="field__rb-eng-at-school" id="field__rb-eng-at-school-yes">
+                                    <label class="scholarship-section__field-radio-label" for="field__rb-eng-at-school-yes"> Yes</label>
                                 </div>
                                 <div class="scholarship-section__field-radio-group">
-                                    <input type="radio" class="scholarship-section__field-radio-yn-input">
-                                    <label class="scholarship-section__field-radio-label"> No</label>
+                                    <input type="radio" class="scholarship-section__field-radio-yn-input" name="field__rb-eng-at-school" id="field__rb-eng-at-school-no">
+                                    <label class="scholarship-section__field-radio-label" for="field__rb-eng-at-school-no"> No</label>
                                 </div>
                             </div>
                         </div>
@@ -176,17 +177,17 @@
                                 <label class="scholarship-section__field-label">Have you taken an English test (IELTS, TOEFL or Others)?<span class="required__symbol">*</span></label>
                                 <div class="scholarship-section__field-yn-radio">
                                     <div class="scholarship-section__field-radio-group">
-                                        <input type="radio" class="scholarship-section__field-radio-yn-input field__rb-english-taken" name="field__rb-english-taken" value="1">
-                                        <label class="scholarship-section__field-radio-label"> Yes</label>
+                                        <input type="radio" class="scholarship-section__field-radio-yn-input field__rb-eng-tak" name="field__rb-eng-tak" id="field__rb-eng-tak-yes" value="1">
+                                        <label class="scholarship-section__field-radio-label" for="field__rb-eng-tak-yes"> Yes</label>
                                     </div>
                                     <div class="scholarship-section__field-radio-group">
-                                        <input type="radio" class="scholarship-section__field-radio-yn-input field__rb-english-taken" name="field__rb-english-taken" value="0">
-                                        <label class="scholarship-section__field-radio-label"> No</label>
+                                        <input type="radio" class="scholarship-section__field-radio-yn-input field__rb-eng-tak" name="field__rb-eng-tak" id="field__rb-eng-tak-no" value="0">
+                                        <label class="scholarship-section__field-radio-label" for="field__rb-eng-tak-no"> No</label>
                                     </div>
                                 </div>
                             </div>
 
-                            <div id="field__english-result">
+                            <div id="field__show-eng-res">
                                 <fieldset class="scholarship-section__fieldset-group">
                                     <legend class="scholarship-section__fieldset-legen">Please provide the result</legend>
                                     <div class="grid-desktop-five-col grid-ipad-three-col">
@@ -212,9 +213,12 @@
                                         </div>
                                     </div>
                                 </fieldset>
-                                <div class="scholarship-section__field-file-group">
-                                    <label class="scholarship-section__field-label">Notarised copy of IELTS/TOEFL/Other qualifications or copy of BUV Placement test result with valid date<span class="required__symbol">*</span></label>
-                                    <input type="file" class="scholarship-section__field-file-input">
+                                <div class="validate">
+                                    <div class="scholarship-section__field-file-group">
+                                        <label class="scholarship-section__field-label">Notarised copy of IELTS/TOEFL/Other qualifications or copy of BUV Placement test result with valid date<span class="required__symbol">*</span></label>
+                                        <input type="file" class="scholarship-section__field-file-input" id="scholarship-section__field-file-input">
+                                    </div>
+                                    <small class="error-message"></small>
                                 </div>
                                 <br>
                             </div>
@@ -238,10 +242,36 @@
         </div><!-- container -->
     </div><!-- scholarship -->
 
-    <script type="text/javascript" src="/template/js/functions.js"></script>  
+    <!-- Modal loading page -->
+    <div class="modal" id="modal__loading">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <div class="loader"></div>
+            <div class="loading__title">Đang chờ xử lý ...</div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="js/functions.js"></script>  
     <script>
-        functions.rbShowHide('field__rb-english-taken', 'field__english-result', false);
-        functions.cbShowHide('field__cb-ccp-programe', 'field__ccp-programe-upload', false);
+        functions.rbShowHide('field__rb-eng-tak', 'field__show-eng-res', false);
+        functions.cbShowHide('field__cb-ccp-pro', 'field__show-ccp-upl', false);
     </script>
+
+    <script src="js/validate.js"></script>
+    <script>
+        Validator({
+            form: '#scholarship__form',
+            rules: [
+                Validator.isTBRequired('#scholarship-section__field-file-input')
+            ],
+            onSubmit: (data) => {
+                // Show loading modal.
+                document.getElementById("modal__loading").style.display = "block";
+            }
+        });
+
+    </script>
+    
 </body>
 </html>

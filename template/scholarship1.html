@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/font.css">
-
+    <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="scholarship/css/style.css">
 
 </head>
@@ -61,43 +61,46 @@
                 </div>
             </div>
 
-            <form class="scholarship__form">
+            <form class="scholarship__form" id="scholarship__form">
                 <div class="scholarship__section">
                     <h3 class="scholarship-section__heading">You are applying for (Please check the appropriate boxes)</h3>
                     <div class="scholarship-section__field">
-                        <div class="scholarship-section__field-checkbox-group">
-                            <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                            <label class="scholarship-section__field-checkbox-label"> The British Ambassador’s Scholarship/ President’s Scholarship/ Dean’s Scholarship</label>
-                        </div>
-                        <div class="scholarship-section__field-checkbox-group">
-                            <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                            <label class="scholarship-section__field-checkbox-label"> Sir Graeme Davies’ Scholarship/ The Founder’s Scholarship</label>
-                        </div>
-                        <div class="scholarship-section__field-checkbox-group">
-                            <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                            <label class="scholarship-section__field-checkbox-label"> Lion’s Heart Scholarship</label>
-                        </div>
-                        <div class="scholarship-section__field-checkbox-group">
-                            <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                            <label class="scholarship-section__field-checkbox-label"> Talent Scholarship</label>
-                        </div>
-                        <div class="scholarship-section__field-checkbox-group">
-                            <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                            <label class="scholarship-section__field-checkbox-label"> Key Partnership Scholarship (MOU)</label>
-                        </div>
-                        <div class="scholarship-section__field-checkbox-group">
-                            <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                            <label class="scholarship-section__field-checkbox-label"> Education Development Scholarship</label>
-                        </div>
-                        <div class="scholarship-section__field-checkbox-group">
-                            <input type="checkbox" class="scholarship-section__field-checkbox-input">
-                            <label class="scholarship-section__field-checkbox-label"> Others</label>
+                        <div class="validate" id="scholarship-section__field--cb-apply">
+                            <div class="scholarship-section__field-checkbox-group">
+                                <input type="checkbox" class="scholarship-section__field-checkbox-input scholarship-section__field-checkbox-apply-input">
+                                <label class="scholarship-section__field-checkbox-label"> The British Ambassador’s Scholarship/ President’s Scholarship/ Dean’s Scholarship</label>
+                            </div>
+                            <div class="scholarship-section__field-checkbox-group">
+                                <input type="checkbox" class="scholarship-section__field-checkbox-input scholarship-section__field-checkbox-apply-input">
+                                <label class="scholarship-section__field-checkbox-label"> Sir Graeme Davies’ Scholarship/ The Founder’s Scholarship</label>
+                            </div>
+                            <div class="scholarship-section__field-checkbox-group">
+                                <input type="checkbox" class="scholarship-section__field-checkbox-input scholarship-section__field-checkbox-apply-input">
+                                <label class="scholarship-section__field-checkbox-label"> Lion’s Heart Scholarship</label>
+                            </div>
+                            <div class="scholarship-section__field-checkbox-group">
+                                <input type="checkbox" class="scholarship-section__field-checkbox-input scholarship-section__field-checkbox-apply-input">
+                                <label class="scholarship-section__field-checkbox-label"> Talent Scholarship</label>
+                            </div>
+                            <div class="scholarship-section__field-checkbox-group">
+                                <input type="checkbox" class="scholarship-section__field-checkbox-input scholarship-section__field-checkbox-apply-input">
+                                <label class="scholarship-section__field-checkbox-label"> Key Partnership Scholarship (MOU)</label>
+                            </div>
+                            <div class="scholarship-section__field-checkbox-group">
+                                <input type="checkbox" class="scholarship-section__field-checkbox-input scholarship-section__field-checkbox-apply-input">
+                                <label class="scholarship-section__field-checkbox-label"> Education Development Scholarship</label>
+                            </div>
+                            <div class="scholarship-section__field-checkbox-group">
+                                <input type="checkbox" class="scholarship-section__field-checkbox-input scholarship-section__field-checkbox-apply-input scholarship-section__field-group-other-cb" id="scholarship-section__field-group-other-cb">
+                                <label class="scholarship-section__field-checkbox-label mr-1" for="scholarship-section__field-group-other-cb"> Others</label>
+                                <input class="scholarship-section__field-textbox" type="text" placeholder="Please specify ..." id="scholarship-section__field-group-other-textbox">
+                            </div>
+                            <small class="error-message"></small>
                         </div>
                     </div>
                 </div>
                 <div class="scholarship-form__submit">
-                    <input class="scholarship-form-submit__btn scholarship-form-submit__btn--previous" type="submit" value="Previous">
-                    <input class="scholarship-form-submit__btn scholarship-form-submit__btn--next" type="submit" value="Next">
+                    <input class="scholarship-form-submit__btn scholarship-form-submit__btn--next" id="scholarship-form-submit__btn--next" type="submit" value="Next">
                 </div>
             </form>
 
@@ -105,6 +108,44 @@
 
         </div><!-- container -->
     </div><!-- scholarship -->
+
+    <!-- Modal loading page -->
+    <div class="modal" id="modal__loading">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <div class="loader"></div>
+            <div class="loading__title">Đang chờ xử lý ...</div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/functions.js"></script>  
+    <script>
+        functions.cbShowHide('scholarship-section__field-group-other-cb', 'scholarship-section__field-group-other-textbox', false);
+
+        function isAnyChecked( cbs ){
+            var checkedFlag = functions.isCheckedbox(cbs);
+            var groupCbEle = document.querySelector('#scholarship-section__field--cb-apply');
+            groupCbEle.querySelector('.error-message').innerHTML = checkedFlag ? "" : "You must select at least one of these /Bạn cần lựa chọn ít nhất một loại học bổng!";
+            return checkedFlag;
+        }
+    
+        var cbs = document.querySelectorAll('.scholarship-section__field-checkbox-apply-input');
+    
+        cbs.forEach(cb => {
+            cb.addEventListener("click", function(){ 
+                isAnyChecked(cbs);
+            });
+        });
+
+        var formElement = document.querySelector('#scholarship__form');
+        formElement.onsubmit = function(e){
+            e.preventDefault();
+            if( isAnyChecked(cbs) ){
+                formElement.submit();
+            }
+        };
+
+    </script>
 
 </body>
 </html>

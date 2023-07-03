@@ -25,18 +25,6 @@
     text-align: center;
 }
 
-/* Safari */
-@-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-
 .modal__content .loader{
     border: 16px solid #f3f3f3;
     border-radius: 50%;
@@ -48,11 +36,22 @@
     position: absolute;
 }
 
-.modal .close{
-    border: none;
-    background-color: white;
-    font-size: 35px;
+.loading__title{
+    position: absolute;
+    top: 75px;
+    left: -35px;
+    width: 150px;
+    color: white;
+    text-align: center;
 }
 
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
 
-
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
