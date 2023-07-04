@@ -116,18 +116,19 @@
                                 <label class="scholarship-section__field-label">Gender<span class="required__symbol">*</span></label>
                                 <div class="grid-three-col scholarship-section__field-gender-group">
                                     <div class="scholarship-section__field-gender-radio-group">
-                                        <input type="radio" class="scholarship-section__field-radio-input" name="field__rb-gender">
+                                        <input type="radio" class="scholarship-section__field-radio-input scholarship-section__field-radio-gender-input" name="field__rb-gender">
                                         <label class="scholarship-section__field-radio-gender-label" for="scholarship-section__field-gender-male"> Male</label>
                                     </div>
                                     <div class="scholarship-section__field-gender-radio-group">
-                                        <input type="radio" class="scholarship-section__field-radio-input" name="field__rb-gender">
+                                        <input type="radio" class="scholarship-section__field-radio-input scholarship-section__field-radio-gender-input" name="field__rb-gender">
                                         <label class="scholarship-section__field-radio-gender-label" for="scholarship-section__field-gender-female"> Female</label>
                                     </div>
                                     <div class="scholarship-section__field-gender-radio-group">
-                                        <input type="radio" class="scholarship-section__field-radio-input" name="field__rb-gender">
+                                        <input type="radio" class="scholarship-section__field-radio-input scholarship-section__field-radio-gender-input" name="field__rb-gender">
                                         <label class="scholarship-section__field-radio-gender-label" for="scholarship-section__field-gender-other"> Other</label>
                                     </div>
                                 </div>
+                                <small class="error-message"></small>
                             </div>
                             <div class="scholarship-section__field-group validate">
                                 <label class="scholarship-section__field-label">Date of birth<span class="required__symbol">*</span></label>
@@ -158,6 +159,7 @@
                             <div class="scholarship-section__field-group validate">
                                 <label class="scholarship-section__field-label">Place of birth<span class="required__symbol">*</span></label>
                                 <input class="scholarship-section__field-textbox" type="text">
+                                <small class="error-message"></small>
                             </div>
                         </div>
 
@@ -165,20 +167,24 @@
                             <div class="scholarship-section__field-group validate">
                                 <label class="scholarship-section__field-label">National ID card number/Passport number<span class="required__symbol">*</span></label>
                                 <input class="scholarship-section__field-textbox" type="text">
+                                <small class="error-message"></small>
                             </div>
                             <div class="scholarship-section__field-group validate">
                                 <label class="scholarship-section__field-label">Passport-sized photograph<span class="required__symbol">*</span></label>
-                                <input class="scholarship-section__field-file" type="file">
+                                <input class="scholarship-section__field-file" type="file" id="scholarship-section__field-file-photo-passport">
+                                <small class="error-message"></small>
                             </div>
                             <div class="scholarship-section__field-group validate">
                                 <label class="scholarship-section__field-label">Notarised copy of ID card/Passport<span class="required__symbol">*</span></label>
                                 <input class="scholarship-section__field-file" type="file">
+                                <small class="error-message"></small>
                             </div>
                         </div>
 
-                        <div class="scholarship-section__field-textarea-group">
+                        <div class="scholarship-section__field-textarea-group validate">
                             <label class="scholarship-section__field-label">Current address<span class="required__symbol">*</span></label>
                             <textarea class="scholarship-section__field-textarea-input" type="text"></textarea>
+                            <small class="error-message"></small>
                         </div>
 
                         <fieldset class="scholarship-section__fieldset-group">
@@ -187,18 +193,22 @@
                                 <div class="scholarship-section__field-group validate">
                                     <label class="scholarship-section__field-label">Name<span class="required__symbol">*</span></label>
                                     <input class="scholarship-section__field-textbox" type="text">
+                                    <small class="error-message"></small>
                                 </div>
                                 <div class="scholarship-section__field-group validate">
                                     <label class="scholarship-section__field-label">Relationship<span class="required__symbol">*</span></label>
                                     <input class="scholarship-section__field-textbox" type="text">
+                                    <small class="error-message"></small>
                                 </div>
                                 <div class="scholarship-section__field-group validate">
                                     <label class="scholarship-section__field-label">Phone no<span class="required__symbol">*</span></label>
                                     <input class="scholarship-section__field-textbox" type="text">
+                                    <small class="error-message"></small>
                                 </div>
                                 <div class="scholarship-section__field-group validate">
                                     <label class="scholarship-section__field-label">Email<span class="required__symbol">*</span></label>
                                     <input class="scholarship-section__field-textbox" type="text">
+                                    <small class="error-message"></small>
                                 </div>
                             </div>
                         </fieldset>
@@ -259,13 +269,15 @@
         Validator({
             form: '#scholarship__form',
             rules: [
-                Validator.isTBRequired('#scholarship-section__field-textbox--firstname'),
-                Validator.isTBRequired('#scholarship-section__field-textbox--middlename'),
-                Validator.isTBRequired('#scholarship-section__field-textbox--lastname'),
-                Validator.isTBRequired('#scholarship-section__field-textbox--fullname'),
-                Validator.isTBRequired('#scholarship-section__field-textbox--phone'),
-                Validator.isTBRequired('#scholarship-section__field-textbox--email'),
-                Validator.isEmail('#scholarship-section__field-textbox--email'),
+                Validator.tbRequired('#scholarship-section__field-textbox--firstname'),
+                Validator.tbRequired('#scholarship-section__field-textbox--middlename'),
+                Validator.tbRequired('#scholarship-section__field-textbox--lastname'),
+                Validator.tbRequired('#scholarship-section__field-textbox--fullname'),
+                Validator.tbRequired('#scholarship-section__field-textbox--phone'),
+                Validator.tbRequired('#scholarship-section__field-textbox--email'),
+                Validator.email('#scholarship-section__field-textbox--email'),
+                Validator.rbRequired('.scholarship-section__field-radio-gender-input'),
+                Validator.tbRequired('#scholarship-section__field-file-photo-passport'),
             ],
             onSubmit: (data) => {
                 // Show loading modal.

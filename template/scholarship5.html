@@ -263,7 +263,7 @@
         Validator({
             form: '#scholarship__form',
             rules: [
-                Validator.isTBRequired('#scholarship-section__field-file-input')
+                Validator.required('#scholarship-section__field-file-input')
             ],
             onSubmit: (data) => {
                 // Show loading modal.

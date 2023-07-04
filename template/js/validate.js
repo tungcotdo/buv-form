@@ -37,10 +37,9 @@ function Validator( options ) {
     }
 
     function validate(inputElement, rule){
-       
         var errorMessage;
         for( var i = 0; i < rule.length; i++ ){
-            errorMessage = rule[i](inputElement.value, formElement);
+            errorMessage = rule[i](inputElement, formElement);
             if( errorMessage !== undefined ) break;
         }
 
@@ -73,18 +72,30 @@ function Validator( options ) {
             var inputElements = formElement.querySelectorAll(rule.inputSelector);
 
             inputElements.forEach( inputElement => {
-                if( inputElement ){
-                    inputElement.onblur = function(){
-                        validate(inputElement, customRules[rule.inputSelector]);
-                    }
+                // console.log(inputElement);
+
+                switch(rule.type) {
+                    case 'cb':
+                        var cbs = inputElement.querySelectorAll('input[type="checkbox"]');
+                        cbs.forEach(cb => {
+                            cb.addEventListener("click", function(){ 
+                                validate(inputElement, customRules[rule.inputSelector]);
+                            });
+                        });
+                      break;
+                    default:
+                        inputElement.onblur = function(){
+                            validate(inputElement, customRules[rule.inputSelector]);
+                        }
                 }
+
             });
 
         });
     }
 }
 
-Validator.isEmail = function( inputSelector ) {
+Validator.email = function( inputSelector ) {
     checkEmail = (email) => {
         return String(email)
             .toLowerCase()
@@ -94,26 +105,29 @@ Validator.isEmail = function( inputSelector ) {
     };
 
     return {
+        type: 'tb',
         inputSelector: inputSelector,
-        test: function( value, formElement ){
-            return checkEmail(value) ? undefined : 'The e-mail address entered is invalid / Địa chỉ email không hợp lệ!';
+        test: function( inputElement, formElement ){
+            return checkEmail(inputElement.value) ? undefined : 'The e-mail address entered is invalid / Địa chỉ email không hợp lệ!';
         }
     };
 }
 
-Validator.isTBRequired = function( inputSelector ) {
+Validator.tbRequired = function( inputSelector ) {
     return {
+        type: 'tb',
         inputSelector: inputSelector,
-        test: function( value, formElement ){
-            return value.trim() ? undefined : 'This field is required / Vui lòng không để trống thông tin này!';
+        test: function( inputElement, formElement ){
+            return inputElement.value.trim() ? undefined : 'This field is required / Vui lòng không để trống thông tin này!';
         }
     };
 }
 
-Validator.isRBRequired = function( inputSelector ) {
+Validator.rbRequired = function( inputSelector ) {
     return {
+        type: 'rb',
         inputSelector: inputSelector,
-        test: function( value, formElement ){
+        test: function( inputElement, formElement ){
             let rbElements = formElement.querySelectorAll(inputSelector);
             let rbCheckFlag = false;
             rbElements.forEach( rbE => {
@@ -126,40 +140,56 @@ Validator.isRBRequired = function( inputSelector ) {
     };
 }
 
-Validator.isCBRequired = function( inputSelector ) {
-    return {
-        inputSelector: inputSelector,
-        test: function( value, formElement ){
-            return formElement.querySelector(inputSelector).checked ? undefined : 'This field is required / Vui lòng không để trống thông tin này!';
-        }
-    };
-}
-
 Validator.isLessThan = function( inputSelector, compareSelector, message ) {
     return {
+        type: 'tb',
         inputSelector: inputSelector,
-        test: function( value, formElement ){
+        test: function( inputElement, formElement ){
             let compareValue = formElement.querySelector(compareSelector).value;
-            return parseInt(value) > parseInt(compareValue) || !value.trim() || !compareValue ? undefined : message || 'The enter value is incorrect!';
+            return parseInt(inputElement.value) > parseInt(compareValue) || !inputElement.value.trim() || !compareValue ? undefined : message || 'The enter value is incorrect!';
         }
     };
 }
 
 Validator.isMoreThan = function( inputSelector, compareSelector, message ) {
     return {
+        type: 'tb',
         inputSelector: inputSelector,
-        test: function( value, formElement ){
+        test: function( inputElement, formElement ){
             let compareValue = formElement.querySelector(compareSelector).value;
-            return parseInt(value) < parseInt(compareValue) || !value.trim() || !compareValue ? undefined : message || 'The enter value is incorrect!';
+            return parseInt(inputElement.value) < parseInt(compareValue) || !inputElement.value.trim() || !compareValue ? undefined : message || 'The enter value is incorrect!';
         }
     };
 }
 
 Validator.isPInt = function( inputSelector ) {
     return {
+        type: 'tb',
         inputSelector: inputSelector,
-        test: function( value, formElement ){
-            return parseInt(value) > 0 || !value.trim() ? undefined : 'The number must be greater than 0!';
+        test: function( inputElement, formElement ){
+            return parseInt(inputElement.value) > 0 || !inputElement.value.trim() ? undefined : 'The number must be greater than 0!';
+        }
+    };
+}
+
+Validator.cbChecked = function ( inputSelector ) {
+    return {
+        type: 'cb',
+        inputSelector: inputSelector,
+        test: function( inputElement, formElement ){
+            
+            function isCheckedbox(cbs){
+                var checkedFlag = false;
+                cbs.forEach(cb => {
+                    if (cb.checked) {
+                        checkedFlag = true;
+                    }
+                });
+                return checkedFlag;
+            }
+
+            var cbs = inputElement.querySelectorAll('input[type="checkbox"]');
+            return isCheckedbox(cbs) ? undefined : 'This field is required / Vui lòng không để trống thông tin này!';
         }
     };
 }
