@@ -72,13 +72,21 @@ function Validator( options ) {
             var inputElements = formElement.querySelectorAll(rule.inputSelector);
 
             inputElements.forEach( inputElement => {
-                // console.log(inputElement);
+                // console.log(rule.type);
 
                 switch(rule.type) {
                     case 'cb':
                         var cbs = inputElement.querySelectorAll('input[type="checkbox"]');
                         cbs.forEach(cb => {
                             cb.addEventListener("click", function(){ 
+                                validate(inputElement, customRules[rule.inputSelector]);
+                            });
+                        });
+                      break;
+                    case 'bd':
+                        var slbs = inputElement.querySelectorAll('select');
+                        slbs.forEach(slb => {
+                            slb.addEventListener("change", function(){ 
                                 validate(inputElement, customRules[rule.inputSelector]);
                             });
                         });
@@ -190,6 +198,28 @@ Validator.cbChecked = function ( inputSelector ) {
 
             var cbs = inputElement.querySelectorAll('input[type="checkbox"]');
             return isCheckedbox(cbs) ? undefined : 'This field is required / Vui lòng không để trống thông tin này!';
+        }
+    };
+}
+
+Validator.bdRequired = function ( inputSelector ) {
+    return {
+        type: 'bd',
+        inputSelector: inputSelector,
+        test: function( inputElement, formElement ){
+            
+            function isSelected(slbs){
+                var checkedFlag = true;
+                slbs.forEach(sl => {
+                    if ( sl.value == null || sl.value == '' || sl.value == undefined ) {
+                        checkedFlag = false;
+                    }
+                });
+                return checkedFlag;
+            }
+
+            var slbs = inputElement.querySelectorAll('select');
+            return isSelected(slbs) ? undefined : 'This field is required / Vui lòng nhập đầy đủ ngày/tháng/năm!';
         }
     };
 }

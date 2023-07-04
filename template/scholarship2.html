@@ -132,33 +132,34 @@
                             </div>
                             <div class="scholarship-section__field-group validate">
                                 <label class="scholarship-section__field-label">Date of birth<span class="required__symbol">*</span></label>
-                                <div class="grid-three-col scholarship-section__field-birthday">
+                                <div class="grid-three-col scholarship-section__field-birthday" id="scholarship-section__field-birthday">
                                     <select class="scholarship-section__field-selectbox">
                                         <option value="">Day</option>
-                                        <option value="">1</option>
-                                        <option value="">2</option>
-                                        <option value="">3</option>
-                                        <option value="">4</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
                                     </select>
                                     <select class="scholarship-section__field-selectbox">
                                         <option value="">Month</option>
-                                        <option value="">1</option>
-                                        <option value="">2</option>
-                                        <option value="">3</option>
-                                        <option value="">4</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
                                     </select>
                                     <select class="scholarship-section__field-selectbox">
                                         <option value="">Year</option>
-                                        <option value="">2023</option>
-                                        <option value="">2024</option>
-                                        <option value="">2025</option>
-                                        <option value="">2026</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2023">2024</option>
+                                        <option value="2023">2025</option>
+                                        <option value="2023">2026</option>
                                     </select>
                                 </div>
+                                <small class="error-message"></small>
                             </div>
                             <div class="scholarship-section__field-group validate">
                                 <label class="scholarship-section__field-label">Place of birth<span class="required__symbol">*</span></label>
-                                <input class="scholarship-section__field-textbox" type="text">
+                                <input class="scholarship-section__field-textbox" type="text" id="scholarship-section__field-textbox--placeofbirth">
                                 <small class="error-message"></small>
                             </div>
                         </div>
@@ -278,6 +279,8 @@
                 Validator.email('#scholarship-section__field-textbox--email'),
                 Validator.rbRequired('.scholarship-section__field-radio-gender-input'),
                 Validator.tbRequired('#scholarship-section__field-file-photo-passport'),
+                Validator.bdRequired('#scholarship-section__field-birthday'),
+                Validator.tbRequired('#scholarship-section__field-textbox--placeofbirth')
             ],
             onSubmit: (data) => {
                 // Show loading modal.
