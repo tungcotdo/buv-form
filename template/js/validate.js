@@ -6,10 +6,10 @@ function Validator( options ) {
         var flagSubmit = true;
         var viewInvalidElement = null;
         options.rules.forEach( rule => {
-           var inputElements = formElement.querySelectorAll(rule.inputSelector);
+           var inputElements = formElement.querySelectorAll(rule.selector);
             inputElements.forEach( inputElement => {
                 if( inputElement ){
-                    var isFormValid = validate(inputElement, customRules[rule.inputSelector]);
+                    var isFormValid = validate(inputElement, customRules[rule.selector]);
                     if( isFormValid !== undefined ){
                         flagSubmit = false;
                         viewInvalidElement = inputElement;
@@ -24,7 +24,6 @@ function Validator( options ) {
             datas.forEach( data => {
                 responses[data.name] = data.value;
             });
-            
             options.onSubmit(responses);
             formElement.submit();
         }else{
@@ -44,7 +43,6 @@ function Validator( options ) {
         }
 
         var errorElement = inputElement.closest('.validate').querySelector(".error-message");
-    
         if( errorMessage ) {
             errorElement.innerText = errorMessage;
             inputElement.closest('.validate').classList.remove('valid');
@@ -62,15 +60,13 @@ function Validator( options ) {
 
         var customRules = [];
         options.rules.forEach( rule => {
-            
-            if(Array.isArray( customRules[rule.inputSelector] )){
-                customRules[rule.inputSelector].push(rule.test);
+            if(Array.isArray( customRules[rule.selector] )){
+                customRules[rule.selector].push(rule.test);
             }else{
-                customRules[rule.inputSelector] = [rule.test];
+                customRules[rule.selector] = [rule.test];
             }
             
-            var inputElements = formElement.querySelectorAll(rule.inputSelector);
-
+            var inputElements = formElement.querySelectorAll(rule.selector);
             inputElements.forEach( inputElement => {
                 // console.log(rule.type);
 
@@ -79,7 +75,7 @@ function Validator( options ) {
                         var cbs = inputElement.querySelectorAll('input[type="checkbox"]');
                         cbs.forEach(cb => {
                             cb.addEventListener("click", function(){ 
-                                validate(inputElement, customRules[rule.inputSelector]);
+                                validate(inputElement, customRules[rule.selector]);
                             });
                         });
                       break;
@@ -87,13 +83,13 @@ function Validator( options ) {
                         var slbs = inputElement.querySelectorAll('select');
                         slbs.forEach(slb => {
                             slb.addEventListener("change", function(){ 
-                                validate(inputElement, customRules[rule.inputSelector]);
+                                validate(inputElement, customRules[rule.selector]);
                             });
                         });
                       break;
                     default:
                         inputElement.onblur = function(){
-                            validate(inputElement, customRules[rule.inputSelector]);
+                            validate(inputElement, customRules[rule.selector]);
                         }
                 }
 
@@ -103,7 +99,7 @@ function Validator( options ) {
     }
 }
 
-Validator.email = function( inputSelector ) {
+Validator.email = function({selector, errMsg}) {
     checkEmail = (email) => {
         return String(email)
             .toLowerCase()
@@ -114,76 +110,63 @@ Validator.email = function( inputSelector ) {
 
     return {
         type: 'tb',
-        inputSelector: inputSelector,
+        selector: selector,
         test: function( inputElement, formElement ){
-            return checkEmail(inputElement.value) ? undefined : 'The e-mail address entered is invalid / Địa chỉ email không hợp lệ!';
+            return checkEmail(inputElement.value) 
+                    ? undefined 
+                    : errMsg  || 'The e-mail address entered is invalid / Địa chỉ email không hợp lệ!';
         }
     };
 }
 
-Validator.tbRequired = function( inputSelector ) {
+Validator.tbRequired = function({selector, errMsg}) {
     return {
         type: 'tb',
-        inputSelector: inputSelector,
+        selector: selector,
         test: function( inputElement, formElement ){
-            return inputElement.value.trim() ? undefined : 'This field is required / Vui lòng không để trống thông tin này!';
+            return inputElement.value.trim() 
+                    ? undefined 
+                    : errMsg  || 'This field is required / Vui lòng không để trống thông tin này!';
         }
     };
 }
 
-Validator.rbRequired = function( inputSelector ) {
+Validator.rbRequired = function({selector, errMsg}) {
     return {
         type: 'rb',
-        inputSelector: inputSelector,
+        selector: selector,
         test: function( inputElement, formElement ){
-            let rbElements = formElement.querySelectorAll(inputSelector);
+            let rbElements = formElement.querySelectorAll(selector);
             let rbCheckFlag = false;
             rbElements.forEach( rbE => {
                 if( rbE.checked == true )
                     rbCheckFlag = true;
             });
 
-            return rbCheckFlag ? undefined : 'This field is required / Vui lòng không để trống thông tin này!';
+            return rbCheckFlag 
+                    ? undefined 
+                    : errMsg  || 'This field is required / Vui lòng không để trống thông tin này!';
         }
     };
 }
 
-Validator.isLessThan = function( inputSelector, compareSelector, message ) {
+Validator.isPInt = function({selector, errMsg}) {
     return {
         type: 'tb',
-        inputSelector: inputSelector,
+        selector: selector,
         test: function( inputElement, formElement ){
-            let compareValue = formElement.querySelector(compareSelector).value;
-            return parseInt(inputElement.value) > parseInt(compareValue) || !inputElement.value.trim() || !compareValue ? undefined : message || 'The enter value is incorrect!';
+
+            return parseInt(inputElement.value) > 0 || !inputElement.value.trim() 
+                    ? undefined 
+                    : errMsg || 'The number must be greater than 0!';
         }
     };
 }
 
-Validator.isMoreThan = function( inputSelector, compareSelector, message ) {
-    return {
-        type: 'tb',
-        inputSelector: inputSelector,
-        test: function( inputElement, formElement ){
-            let compareValue = formElement.querySelector(compareSelector).value;
-            return parseInt(inputElement.value) < parseInt(compareValue) || !inputElement.value.trim() || !compareValue ? undefined : message || 'The enter value is incorrect!';
-        }
-    };
-}
-
-Validator.isPInt = function( inputSelector ) {
-    return {
-        type: 'tb',
-        inputSelector: inputSelector,
-        test: function( inputElement, formElement ){
-            return parseInt(inputElement.value) > 0 || !inputElement.value.trim() ? undefined : 'The number must be greater than 0!';
-        }
-    };
-}
-
-Validator.cbChecked = function ( inputSelector ) {
+Validator.cbChecked = function ({selector, errMsg}) {
     return {
         type: 'cb',
-        inputSelector: inputSelector,
+        selector: selector,
         test: function( inputElement, formElement ){
             
             function isCheckedbox(cbs){
@@ -197,15 +180,18 @@ Validator.cbChecked = function ( inputSelector ) {
             }
 
             var cbs = inputElement.querySelectorAll('input[type="checkbox"]');
-            return isCheckedbox(cbs) ? undefined : 'This field is required / Vui lòng không để trống thông tin này!';
+
+            return isCheckedbox(cbs) 
+                    ? undefined 
+                    : errMsg || 'This field is required / Vui lòng không để trống thông tin này!';
         }
     };
 }
 
-Validator.bdRequired = function ( inputSelector ) {
+Validator.bdRequired = function ({selector, errMsg}){
     return {
         type: 'bd',
-        inputSelector: inputSelector,
+        selector: selector,
         test: function( inputElement, formElement ){
             
             function isSelected(slbs){
@@ -219,7 +205,9 @@ Validator.bdRequired = function ( inputSelector ) {
             }
 
             var slbs = inputElement.querySelectorAll('select');
-            return isSelected(slbs) ? undefined : 'This field is required / Vui lòng nhập đầy đủ ngày/tháng/năm!';
+            return isSelected(slbs) 
+                    ? undefined 
+                    : errMsg || 'This field is required / Vui lòng nhập đầy đủ ngày/tháng/năm!';
         }
     };
 }

@@ -26,7 +26,7 @@ var functions = {
         e.scrollIntoView();
     },
     
-    cbShowHide:function(cbClass, eID, status){
+    cbShowHide:function({cbClass, eID, status}){
         var e = document.getElementById(eID);
         // Element show or hide by default
         e.style.display = ( status ) ? 'block' : 'none';

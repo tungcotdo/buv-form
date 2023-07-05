@@ -167,12 +167,12 @@
                         <div class="grid-desktop-three-col grid-ipad-three-col">
                             <div class="scholarship-section__field-group validate">
                                 <label class="scholarship-section__field-label">National ID card number/Passport number<span class="required__symbol">*</span></label>
-                                <input class="scholarship-section__field-textbox" type="text">
+                                <input class="scholarship-section__field-textbox" type="text" id="scholarship-section__field-textbox--passportnumber">
                                 <small class="error-message"></small>
                             </div>
                             <div class="scholarship-section__field-group validate">
                                 <label class="scholarship-section__field-label">Passport-sized photograph<span class="required__symbol">*</span></label>
-                                <input class="scholarship-section__field-file" type="file" id="scholarship-section__field-file-photo-passport">
+                                <input class="scholarship-section__field-file" type="file" id="scholarship-section__field-file--passportphoto">
                                 <small class="error-message"></small>
                             </div>
                             <div class="scholarship-section__field-group validate">
@@ -270,17 +270,42 @@
         Validator({
             form: '#scholarship__form',
             rules: [
-                Validator.tbRequired('#scholarship-section__field-textbox--firstname'),
-                Validator.tbRequired('#scholarship-section__field-textbox--middlename'),
-                Validator.tbRequired('#scholarship-section__field-textbox--lastname'),
-                Validator.tbRequired('#scholarship-section__field-textbox--fullname'),
-                Validator.tbRequired('#scholarship-section__field-textbox--phone'),
-                Validator.tbRequired('#scholarship-section__field-textbox--email'),
-                Validator.email('#scholarship-section__field-textbox--email'),
-                Validator.rbRequired('.scholarship-section__field-radio-gender-input'),
-                Validator.tbRequired('#scholarship-section__field-file-photo-passport'),
-                Validator.bdRequired('#scholarship-section__field-birthday'),
-                Validator.tbRequired('#scholarship-section__field-textbox--placeofbirth')
+                Validator.tbRequired({
+                    selector: '#scholarship-section__field-textbox--firstname'
+                }),
+                Validator.tbRequired({
+                    selector: '#scholarship-section__field-textbox--middlename'
+                }),
+                Validator.tbRequired({
+                    selector: '#scholarship-section__field-textbox--lastname'
+                }),
+                Validator.tbRequired({
+                    selector: '#scholarship-section__field-textbox--fullname'
+                }),
+                Validator.tbRequired({
+                    selector: '#scholarship-section__field-textbox--phone'
+                }),
+                Validator.tbRequired({
+                    selector: '#scholarship-section__field-textbox--email'
+                }),
+                Validator.email({
+                    selector: '#scholarship-section__field-textbox--email'
+                }),
+                Validator.rbRequired({
+                    selector: '.scholarship-section__field-radio-gender-input'
+                }),
+                Validator.tbRequired({
+                    selector: '#scholarship-section__field-textbox--passportnumber'
+                }),
+                Validator.bdRequired({
+                    selector: '#scholarship-section__field-birthday'
+                }),
+                Validator.tbRequired({
+                    selector: '#scholarship-section__field-textbox--placeofbirth'
+                }),
+                Validator.tbRequired({
+                    selector: '#scholarship-section__field-file--passportphoto'
+                })
             ],
             onSubmit: (data) => {
                 // Show loading modal.
