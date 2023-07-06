@@ -145,19 +145,22 @@ Validator.file = function({selector, size, extension}) {
         type: 'fi',
         selector: selector,
         test: function( element, formElement ){
-            var fileSize = element.files[0].size; __maxFileSize
-            var maxFileSize = size ? size * 1000000 : __maxFileSize;
-            var fileExtension = Validator.getFileExtension(element);
-            var allowExtension = extension ? extension : __allowFileExtension;
-            var errMsg = undefined;
 
+            var errMsg = undefined;
             if( !element.value.trim() ){
                 errMsg = __errRequiredMsg;
-            }else if( !allowExtension.includes(fileExtension) ){
-                errMsg = 'File extention must be: ' + allowExtension.join(' | ') + ''; 
-            }else if( fileSize >  maxFileSize){
-                errMsg = 'File upload must be less than ' + size + 'MB!';                
+            }else{
+                var fileSize = element.files[0].size;
+                var maxFileSize = size ? size * 1000000 : __maxFileSize;
+                var fileExtension = Validator.getFileExtension(element);
+                var allowExtension = extension ? extension : __allowFileExtension;
+                if( !allowExtension.includes(fileExtension) ){
+                    errMsg = 'File extention must be: ' + allowExtension.join(' | ') + ''; 
+                }else if( fileSize >  maxFileSize){
+                    errMsg = 'File upload must be less than ' + size + 'MB!';                
+                }
             }
+
             return errMsg;
         }
     };
