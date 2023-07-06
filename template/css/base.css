@@ -79,9 +79,13 @@ small{
     font-size: 12px;
 }
 
+
+
 .valid .scholarship-section__field-textbox,
 .valid .scholarship-section__field-gender-group,
-.valid .scholarship-section__field-birthday select{
+.valid .scholarship-section__field-birthday select,
+.valid .scholarship-section__field-file,
+.valid .scholarship-section__field-textarea-input{
     background-color: #eaf8e9!important;
     border: 1px solid #91f08c!important;
 }
@@ -95,7 +99,9 @@ small{
 
 .invalid .scholarship-section__field-textbox,
 .invalid .scholarship-section__field-gender-group,
-.invalid .scholarship-section__field-birthday select{
+.invalid .scholarship-section__field-birthday select,
+.invalid .scholarship-section__field-file,
+.invalid .scholarship-section__field-textarea-input{
     background-color: #f5dfdf!important;
     border: 1px solid #f08c8c!important;
 }

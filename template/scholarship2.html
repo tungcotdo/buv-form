@@ -177,14 +177,14 @@
                             </div>
                             <div class="scholarship-section__field-group validate">
                                 <label class="scholarship-section__field-label">Notarised copy of ID card/Passport<span class="required__symbol">*</span></label>
-                                <input class="scholarship-section__field-file" type="file">
+                                <input class="scholarship-section__field-file" type="file" id="scholarship-section__field-file--passportcopy">
                                 <small class="error-message"></small>
                             </div>
                         </div>
 
                         <div class="scholarship-section__field-textarea-group validate">
                             <label class="scholarship-section__field-label">Current address<span class="required__symbol">*</span></label>
-                            <textarea class="scholarship-section__field-textarea-input" type="text"></textarea>
+                            <textarea class="scholarship-section__field-textarea-input" type="text" id="scholarship-section__field-textarea-currentaddress"></textarea>
                             <small class="error-message"></small>
                         </div>
 
@@ -193,22 +193,22 @@
                             <div class="grid-desktop-four-col grid-ipad-four-col">
                                 <div class="scholarship-section__field-group validate">
                                     <label class="scholarship-section__field-label">Name<span class="required__symbol">*</span></label>
-                                    <input class="scholarship-section__field-textbox" type="text">
+                                    <input class="scholarship-section__field-textbox" id="scholarship-section__field-textbox--name" type="text">
                                     <small class="error-message"></small>
                                 </div>
                                 <div class="scholarship-section__field-group validate">
                                     <label class="scholarship-section__field-label">Relationship<span class="required__symbol">*</span></label>
-                                    <input class="scholarship-section__field-textbox" type="text">
+                                    <input class="scholarship-section__field-textbox" id="scholarship-section__field-textbox--relationship" type="text">
                                     <small class="error-message"></small>
                                 </div>
                                 <div class="scholarship-section__field-group validate">
                                     <label class="scholarship-section__field-label">Phone no<span class="required__symbol">*</span></label>
-                                    <input class="scholarship-section__field-textbox" type="text">
+                                    <input class="scholarship-section__field-textbox" id="scholarship-section__field-textbox--phone" type="text">
                                     <small class="error-message"></small>
                                 </div>
                                 <div class="scholarship-section__field-group validate">
                                     <label class="scholarship-section__field-label">Email<span class="required__symbol">*</span></label>
-                                    <input class="scholarship-section__field-textbox" type="text">
+                                    <input class="scholarship-section__field-textbox" id="scholarship-section__field-textbox--email" type="text">
                                     <small class="error-message"></small>
                                 </div>
                             </div>
@@ -240,8 +240,6 @@
                     </div>
                     <!-- / PERSONAL INFOMATION -->
 
-
-
                 </div>
 
                 <div class="scholarship-form__submit">
@@ -249,8 +247,6 @@
                     <input class="scholarship-form-submit__btn scholarship-form-submit__btn--next" type="submit" value="Next">
                 </div>
             </form>
-
-
 
         </div><!-- container -->
     </div><!-- scholarship -->
@@ -303,8 +299,33 @@
                 Validator.tbRequired({
                     selector: '#scholarship-section__field-textbox--placeofbirth'
                 }),
+                Validator.file({
+                    selector: '#scholarship-section__field-file--passportphoto',
+                    size: 2,
+                    extension: ['jpg', 'jpeg', 'png','pdf']
+                }),
+                Validator.file({
+                    selector: '#scholarship-section__field-file--passportcopy',
+                    size: 2,
+                    extension: ['jpg', 'jpeg', 'png']
+                }),
                 Validator.tbRequired({
-                    selector: '#scholarship-section__field-file--passportphoto'
+                    selector: '#scholarship-section__field-textarea-currentaddress'
+                }),
+                Validator.tbRequired({
+                    selector: '#scholarship-section__field-textbox--name'
+                }),
+                Validator.tbRequired({
+                    selector: '#scholarship-section__field-textbox--relationship'
+                }),
+                Validator.tbRequired({
+                    selector: '#scholarship-section__field-textbox--phone'
+                }),
+                Validator.tbRequired({
+                    selector: '#scholarship-section__field-textbox--email'
+                }),
+                Validator.email({
+                    selector: '#scholarship-section__field-textbox--email'
                 })
             ],
             onSubmit: (data) => {
@@ -313,7 +334,7 @@
                 
             }
         });
-
+        
     </script>
 </body>
 </html>

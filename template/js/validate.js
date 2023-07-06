@@ -1,3 +1,7 @@
+const __errRequiredMsg = 'This field is required / Vui lòng không để trống thông tin này!';
+const __allowFileExtension =  ['jpg', 'jpeg', 'png'];
+const __maxFileSize = 1000000 * 2; // 2MB
+
 function Validator( options ) {
     var formElement = document.querySelector(options.form);
 
@@ -6,13 +10,13 @@ function Validator( options ) {
         var flagSubmit = true;
         var viewInvalidElement = null;
         options.rules.forEach( rule => {
-           var inputElements = formElement.querySelectorAll(rule.selector);
-            inputElements.forEach( inputElement => {
-                if( inputElement ){
-                    var isFormValid = validate(inputElement, customRules[rule.selector]);
+           var elements = formElement.querySelectorAll(rule.selector);
+            elements.forEach( element => {
+                if( element ){
+                    var isFormValid = validate(element, customRules[rule.selector]);
                     if( isFormValid !== undefined ){
                         flagSubmit = false;
-                        viewInvalidElement = inputElement;
+                        viewInvalidElement = element;
                     }
                 }
             });
@@ -25,7 +29,7 @@ function Validator( options ) {
                 responses[data.name] = data.value;
             });
             options.onSubmit(responses);
-            formElement.submit();
+            //formElement.submit();
         }else{
             viewInvalidElement.scrollIntoView({
                 behavior: 'smooth',
@@ -35,25 +39,25 @@ function Validator( options ) {
         }
     }
 
-    function validate(inputElement, rule){
-        var errorMessage;
+    function validate(element, rule){
+        var errMsg;
         for( var i = 0; i < rule.length; i++ ){
-            errorMessage = rule[i](inputElement, formElement);
-            if( errorMessage !== undefined ) break;
+            errMsg = rule[i](element, formElement);
+            if( errMsg !== undefined ) break;
         }
 
-        var errorElement = inputElement.closest('.validate').querySelector(".error-message");
-        if( errorMessage ) {
-            errorElement.innerText = errorMessage;
-            inputElement.closest('.validate').classList.remove('valid');
-            inputElement.closest('.validate').classList.add('invalid');
+        var errorElement = element.closest('.validate').querySelector(".error-message");
+        if( errMsg ) {
+            errorElement.innerText = errMsg;
+            element.closest('.validate').classList.remove('valid');
+            element.closest('.validate').classList.add('invalid');
         }else{
             errorElement.innerText = '';
-            inputElement.closest('.validate').classList.remove('invalid');
-            inputElement.closest('.validate').classList.add('valid');
+            element.closest('.validate').classList.remove('invalid');
+            element.closest('.validate').classList.add('valid');
         }
 
-        return errorMessage;
+        return errMsg;
     }
 
     if( options.rules ){
@@ -66,30 +70,35 @@ function Validator( options ) {
                 customRules[rule.selector] = [rule.test];
             }
             
-            var inputElements = formElement.querySelectorAll(rule.selector);
-            inputElements.forEach( inputElement => {
+            var elements = formElement.querySelectorAll(rule.selector);
+            elements.forEach( element => {
                 // console.log(rule.type);
 
                 switch(rule.type) {
                     case 'cb':
-                        var cbs = inputElement.querySelectorAll('input[type="checkbox"]');
+                        var cbs = element.querySelectorAll('input[type="checkbox"]');
                         cbs.forEach(cb => {
                             cb.addEventListener("click", function(){ 
-                                validate(inputElement, customRules[rule.selector]);
+                                validate(element, customRules[rule.selector]);
                             });
                         });
                       break;
                     case 'bd':
-                        var slbs = inputElement.querySelectorAll('select');
+                        var slbs = element.querySelectorAll('select');
                         slbs.forEach(slb => {
                             slb.addEventListener("change", function(){ 
-                                validate(inputElement, customRules[rule.selector]);
+                                validate(element, customRules[rule.selector]);
                             });
                         });
                       break;
+                    case 'fi':
+                        element.onchange = function(){
+                            validate(element, customRules[rule.selector]);
+                        }
+                    break;
                     default:
-                        inputElement.onblur = function(){
-                            validate(inputElement, customRules[rule.selector]);
+                        element.onblur = function(){
+                            validate(element, customRules[rule.selector]);
                         }
                 }
 
@@ -99,7 +108,7 @@ function Validator( options ) {
     }
 }
 
-Validator.email = function({selector, errMsg}) {
+Validator.email = function({selector, msg}) {
     checkEmail = (email) => {
         return String(email)
             .toLowerCase()
@@ -111,31 +120,54 @@ Validator.email = function({selector, errMsg}) {
     return {
         type: 'tb',
         selector: selector,
-        test: function( inputElement, formElement ){
-            return checkEmail(inputElement.value) 
+        test: function( element, formElement ){
+            return checkEmail(element.value) 
                     ? undefined 
-                    : errMsg  || 'The e-mail address entered is invalid / Địa chỉ email không hợp lệ!';
+                    : msg  || 'The e-mail address entered is invalid / Địa chỉ email không hợp lệ!';
         }
     };
 }
 
-Validator.tbRequired = function({selector, errMsg}) {
+Validator.tbRequired = function({selector, msg}) {
     return {
         type: 'tb',
         selector: selector,
-        test: function( inputElement, formElement ){
-            return inputElement.value.trim() 
+        test: function( element, formElement ){
+            return element.value.trim() 
                     ? undefined 
-                    : errMsg  || 'This field is required / Vui lòng không để trống thông tin này!';
+                    : msg  || __errRequiredMsg;
         }
     };
 }
 
-Validator.rbRequired = function({selector, errMsg}) {
+Validator.file = function({selector, size, extension}) {
+    return {
+        type: 'fi',
+        selector: selector,
+        test: function( element, formElement ){
+            var fileSize = element.files[0].size; __maxFileSize
+            var maxFileSize = size ? size * 1000000 : __maxFileSize;
+            var fileExtension = Validator.getFileExtension(element);
+            var allowExtension = extension ? extension : __allowFileExtension;
+            var errMsg = undefined;
+
+            if( !element.value.trim() ){
+                errMsg = __errRequiredMsg;
+            }else if( !allowExtension.includes(fileExtension) ){
+                errMsg = 'File extention must be: ' + allowExtension.join(' | ') + ''; 
+            }else if( fileSize >  maxFileSize){
+                errMsg = 'File upload must be less than ' + size + 'MB!';                
+            }
+            return errMsg;
+        }
+    };
+}
+
+Validator.rbRequired = function({selector, msg}) {
     return {
         type: 'rb',
         selector: selector,
-        test: function( inputElement, formElement ){
+        test: function( element, formElement ){
             let rbElements = formElement.querySelectorAll(selector);
             let rbCheckFlag = false;
             rbElements.forEach( rbE => {
@@ -145,31 +177,31 @@ Validator.rbRequired = function({selector, errMsg}) {
 
             return rbCheckFlag 
                     ? undefined 
-                    : errMsg  || 'This field is required / Vui lòng không để trống thông tin này!';
+                    : msg  || __errRequiredMsg;
         }
     };
 }
 
-Validator.isPInt = function({selector, errMsg}) {
+Validator.isPInt = function({selector, msg}) {
     return {
         type: 'tb',
         selector: selector,
-        test: function( inputElement, formElement ){
+        test: function( element, formElement ){
 
-            return parseInt(inputElement.value) > 0 || !inputElement.value.trim() 
+            return parseInt(element.value) > 0 || !element.value.trim() 
                     ? undefined 
-                    : errMsg || 'The number must be greater than 0!';
+                    : msg || 'The number must be greater than 0!';
         }
     };
 }
 
-Validator.cbChecked = function ({selector, errMsg}) {
+Validator.cbChecked = function ({selector, msg}) {
     return {
         type: 'cb',
         selector: selector,
-        test: function( inputElement, formElement ){
+        test: function( element, formElement ){
             
-            function isCheckedbox(cbs){
+            function isChecked(cbs){
                 var checkedFlag = false;
                 cbs.forEach(cb => {
                     if (cb.checked) {
@@ -179,20 +211,20 @@ Validator.cbChecked = function ({selector, errMsg}) {
                 return checkedFlag;
             }
 
-            var cbs = inputElement.querySelectorAll('input[type="checkbox"]');
+            var cbs = element.querySelectorAll('input[type="checkbox"]');
 
-            return isCheckedbox(cbs) 
+            return isChecked(cbs) 
                     ? undefined 
-                    : errMsg || 'This field is required / Vui lòng không để trống thông tin này!';
+                    : msg || __errRequiredMsg;
         }
     };
 }
 
-Validator.bdRequired = function ({selector, errMsg}){
+Validator.bdRequired = function ({selector, msg}){
     return {
         type: 'bd',
         selector: selector,
-        test: function( inputElement, formElement ){
+        test: function( element, formElement ){
             
             function isSelected(slbs){
                 var checkedFlag = true;
@@ -204,10 +236,15 @@ Validator.bdRequired = function ({selector, errMsg}){
                 return checkedFlag;
             }
 
-            var slbs = inputElement.querySelectorAll('select');
+            var slbs = element.querySelectorAll('select');
             return isSelected(slbs) 
                     ? undefined 
-                    : errMsg || 'This field is required / Vui lòng nhập đầy đủ ngày/tháng/năm!';
+                    : msg || 'This field is required / Vui lòng nhập đầy đủ ngày/tháng/năm!';
         }
     };
+}
+
+Validator.getFileExtension = function( element ){
+    var fileName = element.files[0].name;
+    return fileName.split('.').pop();
 }

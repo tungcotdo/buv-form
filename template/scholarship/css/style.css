@@ -31,6 +31,8 @@
     margin-top: var(--space-sec);
 }
 
+
+
 .scholarship-section__field-group{
     margin: var(--space-fir) 0;
     width: 100%;
@@ -331,6 +333,7 @@
 
 
 
+
 @media (max-width: 576px) {
     .text-italic,
     .scholarship-section__field-checkbox-label,
@@ -366,7 +369,15 @@
 .scholarship-section__field-file{
     height: 35px;
     width: 100%;
-    padding: 5.5px 0;
+    border: 1px solid var(--color-bor);
+}
+
+.scholarship-section__field-file::file-selector-button{
+    border: none;
+    height: 100%;
+    margin-right: 10px;
+    background-color: transparent;
+    border-right: 1px solid var(--color-bor);
 }
 
 .scholarship-section__field-textarea-input{

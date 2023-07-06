@@ -254,8 +254,17 @@
 
     <script type="text/javascript" src="js/functions.js"></script>  
     <script>
-        functions.rbShowHide('field__rb-eng-tak', 'field__show-eng-res', false);
-        functions.cbShowHide('field__cb-ccp-pro', 'field__show-ccp-upl', false);
+        functions.cbShowHide({
+            cbClass : 'field__cb-ccp-pro',
+            eID : 'field__show-ccp-upl',
+            status : false
+        });
+
+        functions.rbShowHide({
+            rbClass : 'field__rb-eng-tak',
+            eID : 'field__show-eng-res',
+            status : false
+        });
     </script>
 
     <script src="js/validate.js"></script>
@@ -263,7 +272,9 @@
         Validator({
             form: '#scholarship__form',
             rules: [
-                Validator.required('#scholarship-section__field-file-input')
+                Validator.tbRequired({
+                    selector: '#scholarship-section__field-file-input'
+                })
             ],
             onSubmit: (data) => {
                 // Show loading modal.
