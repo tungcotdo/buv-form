@@ -261,6 +261,12 @@
     width: 100%;
 }
 
+.scholarship-section__field-group-other-textbox{
+    height: 33px;
+    border: 1px solid var(--color-bor);
+    width: 100%;
+}
+
 .scholarship-section__field-selectbox{
     width: 100%;
     height: 35px;
