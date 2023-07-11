@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/modal.css">
 
     <link rel="stylesheet" href="scholarship/css/style.css">
 
@@ -63,7 +64,7 @@
 
 
 
-            <form class="scholarship__form">
+            <form class="scholarship__form" id="scholarship__form">
                 <div class="scholarship__section">
                     <p class="scholarship__note">
                         Note: (<span class="required__symbol">*</span>) This field is required/ <span class="text__vi">Vui lòng không để trống thông tin này!</span>
@@ -79,31 +80,36 @@
                         <fieldset class="scholarship-section__fieldset-group">
                             <legend class="scholarship-section__fieldset-legen">1</legend>
                             <div class="grid-desktop-five-col grid-ipad-three-col">
-                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
+                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group validate">
                                     <label class="scholarship-section__field-label">Name<span class="required__symbol">*</span></label>
-                                    <select class="scholarship-section__field-selectbox">
+                                    <select class="scholarship-section__field-selectbox" id="scholarship-section__field-name-qualification1">
                                         <option value="">-- Choose option --</option>
-                                        <option value="">Vietname high school - grade 12</option>
-                                        <option value="">Vietname high school - grade 11</option>
-                                        <option value="">Vietname high school - grade 10</option>
-                                        <option value="">Other</option>
+                                        <option value="12">Vietname high school - grade 12</option>
+                                        <option value="11">Vietname high school - grade 11</option>
+                                        <option value="10">Vietname high school - grade 10</option>
+                                        <option value="other">Other</option>
                                     </select>
+                                    <small class="error-message"></small>
                                 </div>
-                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
+                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group validate">
                                     <label class="scholarship-section__field-label">Name of institution<span class="required__symbol">*</span></label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                                    <input class="scholarship-section__field-textbox" type="text" id="scholarship-section__field-textbox-institution-qualification1">
+                                    <small class="error-message"></small>
                                 </div>
-                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
+                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group validate">
                                     <label class="scholarship-section__field-label">Country of study<span class="required__symbol">*</span></label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                                    <input class="scholarship-section__field-textbox" type="text" id="scholarship-section__field-textbox-country-qualification1">
+                                    <small class="error-message"></small>
                                 </div>
-                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
+                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group validate">
                                     <label class="scholarship-section__field-label">Period of study<span class="required__symbol">*</span></label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                                    <input class="scholarship-section__field-textbox" type="text" id="scholarship-section__field-textbox-period-qualification1">
+                                    <small class="error-message"></small>
                                 </div>
-                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
+                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group validate">
                                     <label class="scholarship-section__field-label">GPA<span class="required__symbol">*</span></label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                                    <input class="scholarship-section__field-textbox" type="text" id="scholarship-section__field-textbox-gpa-qualification1">
+                                    <small class="error-message"></small>
                                 </div>
                             </div>
                         </fieldset>
@@ -123,19 +129,19 @@
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
                                     <label class="scholarship-section__field-label">Name of institution</label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                                    <input class="scholarship-section__field-textbox" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
                                     <label class="scholarship-section__field-label">Country of study</label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                                    <input class="scholarship-section__field-textbox" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
                                     <label class="scholarship-section__field-label">Period from ... to ...</label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                                    <input class="scholarship-section__field-textbox" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
                                     <label class="scholarship-section__field-label">GPA</label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                                    <input class="scholarship-section__field-textbox" type="text">
                                 </div>
                             </div>
                         </fieldset>
@@ -155,19 +161,19 @@
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
                                     <label class="scholarship-section__field-label">Name of institution</label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                                    <input class="scholarship-section__field-textbox" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
                                     <label class="scholarship-section__field-label">Country of study</label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                                    <input class="scholarship-section__field-textbox" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
                                     <label class="scholarship-section__field-label">Period of study</label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                                    <input class="scholarship-section__field-textbox" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
                                     <label class="scholarship-section__field-label">GPA</label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                                    <input class="scholarship-section__field-textbox" type="text">
                                 </div>
                             </div>
                         </fieldset>
@@ -187,19 +193,19 @@
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
                                     <label class="scholarship-section__field-label">Name of institution</label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                                    <input class="scholarship-section__field-textbox" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
                                     <label class="scholarship-section__field-label">Country of study</label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                                    <input class="scholarship-section__field-textbox" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
                                     <label class="scholarship-section__field-label">Period of study</label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                                    <input class="scholarship-section__field-textbox" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
                                     <label class="scholarship-section__field-label">GPA</label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                                    <input class="scholarship-section__field-textbox" type="text">
                                 </div>
                             </div>
                         </fieldset>
@@ -219,34 +225,41 @@
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
                                     <label class="scholarship-section__field-label">Name of institution</label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                                    <input class="scholarship-section__field-textbox" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
                                     <label class="scholarship-section__field-label">Country of study</label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                                    <input class="scholarship-section__field-textbox" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
                                     <label class="scholarship-section__field-label">Period of study</label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                                    <input class="scholarship-section__field-textbox" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
                                     <label class="scholarship-section__field-label">GPA</label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                                    <input class="scholarship-section__field-textbox" type="text">
                                 </div>
                             </div>
                         </fieldset>
 
                         <div class="scholarship-section__field-file-group">
                             <label class="scholarship-section__field-label">English-translated notarised copy of high school graduation certificate OR provisional high school graduation certificate (if applicable)</label>
-                            <input type="file" class="scholarship-section__field-file-input">
+                            <div>
+                                <input type="file" class="scholarship-section__field-file">
+                            </div>
                         </div>
                         <div class="scholarship-section__field-file-group">
                             <label class="scholarship-section__field-label">English-translated notarised copy of academic transcript for grades 10, 11 and 12 and other transcript(s) <span class="required__symbol">*</span></label>
-                            <input type="file" class="scholarship-section__field-file-input">
+                            <div class="validate">
+                                <input type="file" class="scholarship-section__field-file" id="scholarship-section__field-file-english-translated-academic"><br>
+                                <small class="error-message"></small>
+                            </div>
                         </div>
                         <div class="scholarship-section__field-file-group">
                             <label class="scholarship-section__field-label">International Qualifications (if any): English-translated notarised Certificate(s) and notarised transcript(s)</label>
-                            <input type="file" class="scholarship-section__field-file-input">
+                            <div>
+                                <input type="file" class="scholarship-section__field-file">
+                            </div>
                         </div>
 
                     </div>
@@ -269,9 +282,42 @@
         <div class="modal__overlay"></div>
         <div class="modal__content">
             <div class="loader"></div>
-            <div class="loading__title">Đang chờ xử lý ...</div>
+            <div class="loading__title">Processing ...<br>Please do not close the browser</div>
         </div>
     </div>
 
+    <script src="js/validate.js"></script>
+    <script>
+        
+        Validator({
+            form: '#scholarship__form',
+            rules: [
+                Validator.slbRequired({
+                    selector: '#scholarship-section__field-name-qualification1'
+                }),
+                Validator.tbRequired({
+                    selector: '#scholarship-section__field-textbox-institution-qualification1'
+                }),
+                Validator.tbRequired({
+                    selector: '#scholarship-section__field-textbox-country-qualification1'
+                }),
+                Validator.tbRequired({
+                    selector: '#scholarship-section__field-textbox-period-qualification1'
+                }),
+                Validator.tbRequired({
+                    selector: '#scholarship-section__field-textbox-gpa-qualification1'
+                }),
+                Validator.file({
+                    selector: '#scholarship-section__field-file-english-translated-academic',
+                    size: 1,
+                    extension: ['jpg', 'jpeg', 'png','pdf']
+                })
+            ],
+            onSubmit: (data) => {
+                document.getElementById("modal__loading").style.display = "block";
+            }
+        });
+        
+    </script>
 </body>
 </html>

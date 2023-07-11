@@ -61,39 +61,42 @@
                 </div>
             </div>
 
-            <form class="scholarship__form" id="scholarship__form">
+            <form class="scholarship__form" id="scholarship__form" action="scholarship.php">
                 <div class="scholarship__section">
                     <h3 class="scholarship-section__heading">You are applying for (Please check the appropriate boxes)</h3>
                     <div class="scholarship-section__field">
                         <div class="validate" id="scholarship-section__field--cb-apply">
                             <div class="scholarship-section__field-checkbox-group">
-                                <input type="checkbox" class="scholarship-section__field-checkbox-input scholarship-section__field-checkbox-apply-input">
-                                <label class="scholarship-section__field-checkbox-label"> The British Ambassador’s Scholarship/ President’s Scholarship/ Dean’s Scholarship</label>
+                                <input type="checkbox" class="scholarship-section__field-checkbox-input scholarship-section__field-checkbox-apply-input" id="scholarship-section__field-checkbox-apply-input-1">
+                                <label for="scholarship-section__field-checkbox-apply-input-1" class="scholarship-section__field-checkbox-label"> The British Ambassador’s Scholarship/ President’s Scholarship/ Dean’s Scholarship</label>
                             </div>
                             <div class="scholarship-section__field-checkbox-group">
-                                <input type="checkbox" class="scholarship-section__field-checkbox-input scholarship-section__field-checkbox-apply-input">
-                                <label class="scholarship-section__field-checkbox-label"> Sir Graeme Davies’ Scholarship/ The Founder’s Scholarship</label>
+                                <input type="checkbox" class="scholarship-section__field-checkbox-input scholarship-section__field-checkbox-apply-input" id="scholarship-section__field-checkbox-apply-input-2">
+                                <label for="scholarship-section__field-checkbox-apply-input-2" class="scholarship-section__field-checkbox-label"> Sir Graeme Davies’ Scholarship/ The Founder’s Scholarship</label>
                             </div>
                             <div class="scholarship-section__field-checkbox-group">
-                                <input type="checkbox" class="scholarship-section__field-checkbox-input scholarship-section__field-checkbox-apply-input">
-                                <label class="scholarship-section__field-checkbox-label"> Lion’s Heart Scholarship</label>
+                                <input type="checkbox" class="scholarship-section__field-checkbox-input scholarship-section__field-checkbox-apply-input" id="scholarship-section__field-checkbox-apply-input-3">
+                                <label for="scholarship-section__field-checkbox-apply-input-3" class="scholarship-section__field-checkbox-label"> Lion’s Heart Scholarship</label>
                             </div>
                             <div class="scholarship-section__field-checkbox-group">
-                                <input type="checkbox" class="scholarship-section__field-checkbox-input scholarship-section__field-checkbox-apply-input">
-                                <label class="scholarship-section__field-checkbox-label"> Talent Scholarship</label>
+                                <input type="checkbox" class="scholarship-section__field-checkbox-input scholarship-section__field-checkbox-apply-input" id="scholarship-section__field-checkbox-apply-input-4">
+                                <label for="scholarship-section__field-checkbox-apply-input-4" class="scholarship-section__field-checkbox-label"> Talent Scholarship</label>
                             </div>
                             <div class="scholarship-section__field-checkbox-group">
-                                <input type="checkbox" class="scholarship-section__field-checkbox-input scholarship-section__field-checkbox-apply-input">
-                                <label class="scholarship-section__field-checkbox-label"> Key Partnership Scholarship (MOU)</label>
+                                <input type="checkbox" class="scholarship-section__field-checkbox-input scholarship-section__field-checkbox-apply-input" id="scholarship-section__field-checkbox-apply-input-5">
+                                <label for="scholarship-section__field-checkbox-apply-input-5" class="scholarship-section__field-checkbox-label"> Key Partnership Scholarship (MOU)</label>
                             </div>
                             <div class="scholarship-section__field-checkbox-group">
-                                <input type="checkbox" class="scholarship-section__field-checkbox-input scholarship-section__field-checkbox-apply-input">
-                                <label class="scholarship-section__field-checkbox-label"> Education Development Scholarship</label>
+                                <input type="checkbox" class="scholarship-section__field-checkbox-input scholarship-section__field-checkbox-apply-input" id="scholarship-section__field-checkbox-apply-input-6">
+                                <label for="scholarship-section__field-checkbox-apply-input-6" class="scholarship-section__field-checkbox-label"> Education Development Scholarship</label>
                             </div>
                             <div class="scholarship-section__field-checkbox-group">
                                 <input type="checkbox" class="scholarship-section__field-checkbox-input scholarship-section__field-checkbox-apply-input scholarship-section__field-group-other-cb" id="scholarship-section__field-group-other-cb">
                                 <label class="scholarship-section__field-checkbox-label mr-1" for="scholarship-section__field-group-other-cb"> Others</label>
-                                <input class="scholarship-section__field-group-other-textbox" type="text" placeholder="Please specify ..." id="scholarship-section__field-group-other-textbox">
+                                <div class="w-100" id="scholarship-section__field-group-other">
+                                    <input class="scholarship-section__field-group-other-textbox" type="text" placeholder="Please specify ..." id="scholarship-section__field-group-other-textbox">
+                                    <small class="error-other-message"></small>
+                                </div>
                             </div>
                             <small class="error-message"></small>
                         </div>
@@ -114,7 +117,7 @@
         <div class="modal__overlay"></div>
         <div class="modal__content">
             <div class="loader"></div>
-            <div class="loading__title">Đang chờ xử lý ...</div>
+            <div class="loading__title">Processing ...<br>Please do not close the browser</div>
         </div>
     </div>
 
@@ -122,6 +125,7 @@
     <script src="js/validate.js"></script>
 
     <script>
+
         functions.cbShowHide({
             cbClass : 'scholarship-section__field-group-other-cb',
             eID : 'scholarship-section__field-group-other-textbox',
@@ -133,13 +137,27 @@
             rules: [
                 Validator.cbChecked({
                     selector : '#scholarship-section__field--cb-apply', 
-                    errMsg : 'You must select at least one option /Bạn phải lựa chọn ít nhất một option!'
+                    msg : 'You must select at least one option /Bạn phải lựa chọn ít nhất một option!'
                 })
             ],
             onSubmit: (data) => {
-                // Show loading modal.
-                document.getElementById("modal__loading").style.display = "block";
-                
+
+                var otherCheckBox = document.getElementById('scholarship-section__field-group-other-cb');
+                var otherTextBox  = document.getElementById('scholarship-section__field-group-other-textbox');
+                var otherErrorMessage = document.querySelector('#scholarship-section__field-group-other .error-other-message');
+
+                otherCheckBox.addEventListener("click", function(){
+                    otherErrorMessage.innerText = '';
+                });
+
+                if( otherCheckBox.checked && otherTextBox.value == ''){
+                    otherErrorMessage.innerText = Validator.errRequiredMsg;
+                }else{
+                    otherErrorMessage.innerText = '';
+                    document.getElementById("modal__loading").style.display = "block";
+                    data.form.submit();
+                }
+
             }
         });
 

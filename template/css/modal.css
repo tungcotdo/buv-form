@@ -36,11 +36,11 @@
     position: absolute;
 }
 
-.loading__title{
+.loading__title {
     position: absolute;
-    top: 75px;
-    left: -35px;
-    width: 150px;
+    top: 70px;
+    left: -80px;
+    width: max-content;
     color: white;
     text-align: center;
 }

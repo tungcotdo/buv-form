@@ -256,7 +256,7 @@
         <div class="modal__overlay"></div>
         <div class="modal__content">
             <div class="loader"></div>
-            <div class="loading__title">Đang chờ xử lý ...</div>
+            <div class="loading__title">Processing ...<br>Please do not close the browser</div>
         </div>
     </div>
 
@@ -301,12 +301,12 @@
                 }),
                 Validator.file({
                     selector: '#scholarship-section__field-file--passportphoto',
-                    size: 2,
+                    size: 1,
                     extension: ['jpg', 'jpeg', 'png','pdf']
                 }),
                 Validator.file({
                     selector: '#scholarship-section__field-file--passportcopy',
-                    size: 2,
+                    size: 3,
                     extension: ['jpg', 'jpeg', 'png']
                 }),
                 Validator.tbRequired({
@@ -329,9 +329,7 @@
                 })
             ],
             onSubmit: (data) => {
-                // Show loading modal.
                 document.getElementById("modal__loading").style.display = "block";
-                
             }
         });
         
