@@ -152,6 +152,12 @@ Validator.tbRequired = function({selector, msg, error}) {
 }
 
 Validator.tbRequiredWhenCbChecked = function({selector, checkbox, msg, error}) {
+    document.querySelector(checkbox)
+    .addEventListener("click", function(){ 
+        document.querySelector(error).innerText = '';
+        document.querySelector(selector).closest('.validate').classList.remove('invalid');
+    });
+
     return {
         type: 'tb',
         selector: selector,
@@ -279,9 +285,6 @@ Validator.slbRequired = function ({selector, msg}){
         }
     };
 }
-
-
-
 
 // Function
 var Functions = {};
