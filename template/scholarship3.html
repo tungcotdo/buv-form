@@ -64,7 +64,7 @@
 
 
 
-            <form class="scholarship__form" id="scholarship__form">
+            <form class="scholarship__form" id="scholarship__form" action="scholarship4.html">
                 <div class="scholarship__section">
                     <p class="scholarship__note">
                         Note: (<span class="required__symbol">*</span>) This field is required/ <span class="text__vi">Vui lòng không để trống thông tin này!</span>
@@ -244,22 +244,19 @@
 
                         <div class="scholarship-section__field-file-group">
                             <label class="scholarship-section__field-label">English-translated notarised copy of high school graduation certificate OR provisional high school graduation certificate (if applicable)</label>
-                            <div>
-                                <input type="file" class="scholarship-section__field-file">
-                            </div>
+                            <div><input type="file" class="scholarship-section__field-file"></div>
                         </div>
-                        <div class="scholarship-section__field-file-group">
-                            <label class="scholarship-section__field-label">English-translated notarised copy of academic transcript for grades 10, 11 and 12 and other transcript(s) <span class="required__symbol">*</span></label>
-                            <div class="validate">
-                                <input type="file" class="scholarship-section__field-file" id="scholarship-section__field-file-english-translated-academic"><br>
-                                <small class="error-message"></small>
+
+                        <div class="validate">
+                            <div class="scholarship-section__field-file-group">
+                                <label class="scholarship-section__field-label">English-translated notarised copy of academic transcript for grades 10, 11 and 12 and other transcript(s) <span class="required__symbol">*</span></label>
+                                <div><input type="file" class="scholarship-section__field-file" id="scholarship-section__field-file-english-translated-academic"></div>
                             </div>
+                            <small class="error-message"></small>
                         </div>
                         <div class="scholarship-section__field-file-group">
                             <label class="scholarship-section__field-label">International Qualifications (if any): English-translated notarised Certificate(s) and notarised transcript(s)</label>
-                            <div>
-                                <input type="file" class="scholarship-section__field-file">
-                            </div>
+                            <div><input type="file" class="scholarship-section__field-file"></div>
                         </div>
 
                     </div>
@@ -286,7 +283,7 @@
         </div>
     </div>
 
-    <script src="js/validate.js"></script>
+    <script src="js/function.js"></script>
     <script>
         
         Validator({
@@ -315,6 +312,7 @@
             ],
             onSubmit: (data) => {
                 document.getElementById("modal__loading").style.display = "block";
+                data.form.submit();
             }
         });
         

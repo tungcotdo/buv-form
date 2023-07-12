@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/modal.css">
 
     <link rel="stylesheet" href="scholarship/css/style.css">
+
 
 </head>
 <body>
@@ -63,7 +65,7 @@
 
 
 
-            <form class="scholarship__form">
+            <form class="scholarship__form" id="scholarship__form" action="scholarship5.html">
                 <div class="scholarship__section">
                     <p class="scholarship__note">
                         Note: (<span class="required__symbol">*</span>) This field is required/ <span class="text__vi">Vui lòng không để trống thông tin này!</span>
@@ -76,25 +78,30 @@
                         <fieldset class="scholarship-section__fieldset-group">
                             <legend class="scholarship-section__fieldset-legen">1</legend>
                             <div class="grid-desktop-five-col grid-ipad-three-col">
-                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
+                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group validate">
                                     <label class="scholarship-section__field-label">Activity<span class="required__symbol">*</span></label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                                    <input class="scholarship-section__field-textbox" id="scholarship-section__field-textbox-activity-curricular1" type="text">
+                                    <small class="error-message"></small>
                                 </div>
-                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
+                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group validate">
                                     <label class="scholarship-section__field-label">Organization<span class="required__symbol">*</span></label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                                    <input class="scholarship-section__field-textbox" id="scholarship-section__field-textbox-organization-curricular1" type="text">
+                                    <small class="error-message"></small>
                                 </div>
-                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
+                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group validate">
                                     <label class="scholarship-section__field-label">Role & Task<span class="required__symbol">*</span></label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                                    <input class="scholarship-section__field-textbox" id="scholarship-section__field-textbox-roletask-curricular1" type="text">
+                                    <small class="error-message"></small>
                                 </div>
-                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
+                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group validate">
                                     <label class="scholarship-section__field-label">Period from ... to ...<span class="required__symbol">*</span></label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                                    <input class="scholarship-section__field-textbox" id="scholarship-section__field-textbox-period-curricular1" type="text">
+                                    <small class="error-message"></small>
                                 </div>
-                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
+                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group validate">
                                     <label class="scholarship-section__field-label">Prize/certificate/achievement<span class="required__symbol">*</span></label>
-                                    <input class="scholarship-section__field-textbox-input" type="text">
+                                    <input class="scholarship-section__field-textbox" id="scholarship-section__field-textbox-prize-curricular1" type="text">
+                                    <small class="error-message"></small>
                                 </div>
                             </div>
                         </fieldset>
@@ -104,23 +111,23 @@
                             <legend class="scholarship-section__fieldset-legen">2</legend>
                             <div class="grid-desktop-five-col grid-ipad-three-col">
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Activity<span class="required__symbol">*</span></label>
+                                    <label class="scholarship-section__field-label">Activity</label>
                                     <input class="scholarship-section__field-textbox-input" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Organization<span class="required__symbol">*</span></label>
+                                    <label class="scholarship-section__field-label">Organization</label>
                                     <input class="scholarship-section__field-textbox-input" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Role & Task<span class="required__symbol">*</span></label>
+                                    <label class="scholarship-section__field-label">Role & Task</label>
                                     <input class="scholarship-section__field-textbox-input" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Period from ... to ...<span class="required__symbol">*</span></label>
+                                    <label class="scholarship-section__field-label">Period from ... to ...</label>
                                     <input class="scholarship-section__field-textbox-input" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Prize/certificate/achievement<span class="required__symbol">*</span></label>
+                                    <label class="scholarship-section__field-label">Prize/certificate/achievement</label>
                                     <input class="scholarship-section__field-textbox-input" type="text">
                                 </div>
                             </div>
@@ -130,23 +137,23 @@
                             <legend class="scholarship-section__fieldset-legen">3</legend>
                             <div class="grid-desktop-five-col grid-ipad-three-col">
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Activity<span class="required__symbol">*</span></label>
+                                    <label class="scholarship-section__field-label">Activity</label>
                                     <input class="scholarship-section__field-textbox-input" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Organization<span class="required__symbol">*</span></label>
+                                    <label class="scholarship-section__field-label">Organization</label>
                                     <input class="scholarship-section__field-textbox-input" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Role & Task<span class="required__symbol">*</span></label>
+                                    <label class="scholarship-section__field-label">Role & Task</label>
                                     <input class="scholarship-section__field-textbox-input" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Period from ... to ...<span class="required__symbol">*</span></label>
+                                    <label class="scholarship-section__field-label">Period from ... to ...</label>
                                     <input class="scholarship-section__field-textbox-input" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Prize/certificate/achievement<span class="required__symbol">*</span></label>
+                                    <label class="scholarship-section__field-label">Prize/certificate/achievement</label>
                                     <input class="scholarship-section__field-textbox-input" type="text">
                                 </div>
                             </div>
@@ -156,23 +163,23 @@
                             <legend class="scholarship-section__fieldset-legen">4</legend>
                             <div class="grid-desktop-five-col grid-ipad-three-col">
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Activity<span class="required__symbol">*</span></label>
+                                    <label class="scholarship-section__field-label">Activity</label>
                                     <input class="scholarship-section__field-textbox-input" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Organization<span class="required__symbol">*</span></label>
+                                    <label class="scholarship-section__field-label">Organization</label>
                                     <input class="scholarship-section__field-textbox-input" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Role & Task<span class="required__symbol">*</span></label>
+                                    <label class="scholarship-section__field-label">Role & Task</label>
                                     <input class="scholarship-section__field-textbox-input" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Period from ... to ...<span class="required__symbol">*</span></label>
+                                    <label class="scholarship-section__field-label">Period from ... to ...</label>
                                     <input class="scholarship-section__field-textbox-input" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Prize/certificate/achievement<span class="required__symbol">*</span></label>
+                                    <label class="scholarship-section__field-label">Prize/certificate/achievement</label>
                                     <input class="scholarship-section__field-textbox-input" type="text">
                                 </div>
                             </div>
@@ -182,31 +189,34 @@
                             <legend class="scholarship-section__fieldset-legen">5</legend>
                             <div class="grid-desktop-five-col grid-ipad-three-col">
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Activity<span class="required__symbol">*</span></label>
+                                    <label class="scholarship-section__field-label">Activity</label>
                                     <input class="scholarship-section__field-textbox-input" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Organization<span class="required__symbol">*</span></label>
+                                    <label class="scholarship-section__field-label">Organization</label>
                                     <input class="scholarship-section__field-textbox-input" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Role & Task<span class="required__symbol">*</span></label>
+                                    <label class="scholarship-section__field-label">Role & Task</label>
                                     <input class="scholarship-section__field-textbox-input" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Period from ... to ...<span class="required__symbol">*</span></label>
+                                    <label class="scholarship-section__field-label">Period from ... to ...</label>
                                     <input class="scholarship-section__field-textbox-input" type="text">
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
-                                    <label class="scholarship-section__field-label">Prize/certificate/achievement<span class="required__symbol">*</span></label>
+                                    <label class="scholarship-section__field-label">Prize/certificate/achievement</label>
                                     <input class="scholarship-section__field-textbox-input" type="text">
                                 </div>
                             </div>
                         </fieldset>
 
-                        <div class="scholarship-section__field-file-group">
-                            <label class="scholarship-section__field-label">Evidence of extra-curricular activities (English translated copy if not in English)<span class="required__symbol">*</span></label>
-                            <input type="file" class="scholarship-section__field-file-input">
+                        <div class="validate">
+                            <div class="scholarship-section__field-file-group">
+                                <label class="scholarship-section__field-label">Evidence of extra-curricular activities (English translated copy if not in English) <span class="required__symbol">*</span></label>
+                                <div><input type="file" class="scholarship-section__field-file" id="scholarship-section__field-file-evidence-of-activity"></div>
+                            </div>
+                            <small class="error-message"></small>
                         </div>
 
                     </div>
@@ -224,14 +234,48 @@
         </div><!-- container -->
     </div><!-- scholarship -->
     
-    <!-- Modal loading page -->
-    <div class="modal" id="modal__loading">
-        <div class="modal__overlay"></div>
-        <div class="modal__content">
-            <div class="loader"></div>
-            <div class="loading__title">Đang chờ xử lý ...</div>
-        </div>
+<!-- Modal loading page -->
+<div class="modal" id="modal__loading">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+        <div class="loader"></div>
+        <div class="loading__title">Processing ...<br>Please do not close the browser</div>
     </div>
+</div>
 
+<script src="js/function.js"></script>
+<script>
+    
+    Validator({
+        form: '#scholarship__form',
+        rules: [
+            Validator.tbRequired({
+                selector: '#scholarship-section__field-textbox-activity-curricular1'
+            }),
+            Validator.tbRequired({
+                selector: '#scholarship-section__field-textbox-organization-curricular1'
+            }),
+            Validator.tbRequired({
+                selector: '#scholarship-section__field-textbox-roletask-curricular1'
+            }),
+            Validator.tbRequired({
+                selector: '#scholarship-section__field-textbox-period-curricular1'
+            }),
+            Validator.tbRequired({
+                selector: '#scholarship-section__field-textbox-prize-curricular1'
+            }),
+            Validator.file({
+                selector: '#scholarship-section__field-file-evidence-of-activity',
+                size: 1,
+                extension: ['jpg', 'jpeg', 'png','pdf']
+            })
+        ],
+        onSubmit: (data) => {
+            document.getElementById("modal__loading").style.display = "block";
+            data.form.submit();
+        }
+    });
+    
+</script>
 </body>
 </html>

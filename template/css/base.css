@@ -88,7 +88,8 @@ small{
 .valid .scholarship-section__field-birthday select,
 .valid .scholarship-section__field-file,
 .valid .scholarship-section__field-selectbox,
-.valid .scholarship-section__field-textarea-input{
+.valid .scholarship-section__field-textarea-input,
+.valid>.scholarship-section__field-group-other-textbox{
     background-color: #eaf8e9!important;
     border: 1px solid #91f08c!important;
 }
@@ -105,7 +106,8 @@ small{
 .invalid .scholarship-section__field-birthday select,
 .invalid .scholarship-section__field-file,
 .invalid .scholarship-section__field-selectbox,
-.invalid .scholarship-section__field-textarea-input{
+.invalid .scholarship-section__field-textarea-input,
+.invalid>.scholarship-section__field-group-other-textbox{
     background-color: #f5dfdf!important;
     border: 1px solid #f08c8c!important;
 }
@@ -213,6 +215,12 @@ small{
     .grid-desktop-five-col{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        column-gap: var(--space-sec);
+    }
+
+    .grid-desktop-six-col{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         column-gap: var(--space-sec);
     }
     

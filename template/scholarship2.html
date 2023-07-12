@@ -64,7 +64,7 @@
 
 
 
-            <form class="scholarship__form" id="scholarship__form">
+            <form class="scholarship__form" id="scholarship__form" action="scholarship3.html">
                 <div class="scholarship__section">
                     <p class="scholarship__note">
                         Note: (<span class="required__symbol">*</span>) This field is required/ <span class="text__vi">Vui lòng không để trống thông tin này!</span>
@@ -260,7 +260,7 @@
         </div>
     </div>
 
-    <script src="js/validate.js"></script>
+    <script src="js/function.js"></script>
     <script>
         
         Validator({
@@ -330,6 +330,7 @@
             ],
             onSubmit: (data) => {
                 document.getElementById("modal__loading").style.display = "block";
+                data.form.submit();
             }
         });
         
