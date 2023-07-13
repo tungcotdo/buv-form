@@ -443,6 +443,6 @@
     cursor: pointer;
 }
 
-.error-other-message{
+.error-late-message{
     color: var(--color-fir);
 }

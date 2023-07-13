@@ -73,7 +73,7 @@
                     <h3 class="scholarship-section__heading">PROPOSED STUDY PROGRAMMES</h3>
 
                     <div class="scholarship-section__field validate" id="scholarship-section__proposed-study-programmes">
-                        <small class="error-message"></small>
+                        <small id="proposed-study-programmes-error-message" class="error-message"></small>
                         
                         <fieldset class="scholarship-section__fieldset-group">
                             <legend class="scholarship-section__fieldset-legen">1. STAFFORDSHIRE UNIVERSITY</legend>
@@ -112,10 +112,10 @@
                                         <input type="checkbox" class="scholarship-section__field-checkbox-input field-checkbox-ccp" id="scholarship-section__field-checkbox-input-8">
                                         <label class="scholarship-section__field-checkbox-label" for="scholarship-section__field-checkbox-input-8"> Photography</label>
                                     </div>
-                                    <div class="scholarship-section__field-group" id="field__show-ccp-upload">
+                                    <div class="scholarship-section__field-group validate" id="field__show-ccp-upload">
                                         <label class="text-italic  mr-1">An original Portfolio of Artwork (<a href="">Download template</a>)<span class="required__symbol">*</span></label>
                                         <input class="scholarship-section__field-file-late" id="scholarship-section__field-file-ccp" type="file">
-                                        <small class="error-ccp-message"></small>
+                                        <small class="error-late-message"></small>
                                     </div>
                                 </fieldset>
                                 <fieldset class="scholarship-section__fieldset-group scholarship-section__fieldset-sub-group">
@@ -277,45 +277,23 @@
         status : false
     });
 
-    const ccpCheckBoxes = document.querySelectorAll('.field-checkbox-ccp');
-    const ccpFile = document.getElementById('scholarship-section__field-file-ccp');
-    const anyCCPChecked = Functions.cbChecked(ccpCheckBoxes);
-    const ccpErrorMessage = document.querySelector('#field__show-ccp-upload .error-ccp-message');
-
-    ccpCheckBoxes.addEventListener("click", function(){
-        ccpErrorMessage.innerText = '';
-    });
-
-    function ccpFileValidate(){
-        if( ccpCheckBoxes.value == ''){
-            ccpCheckBoxesGroup.classList.add('late-invalid');
-            ccpErrorMessage.innerText = Validator.constMsgRequired;
-            return false;
-        }else{
-            ccpErrorMessage.innerText = '';
-            ccpCheckBoxesGroup.classList.add('late-valid');
-            return true;
-        }
-    }
-
-    otherTextBox.onchange = function(){
-        ccpFileValidate();
-    }
-
     Validator({
         form: '#scholarship__form',
         rules: [
             Validator.cbChecked({
                 selector : '#scholarship-section__proposed-study-programmes', 
-                msg : 'You must select at least one option /Bạn phải lựa chọn ít nhất một option!'
+                msg : 'You must select at least one option/ Bạn phải lựa chọn ít nhất một option!',
+                error: '#proposed-study-programmes-error-message'
+            }),
+            Validator.fileRequiredWhenCbChecked({
+                selector: '#scholarship-section__field-file-ccp',
+                checkbox: '.field-checkbox-ccp',
+                msg: 'Please upload file following template/ Vui lòng upload tệp theo mẫu',
+                error: '#field__show-ccp-upload .error-late-message'
             })
         ],
         onSubmit: (data) => {
-            var otherValidate = ccpFileValidate();
-            if( otherValidate ){
-                document.getElementById("modal__loading").style.display = "block";
-                data.form.submit();
-            }
+            document.getElementById("modal__loading").style.display = "block";
         }
     });
 

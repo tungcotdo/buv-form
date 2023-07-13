@@ -100,7 +100,7 @@
                                 <label class="scholarship-section__field-checkbox-label mr-1" for="scholarship-section__field-group-other-cb"> Others</label>
                                 <div class="w-100 validate" id="scholarship-section__field-group-other">
                                     <input class="scholarship-section__field-group-other-textbox" type="text" placeholder="Please specify ..." id="scholarship-section__field-group-other-textbox">
-                                    <small class="error-other-message"></small>
+                                    <small class="error-late-message"></small>
                                 </div>
                             </div>
                             <small class="error-message"></small>
@@ -145,16 +145,15 @@
                 }),
                 Validator.tbRequiredWhenCbChecked({
                     selector: '#scholarship-section__field-group-other-textbox',
-                    checkbox: '#scholarship-section__field-group-other-cb',
+                    checkbox: '.scholarship-section__field-group-other-cb',
                     msg: 'You should speficy name of scholarship/ Bạn phải điền vào tên học bổng',
-                    error: '#scholarship-section__field-group-other .error-other-message'
+                    error: '#scholarship-section__field-group-other .error-late-message'
                 })
             ],
             onSubmit: (data) => {
                 document.getElementById("modal__loading").style.display = "block";
             }
         });
-
 
 
     </script>

@@ -9,19 +9,28 @@ function Validator( options ) {
     formElement.onsubmit = function(e){
         e.preventDefault();
         var flagSubmit = true;
-        var viewInvalidElement = null;
+        var viewInvalidElement = [];
+        
+
         options.rules.forEach( rule => {
+            
            var elements = formElement.querySelectorAll(rule.selector);
             elements.forEach( element => {
                 if( element ){
                     var isFormValid = validate(element, customRules[rule.selector], rule.error);
                     if( isFormValid !== undefined ){
                         flagSubmit = false;
-                        viewInvalidElement = rule.error ? document.querySelector(rule.error) : element.querySelector('.error-message');
+                        var scrollPosition = rule.error 
+                                                ? document.querySelector(rule.error) 
+                                                : element.closest('.validate').querySelector('.error-message');
+                                                
+                        viewInvalidElement.push(scrollPosition);
                     }
                 }
             });
         });
+
+        
 
         if( flagSubmit ){
             var responses = {};
@@ -32,8 +41,7 @@ function Validator( options ) {
             });
             options.onSubmit(responses);
         }else{
-           
-            viewInvalidElement.scrollIntoView({
+            viewInvalidElement[0].scrollIntoView({
                 behavior: 'smooth',
                 block: 'center',
                 inline: 'center'
@@ -152,10 +160,14 @@ Validator.tbRequired = function({selector, msg, error}) {
 }
 
 Validator.tbRequiredWhenCbChecked = function({selector, checkbox, msg, error}) {
-    document.querySelector(checkbox)
-    .addEventListener("click", function(){ 
-        document.querySelector(error).innerText = '';
-        document.querySelector(selector).closest('.validate').classList.remove('invalid');
+    var checkboxes = document.querySelectorAll(checkbox);
+    checkboxes.forEach( cb => {
+        cb.addEventListener("click", function(){ 
+            document.querySelector(error).innerText = '';
+            var textboxElement = document.querySelector(selector);
+            textboxElement.value = '';
+            textboxElement.closest('.validate').classList.remove('invalid', 'valid');
+        });
     });
 
     return {
@@ -163,10 +175,48 @@ Validator.tbRequiredWhenCbChecked = function({selector, checkbox, msg, error}) {
         selector: selector,
         error: error,
         test: function( element, formElement ){
-            return document.querySelector(checkbox).checked && element.value.trim() == ''
+            return Functions.cbChecked(checkboxes) && !element.value.trim()
                     ? msg 
                     || Validator.constMsgRequired 
                     : undefined;
+        }
+    };
+}
+
+Validator.fileRequiredWhenCbChecked = function({selector, size, extension, checkbox, msg, error}) {
+    var checkboxes = document.querySelectorAll(checkbox);
+    checkboxes.forEach( cb => {
+        cb.addEventListener("click", function(){ 
+            document.querySelector(error).innerText = '';
+            var fileElement = document.querySelector(selector);
+            fileElement.value = '';
+            fileElement.closest('.validate').classList.remove('invalid', 'valid');
+        });
+    });
+
+    return {
+        type: 'fi',
+        selector: selector,
+        error: error,
+        test: function( element, formElement ){
+
+            var errMsg = undefined;
+            if(  Functions.cbChecked(checkboxes) && element.value.trim() ){
+                var fileSize = element.files[0].size;
+                var allowFileSize = size ? size * 1000000 : Validator.constFileSize;
+                var fileExtension = Functions.getFileExtension(element);
+                var allowExtension = extension ? extension : Validator.constFileExt;
+                if( !allowExtension.includes(fileExtension) ){
+                    errMsg = 'File extention must be: ' + allowExtension.join(' | ') + ''; 
+                }else if( fileSize >  allowFileSize){
+                    var msgFileSize = size ? size : Validator.constFileSizeMB;
+                    errMsg = 'File upload must be less than ' + msgFileSize + 'MB!';                
+                }
+            }else{
+                errMsg = Validator.constMsgRequired;
+            }
+
+            return errMsg;
         }
     };
 }
@@ -232,10 +282,11 @@ Validator.isPInt = function({selector, msg}) {
     };
 }
 
-Validator.cbChecked = function ({selector, msg}) {
+Validator.cbChecked = function ({selector, msg, error}) {
     return {
         type: 'cb',
         selector: selector,
+        error: error,
         test: function( element, formElement ){
             var cbs = element.querySelectorAll('input[type="checkbox"]');
 
@@ -287,61 +338,50 @@ Validator.slbRequired = function ({selector, msg}){
 }
 
 // Function
-var Functions = {};
+var Functions = {
 
-Functions.getFileExtension = function( element ){
-    var fileName = element.files[0].name;
-    return fileName.split('.').pop();
-}
-
-Functions.cbChecked = function(cbs){
-    var checkedFlag = false;
-    cbs.forEach(cb => {
-        if (cb.checked) {
-            checkedFlag = true;
-        }
-    });
-    return checkedFlag;
-}
-
-Functions.isCheckedbox = function(cbs){
-    var checkedFlag = false;
-    cbs.forEach(cb => {
-        if (cb.checked) {
-            checkedFlag = true;
-        }
-    });
-    return checkedFlag;
-}
-
-Functions.rbShowHide = function({rbClass, eID, status}){
-    // Element show or hide by default
-    var e = document.getElementById(eID);
-    e.style.display = ( status ) ? 'block' : 'none';
-
-    // Check
-    var rbs = document.querySelectorAll('.' + rbClass);
-    rbs.forEach(rb => {
-        rb.addEventListener("click", function(){ 
-            e.style.display = ( rb.value == 1 ) ? 'block' : 'none';
+    getFileExtension : function( element ){
+        var fileName = element.files[0].name;
+        return fileName.split('.').pop();
+    },
+    cbChecked : function(cbs){
+        var checkedFlag = false;
+        cbs.forEach(cb => {
+            if (cb.checked) {
+                checkedFlag = true;
+            }
         });
-    });
-
-    e.scrollIntoView();
-}
-
-Functions.cbShowHide = function({cbClass, eID, status}){
-    var e = document.getElementById(eID);
-    // Element show or hide by default
-    e.style.display = ( status ) ? 'block' : 'none';
-
-    var cbs = document.querySelectorAll('.' + cbClass);
-
-    cbs.forEach(cb => {
-        cb.addEventListener("click", function(){ 
-            e.style.display = Functions.isCheckedbox(cbs) ? 'block' : 'none';
+        return checkedFlag;
+    },
+    rbShowHide : function({rbClass, eID, status}){
+        // Element show or hide by default
+        var e = document.getElementById(eID);
+        e.style.display = ( status ) ? 'block' : 'none';
+    
+        // Check
+        var rbs = document.querySelectorAll('.' + rbClass);
+        rbs.forEach(rb => {
+            rb.addEventListener("click", function(){ 
+                e.style.display = ( rb.value == 1 ) ? 'block' : 'none';
+            });
         });
-    });
+    
+        e.scrollIntoView();
+    },
+    cbShowHide : function({cbClass, eID, status}){
+        var e = document.getElementById(eID);
+        // Element show or hide by default
+        e.style.display = ( status ) ? 'block' : 'none';
+    
+        var cbs = document.querySelectorAll('.' + cbClass);
+    
+        cbs.forEach(cb => {
+            cb.addEventListener("click", function(){ 
+                e.style.display = Functions.cbChecked(cbs) ? 'block' : 'none';
+            });
+        });
+    
+        e.scrollIntoView();
+    }
+};
 
-    e.scrollIntoView();
-}
