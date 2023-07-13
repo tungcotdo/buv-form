@@ -13,7 +13,6 @@ function Validator( options ) {
         
 
         options.rules.forEach( rule => {
-            
            var elements = formElement.querySelectorAll(rule.selector);
             elements.forEach( element => {
                 if( element ){
@@ -23,7 +22,7 @@ function Validator( options ) {
                         var scrollPosition = rule.error 
                                                 ? document.querySelector(rule.error) 
                                                 : element.closest('.validate').querySelector('.error-message');
-                                                
+
                         viewInvalidElement.push(scrollPosition);
                     }
                 }

@@ -157,22 +157,26 @@
                     <h3 class="scholarship-section__heading">ENGLISH LANGUAGE PROFICIENCY</h3>
 
                     <div class="scholarship-section__field">
-
-                        <div class="scholarship-section__field-yn-group">
-                            <label class="scholarship-section__field-label">Is English the language of your secondary/ high school or tertiary studies?<span class="required__symbol">*</span></label>
-                            <div class="scholarship-section__field-yn-radio">
-                                <div class="scholarship-section__field-radio-group">
-                                    <input type="radio" class="scholarship-section__field-radio-yn-input" name="field__rb-eng-at-school" id="field__rb-eng-at-school-yes">
-                                    <label class="scholarship-section__field-radio-label" for="field__rb-eng-at-school-yes"> Yes</label>
+                        <div class="validate">
+                            <div class="scholarship-section__field-yn-group">
+                                <label class="scholarship-section__field-label">Is English the language of your secondary/ high school or tertiary studies?<span class="required__symbol">*</span></label>
+                                <div class="scholarship-section__field-yn-radio">
+                                    <div class="scholarship-section__field-radio-group">
+                                        <input type="radio" class="scholarship-section__field-radio-yn-input field__rb-eng-at-school" name="field__rb-eng-at-school" id="field__rb-eng-at-school-yes">
+                                        <label class="scholarship-section__field-radio-label" for="field__rb-eng-at-school-yes"> Yes</label>
+                                    </div>
+                                    <div class="scholarship-section__field-radio-group">
+                                        <input type="radio" class="scholarship-section__field-radio-yn-input field__rb-eng-at-school" name="field__rb-eng-at-school" id="field__rb-eng-at-school-no">
+                                        <label class="scholarship-section__field-radio-label" for="field__rb-eng-at-school-no"> No</label>
+                                    </div>
                                 </div>
-                                <div class="scholarship-section__field-radio-group">
-                                    <input type="radio" class="scholarship-section__field-radio-yn-input" name="field__rb-eng-at-school" id="field__rb-eng-at-school-no">
-                                    <label class="scholarship-section__field-radio-label" for="field__rb-eng-at-school-no"> No</label>
-                                </div>
+                                
                             </div>
+                            <small class="error-message"></small>
                         </div>
 
-                        <div class="scholarship-section__fieldset-yn-group">
+
+                        <div class="scholarship-section__fieldset-yn-group validate">
                             <div class="scholarship-section__fieldset-yn-radio-group">
                                 <label class="scholarship-section__field-label">Have you taken an English test (IELTS, TOEFL or Others)?<span class="required__symbol">*</span></label>
                                 <div class="scholarship-section__field-yn-radio">
@@ -232,6 +236,8 @@
                                 </div>
                                 <br>
                             </div>
+
+                            <small class="error-message"></small>
                         </div>
 
 
@@ -290,7 +296,13 @@
                 checkbox: '.field-checkbox-ccp',
                 msg: 'Please upload file following template/ Vui lòng upload tệp theo mẫu',
                 error: '#field__show-ccp-upload .error-late-message'
-            })
+            }),
+            Validator.rbRequired({
+                selector: '.field__rb-eng-at-school'
+            }),
+            Validator.rbRequired({
+                selector: '.field__rb-eng-taken'
+            }),
         ],
         onSubmit: (data) => {
             document.getElementById("modal__loading").style.display = "block";
