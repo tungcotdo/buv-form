@@ -83,46 +83,6 @@ small{
     width: 100%;
 }
 
-.valid .scholarship-section__field-textbox,
-.valid .scholarship-section__field-gender-group,
-.valid .scholarship-section__field-birthday select,
-.valid .scholarship-section__field-file,
-.valid .scholarship-section__field-selectbox,
-.valid .scholarship-section__field-textarea-input,
-.valid>.scholarship-section__field-group-other-textbox,
-.valid>.scholarship-section__field-textbox-eng-taken,
-.valid>.scholarship-section__field-file-eng-taken{
-    background-color: #eaf8e9!important;
-    border: 1px solid #91f08c!important;
-}
-
-.valid .scholarship-section__field-textbox:-webkit-autofill,
-.valid .scholarship-section__field-textbox:-webkit-autofill:hover, 
-.valid .scholarship-section__field-textbox:-webkit-autofill:focus, 
-.valid .scholarship-section__field-textbox:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px #eaf8e9 inset !important;
-}
-
-.invalid .scholarship-section__field-textbox,
-.invalid .scholarship-section__field-gender-group,
-.invalid .scholarship-section__field-birthday select,
-.invalid .scholarship-section__field-file,
-.invalid .scholarship-section__field-selectbox,
-.invalid .scholarship-section__field-textarea-input,
-.invalid>.scholarship-section__field-group-other-textbox,
-.invalid>.scholarship-section__field-textbox-eng-taken,
-.invalid>.scholarship-section__field-file-eng-taken{
-    background-color: #f5dfdf!important;
-    border: 1px solid #f08c8c!important;
-}
-
-.invalid .scholarship-section__field-textbox:-webkit-autofill,
-.invalid .scholarship-section__field-textbox:-webkit-autofill:hover, 
-.invalid .scholarship-section__field-textbox:-webkit-autofill:focus, 
-.invalid .scholarship-section__field-textbox:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px #f5dfdf inset !important;
-}
-
 /* Layout */
 
 .grid-three-col{

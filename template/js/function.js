@@ -1,5 +1,8 @@
 Validator.constMsgRequired = 'This field is required / Vui lòng không để trống thông tin này!';
 Validator.constMsgOneOption = 'You must select at least one option/ Bạn phải lựa chọn ít nhất một option!';
+Validator.constMsgAllowFileExt = 'File extention allow/ Đuôi mở rộng cho phép';
+Validator.constMsgAllowFileSize = 'File upload must not be over/ Dung lượng không được vượt quá';
+Validator.constMsgEmailFormat = 'The e-mail address entered is invalid / Địa chỉ email không hợp lệ!';
 
 Validator.constFileExt =  ['jpg', 'jpeg', 'png'];
 Validator.constFileSizeMB = 2; // Alow max file size <= 2MB
@@ -143,7 +146,7 @@ Validator.email = function({selector, msg}) {
             return checkEmail(element.value) 
                     ? undefined 
                     : msg  
-                    || 'The e-mail address entered is invalid / Địa chỉ email không hợp lệ!';
+                    || Validator.constMsgEmailFormat;
         }
     };
 }
@@ -237,10 +240,10 @@ Validator.fileRequiredWhenCbChecked = function({selector, size, extension, check
                 var fileExtension = Functions.getFileExtension(element);
                 var allowExtension = extension ? extension : Validator.constFileExt;
                 if( !allowExtension.includes(fileExtension) ){
-                    errMsg = 'File extention allow/ Đuôi mở rộng cho phép (' + allowExtension.join(' | ') + ')'; 
+                    errMsg = Validator.constMsgAllowFileExt + '(' + allowExtension.join(' | ') + ')'; 
                 }else if( fileSize >  allowFileSize){
                     var msgFileSize = size ? size : Validator.constFileSizeMB;
-                    errMsg = 'File upload must not be over/ Dung lượng không được vượt quá (' + msgFileSize + 'MB)';                
+                    errMsg = Validator.constMsgAllowFileSize + '(' + msgFileSize + 'MB)';                
                 }
             }else{
                 errMsg = Validator.constMsgRequired;
@@ -278,10 +281,10 @@ Validator.fileRequiredWhenRbChecked = function({selector, size, extension, radio
                     var fileExtension = Functions.getFileExtension(element);
                     var allowExtension = extension ? extension : Validator.constFileExt;
                     if( !allowExtension.includes(fileExtension) ){
-                        errMsg = 'File extention allow/ Đuôi mở rộng cho phép (' + allowExtension.join(' | ') + ')'; 
+                        errMsg = Validator.constMsgAllowFileExt + '(' + allowExtension.join(' | ') + ')';
                     }else if( fileSize >  allowFileSize){
                         var msgFileSize = size ? size : Validator.constFileSizeMB;
-                        errMsg = 'File upload must not be over/ Dung lượng không được vượt quá (' + msgFileSize + 'MB)';                
+                        errMsg = Validator.constMsgAllowFileSize + '(' + msgFileSize + 'MB)';                
                     }
                 }else{
                     errMsg = Validator.constMsgRequired;
