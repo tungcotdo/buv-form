@@ -114,8 +114,8 @@
                                     </div>
                                     <div class="scholarship-section__field-group validate" id="field__show-ccp-upload">
                                         <label class="text-italic  mr-1">An original Portfolio of Artwork (<a href="">Download template</a>)<span class="required__symbol">*</span></label>
-                                        <input class="scholarship-section__field-file-late" id="scholarship-section__field-file-ccp" type="file">
-                                        <small class="error-late-message"></small>
+                                        <input class="scholarship-section__field-file-ccp" id="scholarship-section__field-file-ccp" type="file">
+                                        <small class="ccp-error-message"></small>
                                     </div>
                                 </fieldset>
                                 <fieldset class="scholarship-section__fieldset-group scholarship-section__fieldset-sub-group">
@@ -175,73 +175,70 @@
                             <small class="error-message"></small>
                         </div>
 
-
-                        <div class="scholarship-section__fieldset-yn-group validate">
-                            <div class="scholarship-section__fieldset-yn-radio-group">
-                                <label class="scholarship-section__field-label">Have you taken an English test (IELTS, TOEFL or Others)?<span class="required__symbol">*</span></label>
-                                <div class="scholarship-section__field-yn-radio">
-                                    <div class="scholarship-section__field-radio-group">
-                                        <input type="radio" class="scholarship-section__field-radio-yn-input field__rb-eng-taken" name="field__rb-eng-taken" id="field__rb-eng-taken-yes" value="1">
-                                        <label class="scholarship-section__field-radio-label" for="field__rb-eng-taken-yes"> Yes</label>
-                                    </div>
-                                    <div class="scholarship-section__field-radio-group">
-                                        <input type="radio" class="scholarship-section__field-radio-yn-input field__rb-eng-taken" name="field__rb-eng-taken" id="field__rb-eng-taken-no" value="0">
-                                        <label class="scholarship-section__field-radio-label" for="field__rb-eng-taken-no"> No</label>
+                        <div class="validate">
+                            <div class="scholarship-section__fieldset-yn-group">
+                                <div class="scholarship-section__fieldset-yn-radio-group">
+                                    <label class="scholarship-section__field-label">Have you taken an English test (IELTS, TOEFL or Others)?<span class="required__symbol">*</span></label>
+                                    <div class="scholarship-section__field-yn-radio">
+                                        <div class="scholarship-section__field-radio-group">
+                                            <input type="radio" class="scholarship-section__field-radio-yn-input field__rb-eng-taken field__rb-eng-taken--yes" name="field__rb-eng-taken" id="field__rb-eng-taken-yes" value="1">
+                                            <label class="scholarship-section__field-radio-label" for="field__rb-eng-taken-yes"> Yes</label>
+                                        </div>
+                                        <div class="scholarship-section__field-radio-group">
+                                            <input type="radio" class="scholarship-section__field-radio-yn-input field__rb-eng-taken" name="field__rb-eng-taken" id="field__rb-eng-taken-no" value="0">
+                                            <label class="scholarship-section__field-radio-label" for="field__rb-eng-taken-no"> No</label>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div id="field__show-eng-result">
-                                <fieldset class="scholarship-section__fieldset-group">
-                                    <legend class="scholarship-section__fieldset-legen">Please provide the result</legend>
-                                    <div class="grid-desktop-six-col grid-ipad-three-col">
-                                        <div class="scholarship-section__field-group validate">
-                                            <label class="scholarship-section__field-label">Date taken<span class="required__symbol">*</span></label>
-                                            <input class="scholarship-section__field-textbox" type="text" id="scholarship-section__field-textbox--firstname">
-                                            <small class="error-message"></small>
+    
+                                <div id="field__show-eng-result">
+                                    <fieldset class="scholarship-section__fieldset-group">
+                                        <legend class="scholarship-section__fieldset-legen">Please provide the result</legend>
+                                        <div class="grid-desktop-six-col grid-ipad-three-col">
+                                            <div class="scholarship-section__field-group validate">
+                                                <label class="scholarship-section__field-label">Date taken<span class="required__symbol">*</span></label>
+                                                <input class="scholarship-section__field-textbox-eng-taken" type="text" id="scholarship-section__field-textbox-eng-date-taken">
+                                                <small class="error-message"></small>
+                                            </div>
+                                            <div class="scholarship-section__field-group validate">
+                                                <label class="scholarship-section__field-label">Listening<span class="required__symbol">*</span></label>
+                                                <input class="scholarship-section__field-textbox-eng-taken" type="text" id="scholarship-section__field-textbox-eng-listening">
+                                                <small class="error-message"></small>
+                                            </div>
+                                            <div class="scholarship-section__field-group validate">
+                                                <label class="scholarship-section__field-label">Reading<span class="required__symbol">*</span></label>
+                                                <input class="scholarship-section__field-textbox-eng-taken" type="text" id="scholarship-section__field-textbox-eng-reading">
+                                                <small class="error-message"></small>
+                                            </div>
+                                            <div class="scholarship-section__field-group validate">
+                                                <label class="scholarship-section__field-label">Writing<span class="required__symbol">*</span></label>
+                                                <input class="scholarship-section__field-textbox-eng-taken" type="text" id="scholarship-section__field-textbox-eng-writing">
+                                                <small class="error-message"></small>
+                                            </div>
+                                            <div class="scholarship-section__field-group validate">
+                                                <label class="scholarship-section__field-label">Speaking<span class="required__symbol">*</span></label>
+                                                <input class="scholarship-section__field-textbox-eng-taken" type="text" id="scholarship-section__field-textbox-eng-speaking">
+                                                <small class="error-message"></small>
+                                            </div>
+                                            <div class="scholarship-section__field-group validate">
+                                                <label class="scholarship-section__field-label">Overall score<span class="required__symbol">*</span></label>
+                                                <input class="scholarship-section__field-textbox-eng-taken" type="text" id="scholarship-section__field-textbox-eng-overall">
+                                                <small class="error-message"></small>
+                                            </div>
                                         </div>
-                                        <div class="scholarship-section__field-group validate">
-                                            <label class="scholarship-section__field-label">Listening<span class="required__symbol">*</span></label>
-                                            <input class="scholarship-section__field-textbox" type="text">
-                                            <small class="error-message"></small>
-                                        </div>
-                                        <div class="scholarship-section__field-group validate">
-                                            <label class="scholarship-section__field-label">Reading<span class="required__symbol">*</span></label>
-                                            <input class="scholarship-section__field-textbox" type="text">
-                                            <small class="error-message"></small>
-                                        </div>
-                                        <div class="scholarship-section__field-group validate">
-                                            <label class="scholarship-section__field-label">Writing<span class="required__symbol">*</span></label>
-                                            <input class="scholarship-section__field-textbox" type="text">
-                                            <small class="error-message"></small>
-                                        </div>
-                                        <div class="scholarship-section__field-group validate">
-                                            <label class="scholarship-section__field-label">Speaking<span class="required__symbol">*</span></label>
-                                            <input class="scholarship-section__field-textbox" type="text">
-                                            <small class="error-message"></small>
-                                        </div>
-                                        <div class="scholarship-section__field-group validate">
-                                            <label class="scholarship-section__field-label">Overall score<span class="required__symbol">*</span></label>
-                                            <input class="scholarship-section__field-textbox" type="text">
-                                            <small class="error-message"></small>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                                <div class="validate">
+                                    </fieldset>
                                     <div class="scholarship-section__field-file-group">
                                         <label class="scholarship-section__field-label">Notarised copy of IELTS/TOEFL/Other qualifications or copy of BUV Placement test result with valid date <span class="required__symbol">*</span></label>
-                                        <div><input type="file" class="scholarship-section__field-file" id="scholarship-section__field-file-evidence-of-ielts-toefl"></div>
+                                        <div class="validate">
+                                            <input type="file" class="scholarship-section__field-file-eng-taken" id="scholarship-section__field-file-evidence-of-ielts-toefl">
+                                            <small class="error-message"></small>
+                                        </div>
                                     </div>
-                                    <small class="error-message"></small>
+                                    <br>
                                 </div>
-                                <br>
                             </div>
-
-                            <small class="error-message"></small>
+                            <small class="error-message" id="taken-eng-error-message"></small>
                         </div>
-
-
-
                     </div>
                     <!-- /scholarship-section__field -->
 
@@ -288,23 +285,53 @@
         rules: [
             Validator.cbChecked({
                 selector : '#scholarship-section__proposed-study-programmes', 
-                msg : 'You must select at least one option/ Bạn phải lựa chọn ít nhất một option!',
+                msg : Validator.constMsgOneOption,
                 error: '#proposed-study-programmes-error-message'
             }),
             Validator.fileRequiredWhenCbChecked({
                 selector: '#scholarship-section__field-file-ccp',
                 checkbox: '.field-checkbox-ccp',
                 msg: 'Please upload file following template/ Vui lòng upload tệp theo mẫu',
-                error: '#field__show-ccp-upload .error-late-message'
+                error: '#field__show-ccp-upload .ccp-error-message'
             }),
             Validator.rbRequired({
                 selector: '.field__rb-eng-at-school'
             }),
             Validator.rbRequired({
-                selector: '.field__rb-eng-taken'
+                selector: '.field__rb-eng-taken',
+                error: '#taken-eng-error-message'
+            }),
+            Validator.tbRequiredWhenRbChecked({
+                selector: '#scholarship-section__field-textbox-eng-date-taken',
+                radiobox: '.field__rb-eng-taken--yes'
+            }),
+            Validator.tbRequiredWhenRbChecked({
+                selector: '#scholarship-section__field-textbox-eng-listening',
+                radiobox: '.field__rb-eng-taken--yes'
+            }),
+            Validator.tbRequiredWhenRbChecked({
+                selector: '#scholarship-section__field-textbox-eng-reading',
+                radiobox: '.field__rb-eng-taken--yes'
+            }),
+            Validator.tbRequiredWhenRbChecked({
+                selector: '#scholarship-section__field-textbox-eng-writing',
+                radiobox: '.field__rb-eng-taken--yes'
+            }),
+            Validator.tbRequiredWhenRbChecked({
+                selector: '#scholarship-section__field-textbox-eng-speaking',
+                radiobox: '.field__rb-eng-taken--yes'
+            }),
+            Validator.tbRequiredWhenRbChecked({
+                selector: '#scholarship-section__field-textbox-eng-overall',
+                radiobox: '.field__rb-eng-taken--yes'
+            }),
+            Validator.fileRequiredWhenRbChecked({
+                selector: '#scholarship-section__field-file-evidence-of-ielts-toefl',
+                radiobox: '.field__rb-eng-taken--yes'
             }),
         ],
         onSubmit: (data) => {
+            alert('success');
             document.getElementById("modal__loading").style.display = "block";
         }
     });

@@ -141,17 +141,18 @@
             rules: [
                 Validator.cbChecked({
                     selector : '#scholarship-section__field--cb-apply', 
-                    msg : 'You must select at least one option/ Bạn phải lựa chọn ít nhất một option!'
+                    msg : Validator.constMsgOneOption
                 }),
                 Validator.tbRequiredWhenCbChecked({
                     selector: '#scholarship-section__field-group-other-textbox',
                     checkbox: '.scholarship-section__field-group-other-cb',
-                    msg: 'You should speficy name of scholarship/ Bạn phải điền vào tên học bổng',
+                    msg: 'You must speficy the name of scholarship/ Bạn phải điền vào tên học bổng',
                     error: '#scholarship-section__field-group-other .error-late-message'
                 })
             ],
             onSubmit: (data) => {
                 document.getElementById("modal__loading").style.display = "block";
+                data.form.submit();
             }
         });
 

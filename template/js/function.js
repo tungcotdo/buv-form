@@ -1,6 +1,8 @@
 Validator.constMsgRequired = 'This field is required / Vui lòng không để trống thông tin này!';
+Validator.constMsgOneOption = 'You must select at least one option/ Bạn phải lựa chọn ít nhất một option!';
+
 Validator.constFileExt =  ['jpg', 'jpeg', 'png'];
-Validator.constFileSizeMB = 2;
+Validator.constFileSizeMB = 2; // Alow max file size <= 2MB
 Validator.constFileSize = 1000000 * Validator.constFileSizeMB;
 
 function Validator( options ) {
@@ -11,7 +13,6 @@ function Validator( options ) {
         var flagSubmit = true;
         var viewInvalidElement = [];
         
-
         options.rules.forEach( rule => {
            var elements = formElement.querySelectorAll(rule.selector);
             elements.forEach( element => {
@@ -28,8 +29,6 @@ function Validator( options ) {
                 }
             });
         });
-
-        
 
         if( flagSubmit ){
             var responses = {};
@@ -94,6 +93,11 @@ function Validator( options ) {
                             });
                         });
                       break;
+                    case 'rb':
+                        element.addEventListener("click", function(){ 
+                            validate(element, customRules[rule.selector], rule.error);
+                        });
+                        break;
                     case 'bd':
                         var slbs = element.querySelectorAll('select');
                         slbs.forEach(slb => {
@@ -182,7 +186,34 @@ Validator.tbRequiredWhenCbChecked = function({selector, checkbox, msg, error}) {
     };
 }
 
-Validator.fileRequiredWhenCbChecked = function({selector, size, extension, checkbox, msg, error}) {
+Validator.tbRequiredWhenRbChecked = function({selector, radiobox, msg, error}) {
+    var radioboxes = document.querySelectorAll(radiobox);
+    radioboxes.forEach( cb => {
+        cb.addEventListener("click", function(){ 
+            if( error ){
+                document.querySelector(error).innerText = '';
+            }
+            
+            var radioboxElement = document.querySelector(selector);
+            radioboxElement.value = '';
+            radioboxElement.closest('.validate').classList.remove('invalid', 'valid');
+        });
+    });
+
+    return {
+        type: 'tb',
+        selector: selector,
+        error: error,
+        test: function( element, formElement ){
+            return Functions.rbChecked(radioboxes) && !element.value.trim()
+                    ? msg 
+                    || Validator.constMsgRequired 
+                    : undefined;
+        }
+    };
+}
+
+Validator.fileRequiredWhenCbChecked = function({selector, size, extension, checkbox, error}) {
     var checkboxes = document.querySelectorAll(checkbox);
     checkboxes.forEach( cb => {
         cb.addEventListener("click", function(){ 
@@ -206,13 +237,55 @@ Validator.fileRequiredWhenCbChecked = function({selector, size, extension, check
                 var fileExtension = Functions.getFileExtension(element);
                 var allowExtension = extension ? extension : Validator.constFileExt;
                 if( !allowExtension.includes(fileExtension) ){
-                    errMsg = 'File extention must be: ' + allowExtension.join(' | ') + ''; 
+                    errMsg = 'File extention allow/ Đuôi mở rộng cho phép (' + allowExtension.join(' | ') + ')'; 
                 }else if( fileSize >  allowFileSize){
                     var msgFileSize = size ? size : Validator.constFileSizeMB;
-                    errMsg = 'File upload must be less than ' + msgFileSize + 'MB!';                
+                    errMsg = 'File upload must not be over/ Dung lượng không được vượt quá (' + msgFileSize + 'MB)';                
                 }
             }else{
                 errMsg = Validator.constMsgRequired;
+            }
+
+            return errMsg;
+        }
+    };
+}
+
+Validator.fileRequiredWhenRbChecked = function({selector, size, extension, radiobox, error}) {
+    var radioboxes = document.querySelectorAll(radiobox);
+    radioboxes.forEach( rb => {
+        rb.addEventListener("click", function(){ 
+            if( error ){
+                document.querySelector(error).innerText = '';
+            }
+            var fileElement = document.querySelector(selector);
+            fileElement.value = '';
+            fileElement.closest('.validate').classList.remove('invalid', 'valid');
+        });
+    });
+
+    return {
+        type: 'fi',
+        selector: selector,
+        error: error,
+        test: function( element, formElement ){
+
+            var errMsg = undefined;
+            if( Functions.rbChecked(radioboxes) ){
+                if( element.value.trim() ){
+                    var fileSize = element.files[0].size;
+                    var allowFileSize = size ? size * 1000000 : Validator.constFileSize;
+                    var fileExtension = Functions.getFileExtension(element);
+                    var allowExtension = extension ? extension : Validator.constFileExt;
+                    if( !allowExtension.includes(fileExtension) ){
+                        errMsg = 'File extention allow/ Đuôi mở rộng cho phép (' + allowExtension.join(' | ') + ')'; 
+                    }else if( fileSize >  allowFileSize){
+                        var msgFileSize = size ? size : Validator.constFileSizeMB;
+                        errMsg = 'File upload must not be over/ Dung lượng không được vượt quá (' + msgFileSize + 'MB)';                
+                    }
+                }else{
+                    errMsg = Validator.constMsgRequired;
+                }
             }
 
             return errMsg;
@@ -235,10 +308,10 @@ Validator.file = function({selector, size, extension}) {
                 var fileExtension = Functions.getFileExtension(element);
                 var allowExtension = extension ? extension : Validator.constFileExt;
                 if( !allowExtension.includes(fileExtension) ){
-                    errMsg = 'File extention must be: ' + allowExtension.join(' | ') + ''; 
+                    errMsg = 'File extention allow/ Đuôi mở rộng cho phép (' + allowExtension.join(' | ') + ')';  
                 }else if( fileSize >  allowFileSize){
                     var msgFileSize = size ? size : Validator.constFileSizeMB;
-                    errMsg = 'File upload must be less than ' + msgFileSize + 'MB!';                
+                    errMsg = 'File upload must not be over/ Dung lượng tệp tin không được vượt quá (' + msgFileSize + 'MB)';                 
                 }
             }
 
@@ -247,10 +320,11 @@ Validator.file = function({selector, size, extension}) {
     };
 }
 
-Validator.rbRequired = function({selector, msg}) {
+Validator.rbRequired = function({selector, msg, error}) {
     return {
         type: 'rb',
         selector: selector,
+        error: error,
         test: function( element, formElement ){
             let rbElements = formElement.querySelectorAll(selector);
             let rbCheckFlag = false;
@@ -347,6 +421,15 @@ var Functions = {
         var checkedFlag = false;
         cbs.forEach(cb => {
             if (cb.checked) {
+                checkedFlag = true;
+            }
+        });
+        return checkedFlag;
+    },
+    rbChecked : function(rds){
+        var checkedFlag = false;
+        rds.forEach(rb => {
+            if (rb.checked) {
                 checkedFlag = true;
             }
         });
