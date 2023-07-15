@@ -1,9 +1,9 @@
 Validator.message = {
-    'required'  : 'This field is required / Vui lòng không để trống thông tin này!',
+    'required'  : 'This field is required/ Vui lòng không để trống thông tin này!',
     'option'    : 'You must select at least one option/ Bạn phải lựa chọn ít nhất một option!',
     'extension' : 'Allowable extension/ Đuôi mở rộng cho phép ',
     'size'      : 'File size must not exceed/ Dung lượng không được vượt quá ',
-    'email'     : 'Email address is not valid / Địa chỉ email không hợp lệ!'
+    'email'     : 'Email address is not valid/ Địa chỉ email không hợp lệ!'
 }
 
 function Validator( options ) {
