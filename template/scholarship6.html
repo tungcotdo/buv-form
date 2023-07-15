@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/modal.css">
 
     <link rel="stylesheet" href="scholarship/css/style.css">
 
@@ -63,7 +64,7 @@
 
 
 
-            <form class="scholarship__form" action="scholarship7.html">
+            <form class="scholarship__form" id="scholarship__form" action="scholarship7.html">
                 <div class="scholarship__section">
                     <p class="scholarship__note">
                         Note: (<span class="required__symbol">*</span>) This field is required/ <span class="text__vi">Vui lòng không để trống thông tin này!</span>
@@ -75,39 +76,49 @@
 
                     <div class="scholarship-section__field">
 
-                        <div class="scholarship-section__field-textarea-group">
+                        <div class="scholarship-section__field-textarea-group validate">
                             <label class="scholarship-section__field-label">1. Briefly give the reasons why you feel you are an ideal candidate for this scholarship.<span class="required__symbol">*</span></label>
-                            <textarea class="scholarship-section__field-textarea-input" type="text"></textarea>
+                            <textarea class="scholarship-section__field-textarea-input" id="scholarship-section__field-textarea-input-statement1" type="text"></textarea>
+                            <small class="error-message"></small>
                         </div>
 
-                        <div class="scholarship-section__field-textarea-group">
+                        <div class="scholarship-section__field-textarea-group validate">
                             <label class="scholarship-section__field-label">2. What one thing outside of school has been the most challenging for you so far?<span class="required__symbol">*</span></label>
-                            <textarea class="scholarship-section__field-textarea-input" type="text"></textarea>
+                            <textarea class="scholarship-section__field-textarea-input" id="scholarship-section__field-textarea-input-statement2" type="text"></textarea>
+                            <small class="error-message"></small>
                         </div>
 
-                        <div class="scholarship-section__field-textarea-group">
+                        <div class="scholarship-section__field-textarea-group validate">
                             <label class="scholarship-section__field-label">3. How will the major that you have applied for will contribute significantly to the development of Vietnam?<span class="required__symbol">*</span></label>
-                            <textarea class="scholarship-section__field-textarea-input" type="text"></textarea>
+                            <textarea class="scholarship-section__field-textarea-input" id="scholarship-section__field-textarea-input-statement3" type="text"></textarea>
+                            <small class="error-message"></small>
                         </div>
 
-                        <div class="scholarship-section__field-textarea-group">
+                        <div class="scholarship-section__field-textarea-group validate">
                             <label class="scholarship-section__field-label">4. In your field of interest, who do you admire most and why? <span class="required__symbol">*</span></label>
-                            <textarea class="scholarship-section__field-textarea-input" type="text"></textarea>
+                            <textarea class="scholarship-section__field-textarea-input" id="scholarship-section__field-textarea-input-statement4" type="text"></textarea>
+                            <small class="error-message"></small>
                         </div>
 
-                        <div class="scholarship-section__field-textarea-group">
+                        <div class="scholarship-section__field-textarea-group validate">
                             <label class="scholarship-section__field-label">5. How will you contribute to British University Vietnam if you study here? <span class="required__symbol">*</span></label>
-                            <textarea class="scholarship-section__field-textarea-input" type="text"></textarea>
+                            <textarea class="scholarship-section__field-textarea-input" id="scholarship-section__field-textarea-input-statement5" type="text"></textarea>
+                            <small class="error-message"></small>
                         </div>
 
-                        <div class="scholarship-section__field-textarea-group">
+                        <div class="scholarship-section__field-textarea-group validate">
                             <label class="scholarship-section__field-label">6. Is there anything else you would like to add in support of your application for this scholarship? Give details. <span class="required__symbol">*</span></label>
-                            <textarea class="scholarship-section__field-textarea-input" type="text"></textarea>
+                            <textarea class="scholarship-section__field-textarea-input" id="scholarship-section__field-textarea-input-statement6" type="text"></textarea>
+                            <small class="error-message"></small>
                         </div>
 
                         <div class="scholarship-section__field-group">
                             <label class="scholarship-section__field-label">Personal Statement in English (<a href="">Download template</a>)<span class="required__symbol">*</span></label>
-                            <input class="scholarship-section__field-file" type="file">
+                            <div class="validate">
+                                <small class="note-message-file"></small>
+                                <input type="file" class="scholarship-section__field-file" id="scholarship-section__field-file-personal-statement">
+                                <small class="error-message"></small>
+                            </div>
                         </div>
                     </div>
                     <!-- /scholarship-section__field -->
@@ -131,9 +142,48 @@
         <div class="modal__overlay"></div>
         <div class="modal__content">
             <div class="loader"></div>
-            <div class="loading__title">Đang chờ xử lý ...</div>
+            <div class="loading__title">Processing ...<br>Please do not close the browser</div>
         </div>
     </div>
 
+    <script src="js/function.js"></script>
+    <script>
+    
+        Validator({
+            form: '#scholarship__form',
+            rules: [
+                Validator.tbRequired({
+                    selector: '#scholarship-section__field-textarea-input-statement1'
+                }),
+                Validator.tbRequired({
+                    selector: '#scholarship-section__field-textarea-input-statement2'
+                }),
+                Validator.tbRequired({
+                    selector: '#scholarship-section__field-textarea-input-statement3'
+                }),
+                Validator.tbRequired({
+                    selector: '#scholarship-section__field-textarea-input-statement4'
+                }),
+                Validator.tbRequired({
+                    selector: '#scholarship-section__field-textarea-input-statement5'
+                }),
+                Validator.tbRequired({
+                    selector: '#scholarship-section__field-textarea-input-statement6'
+                }),
+                Validator.file({
+                    selector: '#scholarship-section__field-file-personal-statement',
+                    required: true,
+                    extension: ['jpg', 'jpeg', 'png','pdf'],
+                    size: 2,
+                })
+            ],
+            onSubmit: (data) => {
+                document.getElementById("modal__loading").style.display = "block";
+                data.form.submit();
+            }
+        });
+    
+        
+    </script>
 </body>
 </html>

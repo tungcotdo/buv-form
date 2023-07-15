@@ -232,7 +232,7 @@ Validator.fileRequiredWhenCbChecked = function({selector, required, size, extens
         });
     });
 
-    Functions.displayNoteMessage(selector, extension);
+    Functions.displayNoteMessage(selector, extension, size);
 
     return {
         type: 'fi',
@@ -264,7 +264,7 @@ Validator.fileRequiredWhenRbChecked = function({selector, required, size, extens
         });
     });
 
-    Functions.displayNoteMessage(selector, extension);
+    Functions.displayNoteMessage(selector, extension, size);
 
     return {
         type: 'fi',
@@ -280,7 +280,7 @@ Validator.fileRequiredWhenRbChecked = function({selector, required, size, extens
 }
 
 Validator.file = function({selector,required, size, extension}) {
-    Functions.displayNoteMessage(selector, extension);
+    Functions.displayNoteMessage(selector, extension, size);
 
     return {
         type: 'fi',
@@ -382,10 +382,10 @@ Validator.slbRequired = function ({selector, msg}){
 // Function
 var Functions = {
 
-    displayNoteMessage: function(selector, extension){
+    displayNoteMessage: function(selector, extension, size){
         var fileNoteMsg = document.querySelector(selector).closest('.validate').querySelector('.note-message-file');
         if( fileNoteMsg ){
-            fileNoteMsg.innerText = Validator.message.extension + '(' + extension.join(' | ') + ')';
+            fileNoteMsg.innerText = 'Allowable extension (' + extension.join(' | ') + ') and size <= '+ size +'MB';
         }
     },
     checkfile: function({element, required, extension, size}){
@@ -405,7 +405,7 @@ var Functions = {
         if( size && element.value.trim() ){
             var fileSize = element.files[0].size;
             var allowFileSize = size * 1000000;
-            if( fileSize >  allowFileSize){
+            if( fileSize >=  allowFileSize){
                 return Validator.message.size + '(' + size + 'MB)';                
             }
         }

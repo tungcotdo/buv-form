@@ -113,7 +113,7 @@
                                         <label class="scholarship-section__field-checkbox-label" for="scholarship-section__field-checkbox-input-8"> Photography</label>
                                     </div>
                                     <div class="scholarship-section__field-group validate" id="field__show-ccp-upload">
-                                        <label class="text-italic  mr-1">An original Portfolio of Artwork (<a href="">Download template</a>)<span class="required__symbol">*</span></label><br>
+                                        <label class="mr-1">An original Portfolio of Artwork (<a href="">Download template</a>)<span class="required__symbol">*</span></label><br>
                                         <small class="note-message-file"></small>
                                         <input class="scholarship-section__field-file-ccp" id="scholarship-section__field-file-ccp" type="file">
                                         <small class="error-message-ccp"></small>
@@ -295,7 +295,8 @@
                 required: true,
                 checkbox: '.field-checkbox-ccp',
                 error: '#field__show-ccp-upload .error-message-ccp',
-                extension: ['jpg', 'jpeg', 'png','pdf']
+                extension: ['jpg', 'jpeg', 'png','pdf'],
+                size: 2,
             }),
             Validator.rbRequired({
                 selector: '.field__rb-eng-at-school'
@@ -338,6 +339,7 @@
         ],
         onSubmit: (data) => {
             document.getElementById("modal__loading").style.display = "block";
+            data.form.submit();
         }
     });
 

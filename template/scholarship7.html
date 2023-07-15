@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/modal.css">
 
     <link rel="stylesheet" href="scholarship/css/style.css">
 
@@ -61,7 +62,7 @@
                 </div>
             </div>
 
-            <form class="scholarship__form" action="scholarship8.html">
+            <form class="scholarship__form" id="scholarship__form" action="scholarship8.html">
                 <div class="scholarship__section">
                     <p class="scholarship__note">
                         Note: (<span class="required__symbol">*</span>) This field is required/ <span class="text__vi">Vui lòng không để trống thông tin này!</span>
@@ -73,22 +74,38 @@
 
                         <div class="scholarship-section__field-file-group">
                             <label class="scholarship-section__field-label">Recommendation Letter(s) (English-translated copy if not in English) (<a href="">Download template</a>) <span class="required__symbol">*</span></label>
-                            <input type="file" class="scholarship-section__field-file-input">
+                            <div class="validate">
+                                <small class="note-message-file"></small>
+                                <input type="file" class="scholarship-section__field-file" id="scholarship-section__field-file-document-recommenddation">
+                                <small class="error-message"></small>
+                            </div>
                         </div>
 
                         <div class="scholarship-section__field-file-group">
                             <label class="scholarship-section__field-label">Evidence (English-translated notarised copy) of disability or in need of financial support, i.e. “Giấy Chứng nhận hộ nghèo” (if relevant)</label>
-                            <input type="file" class="scholarship-section__field-file-input">
+                            <div class="validate">
+                                <small class="note-message-file"></small>
+                                <input type="file" class="scholarship-section__field-file" id="scholarship-section__field-file-document-disability">
+                                <small class="error-message"></small>
+                            </div>
                         </div>
 
                         <div class="scholarship-section__field-file-group">
                             <label class="scholarship-section__field-label">Copy of scholarship application fee receipt of payment (2,000,000 VND)*</span></label>
-                            <input type="file" class="scholarship-section__field-file-input">
+                            <div class="validate">
+                                <small class="note-message-file"></small>
+                                <input type="file" class="scholarship-section__field-file" id="scholarship-section__field-file-document-fee-receipt">
+                                <small class="error-message"></small>
+                            </div>
                         </div>
 
                         <div class="scholarship-section__field-file-group">
                             <label class="scholarship-section__field-label">Other documents (English-translated copy if not in English)</label>
-                            <input type="file" class="scholarship-section__field-file-input">
+                            <div class="validate">
+                                <small class="note-message-file"></small>
+                                <input type="file" class="scholarship-section__field-file" id="scholarship-section__field-file-document-other">
+                                <small class="error-message"></small>
+                            </div>
                         </div>
 
                         <div class="scholarship-section__field-textarea-group">
@@ -98,25 +115,18 @@
                         
                         <div>
                             <br>
-
                             <p>Payment method: Cash or card at British University Vietnam, Ecopark Township, Van Giang, Hung Yen or bank transfer to one of the below 
                                 accounts with the content “Scholarship fee 2023-[Applicant’s Full name]-[Applicant’s Date of birth]</p>
-                            
                             <br>
-
                             <ul>
                                 <li>Account name: BRITISH UNIVERSITY VIETNAM</li>
                                 <li>Account number: VND88136924588</li>
                                 <li>Bank name: Standard Chartered Bank Vietnam Ltd - Le Dai Hanh branch</li>
                                 <li>Swift Code: SCBLVNVX</li>
                             </ul>
-
                             <br>
-
                             <p>OR</p>
-
                             <br>
-
                             <ul>
                                 <li>Account name: CONG TY TNHH TRUONG DAI HOC ANH QUOC VIET NAM</li>
                                 <li>Account number: 0591000392486</li>
@@ -149,9 +159,42 @@
         <div class="modal__overlay"></div>
         <div class="modal__content">
             <div class="loader"></div>
-            <div class="loading__title">Đang chờ xử lý ...</div>
+            <div class="loading__title">Processing ...<br>Please do not close the browser</div>
         </div>
     </div>
 
+    <script src="js/function.js"></script>
+    <script>
+        Validator({
+            form: '#scholarship__form',
+            rules: [
+                Validator.file({
+                    selector: '#scholarship-section__field-file-document-recommenddation',
+                    required: true,
+                    extension: ['jpg', 'jpeg', 'png','pdf'],
+                    size: 2,
+                }),
+                Validator.file({
+                    selector: '#scholarship-section__field-file-document-disability',
+                    extension: ['jpg', 'jpeg', 'png','pdf'],
+                    size: 2,
+                }),
+                Validator.file({
+                    selector: '#scholarship-section__field-file-document-fee-receipt',
+                    extension: ['jpg', 'jpeg', 'png','pdf'],
+                    size: 2,
+                }),
+                Validator.file({
+                    selector: '#scholarship-section__field-file-document-other',
+                    extension: ['jpg', 'jpeg', 'png','pdf'],
+                    size: 2,
+                })
+            ],
+            onSubmit: (data) => {
+                document.getElementById("modal__loading").style.display = "block";
+                data.form.submit();
+            }
+        });
+    </script>
 </body>
 </html>

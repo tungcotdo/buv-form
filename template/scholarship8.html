@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/modal.css">
+
     <link rel="stylesheet" href="scholarship/css/style.css">
 
 </head>
@@ -60,7 +62,7 @@
                 </div>
             </div>
 
-            <form class="scholarship__form">
+            <form class="scholarship__form" id="scholarship__form">
                 <div class="scholarship__section">
                     <p class="scholarship__note">
                         Note: (<span class="required__symbol">*</span>) This field is required/ <span class="text__vi">Vui lòng không để trống thông tin này!</span>
@@ -78,9 +80,12 @@
                             <p class="scholarship-section__field-condition-item"><b>5</b>. I hereby declare that I have not committed any criminal offences and am able to provide a criminal record check when required.
                         </div>
 
-                        <div class="scholarship-section__field-checkbox-group">
-                            <input type="checkbox" class="scholarship-section__field-checkbox-input" id="scholarship-section__field-checkbox-input-agree">
-                            <label class="scholarship-section__field-checkbox-label" for="scholarship-section__field-checkbox-input-agree"> Please tick here if you agree to the terms and conditions</label>
+                        <div class="validate" id="scholarship-section__field-file-group-agree">
+                            <div class="scholarship-section__field-file-group-agree">
+                                <input type="checkbox" class="scholarship-section__field-checkbox-input" id="scholarship-section__field-checkbox-input-agree">
+                                <label class="scholarship-section__field-checkbox-label" for="scholarship-section__field-checkbox-input-agree"> Please tick here if you agree to the terms and conditions</label>
+                            </div>
+                            <small class="error-message"></small>
                         </div>
 
                         <div class="scholarship-section__field-signature">
@@ -105,14 +110,31 @@
         </div><!-- container -->
     </div><!-- scholarship -->
 
+   
     <!-- Modal loading page -->
     <div class="modal" id="modal__loading">
         <div class="modal__overlay"></div>
         <div class="modal__content">
             <div class="loader"></div>
-            <div class="loading__title">Đang chờ xử lý ...</div>
+            <div class="loading__title">Processing ...<br>Please do not close the browser</div>
         </div>
     </div>
 
+    <script src="js/function.js"></script>
+    <script>
+        Validator({
+            form: '#scholarship__form',
+            rules: [
+                Validator.cbChecked({
+                    selector : '#scholarship-section__field-file-group-agree', 
+                    msg : 'Please tick here if you agree to the terms and conditions/ Vui lòng đánh dấu vào đây nếu bạn đồng ý với các điều khoản và điều kiện!'
+                })
+            ],
+            onSubmit: (data) => {
+                document.getElementById("modal__loading").style.display = "block";
+                data.form.submit();
+            }
+        });
+    </script>
 </body>
 </html>

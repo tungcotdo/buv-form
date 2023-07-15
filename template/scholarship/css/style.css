@@ -418,11 +418,16 @@
     font-weight: bold;
 }
 
+.scholarship-section__field-file-group-agree{
+    display: flex;
+    align-items: center;
+}
+
 .scholarship-section__field-signature{
     /* background-color: red; */
     text-align: center;
     width: 350px;
-    margin-bottom: var(--space-fou);
+    margin: var(--space-fou) 0;
 }
 
 .scholarship-section__field-input-signature{
