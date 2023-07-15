@@ -451,8 +451,13 @@
     cursor: pointer;
 }
 
-.ccp-error-message{
+.error-message-other,
+.error-message-ccp{
     color: var(--color-fir);
+}
+
+.note-message-file{
+    line-height: 17px;
 }
 
 /* Validate color */
@@ -464,7 +469,8 @@
 .valid .scholarship-section__field-textarea-input,
 .valid>.scholarship-section__field-group-other-textbox,
 .valid>.scholarship-section__field-textbox-eng-taken,
-.valid>.scholarship-section__field-file-eng-taken{
+.valid>.scholarship-section__field-file-eng-taken,
+.valid>.scholarship-section__field-file-ccp{
     background-color: #eaf8e9!important;
     border: 1px solid #91f08c!important;
 }
@@ -484,7 +490,8 @@
 .invalid .scholarship-section__field-textarea-input,
 .invalid>.scholarship-section__field-group-other-textbox,
 .invalid>.scholarship-section__field-textbox-eng-taken,
-.invalid>.scholarship-section__field-file-eng-taken{
+.invalid>.scholarship-section__field-file-eng-taken,
+.invalid>.scholarship-section__field-file-ccp{
     background-color: #f5dfdf!important;
     border: 1px solid #f08c8c!important;
 }

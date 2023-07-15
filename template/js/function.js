@@ -1,12 +1,10 @@
-Validator.constMsgRequired = 'This field is required / Vui lòng không để trống thông tin này!';
-Validator.constMsgOneOption = 'You must select at least one option/ Bạn phải lựa chọn ít nhất một option!';
-Validator.constMsgAllowFileExt = 'File extention allow/ Đuôi mở rộng cho phép';
-Validator.constMsgAllowFileSize = 'File upload must not be over/ Dung lượng không được vượt quá';
-Validator.constMsgEmailFormat = 'The e-mail address entered is invalid / Địa chỉ email không hợp lệ!';
-
-Validator.constFileExt =  ['jpg', 'jpeg', 'png'];
-Validator.constFileSizeMB = 2; // Alow max file size <= 2MB
-Validator.constFileSize = 1000000 * Validator.constFileSizeMB;
+Validator.message = {
+    'required'  : 'This field is required / Vui lòng không để trống thông tin này!',
+    'option'    : 'You must select at least one option/ Bạn phải lựa chọn ít nhất một option!',
+    'extension' : 'Allowable extension/ Đuôi mở rộng cho phép ',
+    'size'      : 'File size must not exceed/ Dung lượng không được vượt quá ',
+    'email'     : 'Email address is not valid / Địa chỉ email không hợp lệ!'
+}
 
 function Validator( options ) {
     var formElement = document.querySelector(options.form);
@@ -146,7 +144,7 @@ Validator.email = function({selector, msg}) {
             return checkEmail(element.value) 
                     ? undefined 
                     : msg  
-                    || Validator.constMsgEmailFormat;
+                    || Validator.message.email;
         }
     };
 }
@@ -160,7 +158,7 @@ Validator.tbRequired = function({selector, msg, error}) {
             return element.value.trim()
                     ? undefined 
                     : msg 
-                    || Validator.constMsgRequired;
+                    || Validator.message.required;
         }
     };
 }
@@ -169,9 +167,12 @@ Validator.tbRequiredWhenCbChecked = function({selector, checkbox, msg, error}) {
     var checkboxes = document.querySelectorAll(checkbox);
     checkboxes.forEach( cb => {
         cb.addEventListener("click", function(){ 
-            document.querySelector(error).innerText = '';
             var textboxElement = document.querySelector(selector);
-            textboxElement.value = '';
+            if( error ){
+                document.querySelector(error).innerText = '';
+            }else{
+                textboxElement.closest('.validate').querySelector('.error-message').innerText = '';
+            }
             textboxElement.closest('.validate').classList.remove('invalid', 'valid');
         });
     });
@@ -183,7 +184,7 @@ Validator.tbRequiredWhenCbChecked = function({selector, checkbox, msg, error}) {
         test: function( element, formElement ){
             return Functions.cbChecked(checkboxes) && !element.value.trim()
                     ? msg 
-                    || Validator.constMsgRequired 
+                    || Validator.message.required 
                     : undefined;
         }
     };
@@ -193,12 +194,12 @@ Validator.tbRequiredWhenRbChecked = function({selector, radiobox, msg, error}) {
     var radioboxes = document.querySelectorAll(radiobox);
     radioboxes.forEach( cb => {
         cb.addEventListener("click", function(){ 
+            var radioboxElement = document.querySelector(selector);
             if( error ){
                 document.querySelector(error).innerText = '';
+            }else{
+                radioboxElement.closest('.validate').querySelector('.error-message').innerText = '';
             }
-            
-            var radioboxElement = document.querySelector(selector);
-            radioboxElement.value = '';
             radioboxElement.closest('.validate').classList.remove('invalid', 'valid');
         });
     });
@@ -210,115 +211,82 @@ Validator.tbRequiredWhenRbChecked = function({selector, radiobox, msg, error}) {
         test: function( element, formElement ){
             return Functions.rbChecked(radioboxes) && !element.value.trim()
                     ? msg 
-                    || Validator.constMsgRequired 
+                    || Validator.message.required 
                     : undefined;
         }
     };
 }
 
-Validator.fileRequiredWhenCbChecked = function({selector, size, extension, checkbox, error}) {
+Validator.fileRequiredWhenCbChecked = function({selector, required, size, extension, checkbox, error}) {
     var checkboxes = document.querySelectorAll(checkbox);
     checkboxes.forEach( cb => {
         cb.addEventListener("click", function(){ 
-            document.querySelector(error).innerText = '';
             var fileElement = document.querySelector(selector);
+            if( error ){
+                document.querySelector(error).innerText = '';
+            }else{
+                fileElement.closest('.validate').querySelector('.error-message').innerText = '';
+            }
             fileElement.value = '';
             fileElement.closest('.validate').classList.remove('invalid', 'valid');
         });
     });
+
+    Functions.displayNoteMessage(selector, extension);
 
     return {
         type: 'fi',
         selector: selector,
         error: error,
         test: function( element, formElement ){
-
-            var errMsg = undefined;
-            if(  Functions.cbChecked(checkboxes) && element.value.trim() ){
-                var fileSize = element.files[0].size;
-                var allowFileSize = size ? size * 1000000 : Validator.constFileSize;
-                var fileExtension = Functions.getFileExtension(element);
-                var allowExtension = extension ? extension : Validator.constFileExt;
-                if( !allowExtension.includes(fileExtension) ){
-                    errMsg = Validator.constMsgAllowFileExt + '(' + allowExtension.join(' | ') + ')'; 
-                }else if( fileSize >  allowFileSize){
-                    var msgFileSize = size ? size : Validator.constFileSizeMB;
-                    errMsg = Validator.constMsgAllowFileSize + '(' + msgFileSize + 'MB)';                
-                }
-            }else{
-                errMsg = Validator.constMsgRequired;
+            if(  Functions.cbChecked(checkboxes)){
+                return Functions.checkfile({element, required, extension, size});
             }
-
-            return errMsg;
+            return undefined;
         }
     };
 }
 
-Validator.fileRequiredWhenRbChecked = function({selector, size, extension, radiobox, error}) {
+Validator.fileRequiredWhenRbChecked = function({selector, required, size, extension, radiobox, error}) {
     var radioboxes = document.querySelectorAll(radiobox);
     radioboxes.forEach( rb => {
         rb.addEventListener("click", function(){ 
+            var fileElement = document.querySelector(selector);
+            
             if( error ){
                 document.querySelector(error).innerText = '';
+            }else{
+                fileElement.closest('.validate').querySelector('.error-message').innerText = '';
             }
-            var fileElement = document.querySelector(selector);
+            
             fileElement.value = '';
             fileElement.closest('.validate').classList.remove('invalid', 'valid');
         });
     });
+
+    Functions.displayNoteMessage(selector, extension);
 
     return {
         type: 'fi',
         selector: selector,
         error: error,
         test: function( element, formElement ){
-
-            var errMsg = undefined;
             if( Functions.rbChecked(radioboxes) ){
-                if( element.value.trim() ){
-                    var fileSize = element.files[0].size;
-                    var allowFileSize = size ? size * 1000000 : Validator.constFileSize;
-                    var fileExtension = Functions.getFileExtension(element);
-                    var allowExtension = extension ? extension : Validator.constFileExt;
-                    if( !allowExtension.includes(fileExtension) ){
-                        errMsg = Validator.constMsgAllowFileExt + '(' + allowExtension.join(' | ') + ')';
-                    }else if( fileSize >  allowFileSize){
-                        var msgFileSize = size ? size : Validator.constFileSizeMB;
-                        errMsg = Validator.constMsgAllowFileSize + '(' + msgFileSize + 'MB)';                
-                    }
-                }else{
-                    errMsg = Validator.constMsgRequired;
-                }
+                return Functions.checkfile({element, required, extension, size});
             }
-
-            return errMsg;
+            return undefined;
         }
     };
 }
 
-Validator.file = function({selector, size, extension}) {
+Validator.file = function({selector,required, size, extension}) {
+    Functions.displayNoteMessage(selector, extension);
+
     return {
         type: 'fi',
         selector: selector,
         test: function( element, formElement ){
-
-            var errMsg = undefined;
-            if( !element.value.trim() ){
-                errMsg = Validator.constMsgRequired;
-            }else{
-                var fileSize = element.files[0].size;
-                var allowFileSize = size ? size * 1000000 : Validator.constFileSize;
-                var fileExtension = Functions.getFileExtension(element);
-                var allowExtension = extension ? extension : Validator.constFileExt;
-                if( !allowExtension.includes(fileExtension) ){
-                    errMsg = 'File extention allow/ Đuôi mở rộng cho phép (' + allowExtension.join(' | ') + ')';  
-                }else if( fileSize >  allowFileSize){
-                    var msgFileSize = size ? size : Validator.constFileSizeMB;
-                    errMsg = 'File upload must not be over/ Dung lượng tệp tin không được vượt quá (' + msgFileSize + 'MB)';                 
-                }
-            }
-
-            return errMsg;
+            return Functions.checkfile({element, required, extension, size});
         }
     };
 }
@@ -339,7 +307,7 @@ Validator.rbRequired = function({selector, msg, error}) {
             return rbCheckFlag 
                     ? undefined 
                     : msg  
-                    || Validator.constMsgRequired;
+                    || Validator.message.required;
         }
     };
 }
@@ -349,7 +317,6 @@ Validator.isPInt = function({selector, msg}) {
         type: 'tb',
         selector: selector,
         test: function( element, formElement ){
-
             return parseInt(element.value) > 0 || !element.value.trim() 
                     ? undefined 
                     : msg 
@@ -365,11 +332,10 @@ Validator.cbChecked = function ({selector, msg, error}) {
         error: error,
         test: function( element, formElement ){
             var cbs = element.querySelectorAll('input[type="checkbox"]');
-
             return Functions.cbChecked(cbs) 
                     ? undefined 
                     : msg 
-                    || Validator.constMsgRequired;
+                    || Validator.message.required;
         }
     };
 }
@@ -408,7 +374,7 @@ Validator.slbRequired = function ({selector, msg}){
             return  element.value
                     ? undefined 
                     : msg 
-                    || Validator.constMsgRequired;
+                    || Validator.message.required;
         }
     };
 }
@@ -416,6 +382,36 @@ Validator.slbRequired = function ({selector, msg}){
 // Function
 var Functions = {
 
+    displayNoteMessage: function(selector, extension){
+        var fileNoteMsg = document.querySelector(selector).closest('.validate').querySelector('.note-message-file');
+        if( fileNoteMsg ){
+            fileNoteMsg.innerText = Validator.message.extension + '(' + extension.join(' | ') + ')';
+        }
+    },
+    checkfile: function({element, required, extension, size}){
+        if( required && !element.value.trim() ){
+            return Validator.message.required;
+        }
+
+        // Check file extension
+        if( extension && element.value.trim() ){
+            var fileExtension = Functions.getFileExtension(element);
+            if( !extension.includes(fileExtension) ){
+                return Validator.message.extension + '(' + extension.join(' | ') + ')';
+            }
+        }
+
+        // Check file size
+        if( size && element.value.trim() ){
+            var fileSize = element.files[0].size;
+            var allowFileSize = size * 1000000;
+            if( fileSize >  allowFileSize){
+                return Validator.message.size + '(' + size + 'MB)';                
+            }
+        }
+
+        return undefined;
+    },
     getFileExtension : function( element ){
         var fileName = element.files[0].name;
         return fileName.split('.').pop();

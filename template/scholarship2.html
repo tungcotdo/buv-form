@@ -172,11 +172,13 @@
                             </div>
                             <div class="scholarship-section__field-group validate">
                                 <label class="scholarship-section__field-label">Passport-sized photograph<span class="required__symbol">*</span></label>
+                                <small class="note-message-file"></small>
                                 <input class="scholarship-section__field-file" type="file" id="scholarship-section__field-file--passportphoto">
                                 <small class="error-message"></small>
                             </div>
                             <div class="scholarship-section__field-group validate">
                                 <label class="scholarship-section__field-label">Notarised copy of ID card/Passport<span class="required__symbol">*</span></label>
+                                <small class="note-message-file"></small>
                                 <input class="scholarship-section__field-file" type="file" id="scholarship-section__field-file--passportcopy">
                                 <small class="error-message"></small>
                             </div>
@@ -301,11 +303,13 @@
                 }),
                 Validator.file({
                     selector: '#scholarship-section__field-file--passportphoto',
+                    required: true,
                     size: 1,
                     extension: ['jpg', 'jpeg', 'png','pdf']
                 }),
                 Validator.file({
                     selector: '#scholarship-section__field-file--passportcopy',
+                    required: true,
                     size: 3,
                     extension: ['jpg', 'jpeg', 'png']
                 }),

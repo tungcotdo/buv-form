@@ -244,19 +244,28 @@
 
                         <div class="scholarship-section__field-file-group">
                             <label class="scholarship-section__field-label">English-translated notarised copy of high school graduation certificate OR provisional high school graduation certificate (if applicable)</label>
-                            <div><input type="file" class="scholarship-section__field-file"></div>
+                            <div class="validate">
+                                <small class="note-message-file"></small>
+                                <input type="file" class="scholarship-section__field-file" id="scholarship-section__field-file-english-translated-highschool">
+                                <small class="error-message"></small>
+                            </div>
                         </div>
 
                         <div class="scholarship-section__field-file-group">
                             <label class="scholarship-section__field-label">English-translated notarised copy of academic transcript for grades 10, 11 and 12 and other transcript(s) <span class="required__symbol">*</span></label>
                             <div class="validate">
+                                <small class="note-message-file"></small>
                                 <input type="file" class="scholarship-section__field-file" id="scholarship-section__field-file-english-translated-academic">
                                 <small class="error-message"></small>
                             </div>
                         </div>
                         <div class="scholarship-section__field-file-group">
                             <label class="scholarship-section__field-label">International Qualifications (if any): English-translated notarised Certificate(s) and notarised transcript(s)</label>
-                            <div><input type="file" class="scholarship-section__field-file"></div>
+                            <div class="validate">
+                                <small class="note-message-file"></small>
+                                <input type="file" class="scholarship-section__field-file" id="scholarship-section__field-file-english-translated-internationalqualification">
+                                <small class="error-message"></small>
+                            </div>
                         </div>
 
                     </div>
@@ -305,7 +314,18 @@
                     selector: '#scholarship-section__field-textbox-gpa-qualification1'
                 }),
                 Validator.file({
+                    selector: '#scholarship-section__field-file-english-translated-highschool',
+                    size: 1,
+                    extension: ['jpg', 'jpeg', 'png','pdf']
+                }),
+                Validator.file({
                     selector: '#scholarship-section__field-file-english-translated-academic',
+                    required: true,
+                    size: 1,
+                    extension: ['jpg', 'jpeg', 'png','pdf']
+                }),
+                Validator.file({
+                    selector: '#scholarship-section__field-file-english-translated-internationalqualification',
                     size: 1,
                     extension: ['jpg', 'jpeg', 'png','pdf']
                 })

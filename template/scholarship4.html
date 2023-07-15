@@ -214,6 +214,7 @@
                         <div class="scholarship-section__field-file-group">
                             <label class="scholarship-section__field-label">Evidence of extra-curricular activities (English translated copy if not in English) <span class="required__symbol">*</span></label>
                             <div class="validate">
+                                <small class="note-message-file"></small>
                                 <input type="file" class="scholarship-section__field-file" id="scholarship-section__field-file-evidence-of-activity">
                                 <small class="error-message"></small>
                             </div>
@@ -266,6 +267,7 @@
             }),
             Validator.file({
                 selector: '#scholarship-section__field-file-evidence-of-activity',
+                required: true,
                 size: 1,
                 extension: ['jpg', 'jpeg', 'png','pdf']
             })

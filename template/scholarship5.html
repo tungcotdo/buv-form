@@ -113,9 +113,10 @@
                                         <label class="scholarship-section__field-checkbox-label" for="scholarship-section__field-checkbox-input-8"> Photography</label>
                                     </div>
                                     <div class="scholarship-section__field-group validate" id="field__show-ccp-upload">
-                                        <label class="text-italic  mr-1">An original Portfolio of Artwork (<a href="">Download template</a>)<span class="required__symbol">*</span></label>
+                                        <label class="text-italic  mr-1">An original Portfolio of Artwork (<a href="">Download template</a>)<span class="required__symbol">*</span></label><br>
+                                        <small class="note-message-file"></small>
                                         <input class="scholarship-section__field-file-ccp" id="scholarship-section__field-file-ccp" type="file">
-                                        <small class="ccp-error-message"></small>
+                                        <small class="error-message-ccp"></small>
                                     </div>
                                 </fieldset>
                                 <fieldset class="scholarship-section__fieldset-group scholarship-section__fieldset-sub-group">
@@ -230,6 +231,7 @@
                                     <div class="scholarship-section__field-file-group">
                                         <label class="scholarship-section__field-label">Notarised copy of IELTS/TOEFL/Other qualifications or copy of BUV Placement test result with valid date <span class="required__symbol">*</span></label>
                                         <div class="validate">
+                                            <small class="note-message-file"></small>
                                             <input type="file" class="scholarship-section__field-file-eng-taken" id="scholarship-section__field-file-evidence-of-ielts-toefl">
                                             <small class="error-message"></small>
                                         </div>
@@ -285,14 +287,15 @@
         rules: [
             Validator.cbChecked({
                 selector : '#scholarship-section__proposed-study-programmes', 
-                msg : Validator.constMsgOneOption,
+                msg : Validator.message.option,
                 error: '#proposed-study-programmes-error-message'
             }),
             Validator.fileRequiredWhenCbChecked({
                 selector: '#scholarship-section__field-file-ccp',
+                required: true,
                 checkbox: '.field-checkbox-ccp',
-                msg: 'Please upload file following template/ Vui lòng upload tệp theo mẫu',
-                error: '#field__show-ccp-upload .ccp-error-message'
+                error: '#field__show-ccp-upload .error-message-ccp',
+                extension: ['jpg', 'jpeg', 'png','pdf']
             }),
             Validator.rbRequired({
                 selector: '.field__rb-eng-at-school'
@@ -327,7 +330,10 @@
             }),
             Validator.fileRequiredWhenRbChecked({
                 selector: '#scholarship-section__field-file-evidence-of-ielts-toefl',
-                radiobox: '.field__rb-eng-taken--yes'
+                required: true,
+                radiobox: '.field__rb-eng-taken--yes',
+                size: 2,
+                extension: ['jpg', 'jpeg', 'png','pdf']
             }),
         ],
         onSubmit: (data) => {
