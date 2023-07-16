@@ -90,7 +90,7 @@
 
                         <div class="scholarship-section__field-signature validate">
                             <label class="scholarship-section__field-label">Applicant’s signature/Chữ ký của người dự tuyển</label>
-                            <small class="error-message"></small>
+                            <small class="error-message" id="error-message-signature"></small>
                             <canvas class="scholarship-section__field-input-signature" id="scholarship-section__field-input-signature" height="300" width="350"></canvas>
                             <input type="hidden" id="scholarship-section__field-input-signature-data">
                             <small>Please insert your signature here/ Vui lòng thêm chữ ký vào đây</small>
@@ -128,7 +128,7 @@
         Signature({
             canvasId : 'scholarship-section__field-input-signature',
             clearId  : 'scholarship-section__field-clear-signature',
-            hiddenId : 'scholarship-section__field-input-signature-data',
+            hiddenId : 'scholarship-section__field-input-signature-data'
         });
 
         Validator({

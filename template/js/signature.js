@@ -1,7 +1,7 @@
 var Signature = ({
     canvasId,
     clearId,
-    hiddenId,
+    hiddenId
 }) => {
 
     const canvasElement = document.getElementById(canvasId);
@@ -33,6 +33,7 @@ var Signature = ({
     const handlePointerMove = event => {
         if( !writingMode ) return
         clearElement.disabled = false;
+        
         const [positionX, positionY] = getTargetPosition(event);
         ctx.lineTo(positionX, positionY);
         ctx.strokeStyle = '#4d78e5';
