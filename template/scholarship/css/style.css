@@ -431,9 +431,12 @@
 }
 
 .scholarship-section__field-input-signature{
-    
-    height: 300px;
     border: 1px solid var(--color-bor);
+    cursor: url(/template/img/pen.cur) 16 16, crosshair;
+}
+
+.scholarship-section__field-clear-signature:disabled{
+    opacity: 0.1;
 }
 
 .scholarship-section__field-clear-signature{
@@ -444,6 +447,7 @@
     padding: 5px 10px;
     border-radius: 3px;
     cursor: pointer;
+    opacity: 1;
 }
 
 .scholarship-section__field-upload-signature{

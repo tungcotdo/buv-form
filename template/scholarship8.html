@@ -83,17 +83,19 @@
                         <div class="validate" id="scholarship-section__field-file-group-agree">
                             <div class="scholarship-section__field-file-group-agree">
                                 <input type="checkbox" class="scholarship-section__field-checkbox-input" id="scholarship-section__field-checkbox-input-agree">
-                                <label class="scholarship-section__field-checkbox-label" for="scholarship-section__field-checkbox-input-agree"> Please tick here if you agree to the terms and conditions</label>
+                                <label class="scholarship-section__field-checkbox-label" for="scholarship-section__field-checkbox-input-agree"> Please tick here if you agree to the terms and conditions.</label>
                             </div>
                             <small class="error-message"></small>
                         </div>
 
-                        <div class="scholarship-section__field-signature">
+                        <div class="scholarship-section__field-signature validate">
                             <label class="scholarship-section__field-label">Applicant’s signature/Chữ ký của người dự tuyển</label>
-                            <div class="scholarship-section__field-input-signature"></div>
+                            <small class="error-message"></small>
+                            <canvas class="scholarship-section__field-input-signature" id="scholarship-section__field-input-signature" height="300" width="350"></canvas>
+                            <input type="hidden" id="scholarship-section__field-input-signature-data">
                             <small>Please insert your signature here/ Vui lòng thêm chữ ký vào đây</small>
                             <button class="scholarship-section__field-upload-signature">Or upload signature photo/Tải ảnh chữ ký</button>
-                            <button class="scholarship-section__field-clear-signature">Clear/Xóa</button>
+                            <button class="scholarship-section__field-clear-signature" id="scholarship-section__field-clear-signature">Clear/Xóa</button>
                         </div>
                     </div>
                     <!-- /scholarship-section__field -->
@@ -103,7 +105,7 @@
 
                 <div class="scholarship-form__submit">
                     <input class="scholarship-form-submit__btn scholarship-form-submit__btn--previous" type="submit" value="Previous">
-                    <input class="scholarship-form-submit__btn scholarship-form-submit__btn--next" type="submit" value="Finish">
+                    <input class="scholarship-form-submit__btn scholarship-form-submit__btn--next" type="submit" value="Finish" id="scholarship-form-submit__btn--finish">
                 </div>
             </form>
 
@@ -121,18 +123,27 @@
     </div>
 
     <script src="js/function.js"></script>
+    <script src="js/signature.js"></script>
     <script>
+        Signature({
+            canvasId : 'scholarship-section__field-input-signature',
+            clearId  : 'scholarship-section__field-clear-signature',
+            hiddenId : 'scholarship-section__field-input-signature-data',
+        });
+
         Validator({
             form: '#scholarship__form',
             rules: [
                 Validator.cbChecked({
                     selector : '#scholarship-section__field-file-group-agree', 
                     msg : 'Please tick here if you agree to the terms and conditions/ Vui lòng đánh dấu vào đây nếu bạn đồng ý với các điều khoản và điều kiện!'
-                })
+                }),
+                Validator.tbRequired({
+                    selector: '#scholarship-section__field-input-signature-data'
+                }),
             ],
             onSubmit: (data) => {
                 document.getElementById("modal__loading").style.display = "block";
-                data.form.submit();
             }
         });
     </script>
