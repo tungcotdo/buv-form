@@ -107,15 +107,48 @@ function Validator( options ) {
                             });
                         });
                       break;
-                    case 'fi':
+                    case 'fi' || 'slb':
                         element.onchange = function(){
                             validate(element, customRules[rule.selector], rule.error);
                         }
-                    case 'slb':
-                        element.onchange = function(){
-                            validate(element, customRules[rule.selector], rule.error);
+                        break;
+                    case 'signature':
+                        element.onchange = function( evt ){
+                            
+                            var signatureValid = validate(element, customRules[rule.selector], rule.error);
+                            const ctx = document.getElementById('scholarship-section__field-input-signature').getContext('2d');
+                            
+                            if( signatureValid == undefined ){
+                                
+                                var imageData;
+                                var tgt = evt.target || window.event.srcElement,
+                                files = tgt.files;
+
+                                function getImageData(imageObj) {
+                                    ctx.drawImage(imageObj, 0, 0, 350, 300);
+                                    imageData = ctx.getImageData(0, 0, imageObj.width, imageObj.height).data;
+                                    document.getElementById('scholarship-section__field-upload-signature-hidden').value = imageData;
+                                }
+    
+                                function showImage(fileReader) {
+                                    var img = document.getElementById('scholarship-section__field-img-signature');
+                                    img.onload = () => getImageData(img);
+                                    img.src = fileReader.result;
+                                    document.getElementById('scholarship-section__field-file-upload-signature-btn').disabled = false;
+                                }
+                    
+                                // FileReader support
+                                if (FileReader && files && files.length) {
+                                    var fr = new FileReader();
+                                    fr.onload = () => showImage(fr);
+                                    fr.readAsDataURL(files[0]);
+                                }
+                            }else{
+                                ctx.clearRect(0, 0, 350, 300);
+                            }
+
                         }
-                    break;
+                        break;
                     default:
                         element.onblur = function(){
                             validate(element, customRules[rule.selector], rule.error);
@@ -279,11 +312,23 @@ Validator.fileRequiredWhenRbChecked = function({selector, required, size, extens
     };
 }
 
-Validator.file = function({selector,required, size, extension}) {
+Validator.file = function({selector, required, size, extension}) {
     Functions.displayNoteMessage(selector, extension, size);
 
     return {
         type: 'fi',
+        selector: selector,
+        test: function( element, formElement ){
+            return Functions.checkfile({element, required, extension, size});
+        }
+    };
+}
+
+Validator.signature = function({selector, required, size, extension}) {
+    Functions.displayNoteMessage(selector, extension, size);
+
+    return {
+        type: 'signature',
         selector: selector,
         test: function( element, formElement ){
             return Functions.checkfile({element, required, extension, size});
@@ -465,4 +510,3 @@ var Functions = {
         e.scrollIntoView();
     }
 };
-

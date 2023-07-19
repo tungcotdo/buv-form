@@ -39,13 +39,19 @@
 }
 
 .scholarship-section__field-file-group{
-    display: flex;
     border: 1px solid var(--color-bor);
     padding: 25px 10px;
     margin-top: var(--space-thr);
-    align-items: center;
-    gap: var(--space-fir);
     background-color: var(--color-bac);
+}
+
+@media (min-width: 768px) {
+    .scholarship-section__field-file-group{
+        display: grid;
+        grid-template-columns: 1fr 400px;
+        align-items: center;
+        column-gap: var(--space-sec);
+    }
 }
 
 .scholarship-section__field-yn-group{
@@ -432,7 +438,6 @@
 
 .scholarship-section__field-input-signature{
     border: 1px solid var(--color-bor);
-    cursor: url(/template/img/pen.cur) 16 16, crosshair;
 }
 
 .scholarship-section__field-clear-signature:disabled{
@@ -445,9 +450,14 @@
     border: none;
     margin-top: var(--space-fir);
     padding: 5px 10px;
-    border-radius: 3px;
     cursor: pointer;
     opacity: 1;
+    float: right;
+    margin-right: -1.5px;
+}
+
+.scholarship-section__field-upload-signature:hover{
+    background-color: #1f56e1;
 }
 
 .scholarship-section__field-upload-signature{
@@ -460,6 +470,19 @@
     cursor: pointer;
 }
 
+.scholarship-section__field-upload-signature-file{
+    margin-top: 5px;
+    display: block;
+}
+
+.scholarship-section__field-upload-signature-file::file-selector-button{
+    border: none;
+    height: 100%;
+    margin-right: 10px;
+    background-color: transparent;
+    border-right: 1px solid var(--color-bor);
+}
+
 .error-message-other,
 .error-message-ccp{
     color: var(--color-fir);
@@ -467,6 +490,7 @@
 
 .note-message-file{
     line-height: 17px;
+    font-style: italic;
 }
 
 /* Validate color */
