@@ -424,6 +424,30 @@
     font-weight: bold;
 }
 
+.scholarship-section__field-missing-message{
+    margin-left: 20px;
+}
+
+.scholarship-section__field-missing-message li{
+    margin: var(--space-fir) 0;
+    list-style-type: disc;
+}
+
+.scholarship-section__field-missing-message-item{
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: -.042em;
+    color: #333;
+    width: 100%;
+    text-decoration: none;
+}
+
+.scholarship-section__field-missing-message-item:hover{
+    color: var(--color-sec);
+    text-decoration: underline;
+}
+
+
 .scholarship-section__field-file-group-agree{
     display: flex;
     align-items: center;

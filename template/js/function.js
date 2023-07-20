@@ -169,13 +169,7 @@ Validator.tbRequiredWhenCbChecked = function({selector, checkbox, msg, error}) {
     var checkboxes = document.querySelectorAll(checkbox);
     checkboxes.forEach( cb => {
         cb.addEventListener("click", function(){ 
-            var textboxElement = document.querySelector(selector);
-            if( error ){
-                document.querySelector(error).innerText = '';
-            }else{
-                textboxElement.closest('.validate').querySelector('.error-message').innerText = '';
-            }
-            textboxElement.closest('.validate').classList.remove('invalid', 'valid');
+            Functions.deleteErrorMessage(selector, error);
         });
     });
 
@@ -196,13 +190,7 @@ Validator.tbRequiredWhenRbChecked = function({selector, radiobox, msg, error}) {
     var radioboxes = document.querySelectorAll(radiobox);
     radioboxes.forEach( cb => {
         cb.addEventListener("click", function(){ 
-            var radioboxElement = document.querySelector(selector);
-            if( error ){
-                document.querySelector(error).innerText = '';
-            }else{
-                radioboxElement.closest('.validate').querySelector('.error-message').innerText = '';
-            }
-            radioboxElement.closest('.validate').classList.remove('invalid', 'valid');
+            Functions.deleteErrorMessage(selector, error);
         });
     });
 
@@ -223,14 +211,7 @@ Validator.fileRequiredWhenCbChecked = function({selector, required, size, extens
     var checkboxes = document.querySelectorAll(checkbox);
     checkboxes.forEach( cb => {
         cb.addEventListener("click", function(){ 
-            var fileElement = document.querySelector(selector);
-            if( error ){
-                document.querySelector(error).innerText = '';
-            }else{
-                fileElement.closest('.validate').querySelector('.error-message').innerText = '';
-            }
-            fileElement.value = '';
-            fileElement.closest('.validate').classList.remove('invalid', 'valid');
+            Functions.deleteErrorMessage(selector, error);
         });
     });
 
@@ -253,16 +234,7 @@ Validator.fileRequiredWhenRbChecked = function({selector, required, size, extens
     var radioboxes = document.querySelectorAll(radiobox);
     radioboxes.forEach( rb => {
         rb.addEventListener("click", function(){ 
-            var fileElement = document.querySelector(selector);
-            
-            if( error ){
-                document.querySelector(error).innerText = '';
-            }else{
-                fileElement.closest('.validate').querySelector('.error-message').innerText = '';
-            }
-            
-            fileElement.value = '';
-            fileElement.closest('.validate').classList.remove('invalid', 'valid');
+            Functions.deleteErrorMessage(selector, error);
         });
     });
 
@@ -424,6 +396,18 @@ var Functions = {
             }
         }else{
             ctx.clearRect(0, 0, 350, 300);
+        }
+    },
+    deleteErrorMessage: function(selector, error){
+        var element = document.querySelector(selector);
+        if( error ){
+            document.querySelector(error).innerText = '';
+        }else{
+            element.closest('.validate').querySelector('.error-message').innerText = '';
+        }
+        element.closest('.validate').classList.remove('invalid', 'valid');
+        if( fileElement.value ){
+            fileElement.value = '';
         }
     },
     displayNoteMessage: function(selector, extension, size){
