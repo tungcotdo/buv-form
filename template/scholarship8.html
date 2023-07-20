@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/modal.css">
-
-    <link rel="stylesheet" href="libs/signature/jquery.signaturepad.css" >
     <link rel="stylesheet" href="scholarship/css/style.css">
 
 </head>
@@ -67,17 +65,14 @@
                 </div>
             </div>
 
-
-
-
             <form class="scholarship__form" id="scholarship__form">
                 <div class="scholarship__section">
 
                     <div class="scholarship__section">
-                        <h3 class="scholarship-section__heading">CÁC THÔNG TIN CÒN THIẾU</h3>
                         <p class="scholarship__note">
-                            Please complete the fields below to submit the form/ <span class="text__vi">Vui lòng hoàn thành các trường thông tin dưới đây để có thể submit form!</span>
+                            <span class="error-message">You still can't submit, please go back to the previous steps and fill in the required information/ Bạn chưa thể submit, vui lòng quay lại các bước trước đó và điền đầy đủ các thông tin bắt buộc!</span>
                         </p>
+                        <h3 class="scholarship-section__heading">CÁC THÔNG TIN CÒN THIẾU</h3>
                         <div class="scholarship-section__field">
                             <ul class="scholarship-section__field-missing-message">
                                 <li><a href="scholarship2.html" class="scholarship-section__field-missing-message-item"><span class="text__vi">Step 2</span> - [First name <span class="required__symbol">*</span>]</a></li>
@@ -92,15 +87,16 @@
                     </div>
                 </div>
 
+                
+
                 <div class="scholarship-form__submit">
                     <input class="scholarship-form-submit__btn scholarship-form-submit__btn--previous" type="submit" value="Previous">
-                    <input class="scholarship-form-submit__btn scholarship-form-submit__btn--next" type="submit" value="Submit" id="scholarship-form-submit__btn--finish">
+                    <input class="scholarship-form-submit__btn scholarship-form-submit__btn--disabled scholarship-form-submit__btn--next" type="submit" value="Submit" id="scholarship-form-submit__btn--finish" title="Bạn chưa thể submit thông tin, vui lòng quay lại các bước và điền đầy đủ những thông tin bắt buộc!">
                 </div>
             </form>
 
         </div><!-- container -->
     </div><!-- scholarship -->
-
    
     <!-- Modal loading page -->
     <div class="modal" id="modal__loading">
@@ -110,64 +106,6 @@
             <div class="loading__title">Processing ...<br>Please do not close the browser</div>
         </div>
     </div>
-
-    <script src="js/function.js"></script>
-    <script src="libs/jquery_1.5.1.min.js"></script>
-    <script src="libs/signature/jquery.signaturepad.js"></script>
-    <script src="libs/signature/json2.min.js"></script>
-
-    <script>
-        document.getElementById('scholarship-section__field-file-upload-signature-btn')
-                .addEventListener('click', () => {
-            document.getElementById('scholarship-section__field-upload-signature-file').click();
-        });
-
-        Validator({
-            form: '#scholarship__form',
-            rules: [
-                Validator.cbChecked({
-                    selector : '#scholarship-section__field-file-group-agree', 
-                    msg : 'Please tick here if you agree to the terms and conditions/ Vui lòng đánh dấu vào đây nếu bạn đồng ý với các điều khoản và điều kiện!'
-                }),
-                Validator.tbRequired({
-                    selector: '#scholarship-section__field-upload-signature-hidden'
-                }),
-                Validator.signature({
-                    type : 'signature',
-                    selector: '#scholarship-section__field-upload-signature-file',
-                    size: 3,
-                    extension: ['jpg', 'jpeg', 'png']
-                })
-            ],
-            onSubmit: (data) => {
-                document.getElementById("modal__loading").style.display = "block";
-            }
-        });
-
-        // Init signature
-        $(document).ready(function() {
-            $('.scholarship-section__field-signature').signaturePad({
-                drawOnly: true,
-                defaultAction: 'drawIt',
-                validateFields: false,
-                lineWidth: 0,
-                output: '#scholarship-section__field-upload-signature-hidden',
-                sigNav: null,
-                name: null,
-                typed: null,
-                clear: '#scholarship-section__field-clear-signature',
-                typeIt: null,
-                drawIt: null,
-                typeItDesc: null,
-                drawItDesc: null,
-                onDraw : function (){
-                    document.querySelector('.scholarship-section__field-signature .error-message').innerHTML = '';
-                    document.querySelector('.validate--upload-signature-file .error-message').innerHTML = '';
-                    document.getElementById('scholarship-section__field-upload-signature-file').value = '';
-                }
-            });
-        });
-    </script>
     
 </body>
 </html>

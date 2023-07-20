@@ -90,23 +90,25 @@
                         </div>
 
                         <div class="scholarship-section__field-signature validate">
-                            <label class="scholarship-section__field-label">Applicant’s signature/Chữ ký của người dự tuyển</label>
+                            <label class="scholarship-section__field-label">Applicant’s signature/<span class="text__vi">Chữ ký của người dự tuyển</span></label>
                             <small class="error-message"></small>
-                            <button class="scholarship-section__field-clear-signature" type="reset" id="scholarship-section__field-clear-signature">Clear/Xóa</button>
+                            
                             <canvas class="scholarship-section__field-input-signature pad" id="scholarship-section__field-input-signature" height="300" width="350">
                                 <img id="scholarship-section__field-img-signature">
                             </canvas>
 
                             <div class="validate validate--upload-signature-file">
                                 <div>
-                                    <small>Please insert your signature here/ Vui lòng thêm chữ ký vào đây</small>
+                                    <small>Please insert your signature here/ <span class="text__vi">Vui lòng thêm chữ ký vào đây</span></small>
+                                </div>
+                                <button class="scholarship-section__field-clear-signature" type="reset" id="scholarship-section__field-clear-signature">Clear/Xóa</button>
+                                <div>
+                                    <small>Or/Hoặc</small>
                                 </div>
                                 <button  type="button" class="scholarship-section__field-upload-signature" id="scholarship-section__field-file-upload-signature-btn">
-                                    <p>Or click here to upload signature photo/ Tải ảnh chữ ký</p>
-                                    <small class="note-message-file"></small>
+                                    <p>Upload photo/ Tải lên ảnh chữ ký</p>
                                 </button>
-                                
-                                <input type="file" class="scholarship-section__field-upload-signature-file" id="scholarship-section__field-upload-signature-file">
+                                <input type="file" class="scholarship-section__field-upload-signature-file" id="scholarship-section__field-upload-signature-file" hidden><br>
                                 <small class="error-message"></small>
                             </div>
 
@@ -114,10 +116,10 @@
                         </div>
                     </div>
                 </div>
-
+                <hr>
                 <div class="scholarship-form__submit">
                     <input class="scholarship-form-submit__btn scholarship-form-submit__btn--previous" type="submit" value="Previous">
-                    <input class="scholarship-form-submit__btn scholarship-form-submit__btn--next" type="submit" value="Submit" id="scholarship-form-submit__btn--finish">
+                    <input class="scholarship-form-submit__btn scholarship-form-submit__btn--next" type="submit" value="Submit" id="scholarship-form-submit__btn--finish" title="Bạn chưa thể submit thông tin, vui lòng quay lại các bước và điền đầy đủ những thông tin bắt buộc!">
                 </div>
             </form>
 

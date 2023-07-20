@@ -30,11 +30,11 @@
 
             <div class="scholarship__pagination">
                 <div class="scholarship-pagination__item">
-                    <a class="scholarship-pagination-item__btn" href="scholarship1.html">1</a>
+                    <a class="scholarship-pagination-item__btn" href="scholarship1.html">0</a>
                 </div>
                 <div class="scholarship-pagination__dash"></div>
                 <div class="scholarship-pagination__item scholarship-pagination__item--active">
-                    <a class="scholarship-pagination-item__btn" href="scholarship2.html">2</a>
+                    <a class="scholarship-pagination-item__btn" href="scholarship2.html">1</a>
                 </div>
                 <div class="scholarship-pagination__dash"></div>
                 <div class="scholarship-pagination__item">
@@ -210,7 +210,7 @@
                                 </div>
                                 <div class="scholarship-section__field-group validate">
                                     <label class="scholarship-section__field-label">Email<span class="required__symbol">*</span></label>
-                                    <input class="scholarship-section__field-textbox" id="scholarship-section__field-textbox--email" type="text">
+                                    <input class="scholarship-section__field-textbox" id="scholarship-section__field-textbox--emergency-email" type="text">
                                     <small class="error-message"></small>
                                 </div>
                             </div>
@@ -278,13 +278,15 @@
                     selector: '#scholarship-section__field-textbox--lastname'
                 }),
                 Validator.tbRequired({
-                    selector: '#scholarship-section__field-textbox--fullname'
+                    selector: '#scholarship-section__field-textbox--fullname',
+                    submit: true,
                 }),
                 Validator.tbRequired({
                     selector: '#scholarship-section__field-textbox--phone'
                 }),
                 Validator.tbRequired({
-                    selector: '#scholarship-section__field-textbox--email'
+                    selector: '#scholarship-section__field-textbox--email',
+                    submit: true,
                 }),
                 Validator.email({
                     selector: '#scholarship-section__field-textbox--email'
@@ -304,13 +306,13 @@
                 Validator.file({
                     selector: '#scholarship-section__field-file--passportphoto',
                     required: true,
-                    size: 1,
-                    extension: ['jpg', 'jpeg', 'png','pdf']
+                    size: 2,
+                    extension: ['jpg', 'jpeg', 'png']
                 }),
                 Validator.file({
                     selector: '#scholarship-section__field-file--passportcopy',
                     required: true,
-                    size: 3,
+                    size: 2,
                     extension: ['jpg', 'jpeg', 'png']
                 }),
                 Validator.tbRequired({
@@ -326,10 +328,10 @@
                     selector: '#scholarship-section__field-textbox--phone'
                 }),
                 Validator.tbRequired({
-                    selector: '#scholarship-section__field-textbox--email'
+                    selector: '#scholarship-section__field-textbox--emergency-email'
                 }),
                 Validator.email({
-                    selector: '#scholarship-section__field-textbox--email'
+                    selector: '#scholarship-section__field-textbox--emergency-email'
                 })
             ],
             onSubmit: (data) => {

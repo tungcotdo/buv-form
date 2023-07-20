@@ -17,7 +17,7 @@ function Validator( options ) {
         options.rules.forEach( rule => {
            var elements = formElement.querySelectorAll(rule.selector);
             elements.forEach( element => {
-                if( element ){
+                if( element && rule.submit ){
                     var isFormValid = validate(element, customRules[rule.selector], rule.error);
                     if( isFormValid !== undefined ){
                         flagSubmit = false;
@@ -130,7 +130,7 @@ function Validator( options ) {
     }
 }
 
-Validator.email = function({selector, msg}) {
+Validator.email = function({selector, msg, submit}) {
     checkEmail = (email) => {
         return String(email)
             .toLowerCase()
@@ -142,6 +142,7 @@ Validator.email = function({selector, msg}) {
     return {
         type: 'tb',
         selector: selector,
+        submit: submit,
         test: function( element, formElement ){
             return checkEmail(element.value) 
                     ? undefined 
@@ -151,11 +152,12 @@ Validator.email = function({selector, msg}) {
     };
 }
 
-Validator.tbRequired = function({selector, msg, error}) {
+Validator.tbRequired = function({selector, msg, error, submit}) {
     return {
         type: 'tb',
         selector: selector,
         error: error,
+        submit: submit,
         test: function( element, formElement ){
             return element.value.trim()
                     ? undefined 
@@ -165,7 +167,7 @@ Validator.tbRequired = function({selector, msg, error}) {
     };
 }
 
-Validator.tbRequiredWhenCbChecked = function({selector, checkbox, msg, error}) {
+Validator.tbRequiredWhenCbChecked = function({selector, checkbox, msg, error, submit}) {
     var checkboxes = document.querySelectorAll(checkbox);
     checkboxes.forEach( cb => {
         cb.addEventListener("click", function(){ 
@@ -177,6 +179,7 @@ Validator.tbRequiredWhenCbChecked = function({selector, checkbox, msg, error}) {
         type: 'tb',
         selector: selector,
         error: error,
+        submit: submit,
         test: function( element, formElement ){
             return Functions.cbChecked(checkboxes) && !element.value.trim()
                     ? msg 
@@ -186,7 +189,7 @@ Validator.tbRequiredWhenCbChecked = function({selector, checkbox, msg, error}) {
     };
 }
 
-Validator.tbRequiredWhenRbChecked = function({selector, radiobox, msg, error}) {
+Validator.tbRequiredWhenRbChecked = function({selector, radiobox, msg, error, submit}) {
     var radioboxes = document.querySelectorAll(radiobox);
     radioboxes.forEach( cb => {
         cb.addEventListener("click", function(){ 
@@ -198,6 +201,7 @@ Validator.tbRequiredWhenRbChecked = function({selector, radiobox, msg, error}) {
         type: 'tb',
         selector: selector,
         error: error,
+        submit: submit,
         test: function( element, formElement ){
             return Functions.rbChecked(radioboxes) && !element.value.trim()
                     ? msg 
@@ -207,7 +211,7 @@ Validator.tbRequiredWhenRbChecked = function({selector, radiobox, msg, error}) {
     };
 }
 
-Validator.fileRequiredWhenCbChecked = function({selector, required, size, extension, checkbox, error}) {
+Validator.fileRequiredWhenCbChecked = function({selector, required, size, extension, checkbox, error, submit}) {
     var checkboxes = document.querySelectorAll(checkbox);
     checkboxes.forEach( cb => {
         cb.addEventListener("click", function(){ 
@@ -221,6 +225,7 @@ Validator.fileRequiredWhenCbChecked = function({selector, required, size, extens
         type: 'fi',
         selector: selector,
         error: error,
+        submit: submit,
         test: function( element, formElement ){
             if(  Functions.cbChecked(checkboxes)){
                 return Functions.checkfile({element, required, extension, size});
@@ -230,7 +235,7 @@ Validator.fileRequiredWhenCbChecked = function({selector, required, size, extens
     };
 }
 
-Validator.fileRequiredWhenRbChecked = function({selector, required, size, extension, radiobox, error}) {
+Validator.fileRequiredWhenRbChecked = function({selector, required, size, extension, radiobox, error, submit}) {
     var radioboxes = document.querySelectorAll(radiobox);
     radioboxes.forEach( rb => {
         rb.addEventListener("click", function(){ 
@@ -244,6 +249,7 @@ Validator.fileRequiredWhenRbChecked = function({selector, required, size, extens
         type: 'fi',
         selector: selector,
         error: error,
+        submit: submit,
         test: function( element, formElement ){
             if( Functions.rbChecked(radioboxes) ){
                 return Functions.checkfile({element, required, extension, size});
@@ -253,35 +259,38 @@ Validator.fileRequiredWhenRbChecked = function({selector, required, size, extens
     };
 }
 
-Validator.file = function({selector, required, size, extension}) {
+Validator.file = function({selector, required, size, extension, submit}) {
     Functions.displayNoteMessage(selector, extension, size);
 
     return {
         type: 'fi',
         selector: selector,
+        submit: submit,
         test: function( element, formElement ){
             return Functions.checkfile({element, required, extension, size});
         }
     };
 }
 
-Validator.signature = function({selector, required, size, extension}) {
+Validator.signature = function({selector, required, size, extension, submit}) {
     Functions.displayNoteMessage(selector, extension, size);
 
     return {
         type: 'signature',
         selector: selector,
+        submit: submit,
         test: function( element, formElement ){
             return Functions.checkfile({element, required, extension, size});
         }
     };
 }
 
-Validator.rbRequired = function({selector, msg, error}) {
+Validator.rbRequired = function({selector, msg, error, submit}) {
     return {
         type: 'rb',
         selector: selector,
         error: error,
+        submit: submit,
         test: function( element, formElement ){
             let rbElements = formElement.querySelectorAll(selector);
             let rbCheckFlag = false;
@@ -298,10 +307,11 @@ Validator.rbRequired = function({selector, msg, error}) {
     };
 }
 
-Validator.isPInt = function({selector, msg}) {
+Validator.isPInt = function({selector, msg, submit}) {
     return {
         type: 'tb',
         selector: selector,
+        submit: submit,
         test: function( element, formElement ){
             return parseInt(element.value) > 0 || !element.value.trim() 
                     ? undefined 
@@ -311,11 +321,12 @@ Validator.isPInt = function({selector, msg}) {
     };
 }
 
-Validator.cbChecked = function ({selector, msg, error}) {
+Validator.cbChecked = function ({selector, msg, error, submit}) {
     return {
         type: 'cb',
         selector: selector,
         error: error,
+        submit: submit,
         test: function( element, formElement ){
             var cbs = element.querySelectorAll('input[type="checkbox"]');
             return Functions.cbChecked(cbs) 
@@ -326,10 +337,11 @@ Validator.cbChecked = function ({selector, msg, error}) {
     };
 }
 
-Validator.bdRequired = function ({selector, msg}){
+Validator.bdRequired = function ({selector, msg, submit}){
     return {
         type: 'bd',
         selector: selector,
+        submit: submit,
         test: function( element, formElement ){
             
             function isSelected(slbs){
@@ -351,10 +363,11 @@ Validator.bdRequired = function ({selector, msg}){
     };
 }
 
-Validator.slbRequired = function ({selector, msg}){
+Validator.slbRequired = function ({selector, msg, submit}){
     return {
         type: 'slb',
         selector: selector,
+        submit: submit,
         test: function( element, formElement ){
             console.log(element.value);
             return  element.value
