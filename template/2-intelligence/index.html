@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligence</title>
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/modal.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <div class="intelligence">
+        <div class="container">
+            
+            <div class="intelligence__banner">
+                <div class="intelligence-banner__logo">
+                    <img class="intelligence-banner-logo__img" src="../img/BUV-Logo-Transparent.png">
+                </div>
+                <div class="intelligence-banner__title">
+                    <h3 class="intelligence-banner-title__heading">THE MULTIPLE INTELLIGENCE QUIZ</h3>
+                </div>
+            </div>
+
+            <form class="intelligence__form" id="intelligence__form" action="intelligence3.html">
+                <!-- PERSONAL INFOMATION -->
+                <div class="intelligence__section">
+                    <div class="intelligence__neck">
+                        <h3 class="intelligence__neck-item intelligence-section__heading">PERSONAL INFOMATION</h3>
+                        <div class="intelligence__neck-item">
+                            <label class="intelligence__neck-item-language">Language: </label>
+                            <select>
+                                <option value="1">Vietnamese</option>
+                                <option value="2">English</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <p class="intelligence__note">
+                        Note: (<span class="required__symbol">*</span>) This field is required
+                    </p>
+
+                    <div class="intelligence-section__field">
+                        <div class="grid-desktop-three-col">
+                            <div class="intelligence-section__field-group validate">
+                                <label class="intelligence-section__field-label">Full name<span class="required__symbol">*</span></label>
+                                <input class="intelligence-section__field-textbox" type="text" id="intelligence-section__field-textbox--fullname">
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="intelligence-section__field-group validate">
+                                <label class="intelligence-section__field-label">Mobile phone<span class="required__symbol">*</span></label>
+                                <input class="intelligence-section__field-textbox" type="text" id="intelligence-section__field-textbox--phone">
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="intelligence-section__field-group validate">
+                                <label class="intelligence-section__field-label">Email<span class="required__symbol">*</span></label>
+                                <input class="intelligence-section__field-textbox" type="text" id="intelligence-section__field-textbox--email">
+                                <small class="error-message"></small>
+                            </div>
+                            
+                        </div>
+
+                        <div class="grid-desktop-three-col">
+                            <div class="intelligence-section__field-group validate">
+                                <label class="intelligence-section__field-label">Date of birth<span class="required__symbol">*</span></label>
+                                <input type="date" class="intelligence-section__field-textbox" value="2018-07-22" min="1992-01-01" max="2024-05-05">
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="intelligence-section__field-group validate">
+                                <label class="intelligence-section__field-label">Province<span class="required__symbol">*</span></label>
+                                <input class="intelligence-section__field-textbox" type="text" id="intelligence-section__field-textbox--email">
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="intelligence-section__field-group validate">
+                                <label class="intelligence-section__field-label">High School<span class="required__symbol">*</span></label>
+                                <input class="intelligence-section__field-textbox" type="text" id="intelligence-section__field-textbox--email">
+                                <small class="error-message"></small>
+                            </div>
+                        </div>
+
+                        <div class="grid-desktop-three-col grid-ipad-three-col">
+                            <div class="intelligence-section__field-group validate">
+                                <label class="intelligence-section__field-label">Class<span class="required__symbol">*</span></label>
+                                <input class="intelligence-section__field-textbox" type="text" id="intelligence-section__field-textbox--passportnumber">
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="intelligence-section__field-group intelligence-section__field-textbox-group validate">
+                                <label class="intelligence-section__field-label">Area of ​​interest<span class="required__symbol">*</span></label>
+                                <select class="intelligence-section__field-selectbox" id="intelligence-section__field-name-qualification1">
+                                    <option value="">-- Choose option --</option>
+                                    <option value="12">Vietname high school - grade 12</option>
+                                    <option value="11">Vietname high school - grade 11</option>
+                                    <option value="10">Vietname high school - grade 10</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="intelligence-section__field-group intelligence-section__field-textbox-group validate">
+                                <label class="intelligence-section__field-label">Your college plan<span class="required__symbol">*</span></label>
+                                <select class="intelligence-section__field-selectbox" id="intelligence-section__field-name-qualification1">
+                                    <option value="">-- Choose option --</option>
+                                    <option value="12">Vietname high school - grade 12</option>
+                                    <option value="11">Vietname high school - grade 11</option>
+                                    <option value="10">Vietname high school - grade 10</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <small class="error-message"></small>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <!-- / PERSONAL INFOMATION -->
+                <br>
+                <!-- CODE TEST -->
+                <div class="intelligence__section">
+                    <h3 class="intelligence__neck-item intelligence-section__heading">CODE TEST</h3>
+                    <p class="intelligence__note">
+                        Instruction:
+                    </p>
+                    <p class="intelligence__note">- Estimated time required: 20 minutes.</p>
+                    <p class="intelligence__note">- For each of the statements below, choose a number between 1 and 5 to rate how the statement describes you.</p>
+                    
+                    <div class="grid-desktop-four-col grid-ipad-three-col grid-iphone-two-col ml-1">
+                        <p class="intelligence__note">1	— No, the statement is not at all like me.</p>
+                        <p class="intelligence__note">2	— The statement is a little like me.</p>
+                        <p class="intelligence__note">3 — The statement is somewhat like me.</p>
+                        <p class="intelligence__note">4 — The statement is a lot like me.</p>
+                        <p class="intelligence__note">5 — Yes, the statement  is definitely me.</p>
+                    </div>
+
+                    <div class="grid-desktop-two-col">
+                        <!-- Verbal/Linguistic -->
+                        <fieldset class="intelligence-section__fieldset-group">
+                            <legend class="intelligence-section__fieldset-legen">Verbal/Linguistic</legend>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I can use lots of different words to express myself</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I feel comfortable working with language and words</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I enjoy crosswords and other word games like Scrabble</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I tend to remember things exactly as they are said to me</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I enjoy participating in debates and/or discussions. I find it easy to explain things to others</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I enjoy keeping a written journal and/or writing stories and articles</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I like to read a lot</label>
+                            </div>
+                        </fieldset>
+                        <!-- / Verbal/Linguistic -->
+
+
+
+                        <!-- Logical/Mathematical -->
+                        <fieldset class="intelligence-section__fieldset-group">
+                            <legend class="intelligence-section__fieldset-legen">Logical/Mathematical</legend>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I work best in an organised work area</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I enjoy maths and using numbers</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I keep a 'things to do' list</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I enjoy playing brainteasers and logic puzzles</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I like to ask ‘why‘ questions</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I work best when I have a day planner or timetable</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I quickly grasp cause and effect relationships</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I always do things one step at a time</label>
+                            </div>
+                        </fieldset>
+                        <!-- / Logical/Mathematical -->
+
+                        <!-- Interpersonal -->
+                        <fieldset class="intelligence-section__fieldset-group">
+                            <legend class="intelligence-section__fieldset-legen">Interpersonal</legend>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I can sense the moods and feelings of others</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I work best when interacting with people</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I enjoy team sports rather than individual sports</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I can sort out arguments between friends</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I prefer group activities rather than ones I do alone</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I enjoy learning about different cultures</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I enjoy social events like parties</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I enjoy sharing my ideas and feelings with others</label>
+                            </div>
+                        </fieldset>
+                        <!-- / Interpersonal -->
+
+                        <!-- Visual/Spatial -->
+                        <fieldset class="intelligence-section__fieldset-group">
+                            <legend class="intelligence-section__fieldset-legen">Visual/Spatial</legend>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I understand colour combinations and what colours work well together</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I enjoy solving jigsaw, maze and/or other visual puzzles</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I read charts and maps easily</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I have a good sense of direction</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I like to watch the scenes and activities in movies</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I am observant. I often see things that others miss</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I can anticipate the moves and consequences in a game plan (i.e., hockey sense, chess sense)</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I can picture scenes in my head when remember things</label>
+                            </div>
+                        </fieldset>
+                        <!-- / Visual/Spatial -->
+
+                        <!-- Musical -->
+                        <fieldset class="intelligence-section__fieldset-group">
+                            <legend class="intelligence-section__fieldset-legen">Musical</legend>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I often play music in my mind</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">My mood changes when I listen to music</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">It is easy for me to follow the beat of music</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I can pick out different instruments when I listen to a piece of music</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I keep time when music is playing</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I can hear an off-key note</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I find it easy to engage in musical activities</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I can remember pieces of music easily</label>
+                            </div>
+                        </fieldset>
+                        <!-- / Musical -->
+                        
+
+                        <!-- Naturalistic -->
+                        <fieldset class="intelligence-section__fieldset-group">
+                            <legend class="intelligence-section__fieldset-legen">Naturalistic</legend>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">Pollution makes me angry</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I notice similarities and differences in trees, flowers and other things in nature</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I feel very strongly about protecting the environment</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I enjoy watching nature programs on television</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I engage in 'clean-up-days'</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I like planting and caring for a garden</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I enjoy fishing, bushwalking and bird-watching</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">When I leave school, I hope to work with plants and animals</label>
+                            </div>
+                        </fieldset>
+                        <!-- / Naturalistic -->
+
+                        <!-- Body/Kinesthetic -->
+                        <fieldset class="intelligence-section__fieldset-group">
+                            <legend class="intelligence-section__fieldset-legen">Body/Kinesthetic</legend>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I like to move, tap or fidget when sitting</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I enjoy participating in active sports</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I am curious as to how things feel and I tend to touch objects and examine their texture</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I am well co-ordinated</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I like working with my hands</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I prefer to be physically involved rather than sitting and watching</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I understand best by doing (i.e. touching, moving and interacting)</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I like to think through problems while I walk or run</label>
+                            </div>
+                        </fieldset>
+                        <!-- / Body/Kinesthetic -->
+
+                        <!-- Body/Kinesthetic -->
+                        <fieldset class="intelligence-section__fieldset-group">
+                            <legend class="intelligence-section__fieldset-legen">Body/Kinesthetic</legend>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I like to move, tap or fidget when sitting</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I enjoy participating in active sports</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I am curious as to how things feel and I tend to touch objects and examine their texture</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I am well co-ordinated</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I like working with my hands</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I prefer to be physically involved rather than sitting and watching</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I understand best by doing (i.e. touching, moving and interacting)</label>
+                            </div>
+                            <div class="intelligence__quiz-group">
+                                <input type="number" min="1" max="5" class="intelligence__quiz-score">
+                                <label class="intelligence__quiz-label">I like to think through problems while I walk or run</label>
+                            </div>
+                        </fieldset>
+                        <!-- / Body/Kinesthetic -->
+
+
+
+
+                    </div>
+                </div>
+                <!-- / CODE TEST -->
+
+
+
+                <div class="intelligence-form__submit">
+                    <input class="intelligence-form-submit__btn intelligence-form-submit__btn--next" type="submit" value="Submit">
+                </div>
+            </form>
+
+        </div><!-- container -->
+    </div><!-- intelligence -->
+
+    <!-- Modal loading page -->
+    <div class="modal" id="modal__loading">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <div class="loader"></div>
+            <div class="loading__title">Processing ...<br>Please do not close the browser</div>
+        </div>
+    </div>
+
+    <script src="../js/function.js"></script>
+    <script>
+        
+        // Validator({
+        //     form: '#intelligence__form',
+        //     rules: [
+        //         Validator.tbRequired({
+        //             selector: '#intelligence-section__field-textbox--firstname'
+        //         }),
+        //         Validator.tbRequired({
+        //             selector: '#intelligence-section__field-textbox--middlename'
+        //         }),
+        //         Validator.tbRequired({
+        //             selector: '#intelligence-section__field-textbox--lastname'
+        //         }),
+        //         Validator.tbRequired({
+        //             selector: '#intelligence-section__field-textbox--fullname',
+        //             submit: true,
+        //         }),
+        //         Validator.tbRequired({
+        //             selector: '#intelligence-section__field-textbox--phone'
+        //         }),
+        //         Validator.tbRequired({
+        //             selector: '#intelligence-section__field-textbox--email',
+        //             submit: true,
+        //         }),
+        //         Validator.email({
+        //             selector: '#intelligence-section__field-textbox--email'
+        //         }),
+        //         Validator.rbRequired({
+        //             selector: '.intelligence-section__field-radio-gender-input'
+        //         }),
+        //         Validator.tbRequired({
+        //             selector: '#intelligence-section__field-textbox--passportnumber'
+        //         }),
+        //         Validator.bdRequired({
+        //             selector: '#intelligence-section__field-birthday'
+        //         }),
+        //         Validator.tbRequired({
+        //             selector: '#intelligence-section__field-textbox--placeofbirth'
+        //         }),
+        //         Validator.file({
+        //             selector: '#intelligence-section__field-file--passportphoto',
+        //             required: true,
+        //             size: 2,
+        //             extension: ['jpg', 'jpeg', 'png']
+        //         }),
+        //         Validator.file({
+        //             selector: '#intelligence-section__field-file--passportcopy',
+        //             required: true,
+        //             size: 2,
+        //             extension: ['jpg', 'jpeg', 'png']
+        //         }),
+        //         Validator.tbRequired({
+        //             selector: '#intelligence-section__field-textarea-currentaddress'
+        //         }),
+        //         Validator.tbRequired({
+        //             selector: '#intelligence-section__field-textbox--name'
+        //         }),
+        //         Validator.tbRequired({
+        //             selector: '#intelligence-section__field-textbox--relationship'
+        //         }),
+        //         Validator.tbRequired({
+        //             selector: '#intelligence-section__field-textbox--phone'
+        //         }),
+        //         Validator.tbRequired({
+        //             selector: '#intelligence-section__field-textbox--emergency-email'
+        //         }),
+        //         Validator.email({
+        //             selector: '#intelligence-section__field-textbox--emergency-email'
+        //         })
+        //     ],
+        //     onSubmit: (data) => {
+        //         document.getElementById("modal__loading").style.display = "block";
+        //         data.form.submit();
+        //     }
+        // });
+        
+    </script>
+</body>
+</html>

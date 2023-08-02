@@ -1,0 +1,551 @@
+.scholarship__banner{
+    height: 290px;
+    background-image: url('../img/banner.png');
+    background-position: left;
+    background-size: auto 290px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: var(--space-thr);
+}
+
+.scholarship-banner-logo__img{
+    width: 120px;
+    background-color: white;
+}
+
+.scholarship-banner-title__heading{
+    background-color: var(--color-sec);
+    padding: 15px 15px 7px;
+    width: 310px;
+    line-height: 25px;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: BrandonBld;
+}
+
+.scholarship-section__field{
+    margin-top: var(--space-sec);
+}
+
+
+
+.scholarship-section__field-group{
+    margin: var(--space-fir) 0;
+    width: 100%;
+}
+
+.scholarship-section__field-file-group{
+    border: 1px solid var(--color-bor);
+    padding: 25px 10px;
+    margin-top: var(--space-thr);
+    background-color: var(--color-bac);
+}
+
+@media (min-width: 768px) {
+    .scholarship-section__field-file-group{
+        display: grid;
+        grid-template-columns: 1fr 400px;
+        align-items: center;
+        column-gap: var(--space-sec);
+    }
+}
+
+.scholarship-section__field-yn-group{
+    display: flex;
+    border: 1px solid var(--color-bor);
+    padding: 10px;
+    margin-top: var(--space-thr);
+    align-items: center;
+    gap: var(--space-fir);
+    background-color: var(--color-bac);
+}
+
+.scholarship-section__field-textbox-label,
+.scholarship-section__field-textbox-input{
+    display: block;
+    width: 100%;
+
+}
+
+.scholarship-section__field-textbox-input{
+    height: 33px;
+    border: 1px solid var(--color-bor);
+}
+
+.scholarship-section__field-yn-checkbox{
+    display: flex;
+    gap: var(--space-sec);
+    align-items: center;
+}
+
+.scholarship-section__fieldset-group{
+    padding: 0 10px 10px 10px;
+    border: 1px solid var(--color-bor);
+    background-color: var(--color-bac);
+    margin-top: var(--space-sec);
+}
+
+.scholarship-form__submit{
+    margin: var(--space-fou) 0;
+}
+
+.scholarship-form-submit__btn{
+    font-size: 15px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: var(--space-fir);
+}
+
+.scholarship-form-submit__btn--disabled{
+    opacity: 0.2;
+}
+
+.scholarship-form-submit__btn--next{
+    padding: 10px 50px;
+    background-color: var(--color-fou);
+}
+
+.scholarship-form-submit__btn--previous{
+    padding: 10px 30px;
+    background-color: var(--color-thr);
+}
+
+.scholarship-form-submit__btn--next:hover{
+    background-color: var(--color-fiv);
+}
+
+.scholarship-form-submit__btn--previous:hover{
+    background-color: var(--color-sec);
+}
+
+@media (max-width: 576px) {
+
+    .scholarship__banner{
+        height: 230px;
+        padding: var(--space-mob);
+    }
+
+    .scholarship-banner-title__heading{
+        font-size: 20px;
+        padding: 15px 15px 7px;
+        width: 220px;
+        line-height: 18px;
+    }
+}
+
+@media (min-width: 577px) {
+    .scholarship-banner-title__heading{
+        font-size: 30px;
+        padding: 15px 15px 7px;
+        width: 310px;
+        line-height: 25px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .scholarship__banner,
+    .scholarship__form,
+    .scholarship__pagination{
+        padding: 0 var(--space-mob);
+    }
+}
+
+
+
+.scholarship__note{
+    margin: var(--space-thr) 0;
+    font-style: italic;
+}
+
+.scholarship-section__heading{
+    margin-top: var(--space-fou);
+    font-size: 28px;
+    font-family: BrandonBld;
+}
+
+
+@media (max-width: 576px) {
+    .scholarship-section__heading{
+        margin-top: var(--space-thr);
+        font-size: 20px;
+    }
+}
+
+.scholarship__pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: var(--space-thr);
+}
+
+.scholarship-pagination__item{
+    background-color: var(--color-thr);
+    border-radius: 50%;
+    color: white;
+}
+
+.scholarship-pagination-item__btn{
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+
+@media (min-width: 577px) {
+    .scholarship__pagination {
+        margin-top: var(--space-fou);
+    }
+
+    .scholarship-pagination-item__btn{
+        padding: 10px 13px;
+    }
+}
+
+.scholarship-pagination__item:not(.scholarship-pagination__item--active):hover{
+    background-color: var(--color-sec);
+}
+
+.scholarship-pagination__dash{
+    background-color: var(--color-thr);
+    width: 30px;
+    height: 5px;
+}
+
+.scholarship-pagination__item--active{
+    background-color: var(--color-fir);
+}
+
+.scholarship-pagination__item--active .scholarship-pagination-item__btn{
+    cursor: default;
+}
+
+@media (max-width: 576px) {
+
+    .scholarship-pagination__item{
+        padding: 8px 12px;
+    }
+
+    .scholarship-pagination__dash{
+        background-color: var(--color-thr);
+        width: 12px;
+        height: 5px;
+    }
+
+    .scholarship-pagination__item--active{
+        background-color: var(--color-fir);
+        padding: 10px 14px;
+    }
+}
+
+.scholarship-section__fieldset-legen{
+    font-weight: bold;
+}
+
+.scholarship-section__field-label{
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: -.042em;
+    color: #333;
+    display: block;
+    width: 100%;
+}
+
+@media (max-width: 576px) {
+
+    .scholarship-section__field-label{
+        font-size: 14px;
+    }
+}
+
+
+.scholarship-section__field-textbox{
+    height: 33px;
+    border: 1px solid var(--color-bor);
+    display: block;
+    width: 100%;
+}
+
+.scholarship-section__field-group-other-textbox{
+    height: 33px;
+    border: 1px solid var(--color-bor);
+    width: 100%;
+}
+
+.scholarship-section__field-textbox-eng-taken{
+    height: 33px;
+    border: 1px solid var(--color-bor);
+    width: 100%;
+}
+
+.scholarship-section__field-selectbox{
+    width: 100%;
+    height: 33px;
+    border: 1px solid var(--color-bor);
+    padding: 5px;
+}
+
+.scholarship-section__field-checkbox-group{
+    display: flex;
+    align-items: center;
+    margin: var(--space-sec) 0;
+}
+
+
+.scholarship-section__field-checkbox-input{
+    width: 18px;
+    height: 18px;
+    margin-left: 0;
+}
+
+.scholarship-section__fieldset-yn-group{
+    background-color: var(--color-bac);
+    border: 1px solid var(--color-bor);
+    padding: 10px;
+    margin-top: var(--space-thr);
+}
+
+.scholarship-section__field-checkbox-yn-input{
+    width: 30px;
+    height: 18px;
+}
+
+.scholarship-section__fieldset-yn-checkbox-group{
+    display: flex;
+    align-items: center;
+}
+
+.scholarship-section__fieldset-sub-group{
+    padding: 0 20px 10px;
+}
+
+
+.scholarship-section__field-radio-group{
+    display: flex;
+    align-items: center;
+    margin: var(--space-sec) 0;
+}
+
+.scholarship-section__field-yn-radio{
+    display: flex;
+    gap: var(--space-sec);
+    align-items: center;
+}
+
+.scholarship-section__field-radio-yn-input{
+    width: 30px;
+    height: 18px;
+}
+
+
+.scholarship-section__fieldset-yn-radio-group{
+    display: flex;
+    align-items: center;
+}
+
+.scholarship-section__field-radio-label{
+    padding-top: 4px;
+}
+
+
+
+
+
+@media (max-width: 576px) {
+    .text-italic,
+    .scholarship-section__field-checkbox-label,
+    .scholarship-section__fieldset-sub-legend{
+        font-size: 13px;
+    }
+}
+
+.scholarship-section__field-gender-group{
+    border: 1px solid var(--color-bor);
+}
+
+.scholarship-section__field-gender-radio-group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 33px;
+}
+
+.scholarship-section__field-radio-gender-label{
+    padding-top: 4px;
+}
+
+.scholarship-section__field-radio-input{
+    width: 18px;
+    height: 18px;
+}
+
+.scholarship-section__field-birthday{
+    height: 35px;
+    align-items: center;
+    background-color: var(--color-bac);
+}
+
+.scholarship-section__field-file,
+.scholarship-section__field-file-ccp,
+.scholarship-section__field-file-eng-taken{
+    height: 33px;
+    width: 100%;
+    border: 1px solid var(--color-bor);
+    background-color: white;
+}
+
+.scholarship-section__field-file::file-selector-button,
+.scholarship-section__field-file-ccp::file-selector-button,
+.scholarship-section__field-file-eng-taken::file-selector-button{
+    border: none;
+    height: 100%;
+    margin-right: 10px;
+    background-color: transparent;
+    border-right: 1px solid var(--color-bor);
+}
+
+.scholarship-section__field-textarea-input{
+    display: block;
+    width: 100%;
+    height: 70px;
+    border: 1px solid var(--color-bor);
+}
+
+.scholarship-section__field-textarea-group{
+    margin-top: var(--space-sec);
+}
+
+.scholarship-section__field-condition-item{
+    margin: var(--space-sec) 0;
+}
+
+.scholarship-section__field-condition-item b{
+    font-weight: bold;
+}
+
+.scholarship-section__field-missing-message{
+    margin-left: 20px;
+}
+
+.scholarship-section__field-missing-message li{
+    margin: var(--space-fir) 0;
+    list-style-type: disc;
+}
+
+.scholarship-section__field-missing-message-item{
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: -.042em;
+    color: #333;
+    width: 100%;
+    text-decoration: none;
+}
+
+.scholarship-section__field-missing-message-item:hover{
+    color: var(--color-sec);
+    text-decoration: underline;
+}
+
+
+.scholarship-section__field-file-group-agree{
+    display: flex;
+    align-items: center;
+}
+
+.scholarship-section__field-signature{
+    /* background-color: red; */
+    text-align: center;
+    width: 350px;
+    margin: var(--space-fou) 0;
+}
+
+.scholarship-section__field-input-signature{
+    border: 1px solid var(--color-bor);
+}
+
+.scholarship-section__field-clear-signature:disabled{
+    opacity: 0.1;
+}
+
+.scholarship-section__field-clear-signature{
+    background-color: var(--color-fir);
+    color: white;
+    border: none;
+    margin-top: var(--space-fir);
+    padding: 5px 10px;
+    cursor: pointer;
+    opacity: 1;
+    border-radius: 0.2rem;
+}
+
+.scholarship-section__field-upload-signature:hover{
+    background-color: #1f56e1;
+}
+
+.scholarship-section__field-upload-signature{
+    background-color: var(--color-thr);
+    color: white;
+    border: none;
+    margin-top: var(--space-fir);
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.error-message-other,
+.error-message-ccp{
+    color: var(--color-fir);
+}
+
+.note-message-file{
+    line-height: 17px;
+    font-style: italic;
+}
+
+/* Validate color */
+.valid .scholarship-section__field-textbox,
+.valid .scholarship-section__field-gender-group,
+.valid .scholarship-section__field-birthday select,
+.valid .scholarship-section__field-file,
+.valid .scholarship-section__field-selectbox,
+.valid .scholarship-section__field-textarea-input,
+.valid>.scholarship-section__field-group-other-textbox,
+.valid>.scholarship-section__field-textbox-eng-taken,
+.valid>.scholarship-section__field-file-eng-taken,
+.valid>.scholarship-section__field-file-ccp{
+    background-color: #eaf8e9!important;
+    border: 1px solid #91f08c!important;
+}
+
+.valid .scholarship-section__field-textbox:-webkit-autofill,
+.valid .scholarship-section__field-textbox:-webkit-autofill:hover, 
+.valid .scholarship-section__field-textbox:-webkit-autofill:focus, 
+.valid .scholarship-section__field-textbox:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #eaf8e9 inset !important;
+}
+
+.invalid .scholarship-section__field-textbox,
+.invalid .scholarship-section__field-gender-group,
+.invalid .scholarship-section__field-birthday select,
+.invalid .scholarship-section__field-file,
+.invalid .scholarship-section__field-selectbox,
+.invalid .scholarship-section__field-textarea-input,
+.invalid>.scholarship-section__field-group-other-textbox,
+.invalid>.scholarship-section__field-textbox-eng-taken,
+.invalid>.scholarship-section__field-file-eng-taken,
+.invalid>.scholarship-section__field-file-ccp{
+    background-color: #f5dfdf!important;
+    border: 1px solid #f08c8c!important;
+}
+
+.invalid .scholarship-section__field-textbox:-webkit-autofill,
+.invalid .scholarship-section__field-textbox:-webkit-autofill:hover, 
+.invalid .scholarship-section__field-textbox:-webkit-autofill:focus, 
+.invalid .scholarship-section__field-textbox:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #f5dfdf inset !important;
+}
