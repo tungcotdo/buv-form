@@ -161,7 +161,7 @@ small{
     .grid-desktop-two-col{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        column-gap: var(--space-sec);
+        column-gap: var(--space-thr);
     }
     
     .grid-desktop-three-col{

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scanbarcode</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        .scanbarcode{
+            padding: 0 15px;
+        }
+
+        .scanbarcode__quiz-diagram{
+            border: 1px solid rgb(185, 171, 171);
+            border-radius: 10px;
+            margin: 50px auto;
+            padding: 15px;
+            box-shadow: 5px 10px #888888;
+            width: 100%;
+        }
+
+        .scanbarcode__quiz-title{
+            text-align: center;
+        }
+        
+        .scanbarcode__quiz-group{
+            margin-top: 15px;
+        }
+
+        .scanbarcode__quiz-icon{
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .scanbarcode__quiz-diagram{
+                width: 700px;
+            }
+
+            .scanbarcode__quiz-group{
+                display: grid;
+                grid-template-columns: 23% 7% 70%;
+                align-items: center;
+            }
+
+            .scanbarcode__quiz-icon{
+                display: block;
+            }
+
+
+            .scanbarcode__quiz-progress{
+                width: 500px;
+            }
+        }
+
+
+        .scanbarcode__quiz-label{
+            text-align: right;
+        }
+
+        .scanbarcode__quiz-progress{
+            border: 1px solid rgb(185, 175, 175);
+            border-radius: 0 15px 15px 0;
+            width: 100%;
+            background-color: #f3f3f3;
+        }
+
+        .scanbarcode__quiz-progress-bar{
+            border-radius: 0 15px 15px 0;
+            padding: 5px;
+        }
+
+        .scanbarcode__quiz-progress-bar--success{
+            background-color: #198754;
+            color: white;
+        }
+
+        .scanbarcode__quiz-progress-bar--primary{
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .scanbarcode__quiz-progress-bar--warning{
+            background-color: #ffc107;
+        }
+
+        .scanbarcode__quiz-icon{
+            max-width: 100%;
+            height: 40px;
+        }
+
+        .scanbarcode__quiz-email-paragraph{
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .scanbarcode__quiz-email-paragraph p{
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <div class="scanbarcode">
+        <div class="scanbarcode__quiz-diagram">
+            <div>
+                <h2 class="scanbarcode__quiz-title">Your result of the Multiple scanbarcode Test</h2>
+                <div class="scanbarcode__quiz-group">
+                    <label class="scanbarcode__quiz-label">Verbal/Linguistic</label>
+                    <img class="scanbarcode__quiz-icon" src="img/linguistic.png">
+                    <div class="scanbarcode__quiz-progress">
+                        <div class="scanbarcode__quiz-progress-bar">10</div>
+                    </div>
+                </div>
+                <div class="scanbarcode__quiz-group">
+                    <label class="scanbarcode__quiz-label">Logical/Mathematical</label>
+                    <img class="scanbarcode__quiz-icon" src="img/mathematical.png">
+                    <div class="scanbarcode__quiz-progress">
+                        <div class="scanbarcode__quiz-progress-bar">20</div>
+                    </div>
+                </div>
+                <div class="scanbarcode__quiz-group">
+                    <label class="scanbarcode__quiz-label">Visual/Spatial</label>
+                    <img class="scanbarcode__quiz-icon" src="img/spatial.png">
+                    <div class="scanbarcode__quiz-progress">
+                        <div class="scanbarcode__quiz-progress-bar">30</div>
+                    </div>
+                </div>
+                <div class="scanbarcode__quiz-group">
+                    <label class="scanbarcode__quiz-label">Interpersonal</label>
+                    <img class="scanbarcode__quiz-icon" src="img/interpersonal.png">
+                    <div class="scanbarcode__quiz-progress">
+                        <div class="scanbarcode__quiz-progress-bar">40</div>
+                    </div>
+                </div>
+                <div class="scanbarcode__quiz-group">
+                    <label class="scanbarcode__quiz-label">Musical</label>
+                    <img class="scanbarcode__quiz-icon" src="img/music.png">
+                    <div class="scanbarcode__quiz-progress">
+                        <div class="scanbarcode__quiz-progress-bar">17</div>
+                    </div>
+                </div>
+                <div class="scanbarcode__quiz-group">
+                    <label class="scanbarcode__quiz-label">Naturalistic</label>
+                    <img class="scanbarcode__quiz-icon" src="img/naturalistic.png">
+                    <div class="scanbarcode__quiz-progress">
+                        <div class="scanbarcode__quiz-progress-bar">22</div>
+                    </div>
+                </div>
+                <div class="scanbarcode__quiz-group">
+                    <label class="scanbarcode__quiz-label">Body/Kinesthetic</label>
+                    <img class="scanbarcode__quiz-icon" src="img/body.png">
+                    <div class="scanbarcode__quiz-progress">
+                        <div class="scanbarcode__quiz-progress-bar">10</div>
+                    </div>
+                </div>
+                <div class="scanbarcode__quiz-group">
+                    <label class="scanbarcode__quiz-label">Intrapersonal</label>
+                    <img class="scanbarcode__quiz-icon" src="img/intrapersonal.png">
+                    <div class="scanbarcode__quiz-progress">
+                        <div class="scanbarcode__quiz-progress-bar">5</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scanbarcode__quiz-email-paragraph">
+            <h2>
+                <i>Học sinh đọc định nghĩa để hiểu hơn về bản thân mình:</i>
+            </h2>
+            <div>
+                <h3>1. Trí thông minh Logic/ Toán học </h3>
+                <p>Nhóm trí thông minh này bao gồm khả năng suy luận theo cách quy nạp (đưa ra kết luận dựa vào quan sát) và khả năng suy luận theo cách suy diễn (đưa ra kết luận dựa trên các giả thuyết). Trí thông minh này cũng liên quan đến việc tìm kiếm sự liên hệ giữa các ý tưởng trừu tượng (ví dụ, làm việc với các con số); nhận biết các chuỗi và mẫu logic; nhận ra vấn đề và cách giải quyết. Trí thông minh này thường được chúng ta nghĩ gắn liền với thành công trong học tập. <br>Môn học cần trí thông minh này: Toán, Vật Lý, Hóa Học, Tin Học, Giáo dục Kinh tế và Pháp luật</p>
+            </div>
+            <div>
+                <h3>2. Trí thông minh Ngôn Ngữ </h3>
+                <p>Nhóm trí thông minh này bao gồm khả năng hiểu và sử dụng ngôn ngữ một cách hiệu quả để đọc, viết và nói. Nhóm này cũng ảnh hưởng đến vốn từ vựng và khả năng nhận biết và sử dụng hài hước; miêu tả hình ảnh bằng lời nói; hiểu các mẫu ngôn ngữ và nhận biết quan hệ giữa các từ. Trí thông minh này là một trong những trí thông minh chính cống hiến cho thành công trong học tập. Học sinh nên lưu ý rằng trí thông minh Ngôn Ngữ không nhất thiết phụ thuộc vào khả năng nói hoặc viết, mà có thể còn ở ngôn ngữ cơ thể. <br>Môn học cần trí thông minh này: Ngữ Văn, Ngoại Ngữ </p>
+            </div>
+            <div>
+                <h3>3. Trí thông minh Âm Nhạc</h3>
+                <p>Cùng với khả năng chơi nhạc cụ hoặc ca hát, trí thông minh Âm Nhạc cũng bao gồm một số kĩ năng khác: khả năng nhận biết và phân biệt âm sắc và nhịp điệu; thưởng thức và phân tích âm nhạc; hiểu cấu trúc của một bài hát và sáng tạo giai điệu và tiết tấu. <br> Môn học cần trí thông minh này: Âm Nhạc </p>
+            </div>
+            <div>
+                <h3>4. Trí thông minh Không gian – Thị giác</h3>
+                <p>Trí thông minh này bao gồm khả năng quan sát sự vật một cách chính xác; hình dung và biến đổi hình ảnh trong đầu; và nhận ra sự liên hệ giữa hình dạng và đồ vật. Nhóm này cũng ảnh hưởng đến khả năng phối màu và đo chính xác khoảng cách. Mặc dù trí thông minh này thường được áp dụng bằng thị giác, nhóm này còn có thể được sử dụng thông qua xúc giác và thậm chí thính giác. <br> Môn học cần trí thông minh này: Mỹ Thuật </p>
+            </div>
+            <div>
+                <h3>5. Trí thông minh Vận Động </h3>
+                <p>Trí thông minh này liên quan đến khả năng di chuyển và sử dụng các bộ phận trên cơ thể thành thạo và đồng bộ. Nhóm này cũng ảnh hưởng đến khả năng kiểm soát cơ bắp trong vận động thô và vận động tinh, và khả năng phối hợp tậm trí cùng cơ thể để làm các hoạt động phức tạp như chơi thể thao, nhảy múa… <br> Môn học cần trí thông minh này: Giáo dục thể chất, Bóng rổ, Bóng đá </p>
+            </div>
+            <div>
+                <h3>6. Trí thông minh Thiên Nhiên </h3>
+                <p>Trí thông minh Thiên Nhiên liên quan đến khả năng nhận biết, trân trọng và phân loại các thành phần  trong môi trường, như thực vật, động vật, con người, các kiểu thời tiết và cảnh quan. Nhóm này cũng ảnh hưởng đến khả năng nhìn thấy sự liên hệ giữa các thành phần này; khả năng nhận biết sự thay đổi trong môi trường và ảnh hưởng từ những thay đổi đó. <br>Môn học cần trí thông minh này: Công Nghệ, Hóa Học, Sinh Học</p>
+            </div>
+            <div>
+                <h3>7. Trí thông minh Giao tiếp Xã hội </h3>
+                <p>Trí thông minh này bao gồm khả năng hiểu và làm việc với người khác; thiết lập và duy trì mối quan hệ giữa người với người; nhìn thế giới từ quan điểm của người khác; giao tiếp tốt bằng lời nói và cử chỉ; hợp tác trong một nhóm; ảnh hưởng đến người khác và phản ứng với tâm trạng, tính khí và ý định của người khác. <br>Môn học cần trí thông minh này: Hoạt động ngoại khóa </p>
+            </div>
+            <div>
+                <h3>8. Trí thông minh Nội Tâm</h3> 
+                <p>Trí thông minh Nội Tâm bao gồm khả năng tự phản ánh – hiểu được cảm xúc, nỗi sợ hãi, động lực, điểm mạnh và điểm yếu của mình. Trí thông minh này cho phép một người phản ánh một cách khách quan về suy nghĩ và hành vi của chính mình, học hỏi từ sự phản ánh đó, tự tìm kiếm sự cải thiện bản thân trong tương lai và xác định được tự tin vào bản thân. <br>Môn học cần trí thông minh này: Ngữ Văn, Lịch Sử</p>
+            </div> 
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.scanbarcode__quiz-progress-bar')
+        .forEach(( item, index ) => {
+            var value = parseInt(item.innerHTML);
+            var percent = (100/40) * value;
+            var display = value + "/40";
+            item.style.width = percent + '%';
+            item.innerHTML = display;
+            if( percent < 50 ){
+                item.classList.remove('scanbarcode__quiz-progress-bar--success');
+                item.classList.remove('scanbarcode__quiz-progress-bar--primary');
+                item.classList.add('scanbarcode__quiz-progress-bar--warning');
+            }else if( percent >= 50 && percent < 80 ){
+                item.classList.remove('scanbarcode__quiz-progress-bar--success');
+                item.classList.remove('scanbarcode__quiz-progress-bar--warning');
+                item.classList.add('scanbarcode__quiz-progress-bar--primary');
+            }else if( percent >= 80 ){
+                item.classList.remove('scanbarcode__quiz-progress-bar--primary');
+                item.classList.remove('scanbarcode__quiz-progress-bar--warning');
+                item.classList.add('scanbarcode__quiz-progress-bar--success');
+            }
+        });
+
+    </script>
+</body>
+</html>

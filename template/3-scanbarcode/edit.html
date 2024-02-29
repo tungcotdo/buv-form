@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scanbarcode</title>	
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <div class="scanbarcode">
+        <div class="container">
+            
+            <div class="scanbarcode__banner">
+                <div class="scanbarcode-banner__logo">
+                    <img class="scanbarcode-banner-logo__img" src="../img/BUV-Logo-Transparent.png">
+                </div>
+                <div class="scanbarcode-banner__title">
+                    <h3 class="scanbarcode-banner-title__heading">CHECK-IN SYSTEM FOR BUV EVENTS</h3>
+                </div>
+            </div>
+
+            <ul class="scanbarcode__navigation">
+                <li class="scanbarcode__navigation-item"><a href="index.html">List Participant</a></li>
+                <li class="scanbarcode__navigation-item scanbarcode__navigation-item--active"><a href="check-in.html">Check-in</a></li>
+                <li class="scanbarcode__navigation-item"><a href="report.html">Summary Report</a></li>
+            </ul>
+
+            <hr>
+
+            <form class="scanbarcode__form" id="scanbarcode__form" action="" method="POST">
+                <input type="hidden" id="hd_recaptcha" name="hd_recaptcha">
+      
+                <div class="scanbarcode__section">
+
+                    <!-- PARTICIPANT INFOMATION -->
+                    <h3 class="scanbarcode__heading">UPDATE PARTICIPANT'S INFORMATION</h3>
+
+                    <p class="scanbarcode__note">
+                        Note: (<span class="required__symbol">*</span>) This field is required!</span>
+                    </p>
+            
+                    <div class="scanbarcode__field">
+            
+                        <div class="grid-desktop-four-col">
+                            <div class="scanbarcode__field-group validate">
+                                <label class="scanbarcode__field-label">Source<span class="required__symbol">*</span></label>
+                                <input class="scanbarcode__field-textbox" type="text" name="fullname_vn" id="scanbarcode__field-textbox--fullname" value="">
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="scanbarcode__field-group validate">
+                                <label class="scanbarcode__field-label">Participant's Name<span class="required__symbol">*</span></label>
+                                <input class="scanbarcode__field-textbox" type="text" name="phone_number" id="scanbarcode__field-textbox--phone" value="">
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="scanbarcode__field-group validate">
+                                <label class="scanbarcode__field-label">DOB<span class="required__symbol">*</span></label>
+                                <input class="scanbarcode__field-textbox" type="text" name="email" id="scanbarcode__field-textbox--email" value="">
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="scanbarcode__field-group validate">
+                                <label class="scanbarcode__field-label">Participant's Phone<span class="required__symbol">*</span></label>
+                                <input class="scanbarcode__field-textbox" type="text" name="email" id="scanbarcode__field-textbox--email" value="">
+                                <small class="error-message"></small>
+                            </div>
+                        </div>
+
+                        <div class="grid-desktop-four-col">
+                            <div class="scanbarcode__field-group validate">
+                                <label class="scanbarcode__field-label">Email<span class="required__symbol">*</span></label>
+                                <input class="scanbarcode__field-textbox" type="text" name="fullname_vn" id="scanbarcode__field-textbox--fullname" value="">
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="scanbarcode__field-group validate">
+                                <label class="scanbarcode__field-label">Parent's name<span class="required__symbol">*</span></label>
+                                <input class="scanbarcode__field-textbox" type="text" name="phone_number" id="scanbarcode__field-textbox--phone" value="">
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="scanbarcode__field-group validate">
+                                <label class="scanbarcode__field-label">Parent's Phone<span class="required__symbol">*</span></label>
+                                <input class="scanbarcode__field-textbox" type="text" name="email" id="scanbarcode__field-textbox--email" value="">
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="scanbarcode__field-group validate">
+                                <label class="scanbarcode__field-label">Parent's email<span class="required__symbol">*</span></label>
+                                <input class="scanbarcode__field-textbox" type="text" name="email" id="scanbarcode__field-textbox--email" value="">
+                                <small class="error-message"></small>
+                            </div>
+                        </div>
+
+                        <div class="grid-desktop-four-col">
+                            <div class="scanbarcode__field-group validate">
+                                <label class="scanbarcode__field-label">High school<span class="required__symbol">*</span></label>
+                                <input class="scanbarcode__field-textbox" type="text" name="fullname_vn" id="scanbarcode__field-textbox--fullname" value="">
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="scanbarcode__field-group validate">
+                                <label class="scanbarcode__field-label">Question/Note<span class="required__symbol">*</span></label>
+                                <input class="scanbarcode__field-textbox" type="text" name="phone_number" id="scanbarcode__field-textbox--phone" value="">
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="scanbarcode__field-group validate">
+                                <label class="scanbarcode__field-label">Ward<span class="required__symbol">*</span></label>
+                                <input class="scanbarcode__field-textbox" type="text" name="email" id="scanbarcode__field-textbox--email" value="">
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="scanbarcode__field-group validate">
+                                <label class="scanbarcode__field-label">District<span class="required__symbol">*</span></label>
+                                <input class="scanbarcode__field-textbox" type="text" name="email" id="scanbarcode__field-textbox--email" value="">
+                                <small class="error-message"></small>
+                            </div>
+                        </div>
+
+                        <div class="grid-desktop-four-col">
+                            <div class="scanbarcode__field-group validate">
+                                <label class="scanbarcode__field-label">City<span class="required__symbol">*</span></label>
+                                <input class="scanbarcode__field-textbox" type="text" name="fullname_vn" id="scanbarcode__field-textbox--fullname" value="">
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="scanbarcode__field-group validate">
+                                <label class="scanbarcode__field-label">TA<span class="required__symbol">*</span></label>
+                                <input class="scanbarcode__field-textbox" type="text" name="phone_number" id="scanbarcode__field-textbox--phone" value="">
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="scanbarcode__field-group validate">
+                                <label class="scanbarcode__field-label">Lead sub source<span class="required__symbol">*</span></label>
+                                <input class="scanbarcode__field-textbox" type="text" name="email" id="scanbarcode__field-textbox--email" value="">
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="scanbarcode__field-group validate">
+                                <label class="scanbarcode__field-label">Bus registration<span class="required__symbol">*</span></label>
+                                <input class="scanbarcode__field-textbox" type="text" name="email" id="scanbarcode__field-textbox--email" value="">
+                                <small class="error-message"></small>
+                            </div>
+                        </div>
+
+                        <div class="grid-desktop-four-col">
+                            <div class="scanbarcode__field-group validate">
+                                <label class="scanbarcode__field-label">Number people us bus<span class="required__symbol">*</span></label>
+                                <input class="scanbarcode__field-textbox" type="text" name="fullname_vn" id="scanbarcode__field-textbox--fullname" value="">
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="scanbarcode__field-group validate">
+                                <label class="scanbarcode__field-label">Confrmation<span class="required__symbol">*</span></label>
+                                <input class="scanbarcode__field-textbox" type="text" name="phone_number" id="scanbarcode__field-textbox--phone" value="">
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="scanbarcode__field-group validate">
+                                <label class="scanbarcode__field-label">Checked-in<span class="required__symbol">*</span></label>
+                                <input class="scanbarcode__field-textbox" type="text" name="email" id="scanbarcode__field-textbox--email" value="">
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="scanbarcode__field-group validate">
+                                <label class="scanbarcode__field-label">Total attendances<span class="required__symbol">*</span></label>
+                                <input class="scanbarcode__field-textbox" type="text" name="email" id="scanbarcode__field-textbox--email" value="">
+                                <small class="error-message"></small>
+                            </div>
+                        </div>
+
+                        <div class="grid-desktop-four-col">
+                            <div class="scanbarcode__field-group validate">
+                                <label class="scanbarcode__field-label">SR PIC<span class="required__symbol">*</span></label>
+                                <input class="scanbarcode__field-textbox" type="text" name="fullname_vn" id="scanbarcode__field-textbox--fullname" value="">
+                                <small class="error-message"></small>
+                            </div>
+                        </div>
+                        <form class="scanbarcode__form-filter" id="scanbarcode__form-filter">
+                            <fieldset class="scanbarcode__fieldset-group">
+                                <legend class="scanbarcode__fieldset-legen">MORNING SECTION</legend>
+                                    <div class="scanbarcode__activity-group">
+                                        <div>
+                                            <label for="">Time: 9h30 - 10h45</label>
+                                        </div>
+                                       <div class="scanbarcode__activity-group-content">
+                                            <label class="scanbarcode__activity-group-label">Activity: </label>
+                                            <select class="scanbarcode__activity-selectbox">
+                                                <option value="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, dolores.</option>
+                                                <option value="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, dolores.</option>
+                                                <option value="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, dolores.</option>
+                                            </select>
+                                       </div>
+                                    </div>
+                                    <div class="scanbarcode__activity-group">
+                                        <div>
+                                            <label for="">Time: 9h30 - 10h45</label>
+                                        </div>
+                                       <div class="scanbarcode__activity-group-content">
+                                            <label class="scanbarcode__activity-group-label">Activity: </label>
+                                            <select class="scanbarcode__activity-selectbox">
+                                                <option value="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, dolores.</option>
+                                                <option value="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, dolores.</option>
+                                                <option value="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, dolores.</option>
+                                            </select>
+                                       </div>
+                                    </div>
+                                    <div class="scanbarcode__activity-group">
+                                        <div>
+                                            <label for="">Time: 9h30 - 10h45</label>
+                                        </div>
+                                       <div class="scanbarcode__activity-group-content">
+                                            <label class="scanbarcode__activity-group-label">Activity: </label>
+                                            <select class="scanbarcode__activity-selectbox">
+                                                <option value="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, dolores.</option>
+                                                <option value="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, dolores.</option>
+                                                <option value="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, dolores.</option>
+                                            </select>
+                                       </div>
+                                    </div>
+                            </fieldset>
+
+                            <fieldset class="scanbarcode__fieldset-group">
+                                <legend class="scanbarcode__fieldset-legen">AFTERNOON SECTION</legend>
+                                    <div class="scanbarcode__activity-group">
+                                        <div>
+                                            <label for="">Time: 9h30 - 10h45</label>
+                                        </div>
+                                       <div class="scanbarcode__activity-group-content">
+                                            <label class="scanbarcode__activity-group-label">Activity: </label>
+                                            <select class="scanbarcode__activity-selectbox">
+                                                <option value="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, dolores.</option>
+                                                <option value="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, dolores.</option>
+                                                <option value="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, dolores.</option>
+                                            </select>
+                                       </div>
+                                    </div>
+                                    <div class="scanbarcode__activity-group">
+                                        <div>
+                                            <label for="">Time: 9h30 - 10h45</label>
+                                        </div>
+                                       <div class="scanbarcode__activity-group-content">
+                                            <label class="scanbarcode__activity-group-label">Activity: </label>
+                                            <select class="scanbarcode__activity-selectbox">
+                                                <option value="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, dolores.</option>
+                                                <option value="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, dolores.</option>
+                                                <option value="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, dolores.</option>
+                                            </select>
+                                       </div>
+                                    </div>
+                                    <div class="scanbarcode__activity-group">
+                                        <div>
+                                            <label for="">Time: 9h30 - 10h45</label>
+                                        </div>
+                                       <div class="scanbarcode__activity-group-content">
+                                            <label class="scanbarcode__activity-group-label">Activity: </label>
+                                            <select class="scanbarcode__activity-selectbox">
+                                                <option value="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, dolores.</option>
+                                                <option value="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, dolores.</option>
+                                                <option value="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, dolores.</option>
+                                            </select>
+                                       </div>
+                                    </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <!-- / PERSONAL INFOMATION -->
+            
+                </div>
+            
+                
+                <div class="scanbarcode-form__submit">
+                    <a href="" class="scanbarcode-form-submit__btn scanbarcode-form-submit__btn--previous">Previous</a>
+                    <input class="scanbarcode-form-submit__btn scanbarcode-form-submit__btn--next" id="scanbarcode-form-submit__btn--next" type="submit" value="Update">
+                </div>
+            
+            
+            </form>
+
+
+        </div><!-- container -->
+    </div><!-- scanbarcode -->
+
+
+
+
+
+
+
+
+    <!-- Modal loading page -->
+    <div class="modal" id="modal__loading">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <div class="loader"></div>
+            <div class="loading__title">Processing ...<br>Please do not close the browser</div>
+        </div>
+    </div>
+
+
+    <script src="js/function.js"></script>
+    <script>
+        
+        Validator({
+            form: '#modal-upload__form',
+            rules: [
+                Validator.file({
+                    selector: '#scanbarcode__field-file',
+                    required: true,
+                    size: 2,
+                    extension: ['jpg', 'jpeg', 'png'],
+                    upload: 'passport_photograph'
+                })
+            ],
+            onSubmit: (data) => {
+                alert('Upload successfully')
+            }
+        });
+
+        document.getElementById('sanbarcode__btn--import-excel').onclick = () => {
+            document.getElementById('modal__upload').style.display = "block";
+        }
+
+        document.querySelectorAll('.modal__clsicon, .modal__overlay').forEach( e => {
+            e.onclick = () => {
+                document.querySelectorAll('.modal').forEach((e) => {
+                    e.style.display = "none";
+                });
+            }
+        });
+    </script>
+
+
+</body>
+</html>

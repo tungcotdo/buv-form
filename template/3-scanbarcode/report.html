@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scanbarcode</title>	
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <div class="scanbarcode">
+        <div class="container">
+            
+            <div class="scanbarcode__banner">
+                <div class="scanbarcode-banner__logo">
+                    <img class="scanbarcode-banner-logo__img" src="../img/BUV-Logo-Transparent.png">
+                </div>
+                <div class="scanbarcode-banner__title">
+                    <h3 class="scanbarcode-banner-title__heading">CHECK-IN SYSTEM FOR BUV EVENTS</h3>
+                </div>
+            </div>
+
+            <ul class="scanbarcode__navigation">
+                <li class="scanbarcode__navigation-item scanbarcode__navigation-item--active"><a href="index.html">List Participant</a></li>
+                <li class="scanbarcode__navigation-item"><a href="check-in.html">Check-in</a></li>
+                <li class="scanbarcode__navigation-item"><a href="report.html">Summary Report</a></li>
+            </ul>
+
+            <hr>
+
+            <div class="sanbarcode__buttons">
+                <div>
+                    <label class="scanbarcode__field-label">Checked-in: 3/300</label>
+                    <label class="scanbarcode__field-label">Total attendees: 300/600</label>
+                </div>
+            </div>
+
+            <div class="scanbarcode__field">
+    
+                    <fieldset class="scanbarcode__fieldset-group">
+                        <legend class="scanbarcode__fieldset-legen">MORNING SECTION</legend>
+                            <div class="scanbarcode__activity-report-group">
+                                <div class="scanbarcode__activity-group">
+                                    <div>
+                                        <label for="">Time: 9h30 - 10h45</label>
+                                    </div>
+                                    <div class="scanbarcode__activity-group-content">
+                                        <label class="scanbarcode__activity-group-label">Activity: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt, deserunt?</label>
+                                    </div>
+                                </div>
+                                <div class="scanbarcode__activity-group">12</div>
+                            </div>
+                            <div class="scanbarcode__activity-report-group">
+                                <div class="scanbarcode__activity-group">
+                                    <div>
+                                        <label for="">Time: 9h30 - 10h45</label>
+                                    </div>
+                                    <div class="scanbarcode__activity-group-content">
+                                        <label class="scanbarcode__activity-group-label">Activity: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt, deserunt?</label>
+                                    </div>
+                                </div>
+                                <div class="scanbarcode__activity-group">12</div>
+                            </div>
+                            <div class="scanbarcode__activity-report-group">
+                                <div class="scanbarcode__activity-group">
+                                    <div>
+                                        <label for="">Time: 9h30 - 10h45</label>
+                                    </div>
+                                    <div class="scanbarcode__activity-group-content">
+                                        <label class="scanbarcode__activity-group-label">Activity: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt, deserunt?</label>
+                                    </div>
+                                </div>
+                                <div class="scanbarcode__activity-group">12</div>
+                            </div>
+                    </fieldset>
+    
+                    <fieldset class="scanbarcode__fieldset-group">
+                        <legend class="scanbarcode__fieldset-legen">MORNING SECTION</legend>
+                            <div class="scanbarcode__activity-report-group">
+                                <div class="scanbarcode__activity-group">
+                                    <div>
+                                        <label for="">Time: 9h30 - 10h45</label>
+                                    </div>
+                                    <div class="scanbarcode__activity-group-content">
+                                        <label class="scanbarcode__activity-group-label">Activity: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt, deserunt?</label>
+                                    </div>
+                                </div>
+                                <div class="scanbarcode__activity-group">12</div>
+                            </div>
+                            <div class="scanbarcode__activity-report-group">
+                                <div class="scanbarcode__activity-group">
+                                    <div>
+                                        <label for="">Time: 9h30 - 10h45</label>
+                                    </div>
+                                    <div class="scanbarcode__activity-group-content">
+                                        <label class="scanbarcode__activity-group-label">Activity: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt, deserunt?</label>
+                                    </div>
+                                </div>
+                                <div class="scanbarcode__activity-group">12</div>
+                            </div>
+                            <div class="scanbarcode__activity-report-group">
+                                <div class="scanbarcode__activity-group">
+                                    <div>
+                                        <label for="">Time: 9h30 - 10h45</label>
+                                    </div>
+                                    <div class="scanbarcode__activity-group-content">
+                                        <label class="scanbarcode__activity-group-label">Activity: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt, deserunt?</label>
+                                    </div>
+                                </div>
+                                <div class="scanbarcode__activity-group">12</div>
+                            </div>
+                    </fieldset>
+            </div>
+            
+        </div><!-- container -->
+    </div><!-- scanbarcode -->
+
+    <!-- Modal loading page -->
+    <div class="modal" id="modal__loading">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <div class="loader"></div>
+            <div class="loading__title">Processing ...<br>Please do not close the browser</div>
+        </div>
+    </div>
+
+    <!-- Modal upload layout -->
+    <div class="modal" id="modal__upload">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <div class="modal__header">
+                <div class="modal__width">
+                    <h3 class="modal__title">Upload Excel File</h3>
+                    <img class="modal__clsicon" src="img/icon/close.png">
+                </div>
+            </div>
+            <div class="modal__body">
+                <div class="modal__width">
+                    <form action="" class="modal-upload__form" id="modal-upload__form">
+                        <div class="validate">
+                            <div>
+                                <input class="scholarship-section__field-file" id="scholarship-section__field-file" type="file" name="excel-file">
+                                <button class="sanbarcode__btn">Submit</button>
+                            </div>
+                            <small class="error-message"></small>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/function.js"></script>
+    <script>
+        
+        Validator({
+            form: '#modal-upload__form',
+            rules: [
+                Validator.file({
+                    selector: '#scholarship-section__field-file',
+                    required: true,
+                    size: 2,
+                    extension: ['jpg', 'jpeg', 'png'],
+                    upload: 'passport_photograph'
+                })
+            ],
+            onSubmit: (data) => {
+                alert('Upload successfully')
+            }
+        });
+
+        document.getElementById('sanbarcode__btn--import-excel').onclick = () => {
+            document.getElementById('modal__upload').style.display = "block";
+        }
+
+        document.querySelectorAll('.modal__clsicon, .modal__overlay').forEach( e => {
+            e.onclick = () => {
+                document.querySelectorAll('.modal').forEach((e) => {
+                    e.style.display = "none";
+                });
+            }
+        });
+    </script>
+
+
+</body>
+</html>

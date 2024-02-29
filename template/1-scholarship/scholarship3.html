@@ -80,7 +80,7 @@
                         <fieldset class="scholarship-section__fieldset-group">
                             <legend class="scholarship-section__fieldset-legen">1</legend>
                             <div class="grid-desktop-five-col grid-ipad-three-col">
-                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group validate">
+                                <div class="scholarship-section__field-group scholarship-section__field-textbox-group validate" id="qualification-1">
                                     <label class="scholarship-section__field-label">Name<span class="required__symbol">*</span></label>
                                     <select class="scholarship-section__field-selectbox" id="scholarship-section__field-name-qualification1">
                                         <option value="">-- Choose option --</option>
@@ -89,6 +89,7 @@
                                         <option value="10">Vietname high school - grade 10</option>
                                         <option value="other">Other</option>
                                     </select>
+                                    
                                     <small class="error-message"></small>
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group validate">
@@ -119,12 +120,12 @@
                             <div class="grid-desktop-five-col grid-ipad-three-col">
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
                                     <label class="scholarship-section__field-label">Name</label>
-                                    <select class="scholarship-section__field-selectbox">
+                                    <select class="scholarship-section__field-selectbox" id="scholarship-section__field-name-qualification2">
                                         <option value="">-- Choose option --</option>
-                                        <option value="">Vietname high school - grade 12</option>
-                                        <option value="">Vietname high school - grade 11</option>
-                                        <option value="">Vietname high school - grade 10</option>
-                                        <option value="">Other</option>
+                                        <option value="12">Vietname high school - grade 12</option>
+                                        <option value="11">Vietname high school - grade 11</option>
+                                        <option value="10">Vietname high school - grade 10</option>
+                                        <option value="other">Other</option>
                                     </select>
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
@@ -151,12 +152,12 @@
                             <div class="grid-desktop-five-col grid-ipad-three-col">
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
                                     <label class="scholarship-section__field-label">Name</label>
-                                    <select class="scholarship-section__field-selectbox">
+                                    <select class="scholarship-section__field-selectbox" id="scholarship-section__field-name-qualification3">
                                         <option value="">-- Choose option --</option>
-                                        <option value="">Vietname high school - grade 12</option>
-                                        <option value="">Vietname high school - grade 11</option>
-                                        <option value="">Vietname high school - grade 10</option>
-                                        <option value="">Other</option>
+                                        <option value="12">Vietname high school - grade 12</option>
+                                        <option value="11">Vietname high school - grade 11</option>
+                                        <option value="10">Vietname high school - grade 10</option>
+                                        <option value="other">Other</option>
                                     </select>
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
@@ -183,12 +184,12 @@
                             <div class="grid-desktop-five-col grid-ipad-three-col">
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
                                     <label class="scholarship-section__field-label">Name</label>
-                                    <select class="scholarship-section__field-selectbox">
+                                    <select class="scholarship-section__field-selectbox" id="scholarship-section__field-name-qualification4">
                                         <option value="">-- Choose option --</option>
-                                        <option value="">Vietname high school - grade 12</option>
-                                        <option value="">Vietname high school - grade 11</option>
-                                        <option value="">Vietname high school - grade 10</option>
-                                        <option value="">Other</option>
+                                        <option value="12">Vietname high school - grade 12</option>
+                                        <option value="11">Vietname high school - grade 11</option>
+                                        <option value="10">Vietname high school - grade 10</option>
+                                        <option value="other">Other</option>
                                     </select>
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
@@ -215,12 +216,12 @@
                             <div class="grid-desktop-five-col grid-ipad-three-col">
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
                                     <label class="scholarship-section__field-label">Name</label>
-                                    <select class="scholarship-section__field-selectbox">
+                                    <select class="scholarship-section__field-selectbox" id="scholarship-section__field-name-qualification5">
                                         <option value="">-- Choose option --</option>
-                                        <option value="">Vietname high school - grade 12</option>
-                                        <option value="">Vietname high school - grade 11</option>
-                                        <option value="">Vietname high school - grade 10</option>
-                                        <option value="">Other</option>
+                                        <option value="12">Vietname high school - grade 12</option>
+                                        <option value="11">Vietname high school - grade 11</option>
+                                        <option value="10">Vietname high school - grade 10</option>
+                                        <option value="other">Other</option>
                                     </select>
                                 </div>
                                 <div class="scholarship-section__field-group scholarship-section__field-textbox-group">
@@ -294,6 +295,24 @@
 
     <script src="../js/function.js"></script>
     <script>
+
+        var qualificationSelects = document.querySelectorAll(".scholarship-section__field-selectbox");
+        qualificationSelects.forEach( element => {
+            element.addEventListener("change", function(){ 
+                if( element.value == 'other' ){
+                    var positionIndex = element.id.split("scholarship-section__field-name-qualification")['1'];
+                    var otherTextbox = document.createElement("input");
+                    otherTextbox.classList.add("scholarship-section__field-textbox");
+                    otherTextbox.classList.add("scholarship-section__field-textbox-otherqualification");
+                    otherTextbox.name = "qualification-other" + positionIndex;
+                    otherTextbox.placeholder = " Enter qualification";
+                    element.parentElement.appendChild(otherTextbox);
+                }else{
+                    element.parentElement.querySelector(".scholarship-section__field-textbox-otherqualification").remove();
+                }
+            });
+        } );
+         
         
         Validator({
             form: '#scholarship__form',

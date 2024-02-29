@@ -21,6 +21,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 5px;
+}
+
+.intelligence__neck-item--right{
+    text-align: right;
 }
 
 
@@ -95,7 +100,7 @@
 .intelligence-section__fieldset-group{
     padding: 0 10px 10px 10px;
     border: 1px solid var(--color-bor);
-    background-color: var(--color-bac);
+    background-color: #cfe2ff;
     margin-top: var(--space-sec);
 }
 
@@ -173,14 +178,14 @@
 }
 
 .intelligence-section__heading{
-    font-size: 20px;
+    font-size: 26px;
     font-family: BrandonBld;
 }
 
 
 @media (max-width: 576px) {
     .intelligence-section__heading{
-        font-size: 16px;
+        font-size: 18px;
         margin-top: 5.2px;
     }
 }
@@ -267,11 +272,14 @@
 
 .intelligence__neck-item-language{
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 21px;
     letter-spacing: -.042em;
     color: #333;
-    width: 100%;
+}
+
+.intelligence__neck-item-language-slb{
+    font-size: 14px;
 }
 
 @media (max-width: 576px) {
@@ -533,14 +541,18 @@
 }
 
 .intelligence__quiz-score{
-    width: 50px;
-    height: 33px;
+    width: 38px;
+    height: 35px;
     border: 1px solid var(--color-bor);
-    padding-left: var(--space-fir);
 }
 
 .intelligence__quiz-label{
     font-size: 14px;
+    width: 90%;
+}
+
+.intelligence-section__fieldset-legen{
+    margin: 25px auto;
 }
 
 /* Validate color */
@@ -553,7 +565,8 @@
 .valid>.intelligence-section__field-group-other-textbox,
 .valid>.intelligence-section__field-textbox-eng-taken,
 .valid>.intelligence-section__field-file-eng-taken,
-.valid>.intelligence-section__field-file-ccp{
+.valid>.intelligence-section__field-file-ccp,
+.quiz-valid{
     background-color: #eaf8e9!important;
     border: 1px solid #91f08c!important;
 }
@@ -574,7 +587,8 @@
 .invalid>.intelligence-section__field-group-other-textbox,
 .invalid>.intelligence-section__field-textbox-eng-taken,
 .invalid>.intelligence-section__field-file-eng-taken,
-.invalid>.intelligence-section__field-file-ccp{
+.invalid>.intelligence-section__field-file-ccp,
+.quiz-invalid{
     background-color: #f5dfdf!important;
     border: 1px solid #f08c8c!important;
 }

@@ -99,6 +99,11 @@ function Validator( options ) {
                             validate(element, customRules[rule.selector], rule.error);
                         });
                         break;
+                    case 'slb':
+                        element.onchange = function(){
+                            validate(element, customRules[rule.selector], rule.error);
+                        }
+                        break;
                     case 'bd':
                         var slbs = element.querySelectorAll('select');
                         slbs.forEach(slb => {
@@ -369,7 +374,6 @@ Validator.slbRequired = function ({selector, msg, submit}){
         selector: selector,
         submit: submit,
         test: function( element, formElement ){
-            console.log(element.value);
             return  element.value
                     ? undefined 
                     : msg 
