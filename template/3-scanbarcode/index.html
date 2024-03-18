@@ -41,9 +41,10 @@
                     <button class="sanbarcode__btn sanbarcode__btn--import-excel" type="button" id="sanbarcode__btn--import-excel">Import Excel</button>
                 </div>
                 <div>
-                    <fieldset class="scanbarcode__fieldset-group">
+                    <fieldset class="scanbarcode__filter-group">
                         <legend class="scanbarcode__fieldset-legen">Filter</legend>
                         <form class="scanbarcode__form-filter" id="scanbarcode__form-filter">
+                            
                             <div>
                                 <label for="">Participant Name</label>
                                 <input class="scanbarcode__filter-textbox" type="text" placeholder=" Nguyen Van A ...">
@@ -62,6 +63,7 @@
                                 <label for="">SR-pic</label>
                                 <select class="scanbarcode__field-selectbox" name="" id="">
                                     <option value="">Kieu Ha Linh</option>
+                                    <option value="">All</option>
                                 </select>
                             </div>
 
@@ -70,7 +72,7 @@
                     </fieldset>
                 </div>
                 <div>
-                    <button class="sanbarcode__btn mr-3" type="button">Send Email</button>
+                    <button class="sanbarcode__btn mr-3" type="button" title="Send invitation email for list participants below" onclick="return confirm('Do you want to send invitation email for list participants below?')">Send Email</button>
                     <button class="sanbarcode__btn" type="button">Export</button>
                 </div>
             </div>
@@ -96,8 +98,8 @@
                       <td>Germany</td>
                       <td>
                         <a href="edit.html">Edit</a> |
-                        <a href="">Delete</a> |
-                        <a href="">Send Email</a>
+                        <a href="" onclick="return confirm('Do you want to delete this participant?')">Delete</a> |
+                        <a href="" onclick="return confirm('Do you want to send invitation email to this participant?')">Send Email</a>
                       </td>
                     </tr>
                     <tr>
@@ -109,8 +111,8 @@
                         <td>Germany</td>
                         <td>
                           <a href="edit.html">Edit</a> |
-                          <a href="">Delete</a> |
-                          <a href="">Send Email</a>
+                          <a href="" onclick="return confirm('Do you want to delete this participant?')">Delete</a> |
+                          <a href="" onclick="return confirm('Do you want to send invitation email to this participant?')">Send Email</a>
                         </td>
                       </tr>
                   </table>
@@ -166,7 +168,8 @@
                     required: true,
                     size: 2,
                     extension: ['jpg', 'jpeg', 'png'],
-                    upload: 'passport_photograph'
+                    upload: 'passport_photograph',
+                    submit: true
                 })
             ],
             onSubmit: (data) => {

@@ -29,8 +29,8 @@
             </div>
 
             <ul class="scanbarcode__navigation">
-                <li class="scanbarcode__navigation-item scanbarcode__navigation-item--active"><a href="index.html">List Participant</a></li>
-                <li class="scanbarcode__navigation-item"><a href="check-in.html">Check-in</a></li>
+                <li class="scanbarcode__navigation-item"><a href="index.html">List Participant</a></li>
+                <li class="scanbarcode__navigation-item scanbarcode__navigation-item--active"><a href="check-in.html">Check-in</a></li>
                 <li class="scanbarcode__navigation-item"><a href="report.html">Summary Report</a></li>
             </ul>
 
@@ -38,36 +38,38 @@
 
             <div class="sanbarcode__buttons">
                 <div>
-                    <fieldset class="scanbarcode__fieldset-group">
+                    <fieldset class="scanbarcode__fieldset-group scanbarcode__fieldset-group--scanbarcode">
                         <legend class="scanbarcode__fieldset-legen">Scan barcode</legend>
-                        <form class="scanbarcode__form-filter" id="scanbarcode__form-filter">
-                            <div>
-                                <input class="scanbarcode__scan-textbox" type="text" placeholder=" Focus here before scan barcode ...">
+                        <form class="scanbarcode__form-filter" id="scanbarcode__form-scanbarcode">
+                            <div class="validate">
+                                <div>
+                                    <input class="scanbarcode__scan-textbox" id="scanbarcode__scan-textbox" type="text" placeholder=" Focus here before scan barcode ...">
+                                    <button class="sanbarcode__btn sanbarcode__btn--scanbarcode" type="button">Search</button>
+                                </div>
+                                <small class="error-message"></small>
                             </div>
-
-                            <button class="sanbarcode__btn" type="button">Search</button>
                         </form>
                     </fieldset>
                 </div>
             </div>
 
             <div class="scanbarcode__field">
-                <form id="scanbarcode__form-filter">
+                <form id="scanbarcode__form-edit-participant">
                     <div class="grid-desktop-three-col">
 
                         <div class="scanbarcode__field-group validate">
                             <label class="scanbarcode__field-label">Participant's Name<span class="required__symbol">*</span></label>
-                            <input class="scanbarcode__field-textbox" type="text" name="phone_number" id="scanbarcode__field-textbox--phone" value="">
+                            <input class="scanbarcode__field-textbox" type="text" name="phone_number" id="scanbarcode__field-textbox--name" value="">
                             <small class="error-message"></small>
                         </div>
                         <div class="scanbarcode__field-group validate">
                             <label class="scanbarcode__field-label">DOB<span class="required__symbol">*</span></label>
-                            <input class="scanbarcode__field-textbox" type="text" name="email" id="scanbarcode__field-textbox--email" value="">
+                            <input class="scanbarcode__field-textbox" type="text" name="email" id="scanbarcode__field-textbox--dob" value="">
                             <small class="error-message"></small>
                         </div>
                         <div class="scanbarcode__field-group validate">
                             <label class="scanbarcode__field-label">Participant's Phone<span class="required__symbol">*</span></label>
-                            <input class="scanbarcode__field-textbox" type="text" name="email" id="scanbarcode__field-textbox--email" value="">
+                            <input class="scanbarcode__field-textbox" type="text" name="email" id="scanbarcode__field-textbox--phone" value="">
                             <small class="error-message"></small>
                         </div>
                     </div>
@@ -75,17 +77,17 @@
                     <div class="grid-desktop-three-col">
                         <div class="scanbarcode__field-group validate">
                             <label class="scanbarcode__field-label">Email<span class="required__symbol">*</span></label>
-                            <input class="scanbarcode__field-textbox" type="text" name="fullname_vn" id="scanbarcode__field-textbox--fullname" value="">
+                            <input class="scanbarcode__field-textbox" type="text" name="fullname_vn" id="scanbarcode__field-textbox--email" value="">
                             <small class="error-message"></small>
                         </div>
                         <div class="scanbarcode__field-group validate">
                             <label class="scanbarcode__field-label">Total attendees<span class="required__symbol">*</span></label>
-                            <input class="scanbarcode__field-textbox" type="text" name="phone_number" id="scanbarcode__field-textbox--phone" value="">
+                            <input class="scanbarcode__field-textbox" type="text" name="phone_number" id="scanbarcode__field-textbox--attendees" value="">
                             <small class="error-message"></small>
                         </div>
                         <div class="scanbarcode__field-group validate">
                             <label class="scanbarcode__field-label">SR PIC<span class="required__symbol">*</span></label>
-                            <input class="scanbarcode__field-textbox" type="text" name="email" id="scanbarcode__field-textbox--email" value="">
+                            <input class="scanbarcode__field-textbox" type="text" name="email" id="scanbarcode__field-textbox--sr" value="">
                             <small class="error-message"></small>
                         </div>
     
@@ -100,7 +102,7 @@
                                <div class="scanbarcode__activity-group-content">
                                     <label class="scanbarcode__activity-group-label">Activity: </label>
                                     <select class="scanbarcode__activity-selectbox">
-                                        <option value="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, dolores.</option>
+                                        <option value="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, possimus.</option>
                                         <option value="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, dolores.</option>
                                         <option value="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, dolores.</option>
                                     </select>
@@ -227,14 +229,11 @@
     <script>
         
         Validator({
-            form: '#modal-upload__form',
+            form: '#scanbarcode__form-scanbarcode',
             rules: [
-                Validator.file({
-                    selector: '#scholarship-section__field-file',
-                    required: true,
-                    size: 2,
-                    extension: ['jpg', 'jpeg', 'png'],
-                    upload: 'passport_photograph'
+                Validator.tbRequired({
+                    selector: '#scanbarcode__scan-textbox',
+                    submit: true
                 })
             ],
             onSubmit: (data) => {
@@ -242,15 +241,36 @@
             }
         });
 
-        document.getElementById('sanbarcode__btn--import-excel').onclick = () => {
-            document.getElementById('modal__upload').style.display = "block";
-        }
-
-        document.querySelectorAll('.modal__clsicon, .modal__overlay').forEach( e => {
-            e.onclick = () => {
-                document.querySelectorAll('.modal').forEach((e) => {
-                    e.style.display = "none";
-                });
+        Validator({
+            form: '#scanbarcode__form-edit-participant',
+            rules: [
+                Validator.tbRequired({
+                    selector: '#scanbarcode__field-textbox--name',
+                    submit: true
+                }),
+                Validator.tbRequired({
+                    selector: '#scanbarcode__field-textbox--dob',
+                    submit: true
+                }),
+                Validator.tbRequired({
+                    selector: '#scanbarcode__field-textbox--phone',
+                    submit: true
+                }),
+                Validator.tbRequired({
+                    selector: '#scanbarcode__field-textbox--email',
+                    submit: true
+                }),
+                Validator.tbRequired({
+                    selector: '#scanbarcode__field-textbox--attendees',
+                    submit: true
+                }),
+                Validator.tbRequired({
+                    selector: '#scanbarcode__field-textbox--sr',
+                    submit: true
+                }),
+            ],
+            onSubmit: (data) => {
+                alert('Upload successfully')
             }
         });
     </script>

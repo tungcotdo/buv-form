@@ -1,0 +1,30 @@
+@font-face {
+    font-family: AvenirNextLight;
+    src: url('../font/Avenir/SVN-Avenir Next Light.otf');
+}
+
+@font-face {
+    font-family: AvenirLTStdHeavy;
+    src: url('../font/Avenir/AvenirLTStd-Heavy.ttf');
+}
+
+@font-face {
+    font-family: AvenirLTStdBlack;
+    src: url('../font/Avenir/AvenirLTStd-Black.ttf');
+}
+
+@font-face {
+    font-family: AvenirLTStdBook;
+    src: url('../font/Avenir/AvenirLTStd-Book.ttf');
+}
+
+@font-face {
+    font-family: AvenirLTStdMedium;
+    src: url('../font/Avenir/AvenirLTStd-Medium.ttf');
+}
+
+
+@font-face {
+    font-family: BrandonBld;
+    src: url('../font/Brandon/Brandon_bld.otf');
+}

@@ -1,6 +1,6 @@
 .scholarship__banner{
     height: 290px;
-    background-image: url('../img/banner.png');
+    background-image: url('img/banner.png');
     background-position: left;
     background-size: auto 290px;
     background-repeat: no-repeat;

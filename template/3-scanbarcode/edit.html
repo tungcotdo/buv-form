@@ -278,12 +278,6 @@
     </div><!-- scanbarcode -->
 
 
-
-
-
-
-
-
     <!-- Modal loading page -->
     <div class="modal" id="modal__loading">
         <div class="modal__overlay"></div>
@@ -294,37 +288,7 @@
     </div>
 
 
-    <script src="js/function.js"></script>
-    <script>
-        
-        Validator({
-            form: '#modal-upload__form',
-            rules: [
-                Validator.file({
-                    selector: '#scanbarcode__field-file',
-                    required: true,
-                    size: 2,
-                    extension: ['jpg', 'jpeg', 'png'],
-                    upload: 'passport_photograph'
-                })
-            ],
-            onSubmit: (data) => {
-                alert('Upload successfully')
-            }
-        });
 
-        document.getElementById('sanbarcode__btn--import-excel').onclick = () => {
-            document.getElementById('modal__upload').style.display = "block";
-        }
-
-        document.querySelectorAll('.modal__clsicon, .modal__overlay').forEach( e => {
-            e.onclick = () => {
-                document.querySelectorAll('.modal').forEach((e) => {
-                    e.style.display = "none";
-                });
-            }
-        });
-    </script>
 
 
 </body>

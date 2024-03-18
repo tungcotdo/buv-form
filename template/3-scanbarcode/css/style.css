@@ -86,6 +86,23 @@
 
 }
 
+.scanbarcode__alert{
+    margin-top: 15px;
+    padding: var(--space-sec) var(--space-fir);
+    font-style: italic;
+}
+
+.scanbarcode__alert--danger{
+    color: red;
+    background: #ff000021;
+}
+
+.scanbarcode__alert--success{
+    color: rgb(0 107 23);
+    background: #00ff1521;
+}
+
+
 .scanbarcode__field-textbox-input{
     height: 33px;
     border: 1px solid var(--color-bor);
@@ -100,6 +117,18 @@
 .scanbarcode__fieldset-group{
     border: 1px solid var(--color-bor);
     margin-top: var(--space-thr);
+}
+
+.scanbarcode__filter-group{
+    border: 1px solid var(--color-bor);
+}
+
+.scanbarcode__fieldset-group--scanbarcode{
+    background-color: var(--color-bac);
+}
+
+.sanbarcode__btn--scanbarcode{
+    background-color: var(--yellow-color);
 }
 
 .scanbarcode-form__submit{
@@ -120,6 +149,10 @@
     cursor: pointer;
     border: none;
     padding: var(--space-fir);
+    background: var(--color-bac);
+    color: black;
+    font-size: 14px;
+    font-family: AvenirNextLight;
 }
 
 .scanbarcode-form-submit__btn--disabled{
@@ -160,13 +193,16 @@
 }
 
 .scanbarcode__activity-group-count{
-    border: 1px solid var(--color-bor);
+    color: var(--color-fir);
+    margin-right: var(--space-thr);
+    font-weight: bold;
 }
 
 .scanbarcode__scan-textbox{
     height: 33px;
     border: 1px solid var(--color-bor);
     width: 300px;
+    margin-right: var(--space-fir)
 }
 
 .scanbarcode__field-textbox{
@@ -191,18 +227,38 @@
     border-right: 1px solid var(--color-bor);
 }
 
-.scanbarcode__activity-group{
-    border: 1px solid var(--color-bor);
-    padding: var(--space-sec);
+.scanbarcode__activity-report-group{
+    border: 1px solid var(--color-bac);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: var(--space-fir);
+}
+
+.scanbarcode__total-report{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    margin: var(--space-fou) auto;
+}
+
+.scanbarcode__total-report-label{
+    width: fit-content;
+    font-size: 20px;
+    color: var(--color-fir);
+    font-weight: bold;
+}
+
+.scanbarcode__activity-group{
+    padding: var(--space-sec);
     height: auto;
 }
 
 .scanbarcode__activity-group-content{
     display: flex;
     gap: 3px;
-    align-items: center;
     margin-top: 5px;
+    align-items: center;
 }
 
 .scanbarcode__activity-group-label{
@@ -328,6 +384,7 @@
 
 .scanbarcode__fieldset-legen{
     font-size: 18px;
+    font-weight: bold;
 }
 
 .scanbarcode__field-label{
@@ -637,6 +694,7 @@
 .valid>.scanbarcode__field-textbox-eng-taken,
 .valid>.scanbarcode__field-file-eng-taken,
 .valid>.scanbarcode__field-file-ccp,
+.valid .scanbarcode__scan-textbox,
 .quiz-valid{
     background-color: #eaf8e9!important;
     border: 1px solid #91f08c!important;
@@ -655,6 +713,7 @@
 .invalid .scanbarcode__field-file,
 .invalid .scanbarcode__field-selectbox,
 .invalid .scanbarcode__field-textarea-input,
+.invalid .scanbarcode__scan-textbox,
 .invalid>.scanbarcode__field-group-other-textbox,
 .invalid>.scanbarcode__field-textbox-eng-taken,
 .invalid>.scanbarcode__field-file-eng-taken,
@@ -708,7 +767,7 @@
     align-items: center;
     gap: var(--space-fou);
     width: fit-content;
-    margin: var(--space-fou) auto;
+    margin: var(--space-thr) auto;
 }
 
 .scanbarcode__form-filter{
@@ -717,3 +776,18 @@
     gap: var(--space-fou);
 }
 
+.scanbarcode__alert{
+    margin-top: 15px;
+    padding: var(--space-sec) var(--space-fir);
+    font-style: italic;
+}
+
+.scanbarcode__alert--danger{
+    color: red;
+    background: #ff000021;
+}
+
+.scanbarcode__alert--success{
+    color: rgb(0 107 23);
+    background: #00ff1521;
+}

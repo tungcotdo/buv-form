@@ -1,0 +1,147 @@
+/* Modal */
+.modal{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
+    display: none;
+}
+
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.mb_modal__navigation .modal__content{
+    height: 100vh;
+    background-color: white;
+    opacity: 0.7;
+}
+
+@keyframes modalFromTop {
+    from {
+       top: -100%;
+    }
+    to {
+       top: 0px;
+    }
+}
+
+.modal__content{
+    border: 1px solid #c3b7b7;
+    width: 100%;
+    height: auto;
+    background-color: white;
+    position: absolute;
+    animation: modalFromTop 0.3s;
+}
+
+
+@keyframes modalFromLeft {
+    from {
+       left: -100%;
+    }
+    to {
+       left: 0px;
+    }
+}
+
+.modal__content--left{
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    animation: modalFromLeft 0.3s;
+    box-shadow: 4px 4px 4px rgb(169, 167, 167);
+}
+
+.modal__width{
+    margin: 0 auto;
+}
+
+@keyframes modalFromRight {
+    from {
+       right: -100%;
+    }
+    to {
+       right: 0px;
+    }
+}
+
+.modal__content--right{
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    right: 0px;
+    animation: modalFromRight 0.3s;
+    box-shadow: -4px 4px 4px rgb(169, 167, 167, 167);
+}
+
+.modal__header{
+    border-bottom: 1px solid #c3b7b7;
+}
+
+.modal__title{
+    font-size: 16px;
+}
+
+.modal__header .modal__width{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-body__ul{
+    padding:0;
+    list-style: none;
+}
+
+.modal-body__li{
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.modal-body__a{
+    text-decoration: none;
+    color: black;
+}
+
+
+.modal-search__form{
+    margin: 40px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #c3b7b7;
+    padding: 5px;
+    font-size: 13px;
+}
+
+.modal-search-form__input{
+    width: 100%;
+    font-family: AvenirLTStdMedium;
+}
+
+.pc-header__modal-btn:hover{
+    cursor: pointer;
+    background-color: #e1e1e1;
+}
+
+.modal-search-form__input,
+.modal-search-form__submit{
+    height: 35px;
+    border: none;
+    outline: none;
+}
+
+.modal-search-form__submit{
+    width: 100px;
+    font-family: AvenirLTStdMedium;
+    background-color: var(--color-red);
+    color: white;
+    font-weight: bold;
+}
