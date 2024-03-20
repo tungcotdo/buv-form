@@ -28,3 +28,8 @@
     font-family: BrandonBld;
     src: url('../font/Brandon/Brandon_bld.otf');
 }
+
+@font-face {
+    font-family: BrandonReg;
+    src: url('../font/Brandon/Brandon_reg.otf');
+}

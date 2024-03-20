@@ -9,20 +9,124 @@
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/font.css">
     <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/slide.css">
+    <link rel="stylesheet" href="../css/virtual.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        .body__banner{
+            background-image: url('img/banner.png');
+            width: 100%;
+            padding-top: 31.25%;
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .body-section__heading{
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-left: -41px;
+        }
+
+        .body-section__heading-icon{
+            display: block;
+        }
+
+        .body-section__heading-title{
+            font-family: BrandonBld;
+            font-size: 27px;
+            padding: 11px 0 0;
+            text-transform: uppercase;
+            color: #333;
+        }
+
+        .body__banner{
+            position: relative;
+        }
+
+        .body__banner .container{
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 60px;
+        }
+
+        .body-banner-breadcrumb__item{
+            font-family: BrandonReg;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 32px;
+            color: #fff;
+        }
+
+        .body-banner__heading{
+            margin-top: 30px;
+            font-size: 40px;
+            line-height: 46px;
+            color: #fff;
+            font-family: BrandonBld;
+            text-transform: uppercase;
+        }
+
+        .body__section{
+            margin: 60px 0 60px 0;
+        }
+
+        .body__section-body{
+            margin-top: 20px;
+        }
+
+        .buv__paragraph{
+            font-family: AvenirNextLight;
+            font-size: 16px;
+            line-height: 24px;
+            color: #333;
+            margin-bottom: var(--space-element);
+        }
+
+        .buv__paragraph--muted{
+            color: var(--color-muted);
+        }
+
+        .buv__two-col-padding{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: var(--space-element);
+        }
+
+        .buv__link{
+            color: #4774b7;
+            font-family: AvenirLTStdHeavy;
+        }
+
+        .buv__link--underline{
+            text-decoration: underline;
+        }
+
+        .buv__link--bold{
+            font-weight: bold;
+        }
+
+
+    </style>
 </head>
 <body>
 
     <div class="buv">
-        <div class="pc-header">
-            <div class="pc-container">
+        <header class="pc-header">
+            <div class="container">
                 <div class="pc-header__left">
                     <img class="pc-header__logo" src="img/BUV-Logo-Transparent.png">
                 </div>
                 <div class="pc-header__right">
                     <nav class="pc-header__nav">
                         <div class="pc-header__nav-group">
-                            <a class="pc-header-nav__item pc-header-nav__item--dropdown" href="">Study at BUV</a>
+                            <a class="pc-header-nav__item pc-header-nav__item--dropdown" href="#">Study at BUV</a>
                             <nav class="pc-header__sub-nav">
                                 <div class="pc-header__sub-nav-group">
                                     <a class="pc-header-sub-nav__item pc-header-sub-nav__item--right">Abcdef</a>
@@ -44,14 +148,37 @@
                             </nav>
                         </div>
 
-                        <a class="pc-header-nav__item pc-header-nav__item--dropdown" href="">Scholarships</a>
-                        <a class="pc-header-nav__item pc-header-nav__item--dropdown" href="">Student Experience</a>
-                        <a class="pc-header-nav__item pc-header-nav__item--dropdown" href="">News & Events</a>
-                        <a class="pc-header-nav__item pc-header-nav__item--dropdown" href="">About BUV</a>
+                        <a class="pc-header-nav__item pc-header-nav__item--dropdown" href="#">Scholarships</a>
+                        <a class="pc-header-nav__item pc-header-nav__item--dropdown" href="#">Student Experience</a>
+                        <a class="pc-header-nav__item pc-header-nav__item--dropdown" href="#">News & Events</a>
+
+                        <div class="pc-header__nav-group">
+                            <a class="pc-header-nav__item pc-header-nav__item--dropdown" href="#">About BUV</a>
+                            <nav class="pc-header__sub-nav">
+                                <div class="pc-header__sub-nav-group">
+                                    <a class="pc-header-sub-nav__item pc-header-sub-nav__item--right">Abcdef 111</a>
+                                    <nav class="pc-header__sub-nav-right">
+                                        <a class="pc-header__sub-nav-right-item">Abcdef</a>
+                                        <a class="pc-header__sub-nav-right-item">Abcdef</a>
+                                    </nav>
+                                </div>
+                                
+                                <a class="pc-header-sub-nav__item">Abcdef</a>
+                                <a class="pc-header-sub-nav__item">Abcdef</a>
+                                <div class="pc-header__sub-nav-group">
+                                    <a class="pc-header-sub-nav__item pc-header-sub-nav__item--right">Abcdef</a>
+                                    <nav class="pc-header__sub-nav-right">
+                                        <a class="pc-header__sub-nav-right-item">Abcdef</a>
+                                        <a class="pc-header__sub-nav-right-item">Abcdef</a>
+                                    </nav>
+                                </div>
+                            </nav>
+                        </div>
+                        
                     </nav>
                     <nav class="pc-header__lang">
-                        <a class="pc-header-nav-lang__item pc-header-nav-lang__item--active pc-header-nav-lang__item--separate" href="">EN</a>
-                        <a class="pc-header-nav-lang__item" href="">VI</a>
+                        <a class="pc-header-nav-lang__item pc-header-nav-lang__item--active pc-header-nav-lang__item--separate" href="#">EN</a>
+                        <a class="pc-header-nav-lang__item" href="#">VI</a>
                     </nav>
                     <div class="pc-header__search-modal">
                         <img class="modal__icon-show pc-header-modal__icon-search" id="pc-header-modal__icon-search" src="img/search-icon.png" alt="pc-header__search-icon">
@@ -59,9 +186,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </header> <!-- pc-header -->
         
-        <div class="mb-header">
+        <header class="mb-header">
             <div class="mb-header__left">
                 <img class="mb-header__logo" src="img/BUV-Logo-Transparent.png">
             </div>
@@ -76,11 +203,346 @@
                     <img class="modal__icon-close mb-header-modal__icon-close mb-header-modal__icon-close--hamberger" id="mb-header-modal__icon-close--hamberger" src="img/mb-close-icon.png" alt="mb-header__search-icon">
                 </div>
             </div>
-        </div>
+        </header> <!-- mb-header -->
 
-        <div class="content">
+        <div class="body">
+            <div class="body__banner">
+                <div class="container">
+                    <div class="body-banner__breadcrumb">
+                        <a class="body-banner-breadcrumb__item" href="">Trang chủ</a> 
+                        <span class="body-banner-breadcrumb__item">/</span> 
+                        <a class="body-banner-breadcrumb__item" href="">Khuôn viên trường</a>
+                    </div>  
+                    <h1 class="body-banner__heading">
+                        KHUÔN VIÊN TRƯỜNG
+                    </h1>
+                </div>
+            </div>
+            <div class="container">
+                <section class="body__section">
+                    <div class="body-section__heading">
+                        <img class="body-section__heading-icon" src="img/star.png" alt="star-icon">
+                        <h2 class="body-section__heading-title">CHÀO MỪNG BẠN ĐẾN VỚI KHUÔN VIÊN TRƯỜNG ĐẠI HỌC ANH QUỐC VIỆT NAM (BUV)</h2>
+                    </div>
+                    <div class="body__section-body">
+                        <p class="buv__paragraph">
+                            Sinh viên BUV được học tập tại khu học xá đẳng cấp quốc tế với tổng vốn đầu tư cho 03 giai đoạn lên đến 165 triệu USD, đáp ứng nhu cầu đào tạo cho hơn 10.000 sinh viên khi hoàn thành. Tọa lạc tại khu đô thị Ecopark, BUV sở hữu thiết kế phóng khoáng, mang tính biểu tượng của kỷ nguyên 4.0, đáp ứng nhu cầu học tập trải nghiệm giáo dục tiêu chuẩn quốc tế cho sinh viên với cơ sở vật chất hiện đại và thiết bị công nghệ tối tân.
+                        </p>
+                        <div class="buv__two-col-padding px-3">
+                            <p class="buv__paragraph buv__paragraph--muted">
+                                Chỉ cách trung tâm Hà Nội 25 phút lái xe, Ecopark được vinh danh là đại đô thị sinh thái đẳng cấp, đáng sống nhất miền Bắc. Được xây dựng theo công nghệ xanh độc đáo với không gian mở rộng thoáng, Ecopark tràn ngập hơi thở của thiên nhiên cùng nhiều công viên rộng lớn, hàng triệu cây xanh cùng hệ thống tiện ích thể thao, vui chơi, giải trí, giáo dục toàn diện.
+                            </p>
+                            <div>
+                                <iframe style="border: 0;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14903.110466168831!2d105.93397379999999!3d20.96144395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135af1eafcbfbf1%3A0x18ffa63c6b828de8!2sEcopark%20Township%2C%20Xu%C3%A2n%20Quan%2C%20V%C4%83n%20Giang%2C%20Hung%20Yen!5e0!3m2!1sen!2s!4v1705292815485!5m2!1sen!2s" width="500" allowfullscreen="allowfullscreen" data-mce-fragment="1"></iframe>
+                            </div>
+                        </div>
+                        <p class="buv__paragraph">
+                            Giai đoạn 1 của khu học xá đã đi vào hoạt động với tổng vốn đầu tư lên tới 52 triệu USD, có khả năng đào tạo cho 3.000 sinh viên. Mỗi phòng học tại BUV là một “siêu phẩm” thông minh, đặc biệt ứng dụng các công nghệ giáo dục để hỗ trợ tối đa cho các hoạt động giảng dạy, tăng cường tương tác giữa các sinh viên và với giảng viên. Phòng học chức năng chuyên biệt với vốn đầu tư lớn như: phòng học Thiết kế và Lập trình Games với máy móc tối tân trị giá lên tới 2 triệu USD, phòng học chức năng cho ngành Quản trị Khách sạn tiêu chuẩn 5 sao… Bên cạnh đó, BUV trang bị một phòng tập gym, yoga cho sinh viên cùng những tiện ích như sân bóng đá với cỏ nhập từ Bỉ, sân bóng rổ, cầu lông …, cung cấp dịch vụ hỗ trợ sức khỏe tinh thần và thể chất cho sinh viên ngay tại trường. Chuyên viên tại phòng tư vấn tâm lý luôn sẵn sàng lắng nghe sinh viên chia sẻ về những khó khăn và khúc mắc trong học tập và cuộc sống.
+                        </p>
+                        <p class="buv__paragraph">
+                            Giai đoạn 2 của khuôn viên BUV tại Ecopark đã được khởi công xây dựng vào tháng 8 năm 2022, với vốn đầu tư lên tới 33 triệu USD, dự kiến được hoàn thiện đầu năm 2025. Cụ thể, khu canteen mới với tổng diện tích sàn 4.096m2 được hoàn thiện vào đầu năm 2023, nối tiếp là khu phức hợp thể thao và tòa nhà học vụ với các phòng học đa chức năng, hội trường lớn đáp ứng nhu cầu học tập, rèn luyện thể chất, nghỉ ngơi thư giãn,… cho sinh viên được hoàn thiện vào năm 2025. Các khu vực trong nhà và ngoài trời được bố trí hài hòa giữa cảnh quan thiên nhiên trong lành với hệ thống tiểu cảnh cây xanh, lối đi dạo sân vườn, ghế ngồi nghỉ ngoài trời,…
+                        </p>
+                        <p class="buv__paragraph">
+                            Xem thêm về <a class="buv__link buv__link--underline buv__link--bold" href="https://www.youtube.com/watch?v=EZvnpq3pdHY">Kế hoạch mở rộng Khuôn viên học tập BUV</a>.
+                        </p>
+                        
+                    </div>
+                </section>
+                <section class="body__section">
+                    <div class="body-section__heading">
+                        <img class="body-section__heading-icon" src="img/star.png" alt="star-icon">
+                        <h2 class="body-section__heading-title">NƠI Ở CHO SINH VIÊN</h2>
+                    </div>
+                    <div class="body__section-body">
+                        <p class="buv__paragraph">
+                            Sinh viên cần hỗ trợ về nơi ở có thể liên hệ email services@buv.edu.vn hoặc hotline +84 902 157 558
+                        </p>
+                        <div class="buv__slide">
+                            <div class="swiper buv-slide__student-accommodation">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img width="2560" height="1707" src="https://www.buv.edu.vn/wp-content/uploads/2022/05/Be-boi-Swimming-pool-2-scaled.jpg" alt="Khuôn viên trường" data-lazy-src="https://www.buv.edu.vn/wp-content/uploads/2022/05/Be-boi-Swimming-pool-2-scaled.jpg" data-ll-status="loaded" class="entered lazyloaded">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img width="2560" height="1707" src="https://www.buv.edu.vn/wp-content/uploads/2022/05/Be-boi-Swimming-pool-1-scaled.jpg" alt="Khuôn viên trường" data-lazy-src="https://www.buv.edu.vn/wp-content/uploads/2022/05/Be-boi-Swimming-pool-1-scaled.jpg" data-ll-status="loaded" class="entered lazyloaded">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img width="2560" height="1707" src="https://www.buv.edu.vn/wp-content/uploads/2022/05/Phong-the-duc-trong-nha-Indoor-Fitness-Gym-scaled.jpg" alt="Khuôn viên trường" data-lazy-src="https://www.buv.edu.vn/wp-content/uploads/2022/05/Phong-the-duc-trong-nha-Indoor-Fitness-Gym-scaled.jpg" data-ll-status="loaded" class="entered lazyloaded">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img width="2560" height="1707" src="https://www.buv.edu.vn/wp-content/uploads/2022/05/Phong-the-duc-trong-nha-Indoor-Fitness-Gym-2-scaled.jpg" alt="Khuôn viên trường" data-lazy-src="https://www.buv.edu.vn/wp-content/uploads/2022/05/Phong-the-duc-trong-nha-Indoor-Fitness-Gym-2-scaled.jpg" data-ll-status="loaded" class="entered lazyloaded">
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false">
+                                    <img width="70" height="70" src="https://www.buv.edu.vn/wp-content/themes/main/assets/images/about/pgn-next.png" alt="next" data-lazy-src="https://www.buv.edu.vn/wp-content/themes/main/assets/images/about/pgn-next.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img width="70" height="70" src="https://www.buv.edu.vn/wp-content/themes/main/assets/images/about/pgn-next.png" alt="next"></noscript>
+                                </div>
+                                <div class="swiper-button-prev" tabindex="-1" role="button" aria-label="Previous slide" aria-disabled="true">
+                                    <img width="70" height="70" src="https://www.buv.edu.vn/wp-content/themes/main/assets/images/about/pgn-prev.png" alt="prev" data-lazy-src="https://www.buv.edu.vn/wp-content/themes/main/assets/images/about/pgn-prev.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img width="70" height="70" src="https://www.buv.edu.vn/wp-content/themes/main/assets/images/about/pgn-prev.png" alt="prev"></noscript>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="body__section">
+                    <div class="body-section__heading">
+                        <img class="body-section__heading-icon" src="img/star.png" alt="star-icon">
+                        <h2 class="body-section__heading-title">CƠ SỞ VẬT CHẤT NGOÀI GIỜ HỌC</h2>
+                    </div>
+                    <div class="body__section-body">
+                        <div class="buv__slide">
+                            <div class="swiper buv-slide__non-academic-facilities">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img width="2560" height="1707" src="https://www.buv.edu.vn/wp-content/uploads/2022/05/Be-boi-Swimming-pool-2-scaled.jpg" alt="Khuôn viên trường" data-lazy-src="https://www.buv.edu.vn/wp-content/uploads/2022/05/Be-boi-Swimming-pool-2-scaled.jpg" data-ll-status="loaded" class="entered lazyloaded">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img width="2560" height="1707" src="https://www.buv.edu.vn/wp-content/uploads/2022/05/Be-boi-Swimming-pool-1-scaled.jpg" alt="Khuôn viên trường" data-lazy-src="https://www.buv.edu.vn/wp-content/uploads/2022/05/Be-boi-Swimming-pool-1-scaled.jpg" data-ll-status="loaded" class="entered lazyloaded">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img width="2560" height="1707" src="https://www.buv.edu.vn/wp-content/uploads/2022/05/Phong-the-duc-trong-nha-Indoor-Fitness-Gym-scaled.jpg" alt="Khuôn viên trường" data-lazy-src="https://www.buv.edu.vn/wp-content/uploads/2022/05/Phong-the-duc-trong-nha-Indoor-Fitness-Gym-scaled.jpg" data-ll-status="loaded" class="entered lazyloaded">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img width="2560" height="1707" src="https://www.buv.edu.vn/wp-content/uploads/2022/05/Phong-the-duc-trong-nha-Indoor-Fitness-Gym-2-scaled.jpg" alt="Khuôn viên trường" data-lazy-src="https://www.buv.edu.vn/wp-content/uploads/2022/05/Phong-the-duc-trong-nha-Indoor-Fitness-Gym-2-scaled.jpg" data-ll-status="loaded" class="entered lazyloaded">
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false">
+                                    <img width="70" height="70" src="https://www.buv.edu.vn/wp-content/themes/main/assets/images/about/pgn-next.png" alt="next" data-lazy-src="https://www.buv.edu.vn/wp-content/themes/main/assets/images/about/pgn-next.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img width="70" height="70" src="https://www.buv.edu.vn/wp-content/themes/main/assets/images/about/pgn-next.png" alt="next"></noscript>
+                                </div>
+                                <div class="swiper-button-prev" tabindex="-1" role="button" aria-label="Previous slide" aria-disabled="true">
+                                    <img width="70" height="70" src="https://www.buv.edu.vn/wp-content/themes/main/assets/images/about/pgn-prev.png" alt="prev" data-lazy-src="https://www.buv.edu.vn/wp-content/themes/main/assets/images/about/pgn-prev.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img width="70" height="70" src="https://www.buv.edu.vn/wp-content/themes/main/assets/images/about/pgn-prev.png" alt="prev"></noscript>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="body__section">
+                    <div class="body-section__heading">
+                        <img class="body-section__heading-icon" src="img/star.png" alt="star-icon">
+                        <h2 class="body-section__heading-title">VIRTUAL TOUR</h2>
+                    </div>
+                    <div class="body__section-body">
+                        <div class="buv__virtual-tour">
+                            <div data-bg="https://www.buv.edu.vn/wp-content/uploads/2021/12/BUV-Campus-Tour.png" class="wrap rocket-lazyload entered lazyloaded" style="background-image: url(&quot;https://www.buv.edu.vn/wp-content/uploads/2021/12/BUV-Campus-Tour.png&quot;);" data-ll-status="entered">
+                                <img width="201" height="153" class="icon entered lazyloaded" src="https://www.buv.edu.vn/wp-content/themes/main/assets/images/home/icon-360.png" alt="Campus and Facilities" data-lazy-src="https://www.buv.edu.vn/wp-content/themes/main/assets/images/home/icon-360.png" data-ll-status="loaded"><img width="201" height="153" class="icon" src="https://www.buv.edu.vn/wp-content/themes/main/assets/images/home/icon-360.png" alt="Campus and Facilities">
+                                <div class="_close" style="display: flex;">x</div>
+                                <div class="inner-wrap"><iframe src="https://www.buv.edu.vn/360/" title="Virtual Tour"></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="body__section">
+                    <div class="body-section__heading">
+                        <img class="body-section__heading-icon" src="img/star.png" alt="star-icon">
+                        <h2 class="body-section__heading-title">ECOPARK</h2>
+                    </div>
+                    <div class="body__section-body">
+                        <div class="buv__gallery">
+                            <div class="swiper-container _gallery_slide swiper-container-initialized swiper-container-horizontal">
+                                <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
+                                   <div class="swiper-slide swiper-slide-active" style="width: 1200px;">
+                                      <div class="_img_gallery">
+                                         <a data-fancybox="group1" href="https://www.buv.edu.vn/wp-content/uploads/2023/12/351148603_942613710280677_8600286211251253945_n.jpg">
+                                         <img width="800" height="533" src="https://www.buv.edu.vn/wp-content/uploads/2023/12/351148603_942613710280677_8600286211251253945_n.jpg" alt="" data-lazy-src="https://www.buv.edu.vn/wp-content/uploads/2023/12/351148603_942613710280677_8600286211251253945_n.jpg" data-ll-status="loaded" class="entered lazyloaded"><img width="800" height="533" src="https://www.buv.edu.vn/wp-content/uploads/2023/12/351148603_942613710280677_8600286211251253945_n.jpg" alt="">
+                                         </a>
+                                      </div>
+                                      <div class="_img_gallery">
+                                         <a data-fancybox="group1" href="https://www.buv.edu.vn/wp-content/uploads/2023/12/nopath-copy-20_1599747409.jpg">
+                                         <img width="750" height="500" src="https://www.buv.edu.vn/wp-content/uploads/2023/12/nopath-copy-20_1599747409.jpg" alt="" data-lazy-src="https://www.buv.edu.vn/wp-content/uploads/2023/12/nopath-copy-20_1599747409.jpg" data-ll-status="loaded" class="entered lazyloaded"><img width="750" height="500" src="https://www.buv.edu.vn/wp-content/uploads/2023/12/nopath-copy-20_1599747409.jpg" alt="">
+                                         </a>
+                                      </div>
+                                      <div class="_img_gallery">
+                                         <a data-fancybox="group1" href="https://www.buv.edu.vn/wp-content/uploads/2023/12/ecopark-flycam-12.jpg">
+                                         <img width="1000" height="666" src="https://www.buv.edu.vn/wp-content/uploads/2023/12/ecopark-flycam-12.jpg" alt="" data-lazy-src="https://www.buv.edu.vn/wp-content/uploads/2023/12/ecopark-flycam-12.jpg" data-ll-status="loaded" class="entered lazyloaded"><img width="1000" height="666" src="https://www.buv.edu.vn/wp-content/uploads/2023/12/ecopark-flycam-12.jpg" alt="">
+                                         </a>
+                                      </div>
+                                      <div class="_img_gallery">
+                                         <a data-fancybox="group1" href="https://www.buv.edu.vn/wp-content/uploads/2023/12/ecopark-flycam-06.jpg">
+                                         <img width="1000" height="562" src="https://www.buv.edu.vn/wp-content/uploads/2023/12/ecopark-flycam-06.jpg" alt="" data-lazy-src="https://www.buv.edu.vn/wp-content/uploads/2023/12/ecopark-flycam-06.jpg" data-ll-status="loaded" class="entered lazyloaded"><img width="1000" height="562" src="https://www.buv.edu.vn/wp-content/uploads/2023/12/ecopark-flycam-06.jpg" alt="">
+                                         </a>
+                                      </div>
+                                      <div class="_img_gallery">
+                                         <a data-fancybox="group1" href="https://www.buv.edu.vn/wp-content/uploads/2023/12/ecopark-flycam-13.jpg">
+                                         <img width="1000" height="562" src="https://www.buv.edu.vn/wp-content/uploads/2023/12/ecopark-flycam-13.jpg" alt="" data-lazy-src="https://www.buv.edu.vn/wp-content/uploads/2023/12/ecopark-flycam-13.jpg" data-ll-status="loaded" class="entered lazyloaded"><img width="1000" height="562" src="https://www.buv.edu.vn/wp-content/uploads/2023/12/ecopark-flycam-13.jpg" alt="">
+                                         </a>
+                                      </div>
+                                      <div class="_img_gallery">
+                                         <a data-fancybox="group1" href="https://www.buv.edu.vn/wp-content/uploads/2023/12/ecopark-flycam-11.jpg">
+                                         <img width="1000" height="667" src="https://www.buv.edu.vn/wp-content/uploads/2023/12/ecopark-flycam-11.jpg" alt="" data-lazy-src="https://www.buv.edu.vn/wp-content/uploads/2023/12/ecopark-flycam-11.jpg" data-ll-status="loaded" class="entered lazyloaded"><img width="1000" height="667" src="https://www.buv.edu.vn/wp-content/uploads/2023/12/ecopark-flycam-11.jpg" alt="">
+                                         </a>
+                                      </div>
+                                   </div>
+                                   <div class="swiper-slide swiper-slide-next" style="width: 1200px;">
+                                      <div class="_img_gallery">
+                                         <a data-fancybox="group1" href="https://www.buv.edu.vn/wp-content/uploads/2023/12/ecopark-flycam-02.jpg">
+                                         <img width="1000" height="666" src="https://www.buv.edu.vn/wp-content/uploads/2023/12/ecopark-flycam-02.jpg" alt="" data-lazy-src="https://www.buv.edu.vn/wp-content/uploads/2023/12/ecopark-flycam-02.jpg" data-ll-status="loaded" class="entered lazyloaded"><img width="1000" height="666" src="https://www.buv.edu.vn/wp-content/uploads/2023/12/ecopark-flycam-02.jpg" alt="">
+                                         </a>
+                                      </div>
+                                      <div class="_img_gallery">
+                                         <a data-fancybox="group1" href="https://www.buv.edu.vn/wp-content/uploads/2023/12/ecopark-flycam-01.jpg">
+                                         <img width="1000" height="563" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201000%20563'%3E%3C/svg%3E" alt="" data-lazy-src="https://www.buv.edu.vn/wp-content/uploads/2023/12/ecopark-flycam-01.jpg"><img width="1000" height="563" src="https://www.buv.edu.vn/wp-content/uploads/2023/12/ecopark-flycam-01.jpg" alt="">
+                                         </a>
+                                      </div>
+                                      <div class="_img_gallery">
+                                         <a data-fancybox="group1" href="https://www.buv.edu.vn/wp-content/uploads/2023/12/via-he-ecopark-06.jpg">
+                                         <img width="1080" height="684" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201080%20684'%3E%3C/svg%3E" alt="" data-lazy-src="https://www.buv.edu.vn/wp-content/uploads/2023/12/via-he-ecopark-06.jpg"><img width="1080" height="684" src="https://www.buv.edu.vn/wp-content/uploads/2023/12/via-he-ecopark-06.jpg" alt="">
+                                         </a>
+                                      </div>
+                                      <div class="_img_gallery">
+                                         <a data-fancybox="group1" href="https://www.buv.edu.vn/wp-content/uploads/2023/12/via-he-ecopark-04.jpg">
+                                         <img width="1080" height="606" src="https://www.buv.edu.vn/wp-content/uploads/2023/12/via-he-ecopark-04.jpg" alt="" data-lazy-src="https://www.buv.edu.vn/wp-content/uploads/2023/12/via-he-ecopark-04.jpg" data-ll-status="loaded" class="entered lazyloaded"><img width="1080" height="606" src="https://www.buv.edu.vn/wp-content/uploads/2023/12/via-he-ecopark-04.jpg" alt="">
+                                         </a>
+                                      </div>
+                                      <div class="_img_gallery">
+                                         <a data-fancybox="group1" href="https://www.buv.edu.vn/wp-content/uploads/2023/12/via-he-ecopark-01.jpg">
+                                         <img width="1080" height="669" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201080%20669'%3E%3C/svg%3E" alt="" data-lazy-src="https://www.buv.edu.vn/wp-content/uploads/2023/12/via-he-ecopark-01.jpg"><img width="1080" height="669" src="https://www.buv.edu.vn/wp-content/uploads/2023/12/via-he-ecopark-01.jpg" alt="">
+                                         </a>
+                                      </div>
+                                      <div class="_img_gallery">
+                                         <a data-fancybox="group1" href="https://www.buv.edu.vn/wp-content/uploads/2023/12/via-he-ecopark-02.jpg">
+                                         <img width="1080" height="608" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201080%20608'%3E%3C/svg%3E" alt="" data-lazy-src="https://www.buv.edu.vn/wp-content/uploads/2023/12/via-he-ecopark-02.jpg"><img width="1080" height="608" src="https://www.buv.edu.vn/wp-content/uploads/2023/12/via-he-ecopark-02.jpg" alt="">
+                                         </a>
+                                      </div>
+                                   </div>
+                                </div>
+                                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                             </div>
+                             <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false">
+                                <img width="70" height="70" src="https://www.buv.edu.vn/wp-content/themes/main/assets/images/about/pgn-next.png" alt="next" data-lazy-src="https://www.buv.edu.vn/wp-content/themes/main/assets/images/about/pgn-next.png" data-ll-status="loaded" class="entered lazyloaded"><img width="70" height="70" src="https://www.buv.edu.vn/wp-content/themes/main/assets/images/about/pgn-next.png" alt="next">
+                             </div>
+                             <div class="swiper-button-prev" tabindex="-1" role="button" aria-label="Previous slide" aria-disabled="true">
+                                <img width="70" height="70" src="https://www.buv.edu.vn/wp-content/themes/main/assets/images/about/pgn-prev.png" alt="prev" data-lazy-src="https://www.buv.edu.vn/wp-content/themes/main/assets/images/about/pgn-prev.png" data-ll-status="loaded" class="entered lazyloaded"><img width="70" height="70" src="https://www.buv.edu.vn/wp-content/themes/main/assets/images/about/pgn-prev.png" alt="prev">
+                             </div>
+                        </div>
+                    </div>
+                    <br>
+                    <a href="https://www.buv.edu.vn/campus-request-form" class="buv__btn buv__btn--red buv__btn--center">Book to visit</a>
+                </section>
+            </div>
+        </div> <!-- content -->
 
-        </div>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__row">
+                    <div class="footer__col footer__col--left">
+                        <div class="footer__logo">
+                            <img src="img/logo-footer.png" alt="">
+                        </div>
+                        <div class="footer__followus">
+                            <p class="footer__followus-title">THEO DÕI CHÚNG TÔI</p>
+                            <div class="footer__followus-icon">
+                                <a href="https://www.facebook.com/Britishuniversityvietnam/">
+                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+                                        <path d="M12.8028 0H2.19733C0.985855 0 6.10352e-05 0.985794 6.10352e-05 2.19727V12.8027C6.10352e-05 14.0142 0.985855 15 2.19733 15H6.62115V9.69727H4.86334V7.06055H6.62115V5.27344C6.62115 3.81947 7.8039 2.63672 9.25787 2.63672H11.9239V5.27344H9.25787V7.06055H11.9239L11.4844 9.69727H9.25787V15H12.8028C14.0143 15 15.0001 14.0142 15.0001 12.8027V2.19727C15.0001 0.985794 14.0143 0 12.8028 0Z" fill="#F5F5F5"></path>
+                                    </svg>
+                                </a>
+                                <a href="https://www.youtube.com/user/BUVietnam">
+                                    <svg width="18" height="12" viewBox="0 0 18 12" fill="none">
+                                        <path d="M16.7128 1.15636C16.2393 0.314182 15.7255 0.159273 14.6793 0.100364C13.6342 0.0294546 11.0062 0 8.72952 0C6.44842 0 3.81933 0.0294546 2.77533 0.0992728C1.73133 0.159273 1.21642 0.313091 0.738606 1.15636C0.25097 1.99745 6.10352e-05 3.44618 6.10352e-05 5.99673C6.10352e-05 5.99891 6.10352e-05 6 6.10352e-05 6C6.10352e-05 6.00218 6.10352e-05 6.00327 6.10352e-05 6.00327V6.00546C6.10352e-05 8.54509 0.25097 10.0047 0.738606 10.8371C1.21642 11.6793 1.73024 11.832 2.77424 11.9029C3.81933 11.964 6.44842 12 8.72952 12C11.0062 12 13.6342 11.964 14.6804 11.904C15.7266 11.8331 16.2404 11.6804 16.7139 10.8382C17.2059 10.0058 17.4546 8.54618 17.4546 6.00655C17.4546 6.00655 17.4546 6.00327 17.4546 6.00109C17.4546 6.00109 17.4546 5.99891 17.4546 5.99782C17.4546 3.44618 17.2059 1.99745 16.7128 1.15636ZM6.54552 9.27273V2.72727L12.0001 6L6.54552 9.27273Z" fill="#F5F5F5"></path>
+                                    </svg>
+                                </a>
+                                <a href="https://www.linkedin.com/company/british-university-vietnam/mycompany/">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16.0001 16V10.14C16.0001 7.26004 15.3801 5.06006 12.0201 5.06006C10.4001 5.06006 9.32014 5.94005 8.88014 6.78005H8.84014V5.32006H5.66016V16H8.98014V10.7C8.98014 9.30002 9.24014 7.96004 10.9601 7.96004C12.6601 7.96004 12.6801 9.54002 12.6801 10.78V15.98H16.0001V16Z" fill="#F5F5F5"></path>
+                                        <path d="M0.259766 5.32007H3.57975V16H0.259766V5.32007Z" fill="#F5F5F5"></path>
+                                        <path d="M1.91999 0C0.859996 0 0 0.859994 0 1.91999C0 2.97998 0.859996 3.85997 1.91999 3.85997C2.97999 3.85997 3.83998 2.97998 3.83998 1.91999C3.83998 0.859994 2.97999 0 1.91999 0Z" fill="#F5F5F5"></path>
+                                    </svg>
+                                </a>
+                                <a href="https://www.instagram.com/british_university_vietnam/?hl=en">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M11.669 0H4.33111C1.94293 0 6.10352e-05 1.94287 6.10352e-05 4.33105V11.669C6.10352e-05 14.0571 1.94293 16 4.33111 16H11.6691C14.0572 16 16 14.0571 16 11.669V4.33105C16 1.94287 14.0572 0 11.669 0V0ZM8.00005 12.3749C5.5877 12.3749 3.62518 10.4123 3.62518 7.99998C3.62518 5.58764 5.5877 3.62512 8.00005 3.62512C10.4124 3.62512 12.3749 5.58764 12.3749 7.99998C12.3749 10.4123 10.4124 12.3749 8.00005 12.3749ZM12.4795 4.65685C11.7666 4.65685 11.1868 4.07702 11.1868 3.36413C11.1868 2.65124 11.7666 2.07129 12.4795 2.07129C13.1924 2.07129 13.7724 2.65124 13.7724 3.36413C13.7724 4.07702 13.1924 4.65685 12.4795 4.65685Z" fill="#F5F5F5"></path>
+                                        <path d="M8.00023 4.5636C6.10522 4.5636 4.56335 6.10534 4.56335 8.00048C4.56335 9.89549 6.10522 11.4374 8.00023 11.4374C9.89537 11.4374 11.4371 9.89549 11.4371 8.00048C11.4371 6.10534 9.89537 4.5636 8.00023 4.5636Z" fill="#F5F5F5"></path>
+                                        <path d="M12.4796 3.01038C12.284 3.01038 12.1248 3.16956 12.1248 3.36511C12.1248 3.56067 12.284 3.71985 12.4796 3.71985C12.6752 3.71985 12.8344 3.56079 12.8344 3.36511C12.8344 3.16943 12.6752 3.01038 12.4796 3.01038Z" fill="#F5F5F5"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="footer__copyright">
+                            © Copyright British University Vietnam 2021
+                        </p>
+                    </div>
+                    <div class="footer__col footer__col--middle">
+                        <div class="footer__item">
+                            <p class="footer__item-title">Explore</p>
+                            <ul class="footer__item-ul">
+                                <li class="footer__item-li"><a class="footer__item-a" href="https://www.buv.edu.vn/ve-chung-toi/">Về chúng tôi</a></li>
+                                <li class="footer__item-li"><a class="footer__item-a" href="https://www.buv.edu.vn/trung-tam-dao-tao-buv/">Trung tâm Đào tạo BUV</a></li>
+                                <li class="footer__item-li"><a class="footer__item-a" href="https://www.buv.edu.vn/tin-tuc-su-kien/">Tin tức &amp; Sự kiện</a></li>
+                                <li class="footer__item-li"><a class="footer__item-a" href="https://www.buv.edu.vn/khuon-vien-truong/">Khuôn viên BUV</a></li>
+                                <li class="footer__item-li"><a class="footer__item-a" href="https://www.buv.edu.vn/cac-cau-hoi-thuong-gap/">Câu hỏi thường gặp</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer__item">
+                            <p class="footer__item-title">Learn</p>
+                            <ul class="footer__item-ul">
+                                <li class="footer__item-li"><a class="footer__item-a" href="https://www.buv.edu.vn/ve-chung-toi/">Về chúng tôi</a></li>
+                                <li class="footer__item-li"><a class="footer__item-a" href="https://www.buv.edu.vn/trung-tam-dao-tao-buv/">Trung tâm Đào tạo BUV</a></li>
+                                <li class="footer__item-li"><a class="footer__item-a" href="https://www.buv.edu.vn/tin-tuc-su-kien/">Tin tức &amp; Sự kiện</a></li>
+                                <li class="footer__item-li"><a class="footer__item-a" href="https://www.buv.edu.vn/khuon-vien-truong/">Khuôn viên BUV</a></li>
+                                <li class="footer__item-li"><a class="footer__item-a" href="https://www.buv.edu.vn/cac-cau-hoi-thuong-gap/">Câu hỏi thường gặp</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer__item">
+                            <p class="footer__item-title">Create</p>
+                            <ul class="footer__item-ul">
+                                <li class="footer__item-li"><a class="footer__item-a" href="https://www.buv.edu.vn/ve-chung-toi/">Về chúng tôi</a></li>
+                                <li class="footer__item-li"><a class="footer__item-a" href="https://www.buv.edu.vn/trung-tam-dao-tao-buv/">Trung tâm Đào tạo BUV</a></li>
+                                <li class="footer__item-li"><a class="footer__item-a" href="https://www.buv.edu.vn/tin-tuc-su-kien/">Tin tức &amp; Sự kiện</a></li>
+                                <li class="footer__item-li"><a class="footer__item-a" href="https://www.buv.edu.vn/khuon-vien-truong/">Khuôn viên BUV</a></li>
+                                <li class="footer__item-li"><a class="footer__item-a" href="https://www.buv.edu.vn/cac-cau-hoi-thuong-gap/">Câu hỏi thường gặp</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer__item">
+                            <p class="footer__item-title">Connect</p>
+                            <ul class="footer__item-ul">
+                                <li class="footer__item-li"><a class="footer__item-a" href="https://www.buv.edu.vn/ve-chung-toi/">Về chúng tôi</a></li>
+                                <li class="footer__item-li"><a class="footer__item-a" href="https://www.buv.edu.vn/trung-tam-dao-tao-buv/">Trung tâm Đào tạo BUV</a></li>
+                                <li class="footer__item-li"><a class="footer__item-a" href="https://www.buv.edu.vn/tin-tuc-su-kien/">Tin tức &amp; Sự kiện</a></li>
+                                <li class="footer__item-li"><a class="footer__item-a" href="https://www.buv.edu.vn/khuon-vien-truong/">Khuôn viên BUV</a></li>
+                                <li class="footer__item-li"><a class="footer__item-a" href="https://www.buv.edu.vn/cac-cau-hoi-thuong-gap/">Câu hỏi thường gặp</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer__col footer__col--right">
+                        <div class="footer__buvinfo">
+                            <div class="footer-buvinfo__item">
+                                <label for="" class="footer-buvinfo__item-title">Liên hệ:</label>
+                                <p class="footer-buvinfo__item-content">+84 (221) 6 250 250 <br> +84 96 662 9909</p>
+                            </div>
+                            <div class="footer-buvinfo__item">
+                                <label for="" class="footer-buvinfo__item-title">Email:</label>
+                                <p class="footer-buvinfo__item-content">info@buv.edu.vn</p>
+                            </div>
+                            <div class="footer-buvinfo__item">
+                                <label for="" class="footer-buvinfo__item-title">Địa chỉ:</label>
+                                <p class="footer-buvinfo__item-content">///cads.oatmeal.overrule</p>
+                            </div>
+                            <div class="footer-buvinfo__item">
+                                <label for="" class="footer-buvinfo__item-title">Main entrance:</label>
+                                <p class="footer-buvinfo__item-content">///cads.oatmeal.overrule</p>
+                            </div>
+                            <div class="footer-buvinfo__item">
+                                <label for="" class="footer-buvinfo__item-title">Bus parking:</label>
+                                <p class="footer-buvinfo__item-content">///tether.cyclists.taint</p>
+                            </div>
+                        </div>
+                        <div class="footer__map">
+                            <iframe class="footer__map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.6665195964597!2d105.92926901480847!3d20.965903186032488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab8a51942213%3A0xefe72771a5266841!2zVHLGsOG7nW5nIMSR4bqhaSBo4buNYyBBbmggUXXhu5FjIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1640852550783!5m2!1svi!2s" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div> <!-- footer__row -->
+            </div>
+            <div class="footer__nav">
+                <a href="" class="footer__nav-item">Privacy Policy</a>
+                <span class="footer__nav-item">|</span>
+                <a href="" class="footer__nav-item">Legal and Compliance</a>
+                <span class="footer__nav-item">|</span>
+                <a href="" class="footer__nav-item">Terms and Conditions</a>
+                <span class="footer__nav-item">|</span>
+                <a href="" class="footer__nav-item">Admission policy</a>
+                <span class="footer__nav-item">|</span>
+                <a href="" class="footer__nav-item">Recognition of Prior Learning Policy</a>
+            </div>
+        </footer> <!-- footer -->
     </div>
 
     <div class="modal modal__search" id="modal__search">
@@ -102,13 +564,60 @@
     <div class="modal modal__navigation" id="modal__navigation">
         <div class="modal__content modal__container">
             <nav class="mb-header__nav">
-                <a class="mb-header-nav__item" href="">Scholarships</a>
-                <a class="mb-header-nav__item" href="">Student Experience</a>
-                <a class="mb-header-nav__item" href="">News & Events</a>
-                <a class="mb-header-nav__item" href="">About BUV</a>
+                <div class="mb-header__nav-group">
+                    <a class="mb-header-nav__item mb-header-nav__item--right" href="#">Study at BUV</a>
+                    <nav class="mb-header__sub-nav">
+                        <div class="mb-header__sub-nav-group">
+                            <a href="#" class="mb-header-sub-nav__item mb-header-sub-nav__item--right">Con Study BUV 1</a>
+                            <nav class="mb-header__sub-nav-right">
+                                <a class="mb-header__sub-nav-right-item">Cháu study BUV 1</a>
+                                <a class="mb-header__sub-nav-right-item">Cháu study BUV 2</a>
+                            </nav>
+                        </div>
+                        
+                        <a class="mb-header-sub-nav__item">Con Study BUV 2</a>
+                        <a class="mb-header-sub-nav__item">Con Study BUV 3</a>
+                        <div class="mb-header__sub-nav-group">
+                            <a href="#" class="mb-header-sub-nav__item mb-header-sub-nav__item--right">Con Study BUV 4</a>
+                            <nav class="mb-header__sub-nav-right">
+                                <a class="mb-header__sub-nav-right-item">Abcdef</a>
+                                <a class="mb-header__sub-nav-right-item">Abcdef</a>
+                            </nav>
+                        </div>
+                    </nav>
+                </div>
+                <a class="mb-header-nav__item" href="#">Scholarships</a>
+                <a class="mb-header-nav__item" href="#">Student Experience</a>
+                <a class="mb-header-nav__item" href="#">News & Events</a>
+
+                <div class="mb-header__nav-group">
+                    <a class="mb-header-nav__item mb-header-nav__item--right" href="#">About BUV</a>
+                    <nav class="mb-header__sub-nav">
+                        <div class="mb-header__sub-nav-group">
+                            <a href="#" class="mb-header-sub-nav__item mb-header-sub-nav__item--right">Con about BUV 1</a>
+                            <nav class="mb-header__sub-nav-right">
+                                <a class="mb-header__sub-nav-right-item">Cháu about BUV 1</a>
+                                <a class="mb-header__sub-nav-right-item">Cháu about BUV 2</a>
+                            </nav>
+                        </div>
+                        
+                        <a class="mb-header-sub-nav__item">Con about BUV 2</a>
+                        <a class="mb-header-sub-nav__item">Con about BUV 3</a>
+                        <div class="mb-header__sub-nav-group">
+                            <a href="#" class="mb-header-sub-nav__item mb-header-sub-nav__item--right">Con about BUV 4</a>
+                            <nav class="mb-header__sub-nav-right">
+                                <a class="mb-header__sub-nav-right-item">Abcdef</a>
+                                <a class="mb-header__sub-nav-right-item">Abcdef</a>
+                            </nav>
+                        </div>
+                    </nav>
+                </div>
+
+
+                
                 <nav class="mb-header__lang">
-                    <a class="mb-header-nav-lang__item mb-header-nav-lang__item--active mb-header-nav-lang__item--separate" href="">EN</a>
-                    <a class="mb-header-nav-lang__item" href="">VI</a>
+                    <a class="mb-header-nav-lang__item mb-header-nav-lang__item--active mb-header-nav-lang__item--separate" href="#">EN</a>
+                    <a class="mb-header-nav-lang__item" href="#">VI</a>
                 </nav>
             </nav>
 
@@ -139,7 +648,6 @@
             </div>
         </div>
     </div>
-
 
     <script>
 
@@ -189,6 +697,55 @@
         const mbIconCloseNavigationModal = document.getElementById('mb-header-modal__icon-close--hamberger');
         showModal( modalNavigation, mbIconShowNavigationModal, mbIconCloseNavigationModal );
 
+        // mb navigation
+        // dropdown click
+        document.querySelectorAll('.mb-header-nav__item--right').forEach((e) => {
+            e.onclick = (event) =>{
+                event.preventDefault()
+                document.querySelectorAll('.mb-header-nav__item').forEach( menuItem => {
+                    menuItem.style.display = 'none';
+                });
+                e.closest('.mb-header__nav-group').querySelector('.mb-header__sub-nav').style.display = "block";
+            }
+        });
+
+        document.querySelectorAll('.mb-header-sub-nav__item--right').forEach((e) => {
+            e.onclick = (event) =>{
+                event.preventDefault()
+                document.querySelectorAll('.mb-header-sub-nav__item').forEach( menuItem => {
+                    menuItem.style.display = 'none';
+                });
+                e.closest('.mb-header__sub-nav-group').querySelector('.mb-header__sub-nav-right').style.display = "block";
+            }
+        });
+
+    </script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".buv-slide__student-accommodation", {
+            navigation: {
+                nextEl: ".buv-slide__student-accommodation .swiper-button-next",
+                prevEl: ".buv-slide__student-accommodation .swiper-button-prev",
+            },
+        });
+
+        var swiper = new Swiper(".buv-slide__non-academic-facilities", {
+            navigation: {
+                nextEl: ".buv-slide__non-academic-facilities .swiper-button-next",
+                prevEl: ".buv-slide__non-academic-facilities .swiper-button-prev",
+            },
+        });
+
+        var swiper = new Swiper(".buv__gallery ._gallery_slide", {
+            navigation: {
+                nextEl: '.buv__gallery .swiper-button-next',
+                prevEl: '.buv__gallery .swiper-button-prev',
+            },
+        });
     </script>
 </body>
 </html>
