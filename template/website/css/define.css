@@ -1,0 +1,21 @@
+:root{
+    --color-red: #d71f27;
+    --color-muted: rgba(51, 51, 51, .75);
+    --space-element: 30px;
+    --mb-padding: 15px;
+    --mb-fs-nav: 16px;
+}
+
+.p-3{
+    padding: 30px!important;
+}
+
+.px-3{
+    padding: 0 30px!important;
+}
+
+.mb-15{
+    margin-bottom: 15px!important;
+}
+
+

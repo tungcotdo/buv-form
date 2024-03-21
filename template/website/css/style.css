@@ -1,8 +1,151 @@
+.body__banner{
+    position: relative;
+    background-image: url('../img/banner.png');
+}
+
+@media (max-width: 1199px) {
+    .body__banner{
+        position: relative;
+        display: block;
+        height: 465px;
+        width: 100%;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@media (min-width: 1200px) {
+    .body__banner{
+        width: 100%;
+        padding-top: 31.25%;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+.body__banner .container{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 60px;
+}
+
+.body-banner-breadcrumb__item{
+    font-family: BrandonReg;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 32px;
+    color: #fff;
+}
+
+.body-banner__heading{
+    margin-top: 30px;
+    font-size: 40px;
+    line-height: 46px;
+    color: #fff;
+    font-family: BrandonBld;
+    text-transform: uppercase;
+}
+
+@media (max-width: 1199px) {
+    .body-banner__heading{
+        margin-top: 10px;
+        font-size: 27px;
+    }
+}
+
+.body-section__heading{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+@media (min-width: 1199px) {
+    .body-section__heading{
+        margin-left: -41px;
+    }
+}
+
+.body-section__heading-icon{
+    display: block;
+}
+
+.body-section__heading-title{
+    font-family: BrandonBld;
+    font-size: 27px;
+    padding: 11px 0 0;
+    text-transform: uppercase;
+    color: #333;
+}
+
+@media (max-width: 1199px) {
+    .body-section__heading-title{
+        font-size: 23px;
+    }
+}
+
+.body__section{
+    margin: 60px 0 60px 0;
+}
+
+.body__section-body{
+    margin-top: 20px;
+}
+
+.buv__paragraph{
+    font-family: AvenirNextLight;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333;
+}
+
+.buv__paragraph--muted{
+    color: var(--color-muted);
+}
+
+.buv__map iframe{
+    width: 500px;
+}
+
+@media (max-width: 1199px) {
+    .buv__map{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .buv__map iframe{
+        width: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .buv__two-col-padding{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 50px;
+    }
+}
+
+.buv__link{
+    color: #4774b7;
+    font-family: AvenirLTStdHeavy;
+}
+
+.buv__link--underline{
+    text-decoration: underline;
+}
+
+.buv__link--bold{
+    font-weight: bold;
+}
+
 .buv__btn{
     font-family: AvenirLTStdHeavy;
-    padding: 12px 0 5px;
+    padding: 15px;
     width: 180px;
-    height: 40px;
     text-align: center;
     color: #fff;
     text-decoration: none;
@@ -16,6 +159,7 @@
 .buv__btn--center{
     margin: 0 auto;
 }
+
 
 @media (max-width: 1199px) {
     .container{
@@ -65,7 +209,6 @@
     }
 
     .modal__container{
-        width: 100%;
         padding: 0 var(--mb-padding);
         margin: 0 auto;
     }
@@ -81,10 +224,7 @@
         background-color: white;
         opacity: 0.9;
         display: none;
-    }
-
-    .modal__navigation .modal__content{
-        border: none;
+        padding: 15px;
     }
 
     .mb-header__nav{
@@ -120,10 +260,6 @@
         font-family: AvenirLTStdHeavy;
         border-bottom: 1px solid rgba(51, 51, 51, .2);
     }
-
-    /* .mb-header__sub-nav-group{
-        display: none;
-    } */
 
     .mb-header__sub-nav-right-item{
         position: relative;
@@ -521,10 +657,6 @@
     line-height: 20px;
 }
 
-.footer__item-ul{
-
-}
-
 .footer__item-li{
     margin-bottom: 10px;
 }
@@ -545,10 +677,6 @@
     width: 6px;
     height: 100%;
     background: var(--color-red);
-}
-
-.footer__col--right{
-
 }
 
 @media (max-width: 1199px) {
@@ -605,3 +733,4 @@
     color: #bdbdbd;
     font-size: 14px;
 }
+
