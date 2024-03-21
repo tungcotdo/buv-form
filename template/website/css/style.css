@@ -710,6 +710,10 @@
 }
 
 @media (max-width: 1199px) {
+    .footer__map{
+        margin-bottom: 60px;
+    }
+
     .footer__map-iframe{
         width: 100%;
     }
