@@ -26,6 +26,13 @@
 }
 
 @media (min-width: 1200px) {
+    .floating__social{
+        display: none;
+    }
+
+    .floating__social.show{
+        display: block;
+    }
 
     .floating__social{
         position: fixed;

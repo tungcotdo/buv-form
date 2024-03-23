@@ -1,0 +1,30 @@
+
+/* Validate color */
+.valid .buv__tb-validate{
+    background-color: #eaf8e9!important;
+    border: 1px solid #91f08c!important;
+}
+
+.valid .buv__tb-validate:-webkit-autofill,
+.valid .buv__tb-validate:-webkit-autofill:hover, 
+.valid .buv__tb-validate:-webkit-autofill:focus, 
+.valid .buv__tb-validate:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #eaf8e9 inset !important;
+}
+
+.invalid .buv__tb-validate{
+    background-color: #f5dfdf!important;
+    border: 1px solid #f08c8c!important;
+}
+
+.invalid .buv__tb-validate:-webkit-autofill,
+.invalid .buv__tb-validate:-webkit-autofill:hover, 
+.invalid .buv__tb-validate:-webkit-autofill:focus, 
+.invalid .buv__tb-validate:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #f5dfdf inset !important;
+}
+
+.modal__form-validate .error-message{
+    color: var(--color-red);
+    font-size: 12px;
+}

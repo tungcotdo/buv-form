@@ -36,7 +36,7 @@
     width: 75%;
 }
 .buv__slide .buv__slidesimple .swiper-slide .text .photo_name {
-    font-family: "AvenirLTStd-Medium.ttf";
+    font-family: "AvenirLTStdMedium";
     font-size: 20px;
     letter-spacing: 0.03em;
     color: #fff;
@@ -90,7 +90,7 @@
         margin-top: 15px;
    }
     .buv__slide .buv__slidesimple .swiper-slide .text .photo_name {
-        font-family: "AvenirLTStd-Medium.ttf";
+        font-family: "AvenirLTStdMedium";
         font-size: 18px;
         letter-spacing: 0.03em;
         color: #333;

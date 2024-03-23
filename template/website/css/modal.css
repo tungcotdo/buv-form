@@ -104,9 +104,11 @@
     color: black;
 }
 
+.modal__form-validate--search{
+    margin: 40px 0;
+}
 
 .modal-search__form{
-    margin: 40px 0;
     display: flex;
     justify-content: space-between;
     border: 1px solid #c3b7b7;
@@ -132,9 +134,11 @@
 }
 
 .modal-search-form__submit{
+    height: 38px;
     width: 100px;
     font-family: AvenirLTStdMedium;
     background-color: var(--color-red);
     color: white;
     font-weight: bold;
+    cursor: pointer;
 }

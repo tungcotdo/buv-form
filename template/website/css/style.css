@@ -476,7 +476,6 @@
         display: block;
         position: relative;
         padding: 12px 20px 10px;
-        width: 100%;
         margin: 0;
         transition: all .3s ease;
         font-family: AvenirLTStdMedium;
@@ -510,8 +509,7 @@
     .pc-header-sub-nav__item{
         display: block;
         position: relative;
-        padding: 12px 20px 10px;
-        width: 100%;
+        padding: 12px 27px 12px 20px;
         margin: 0;
         transition: all .3s ease;
         font-family: AvenirLTStdMedium;
@@ -688,8 +686,12 @@
 .footer-buvinfo__item{
     margin-bottom: 15px;
     display: grid;
-    grid-template-columns: 100px auto;
+    grid-template-columns: 92px auto;
     gap: 5px;
+}
+
+.footer-buvinfo__item-content--br{
+    display: block;
 }
 
 .footer-buvinfo__item-title{
