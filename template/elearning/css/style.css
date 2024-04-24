@@ -1,0 +1,38 @@
+/* X-Small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {}
+
+.form__group .message__error{
+    font-size: var(--fsize_1);
+    float: left;
+    color: red;
+    font-style: italic;
+}
+
+.form__group.valid .form__tb{
+    background-color: #eaf8e9;
+    border: 1px solid var(--color_s);
+}
+
+.form__group.invalid .form__tb{
+    background-color: #f5dfdf;
+    border: 1px solid var(--color_e);
+}
+
+.heading-hello{
+    color: red;
+}

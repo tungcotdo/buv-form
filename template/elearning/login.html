@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tung Binh Thai Son - Login</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/define.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+
+</head>
+<body>
+    <div id="root"></div>
+
+    <!-- Modal login -->
+    <div class="modal modal__login" id="modal__login" style="display: flex;">
+        <div class="modal__overlay"></div>
+        <div class="modal__content modal__content--login">
+            <img class="modal__login-logo" src="img/tungbinhthaison-thuphap.png" alt="tungbinhthaison-thuphap.png">
+            <form class="modal__login-form" id="modal__login-form" action="">
+                <div class="form__group validate">
+                    <input class="form__tb" id="form__tb--username" type="text" placeholder="Tài khoản">
+                    <small class="message__error"></small>
+                </div>
+                <div class="form__group validate">
+                    <input class="form__tb" id="form__tb--password" type="text" placeholder="Mật khẩu">
+                    <small class="message__error"></small>
+                </div>
+                <input class="form__tb form__tb--submit" type="submit" value="Đăng nhập">
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal loading page -->
+    <div class="modal modal__loading" id="modal__loading">
+        <div class="modal__overlay"></div>
+        <div class="modal__content modal__content--loading">
+            <div class="modal__loader"></div>
+        </div>
+    </div>
+
+    <script type="module" src="js/login.js"></script>
+
+</body>
+</html>

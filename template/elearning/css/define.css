@@ -1,0 +1,22 @@
+:root{
+    --space_1: 15px;
+    --space_2: calc( var(--space_1) * 2 );
+    --space_3: calc( var(--space_1) * 3 );
+    --space_4: calc( var(--space_1) * 4 );
+
+    --fsize_1: 12px;
+    --fsize_2: calc( var(--fsize_1) + 2 );
+    --fsize_3: calc( var(--fsize_1) + 4 );
+    --fsize_4: calc( var(--fsize_1) + 6 );
+
+    --color_1: rgb(106 168 79);
+    --color_2: rgb(106 168 79);
+    --color_3: rgb(106 168 79);
+    --color_4: rgb(106 168 79);
+
+    --color_s: #91f08c;
+    --color_e: #f08c8c;
+}
+
+
+

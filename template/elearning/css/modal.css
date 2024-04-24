@@ -1,0 +1,87 @@
+/* Modal */
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    overflow-y: auto;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.774);
+}
+
+/* Loading */
+.modal__content--loading{
+    position: absolute;
+}
+
+.modal__loader{
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #2b2929;
+    width: 70px;
+    height: 70px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Login */
+.modal__content--login{
+    position: absolute;
+    background-color: white;
+    padding: var(--space_3);
+    text-align: center;
+    border-radius: 5px;
+}
+
+.modal__login-logo{
+    width: 160px;
+}
+
+.modal__login-form{
+    width: fit-content;
+    margin: var(--space_1) auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space_1);
+}
+
+.form__tb{
+    display: block;
+    height: 40px;
+    border: 1px solid rgb(22 24 35 / 16%);
+    padding: var(--space_1);
+    border-radius: 5px;
+}
+
+.form__tb--submit{
+    width: fit-content;
+    font-size: 15px;
+    padding: 0 var(--space_1);
+    border-radius: 20px;
+    margin: 0 auto;
+    color: white;
+    cursor: pointer;
+    height: 35px;
+    background-color: var(--color_1);
+}

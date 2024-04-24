@@ -525,7 +525,7 @@
 
     <!-- Modal search for mobile -->
     <div class="modal modal__search" id="modal__search">
-        <div class="modal__content">
+        <div class="modal__content modal__content--search">
             <div class="modal__body">
                 <div class="modal__width">
                     <div class="modal__container">
@@ -629,6 +629,15 @@
     </div>
     <!-- End modal navigation for mobile -->
 
+    <!-- Modal loading page -->
+    <div class="modal" id="modal__loading">
+        <div class="modal__overlay"></div>
+        <div class="modal__content--loader">
+            <div class="loader"></div>
+            <div class="loading__title">Processing ...<br>Please do not close the browser</div>
+        </div>
+    </div>
+
     <script src="js/modal.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/floating.js"></script>
@@ -639,6 +648,8 @@
     <script src="js/function.js"></script>
     <script src="js/form.js"></script>
     
-
+    <script>
+        document.getElementById("modal__loading").style.display = "block";
+    </script>
 </body>
 </html>

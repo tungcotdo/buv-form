@@ -15,349 +15,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/swiper.css" />
     <link rel="stylesheet" href="css/form.css" />
-
-    <style>
-        .buv__img-full-width{
-            display: block;
-            width: 100%;
-        }
-
-        .buv__video-youtube--psg iframe{
-            width: 100%;
-            height: 500px;
-        }
-
-        .buv__psg-overview-student-experience{
-            display: flex;
-            background-color: #f3f3f3;
-            margin-bottom: 30px;
-            gap: 25px;
-            align-items: center;
-        }
-
-        .buv-psg-overview-student-experience__img{
-            height: 500px;
-        }
-
-        .buv-psg-overview-student-experience__text{
-            padding: 15px;
-            line-height: 18px;
-        }
-
-        .buv-psg-overview-student-experience__heading{
-            font-weight: bold;
-        }
-
-        .buv-psg-overview-student-experience__ul{
-            list-style: circle;
-            padding: 0 20px;
-        }
-
-        .buv-psg-overview-student-experience__li{
-            margin: 10px auto;
-        }
-
-        .buv-psg-overview-student-experience__li--bold{
-            font-weight: bold;
-        }
-
-.section_2 .content_s2 {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 25px;
-}
-@media only screen and (max-width: 480px) {
-  .section_2 .content_s2 {
-    flex-direction: column;
-  }
-}
-
-  .section_2
-  .content_s2
-  .item {
-  position: relative;
-  display: block;
-  width: calc((100% - 10px) / 2);
-  margin-right: 10px;
-  margin-bottom: 10px;
-  padding-top: 25%;
-}
-@media only screen and (max-width: 768px) {
-  .page-person-develop
-    .content-page
-    .content_common
-    .section_2
-    .content_s2
-    .item {
-    padding-top: 0;
-    height: 400px;
-  }
-}
-@media only screen and (max-width: 480px) {
-  .page-person-develop
-    .content-page
-    .content_common
-    .section_2
-    .content_s2
-    .item {
-    height: 300px;
-    width: 100%;
-    margin-right: 0;
-  }
-}
-
-  .section_2
-  .content_s2
-  .item
-  .img_item {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transition: 0.35s;
-}
-
-  .section_2
-  .content_s2
-  .item:hover
-  .img_item {
-  mix-blend-mode: multiply;
-  opacity: 0.1;
-}
-
-  .section_2
-  .content_s2
-  .item:hover
-  .content_hover {
-  opacity: 1;
-  mix-blend-mode: multiply;
-}
-
-  .section_2
-  .content_s2
-  .item:hover:after {
-  opacity: 0;
-}
-
-  .section_2
-  .content_s2
-  .item:hover
-  ._tag {
-  opacity: 0;
-}
-
-  .section_2
-  .content_s2
-  .item:after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(180deg, rgba(51, 51, 51, 0) 59.9%, #333333 100%);
-  pointer-events: none;
-  transition: 0.35s;
-}
-
-  .section_2
-  .content_s2
-  .item:nth-of-type(2n) {
-  margin-right: 0;
-}
-
-  .section_2
-  .content_s2
-  .item
-  ._tag {
-  position: absolute;
-  left: 0;
-  bottom: 24px;
-  background: #262626;
-  font-family: "Brandon_bld.otf";
-  font-size: 14px;
-  line-height: 32px;
-  text-transform: uppercase;
-  color: #ffffff;
-  z-index: 2;
-  padding: 10px 58px 10px 10px;
-  transition: 0.35s;
-}
-@media only screen and (max-width: 1024px) {
-  .page-person-develop
-    .content-page
-    .content_common
-    .section_2
-    .content_s2
-    .item
-    ._tag {
-    bottom: 50px;
-  }
-}
-
-  .section_2
-  .content_s2
-  .item
-  .content_hover {
-  background-color: #d71f27;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 3;
-  opacity: 0;
-  transition: 0.5s;
-  mix-blend-mode: multiply;
-  padding: 40px 35px 32px;
-}
-
-  .section_2
-  .content_s2
-  .item
-  .content_hover
-  .title_ {
-  font-family: "AvenirLTStd-Heavy.ttf";
-  font-size: 20px;
-  line-height: 26px;
-  text-transform: uppercase;
-  color: #ffffff;
-  margin-bottom: 20px;
-}
-@media only screen and (max-width: 480px) {
-  .page-person-develop
-    .content-page
-    .content_common
-    .section_2
-    .content_s2
-    .item
-    .content_hover
-    .title_ {
-    margin-bottom: 15px;
-  }
-}
-
-  .section_2
-  .content_s2
-  .item
-  .content_hover
-  .text {
-  font-size: 14px;
-  line-height: 23px;
-  color: #fff;
-  height: 130px;
-  word-break: break-word;
-  display: -webkit-box;
-  -webkit-line-clamp: 6;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-  .section_2
-  .content_s2
-  .item
-  .content_hover
-  .text
-  p {
-  color: #fff;
-}
-@media only screen and (max-width: 480px) {
-  .page-person-develop
-    .content-page
-    .content_common
-    .section_2
-    .content_s2
-    .item
-    .content_hover
-    .text {
-    text-align: left;
-  }
-  .page-person-develop
-    .content-page
-    .content_common
-    .section_2
-    .content_s2
-    .item
-    .content_hover
-    .text
-    p {
-    margin-top: 0;
-  }
-}
-
-  .section_2
-  .content_s2
-  .item
-  .content_hover
-  .see_more {
-  margin-top: 40px;
-  font-family: "AvenirLTStd-Heavy.ttf";
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: 0.05em;
-  color: #ffffff;
-}
-
-  .section_2
-  .content_s2
-  .item
-  .content_hover
-  .see_more
-  span {
-  margin-left: 10px;
-}
-@media only screen and (max-width: 480px) {
-  .page-person-develop
-    .content-page
-    .content_common
-    .section_2
-    .content_s2
-    .item
-    .content_hover
-    .see_more {
-    margin-top: 25px;
-  }
-}
-
-  .section_2
-  .content_s2
-  .item
-  .see_mobile {
-  display: none;
-  position: absolute;
-  bottom: 15px;
-  left: 10px;
-  margin-top: 40px;
-  font-family: "AvenirLTStd-Heavy.ttf";
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: 0.05em;
-  color: #ffffff;
-  z-index: 2;
-}
-
-  .section_2
-  .content_s2
-  .item
-  .see_mobile
-  span {
-  margin-left: 10px;
-}
-@media only screen and (max-width: 1024px) {
-  .page-person-develop
-    .content-page
-    .content_common
-    .section_2
-    .content_s2
-    .item
-    .see_mobile {
-    display: block;
-  }
-}
-
-    </style>
 </head>
 <body>
     <div class="buv">
@@ -453,7 +110,7 @@
 
         <div class="body">
             <!-- body banner -->
-            <div class="body__banner">
+            <div class="body__banner" style="background-image: url('img/banner.png')">
                 <div class="container">
                     <div class="body-banner__breadcrumb">
                         <a class="body-banner-breadcrumb__item" href="">Trang chủ</a> 
@@ -543,165 +200,46 @@
                         <h2 class="body-section__heading-title">04 LĨNH VỰC CỐT LÕI</h2>
                     </div>
                     <div class="body__section-body">
-                        <div class="section_2">
-                            <div class="content_s2">
-                              <a href="https://www.buv.edu.vn/cac-dich-vu-huong-nghiep-va-thuc-tap/" class="item">
-                                <div data-bg="https://www.buv.edu.vn/wp-content/uploads/2023/09/1.jpg" class="img_item rocket-lazyload entered lazyloaded exited" style="background-image: url(&quot;https://www.buv.edu.vn/wp-content/uploads/2023/09/1.jpg&quot;);" data-ll-status="loaded"></div>
-                                <div class="_tag"> HÀNH TRANG CÔNG VIỆC VÀ SỰ NGHIỆP   </div>
-                                <div class="content_hover">
-                                  <div class="title_"> HÀNH TRANG CÔNG VIỆC VÀ SỰ NGHIỆP   </div>
-                                  <div class="text js-item-scroll the_content_def mCustomScrollbar _mCS_1">
-                                    <div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0">
-                                      <div id="mCSB_1_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
-                                        <div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0">
-                                          <div id="mCSB_1_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
-                                            <p>Tham gia vào lĩnh vực Hành trang Công việc và Sự nghiệp, sinh viên sẽ được hướng nghiệp chuyên sâu và phát triển năng lực nghề nghiệp toàn diện, trở thành những nhân sự ưu tú có kiến thức chuyên môn vững vàng, hiểu biết bao quát về thị trường lao động và ngành nghề, có thái độ làm việc tích cực và kỹ năng làm việc liên ngành thuần thục.</p>
-                                            <p>Với mạng lưới hơn 500 đối tác doanh nghiệp cùng sự hỗ trợ tận tình từ Phòng Dịch vụ Hướng nghiệp và Quan hệ Đối tác, sinh viên BUV có cơ hội thực tập và thử sức làm việc tại những công ty, tổ chức có tên tuổi, từ đó tích lũy kinh nghiệm làm việc thực tế trước khi ra trường.</p>
-                                          </div>
-                                          <div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: block;">
-                                            <div class="mCSB_draggerContainer">
-                                              <div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 66px; display: block; height: 130px; max-height: 269px; top: 0px;">
-                                                <div class="mCSB_dragger_bar" style="line-height: 66px;"></div>
-                                                <div class="mCSB_draggerRail"></div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical">
-                                        <div class="mCSB_draggerContainer">
-                                          <div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position:absolute;">
-                                            <div class="mCSB_dragger_bar"></div>
-                                            <div class="mCSB_draggerRail"></div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="see_more" style="margin-top: 20px;">Xem thêm <span>&gt;</span>
-                                  </div>
+                        <div class="buv__psg-coreareas">
+                            <div class="buv__psg-coreareas-item" style="background-image: url('https://www.buv.edu.vn/wp-content/uploads/2023/09/1.jpg');">
+                                <h3 class="buv-psg-coreareas__heading buv-psg-coreareas__heading--yellow">HÀNH TRANG CÔNG VIỆC VÀ SỰ NGHIỆP</h3>
+                                <div class="buv-psg-coreareas__hover">
+                                    <h3 class="buv-psg-coreareas-hover__heading">HÀNH TRANG CÔNG VIỆC VÀ SỰ NGHIỆP</h3>
+                                    <p class="buv-psg-coreareas-hover__description">Tham gia vào lĩnh vực “Hành trang công việc và sự nghiệp” thuộc chương trình PSG, sinh viên sẽ được hướng nghiệp chuyên sâu và phát triển năng lực nghề nghiệp toàn diện, trở thành những nhân sự ưu tú có kiến thức chuyên môn vững vàng, hiểu biết bao quát về thị trường lao động và ngành nghề, có thái độ làm việc tích cực và kỹ năng làm việc liên ngành thuần thục.</p>
+                                    <p class="buv-psg-coreareas-hover__description">Với mạng lưới hơn 500 đối tác doanh nghiệp cùng sự hỗ trợ tận tình từ Phòng Dịch vụ Hướng nghiệp và Quan hệ Đối tác, sinh viên BUV có cơ hội thực tập và thử sức làm việc tại những công ty, tổ chức có tên tuổi, từ đó tích lũy kinh nghiệm làm việc thực tế trước khi ra trường.</p>
+                                    <a href="#" class="buv-psg-coreareas-hover_seemore">Xem thêm</a>
                                 </div>
-                                <div class="see_mobile">Xem thêm <span>&gt;</span>
-                                </div>
-                              </a>
-                              <a href="https://www.buv.edu.vn/hoat-dong-sinh-vien/" class="item">
-                                <div data-bg="https://www.buv.edu.vn/wp-content/uploads/2023/09/2.jpg" class="img_item rocket-lazyload entered lazyloaded exited" style="background-image: url(&quot;https://www.buv.edu.vn/wp-content/uploads/2023/09/2.jpg&quot;);" data-ll-status="loaded"></div>
-                                <div class="_tag"> KỸ NĂNG LÃNH ĐẠO VÀ KẾT NỐI   </div>
-                                <div class="content_hover">
-                                  <div class="title_"> KỸ NĂNG LÃNH ĐẠO VÀ KẾT NỐI   </div>
-                                  <div class="text js-item-scroll the_content_def mCustomScrollbar _mCS_1 _mCS_2">
-                                    <div id="mCSB_2" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0">
-                                      <div id="mCSB_2_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
-                                        <div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0">
-                                          <div id="mCSB_1_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
-                                            <p>Tham gia vào lĩnh vực Kỹ năng Lãnh đạo và Kết nối, sinh viên được rèn luyện trở thành các công dân tích cực, những người dẫn dắt có tinh thần tiên phong, khả năng lãnh đạo bản thân và đội nhóm để tạo ra thay đổi và đóng góp tích cực cho cộng đồng. Cơ hội hòa mình vào các hoạt động sinh viên cũng giúp các em sẽ thêm gắn kết với BUV, tìm kiếm được những người bạn cùng sở thích và đam mê để khai phá bản thân, tạo nên một cuộc sống sinh viên thật sôi động và ý nghĩa.</p>
-                                            <p>Không chỉ vậy, với mối quan hệ hợp tác sâu rộng với các trường đại học tại Vương Quốc Anh, sinh viên BUV có cơ hội tham quan, trao đổi và học tập tại nước ngoài, giao lưu với các sinh viên quốc tế tới Việt Nam,… từ đó được tiếp cận và trải nghiệm các giá trị văn hóa đa dạng, mở rộng tư duy toàn cầu.</p>
-                                          </div>
-                                          <div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: block;">
-                                            <div class="mCSB_draggerContainer">
-                                              <div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; display: block; height: 66px; max-height: 120px; top: 0px;">
-                                                <div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
-                                                <div class="mCSB_draggerRail"></div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div id="mCSB_2_scrollbar_vertical" class="mCSB_scrollTools mCSB_2_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: block;">
-                                        <div class="mCSB_draggerContainer">
-                                          <div id="mCSB_2_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; display: block; height: 52px; max-height: 120px; top: 0px;">
-                                            <div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
-                                            <div class="mCSB_draggerRail"></div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="see_more" style="margin-top: 20px;">Xem thêm <span>&gt;</span>
-                                  </div>
-                                </div>
-                                <div class="see_mobile">Xem thêm <span>&gt;</span>
-                                </div>
-                              </a>
-                              <a href="https://www.buv.edu.vn/suc-khoe-tinh-than/" class="item">
-                                <div data-bg="https://www.buv.edu.vn/wp-content/uploads/2023/09/3.jpg" class="img_item rocket-lazyload entered lazyloaded" style="background-image: url(&quot;https://www.buv.edu.vn/wp-content/uploads/2023/09/3.jpg&quot;);" data-ll-status="loaded"></div>
-                                <div class="_tag"> NĂNG LỰC XÃ HỘI, VĂN HÓA VÀ CẢM XÚC   </div>
-                                <div class="content_hover">
-                                  <div class="title_"> NĂNG LỰC XÃ HỘI, VĂN HÓA VÀ CẢM XÚC   </div>
-                                  <div class="text js-item-scroll the_content_def mCustomScrollbar _mCS_1 _mCS_3">
-                                    <div id="mCSB_3" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0">
-                                      <div id="mCSB_3_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
-                                        <div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0">
-                                          <div id="mCSB_1_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
-                                            <p>Thông qua việc phát triển năng lực xã hội, văn hóa và cảm xúc, sinh viên BUV sẽ nhận thức rõ nét, tôn trọng và sẵn sàng đón nhận những giá trị, cảm xúc, suy nghĩ, phẩm chất riêng biệt của bản thân, thấu cảm với sự khác biệt của những người xung quanh. Từ đó, các em sẽ điều chỉnh cảm xúc và hành vi của mình để ứng xử một cách khéo léo, sâu sắc, phù hợp với các bối cảnh khác nhau, từ đó tạo lập những mối quan hệ bền vững trong công việc và cuộc sống.</p>
-                                          </div>
-                                          <div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: block;">
-                                            <div class="mCSB_draggerContainer">
-                                              <div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; display: block; height: 66px; max-height: 120px; top: 0px;">
-                                                <div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
-                                                <div class="mCSB_draggerRail"></div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div id="mCSB_3_scrollbar_vertical" class="mCSB_scrollTools mCSB_3_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: block;">
-                                        <div class="mCSB_draggerContainer">
-                                          <div id="mCSB_3_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; display: block; height: 88px; max-height: 120px; top: 0px;">
-                                            <div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
-                                            <div class="mCSB_draggerRail"></div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="see_more" style="margin-top: 20px;">Xem thêm <span>&gt;</span>
-                                  </div>
-                                </div>
-                                <div class="see_mobile">Xem thêm <span>&gt;</span>
-                                </div>
-                              </a>
-                              <a href="https://www.buv.edu.vn/trung-tam-phat-trien-hoc-tap/" class="item">
-                                <div data-bg="https://www.buv.edu.vn/wp-content/uploads/2023/09/Choosingcourse2-7.png" class="img_item rocket-lazyload entered lazyloaded" style="background-image: url(&quot;https://www.buv.edu.vn/wp-content/uploads/2023/09/Choosingcourse2-7.png&quot;);" data-ll-status="loaded"></div>
-                                <div class="_tag"> BỔ TRỢ VÀ NÂNG CAO NĂNG LỰC HỌC TẬP   </div>
-                                <div class="content_hover">
-                                  <div class="title_"> BỔ TRỢ VÀ NÂNG CAO NĂNG LỰC HỌC TẬP   </div>
-                                  <div class="text js-item-scroll the_content_def mCustomScrollbar _mCS_1 _mCS_4">
-                                    <div id="mCSB_4" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0">
-                                      <div id="mCSB_4_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
-                                        <div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0">
-                                          <div id="mCSB_1_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
-                                            <p>Tham gia vào lĩnh vực Bổ trợ và nâng cao năng lực Học tập thuộc chương trình PSG, sinh viên sẽ được trau dồi kỹ năng học thuật vững vàng giúp việc theo học chương trình chính khóa hiệu quả hơn, đồng thời cùng nhau đạt và vượt cả những mục tiêu học tập đề ra.</p>
-                                            <p>Chương trình mở ra cơ hội cho những sinh viên có năng lực học thuật tốt và mong muốn đóng góp cho cộng đồng có không gian chia sẻ kiến thức tới các sinh viên khác, hỗ trợ nhau cùng phát triển. Đặc biệt, những sinh viên đam mê học thuật sẽ được khuyến khích thể hiện tài năng qua các hoạt động nghiên cứu khoa học, không ngừng khám phá, kết nối và tạo ra tri thức mới.</p>
-                                          </div>
-                                          <div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: block;">
-                                            <div class="mCSB_draggerContainer">
-                                              <div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; display: block; height: 66px; max-height: 120px; top: 0px;">
-                                                <div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
-                                                <div class="mCSB_draggerRail"></div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div id="mCSB_4_scrollbar_vertical" class="mCSB_scrollTools mCSB_4_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: block;">
-                                        <div class="mCSB_draggerContainer">
-                                          <div id="mCSB_4_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; display: block; height: 61px; max-height: 120px; top: 0px;">
-                                            <div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
-                                            <div class="mCSB_draggerRail"></div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="see_more" style="margin-top: 20px;">Xem thêm <span>&gt;</span>
-                                  </div>
-                                </div>
-                                <div class="see_mobile">Xem thêm <span>&gt;</span>
-                                </div>
-                              </a>
                             </div>
-                          </div>
+                            <div class="buv__psg-coreareas-item" style="background-image: url('https://www.buv.edu.vn/wp-content/uploads/2023/09/1.jpg');">
+                                <h3 class="buv-psg-coreareas__heading buv-psg-coreareas__heading--green">KỸ NĂNG LÃNH ĐẠO VÀ KẾT NỐI</h3>
+                                <div class="buv-psg-coreareas__hover">
+                                    <h3 class="buv-psg-coreareas-hover__heading">KỸ NĂNG LÃNH ĐẠO VÀ KẾT NỐI</h3>
+                                    <p class="buv-psg-coreareas-hover__description">Tham gia vào lĩnh vực “Kỹ năng lãnh đạo và kết nối” thuộc chương trình PSG, sinh viên được rèn luyện trở thành các công dân tích cực, những người dẫn dắt có tinh thần tiên phong, khả năng lãnh đạo bản thân và đội nhóm để tạo ra thay đổi và đóng góp tích cực cho cộng đồng. </p>
+                                    <p class="buv-psg-coreareas-hover__description">Cơ hội hòa mình vào các hoạt động sinh viên cũng giúp các em sẽ thêm gắn kết với BUV, tìm kiếm được những người bạn cùng sở thích và đam mê để khai phá bản thân, tạo nên một cuộc sống sinh viên thật sôi động và ý nghĩa.</p>
+                                    <p class="buv-psg-coreareas-hover__description">Không chỉ vậy, với mối quan hệ hợp tác sâu rộng với các trường đại học tại Vương Quốc Anh, sinh viên BUV có cơ hội tham quan, trao đổi và học tập tại nước ngoài, giao lưu với các sinh viên quốc tế tới Việt Nam, từ đó được tiếp cận và trải nghiệm các giá trị văn hóa đa dạng, mở rộng tư duy toàn cầu.</p>
+                                    <a href="#" class="buv-psg-coreareas-hover_seemore">Xem thêm</a>
+                                </div>
+                            </div>
+                            <div class="buv__psg-coreareas-item" style="background-image: url('https://www.buv.edu.vn/wp-content/uploads/2023/09/1.jpg');">
+                                <h3 class="buv-psg-coreareas__heading buv-psg-coreareas__heading--red">BỔ TRỢ VÀ NÂNG CAO NĂNG LỰC HỌC TẬP</h3>
+                                <div class="buv-psg-coreareas__hover">
+                                    <h3 class="buv-psg-coreareas-hover__heading">BỔ TRỢ VÀ NÂNG CAO NĂNG LỰC HỌC TẬP</h3>
+                                    <p class="buv-psg-coreareas-hover__description">Tham gia vào lĩnh vực “Bổ trợ và nâng cao năng lực học tập” thuộc chương trình PSG, sinh viên sẽ được trau dồi kỹ năng học thuật vững vàng giúp việc theo học chương trình chính khóa hiệu quả hơn, đạt và vượt những mục tiêu học tập đề ra. </p>
+                                    <p class="buv-psg-coreareas-hover__description">Chương trình mở ra những cơ hội cho những sinh viên có năng lực học thuật tốt, mong muốn đóng góp cho cộng đồng có không gian chia sẻ kiến thức tới các sinh viên khác, hỗ trợ nhau cùng phát triển. Đặc biệt, những sinh viên đam mê học thuật sẽ được khuyến khích thể hiện tài năng qua các hoạt động nghiên cứu khoa học, không ngừng khám phá, kết nối và tạo ra tri thức mới. </p>
+                                    <a href="#" class="buv-psg-coreareas-hover_seemore">Xem thêm</a>
+                                </div>
+                            </div>
+                            <div class="buv__psg-coreareas-item" style="background-image: url('https://www.buv.edu.vn/wp-content/uploads/2023/09/1.jpg');">
+                                <h3 class="buv-psg-coreareas__heading buv-psg-coreareas__heading--blue">NĂNG LỰC XÃ HỘI, VĂN HÓA VÀ CẢM XÚC</h3>
+                                <div class="buv-psg-coreareas__hover">
+                                    <h3 class="buv-psg-coreareas-hover__heading">NĂNG LỰC XÃ HỘI, VĂN HÓA VÀ CẢM XÚC</h3>
+                                    <p class="buv-psg-coreareas-hover__description">Thông qua việc phát triển năng lực xã hội, văn hóa và cảm xúc, sinh viên BUV sẽ nhận thức rõ nét, tôn trọng và sẵn sàng đón nhận những giá trị, cảm xúc, suy nghĩ, phẩm chất riêng biệt của bản thân, thấu cảm với sự khác biệt của những người xung quanh. </p>
+                                    <p class="buv-psg-coreareas-hover__description">Từ đó, các em sẽ điều chỉnh cảm xúc và hành vi của mình để ứng xử một cách khéo léo, sâu sắc, phù hợp với các bối cảnh khác nhau, từ đó tạo lập những mối quan hệ bền vững trong công việc và cuộc sống.</p>
+                                    
+                                    <a href="#" class="buv-psg-coreareas-hover_seemore">Xem thêm</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section> 
                 <!-- End core areas -->

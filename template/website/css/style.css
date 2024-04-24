@@ -145,7 +145,7 @@
 .buv__btn{
     font-family: AvenirLTStdHeavy;
     padding: 15px;
-    width: 180px;
+    width: fit-content;
     text-align: center;
     color: #fff;
     text-decoration: none;
@@ -177,9 +177,9 @@
         align-items: center;
     }
 
-    .mb-header__logo{
+    /* .mb-header__logo{
         width: 100px;
-    }
+    } */
 
     .mb-header__right{
         display: flex;
@@ -740,3 +740,126 @@
     font-size: 14px;
 }
 
+/* Psg page */
+.buv__img-full-width{
+    display: block;
+    width: 100%;
+}
+
+.buv__video-youtube--psg iframe{
+    width: 100%;
+    height: 500px;
+}
+
+.buv__psg-overview-student-experience{
+    display: flex;
+    background-color: #f3f3f3;
+    margin-bottom: 15px;
+    gap: 25px;
+    align-items: center;
+}
+
+.buv-psg-overview-student-experience__img{
+    height: 500px;
+}
+
+.buv-psg-overview-student-experience__text{
+    padding: 15px;
+    line-height: 18px;
+}
+
+.buv-psg-overview-student-experience__heading{
+    font-weight: bold;
+}
+
+.buv-psg-overview-student-experience__ul{
+    list-style: circle;
+    padding: 0 20px;
+}
+
+.buv-psg-overview-student-experience__li{
+    margin: 10px auto;
+}
+
+.buv-psg-overview-student-experience__li--bold{
+    font-weight: bold;
+}
+
+.buv__psg-coreareas{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.buv__psg-coreareas-item{
+    height: 400px;
+    width: calc(50% - 15px);
+    background-size: cover;
+    position: relative;
+}
+
+.buv-psg-coreareas__hover{
+    background-color: red;
+    padding: 30px;
+    position: absolute;
+    bottom: 0;
+    top:0;
+    right: 0;
+    left: 0;
+    display: none;
+}
+
+.buv__psg-coreareas-item:hover .buv-psg-coreareas__hover{
+    cursor: pointer;
+    display: block;
+}
+
+.buv-psg-coreareas-hover__heading{
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 26px;
+    text-transform: uppercase;
+}
+
+.buv-psg-coreareas-hover__description{
+    margin-top: 20px;
+    color: white;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: AvenirNextLight;
+}
+
+.buv-psg-coreareas-hover_seemore{
+    background-color: rgba(0, 0, 0, 0.781);
+    color: white;
+    padding: 7px 5px;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+.buv-psg-coreareas__heading{
+    background-color: black;
+    width: fit-content;
+    padding: 15px;
+    font-family: AvenirLTStdHeavy;
+    color: white;
+    position: absolute;
+    bottom: 20px;
+}
+
+.buv-psg-coreareas__heading--yellow{
+    background-color: rgba(247, 169, 1, 0.856);
+}
+
+.buv-psg-coreareas__heading--green{
+    background-color: rgba(1, 247, 21, 0.856);
+}
+
+.buv-psg-coreareas__heading--red{
+    background-color: rgba(247, 1, 1, 0.856);
+}
+
+.buv-psg-coreareas__heading--blue{
+    background-color: rgba(1, 169, 247, 0.856);
+}
